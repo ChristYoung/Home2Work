@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#div1{ width:400px; height:400px; margin:20px auto; background: white;}
+			body{ background:black;}
+        </style>
+        
+	</head>
+	<body>
+		<div id="div1">
+			<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" id="svg1">
+			    	<!--<path d = "M150 150A100 100 0 0 1 250 150L225 175A50 50 0 0 0 175 175Z" stroke = "black" fill = "none"></path>-->		        
+			</svg>
+		</div>
+	</body>
+	<script src="js/jquery-1.11.0.min.js"  charset="utf-8"></script>
+	<script type="text/javascript">
+		    	var svgNS = 'http://www.w3.org/2000/svg',
+		        oParent = document.getElementById('div1'),
+		        oSvg = document.getElementById("svg1"),
+			    aPath = oSvg.getElementsByTagName('path');
+			    
+				function createTag(tag,objAttr){     //创建元素
+					var oTag = document.createElementNS(svgNS , tag);	
+					for(var attr in objAttr){
+						oTag.setAttribute(attr , objAttr[attr]);
+					}	
+					return oTag;	
+				}  
+				
+				var arr = [17,30,19,13,21],
+				    arrLen = arr.length,
+				    angle = 360,
+				    outerR = 120,         //外层半径
+				    innerR = 70,          //内层半径
+				    centerX = 200,
+				    centerY = 200,        //中心点坐标
+			        arrColor = ['#51D0CC','#78E6E6','#F6B51D','#FA7953','#6F87CE','gray'];      //颜色库
+			   
+			   for(var i=0; i<arrLen; i++){
+			  	   var oPath = createTag('path',{
+			  	   	       fill:arrColor[i]
+			  	   });	       
+			  	   oSvg.appendChild(oPath);
+			  }
+			   
+			  $("#div1").animate({
+			  	   move:'auto'        //随意写的参数
+			  },{
+			  	  duration:600,
+			  	  easing:'linear',
+			  	  step:function(a,b){
+			  	  	 //b.pos     //是0到1之间不断运动的值
+				        var sumNum = 0,
+			  	  	         outerXY = [{x:320,y:200}],
+				             innerXY = [{x:270,y:200}];
+				             
+				  	  	 for(var i=0; i<arrLen; i++){
+						   	   var angleValue = arr[i]/100*angle;
+						   	   sumNum+=angleValue;
+						   	   
+						   	   if(i == arrLen-1){
+						   	   	   sumNum = 360;
+						   	   }
+						   	   
+						   	   var outerX = Math.cos(sumNum*b.pos*Math.PI/180)*outerR+centerX;     //求出扇形外面两个点的坐标
+						   	   var outerY = Math.sin(sumNum*b.pos*Math.PI/180)*outerR+centerY;
+						   	   outerXY.push({x:outerX,y:outerY});
+						   	   
+						   	   var innerX = Math.cos(sumNum*b.pos*Math.PI/180)*innerR+centerX;     //求出扇形里面两个点的坐标
+						   	   var innerY = Math.sin(sumNum*b.pos*Math.PI/180)*innerR+centerY;
+						   	   innerXY.push({x:innerX,y:innerY});
+				        }
+				  	  	 
+				  	  	 for(var i=0; i<outerXY.length; i++){
+						  	   if(i == outerXY.length-1){
+						  	   	   break;
+						  	   }
+						  	   var oPath = createTag('path',{
+						  	   	       fill:arrColor[i],
+						  	   	       d:"M"+outerXY[i].x+' '+outerXY[i].y+'A'+outerR+' '+outerR+' 0 0 1 '+outerXY[i+1].x+' '+outerXY[i+1].y+'L'+innerXY[i+1].x+' '+innerXY[i+1].y+'A'+innerR+' '+innerR+' 0 0 0 '+innerXY[i].x+' '+innerXY[i].y
+						  	   });
+						  	   oSvg.appendChild(oPath);
+			           }
+			  	  }
+			  })    //对数据进行运动变化
+	</script>
+</html>

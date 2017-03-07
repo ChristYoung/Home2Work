@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/function.css"/>
+		<style type="text/css">
+			/*相对定位时，无论是否进行移动，元素仍然占据原来的空间。因此，移动元素会导致它覆盖其他框*/
+			/*绝对定位的框与文档流无关，所以它们可以覆盖页面上的其他元素并可以通过z-index来控制它层级次序*/
+			/*负margin布局*/
+			.wrap{margin:0 0 10px;}
+			.left{background: green;}
+			.right,.left{position:relative;float:left;width:230px;height:200px;margin:0 -230px 0 0;} /*此处设置了right和left的定位属性,使得元素即使设置了向右的负边距也不会被后面的元素覆盖*/
+			.right{width:190px;margin:0 0 0 -190px; background: red;}
+			.centerP{float:left;width:100%; background: yellow; height: 200px;}
+			.centerC{margin:0 200px 0 240px;}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+		    <div class="left">
+		        <p>左侧定宽</p>
+		    </div>
+		    <div class="centerP">
+		        <div class="centerC">
+		            <p>中间自适应</p>
+		        </div>
+		    </div>
+		    <div class="right">
+		        <p>右侧定宽</p>
+		    </div>
+		</div>
+	</body>
+</html>

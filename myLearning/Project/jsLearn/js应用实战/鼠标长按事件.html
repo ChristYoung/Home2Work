@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>鼠标长按</title>
+		<style type="text/css">
+			*{margin: 0; padding: 0;}
+			#div1{width: 100px; height: 100px; border: 1px solid red; line-height: 100px; font-size: 20px; text-align: center;}
+		</style>
+	</head>
+	<body>
+		<div id="div1">
+			
+		</div>
+		<input type="button" name="sh" id="sh" value="点击显示" />
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+		    var timeOut = 0;
+		    var interVeal = null;
+		    var iN = 0;
+		    $("#sh").on({
+		    	mousedown:function(e){
+		    		timeOut = setTimeout(function(){//超过500ms算长按
+		    			timeOut = 0;
+		    			interVeal = setInterval(function(){
+		    				iN++;
+			    			$("#div1").html(iN);
+		    			},100);
+		    		},500);
+		    		e.preventDefault();
+		    	},
+		    	mousemove:function(){
+		    		clearInterval(interVeal);
+		    		clearTimeout(timeOut);
+		    	},
+		    	mouseup:function(){
+		    		clearInterval(interVeal);
+		    		clearTimeout(timeOut);
+		    		alert(timeOut);
+		    		if(timeOut != 0){
+		    			iN++;
+			    		$("#div1").html(iN);
+		    		}
+		    	}
+		    })
+		</script>
+	</body>
+</html>

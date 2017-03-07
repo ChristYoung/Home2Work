@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script type="text/javascript">
+		window.onload = function(){
+			var oBtn = document.getElementById("btn1");
+			var oIframe = document.getElementById("iframe1");
+			
+			oBtn.onclick = function(){
+				oIframe.contentDocument.getElementById('div1').style.color = 'red'                        //找到iframe下的document对象,对他进行操作(ie6、7不支持)
+//				oIframe.contentWindow.document.getElementById('div1').style.color = 'red';                //找到iframe下的window对象,对他进行操作
+			}
+		}
+	</script>
+	<body>
+		<input type="button" name="btn1" id="btn1" value="改变" />
+		<iframe src="iframe1.html" width="" height="" id="iframe1"></iframe>
+	</body>
+</html>

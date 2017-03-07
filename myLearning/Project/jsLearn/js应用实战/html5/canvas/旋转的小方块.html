@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			 #c1{border: 1px solid blue;}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+					var oC=document.getElementById("c1");
+					var oGc=oC.getContext('2d');
+					var num = 0;
+					setInterval(function(){
+						 num++;
+						 oGc.save();              //清空num值累加
+						 oGc.clearRect(0,0,oC.width,oC.height);          //每次旋转前先删除整个画布
+					     oGc.translate(200,200);                             //不能写到定时器外面
+						 oGc.rotate(num*Math.PI/180);
+						 oGc.translate(-50,-50);                          //设置以中心点进行旋转
+						 oGc.fillRect(0,0,100,100);
+						 oGc.restore();
+					},80)
+				
+			}
+		</script>
+	</head>
+	<body>
+		<canvas id="c1" width="400" height="400"></canvas>
+	</body>
+</html>

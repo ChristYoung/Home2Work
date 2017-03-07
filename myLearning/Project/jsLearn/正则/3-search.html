@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//正则去匹配字符串,如果匹配成功,则返回该元素的位置,否则返回-1(字符串.search(正则))
+		    //正则中的默认是区分大小写的,如果要不区分大小写的话,在正则的最后加上标石i
+		    var str = 'abcdef';
+		    //var re = new RegExp('B','i');  全称的写法
+		    var re = /B/i;
+		    alert(str.search(re));
+		</script>
+	</body>
+</html>

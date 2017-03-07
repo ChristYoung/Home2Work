@@ -1,0 +1,52 @@
+<html>
+   <head>
+      <title>网页标题</title>
+      <meta name="keywors" content="睿博">
+      <meta name="description" content="睿博好啊">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+      <link id="bs-css" href="css/bootstrap-cerulean.css" rel="stylesheet">
+	  <link rel="stylesheet" type="text/css" href="css/getOut.css"/>
+	  <script type="text/javascript" src="js/jquery-1.11.0.min.js"> </script>
+	  <script type="text/javascript" > 
+	     $(function(){
+		   
+           (function(){
+		      var aTxt=$('#txt');
+              var oDiv=$('.getOut');
+              var oBtn=$('#oClose');
+			  aTxt.click(function(){
+			     oDiv.slideDown(500);
+			  });
+              
+			  oBtn.click(function(){
+				  oDiv.slideUp(500);
+			  });
+		   })();
+
+
+		 });    
+	  </script>  
+	 
+   </head>
+   <body>
+         <div class="btn">
+		     <input type="button" id="txt" value="手动输入数据"/>
+		 </div>
+		 <div class="getOut">
+		    <div class="oData">
+		    	<h4>手动输入血压值</h4>
+		    	<ul>
+		    		<li>时间：</li>
+		    		<li>高压值：</li>
+		    		<li>低压值:</li>
+		    	</ul>
+		    	<strong>评价:</strong>	    	
+		    </div>
+		    <div class="wrap">
+			    <button type="button" class="btn btn-hg btn-primary" id="oClose" >关闭</button>
+				<button class="btn btn-hg btn-primary" id="oSub" type="submit" >提交</button>
+		    </div>
+			
+		 </div>
+   </body>
+</html>

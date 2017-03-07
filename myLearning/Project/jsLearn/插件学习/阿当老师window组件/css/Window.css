@@ -1,0 +1,78 @@
+html,body{
+	margin: 0;
+	padding: 0;
+}
+
+.window_boundingBox{
+	position: relative; border: 1px solid #000; 
+	box-shadow: 0 0 12px rgba(0,0,0,0.5);
+	z-index: 99;
+	background: #FFFFFF;
+}
+
+.window_header{
+	width: 100%; height: 30px;
+	color: #FFFFFF; text-align: center; line-height: 30px;
+	background: #333333;
+	cursor: move;
+}
+
+.window_body{
+	width: 100%;
+	text-align: center; padding-top: 10px; 
+}
+
+.window_footer{
+	position: absolute; bottom: 0;
+	padding-bottom: 10px; text-align: center;
+	width: 100%;
+}
+
+.window_confirmBtn{
+	width: 80px;
+	height: 25px;
+}
+
+.window_cancelBtn{
+	width: 80px;
+	height: 25px;
+	margin-left: 20px;
+}
+
+.window_alertBtn{
+	width: 100px; position: absolute; height: 25px;
+    bottom: 10px; left: 50%; margin-left: -50px;
+}
+
+.window_closeBtn{
+	position: absolute; top: 5px; right: 5px;
+	cursor: pointer;
+	color: #FFFFFF;
+}
+
+.window_promptInputWrapper{text-align: center;}
+
+.window_mask{
+	width: 100%; height: 100%;
+	background: #000; opacity: 0.3;
+	position: absolute; top: 0; left: 0;
+	z-index: 98;
+}
+
+/*skin for a*/
+.window_skin_a.window_boudingBox{}       /*.window_skin_a和.window_boudingBox是同一层级中间不要加逗号*/
+.window_skin_a .window_header{background: #FE1800;}
+.window_skin_a .window_alertBtn{
+		 left: 260px; width: 80px; 
+		 background: #FE1800; color: #FFFFFF; 
+		 border: none; outline: none; 
+		 cursor: pointer;
+}
+
+.window_skin_a .window_confirmBtn,.window_skin_a .window_cancelBtn{
+	background: #FE1800; color: #FFFFFF;
+	border: none; outline: none; 
+	cursor: pointer;
+}
+
+/*skin for b*/

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		    *{margin: 0; padding: 0;}
+			.div1{width: 100px; height: 100px; line-height: 100px; text-align: center; background: gray; position: absolute; left: 0; top: 50px;}
+		</style>
+	</head>
+	<body>
+		<input type="button" name="play" id="play" value="播放" />
+		<input type="button" name="stop" id="stop" value="停止" />
+		<input type="button" name="reverse" id="reverse" value="反向" />
+		<div class="div1" id="div1">asdas</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="../js/src/TweenMax.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	   //t.stop() 停止动画
+	   //t.play() 开始动画
+	   //t.reverse() 反向开始动画
+	   //onComplete() 运动结束后触发的回调函数
+	   //onReverseComplete() 反向运动结束后触发的回调函数
+	
+	
+		var t = new TimelineMax();
+		
+		t.to('#div1',2,{width:300,onComplete:function(){
+			alert('1');
+		}});
+		t.to('#div1',0.8,{left:300});  
+		t.to('#div1',2,{top:300});
+		t.to('#div1',2,{rotationZ:360}); 
+		t.to('#div1',2,{opacity:0});
+		t.stop();
+		
+		$('#play').click(function(){
+			t.play();
+		});
+		$('#stop').click(function(){
+			t.stop();
+		});
+		$('#reverse').click(function(){
+			t.reverse();
+		});
+	</script>
+</html>

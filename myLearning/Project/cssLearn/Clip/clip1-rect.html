@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0; padding: 0;}
+			.header{
+				    width: 200px; height: 200px; 
+			        background: red; 
+			        position: absolute; left: 50%; 
+			        margin-left: -100px;
+			        clip: rect(0 200px 10px 0);
+			    }
+		</style>
+	</head>
+	<body>
+		<!--clip属性只能在元素设置了“position:absolute”或者“position:fixed”属性起作用.clip无法在设置“position:relative”和“position:static”上工作-->
+	    <!--clip属性只接受三个不同的属性值：
+			 <shape>：shape是一个函数功能，当使用仅使用rect()属性;
+			 auto：这是一个默认值，clip设置auto值和没有进行剪切是一样的效果;
+			 inherit：继承父元素的clip属性值。
+        -->
+        <!--
+        	rect()需要设置四个值：top, right, bottom和left。
+        	他们之间需要用逗号隔开，而且rect()属性值和margin、padding以及bodrder具有一样的标准，
+        	遵循TRBL顺时针旋转的规则。
+        -->
+        <!--
+        	1、不显示剪切区域：当rect()中的bottom值小于top值，或者right值小于left值时，整个剪切区域不会显示。
+        	2、top和left取值为auto，当top或者left取值为auto时，相当于取值为0。
+        	3、bottom和right取值为auto，当bottom和right取值为auto时，相当于元素的100%宽度。
+        -->
+        <!--
+        	top:从上面开始裁剪(top值越大,元素在竖直面上被展示的更加少,)
+        	right:向右边进行展示(right值越大,元素在水平面上被展示的更加完全,)
+        	bottom:向下进行展示(bottom值越大,元素在竖直面上被展示的更加完全,)
+        	left:从左边开始裁剪(left值越大,元素在水平面上被展示的越少,)
+        -->
+        <div class="header">
+        	
+        </div>
+	</body>
+</html>

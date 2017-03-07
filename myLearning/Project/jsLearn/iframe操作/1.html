@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>获取iframe内body的高度</title>
+		
+	</head>
+	<body>
+		<iframe src="iframe4.html" id="Frame" width="" height=""></iframe>
+	</body>
+	<script type="text/javascript">
+			window.onload = function(){
+				var oFrame = document.getElementById("Frame");
+				var H = oFrame.contentWindow.document.body.offsetHeight;
+				alert(H);
+			}
+		</script>
+</html>

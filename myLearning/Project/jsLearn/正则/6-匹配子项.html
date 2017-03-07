@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//匹配子项: 用小括号来代表匹配子项() (还有分组操作的作用)
+			
+			
+			//把正则的整体看做是母体,小括号内的是正则的子项,然后把左边第一个小括号内的正则叫做这个母体的第一个子项,依次类推
+			
+			var str = '2015-6-19';
+			var re = /(\d+)(-)/g;        //找到2015-和6-
+			//var re = /\d-+/g;        //找到5-和6-
+			//var re = /(\d-)+/g;      //找到5-6-
+			
+			str = str.replace(re,function(s,t,k){
+					//第一个参数表示母体,第二个参数表示第一个子项,以此类推.
+					
+					alert(s);
+					//alert(t);
+					//alert(k);
+					return t+'.';
+			});
+			alert(str);
+		</script>
+	</body>
+</html>

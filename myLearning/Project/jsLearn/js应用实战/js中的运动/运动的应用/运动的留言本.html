@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#ul1{margin: 0; position: absolute; right: 10px; top: 8px; width: 700px; height: 500px; border: 1px solid #000; padding: 10px; overflow-x: hidden; overflow-y: scroll;}
+			#ul1 li{list-style: none; line-height: 28px; border-bottom: 1px dotted #000; word-break: break-all; overflow: hidden;}
+		</style>
+		<script src="move.js"  charset="utf-8"></script>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oContent = document.getElementById("content");
+				var oBtn = document.getElementById("btn");
+				var oUl = document.getElementById("ul1");
+				
+				oBtn.onclick = function(){
+					var oLi = document.createElement("li");
+					oLi.innerHTML = oContent.value;
+					
+					if(oUl.children[0]){
+						oUl.insertBefore(oLi,oUl.children[0]);
+					}else{
+						oUl.appendChild(oLi)
+					}
+					
+//					alert(oLi.style.height) ;     //obj.style.height无法将高度读取出来
+					var ih = parseInt(getStyle(oLi,'height'))  //将每个li的高度保存下来
+					oLi.style.height = '0px';    //运动之前的初始化,将每个oLi的高度置为0;
+					oLi.style.opacity = '0';
+					oLi.style.filter = 'alpha(opacity=0)'
+					
+					startMove(oLi,{
+						height:ih,
+						opacity:100
+					})
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<textarea name="" rows="10" cols="50" id="content"></textarea>
+		<input type="button" name="" id="btn" value="留言" />
+		<ul id="ul1">
+		</ul>
+	</body>
+</html>

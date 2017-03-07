@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				 var oIframe = document.createElement('iframe');
+		         oIframe.src = 	'iframe1.html';
+		         document.body.appendChild(oIframe);
+		         
+		         oIframe.onload = function(){
+		         	alert('1')
+		         }
+		         
+		         //ie只能以绑定的方式支持onload事件
+//		         oIframe.attachEvent('onload',function(){
+//		         	alert('1')
+//		         })
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

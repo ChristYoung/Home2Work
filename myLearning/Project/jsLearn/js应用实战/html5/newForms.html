@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+	</style>
+	<script type="text/javascript">
+	  
+	  	  window.onload=function(){
+	  	  	   var oNum=document.getElementById("no");
+	  	  	   oNum.onclick=function(){
+	  	  	   	     if(this.value<0){
+	  	  	   	     	  this.value=0;
+	  	  	   	     }
+	  	  	   }
+	  	  }
+		
+		
+	</script>
+	<body>
+		<form>
+			<span>email</span><input type="email" name="" id="" value="" /><br />
+			<span>URL</span><input type="url" name="" id="" value="" /><br />
+			<span>search</span><input type="search" name="" id="" value="" /><br />
+			<span>range</span><input type="range" name="" id="" value="0"  step="2" min="0" max="12" /><br />
+			<span>number</span><input type="number" name="" id="no" value="1" /><br />
+			<span>color</span><input type="color" name="" id="no" value="" /><br />
+			<input type="submit" name="" id="" value="提交" />
+		</form>
+	</body>
+</html>

@@ -1,0 +1,206 @@
+
+			$(function(){
+				//搜索切换
+				(function(){
+					var aLi=$('#menu li');
+					var oText=$('#search').find('.form .text');
+					var arrText=[
+						'例如：荷塘鱼坊烤鱼 或 樱花日本料理',
+						 '例如：昌平区育新站龙骑广场2号楼609室',
+						'例如：万达影院双人情侣券',
+						'例如：东莞出事了，大老虎是谁？',
+						'例如：北京初春降雪，天气变幻莫测',
+					];
+					var iNow=0;
+					oText.val(arrText[iNow]);            //文本框的初始化
+					aLi.each(function(index){
+						$(this).click(function(){
+							//console.log(index);
+							aLi.attr('class','gradient');
+							$(this).attr('class', 'active');
+							iNow=index;
+							oText.val(arrText[iNow]); 
+						});
+					});
+					
+					oText.focus(function(){
+						//console.log(arrText[iNow]);           //当文本框得到焦点时可以获取到文本框的内容
+						if($(this).val()==arrText[iNow]){
+							$(this).val('');
+						};
+					});
+					oText.blur(function(){
+						if($(this).val()==''){
+							oText.val(arrText[iNow]); 
+						}
+					});
+				})();
+				
+				//update文字滚动
+				(function(){
+					var oDiv=$('.update');
+					var  oUl=oDiv.find('ul');
+					var  iH=0;
+//					console.log(iH);
+					var arrData=[
+//     				  {'name':'萱萱', 'time'：4, 'title':'那些灿烂华美的瞬间'},
+                      {'name':'芝芝', 'time':4, 'title':'我的爱情在哪'},
+					  {'name':'畅畅', 'time':5, 'title':'广东三天抓获涉黄嫌犯'},
+					  {'name':'芳芳', 'time':6, 'title':'国台办回应王玉琪'},
+					  {'name':'东东', 'time':7, 'title':'那些永远忘不掉的电商1班'},
+					  {'name':'戴戴', 'time':8, 'title':'岁月静好'},
+					  {'name':'小小', 'time':9, 'title':'只是当时已惘然'},
+			          {'name':'洋洋', 'time':10, 'title':'落霞与孤鹜齐飞'},
+			          {'name':'洋洋', 'time':10, 'title':'秋水共长天一色'}
+					];
+					var str='';
+					var oBtnup=$('#updateUpBtn');
+					var oBtndown=$('#updateDownBtn');
+					var iNow=0;
+					var timer=null;
+					for(var i=0; i<arrData.length; i++){
+						str+='<li><a href="#"><strong>'+arrData[i].name+'</strong><span>'+arrData[i].time+'分钟前</span>写了一篇新文章:'+arrData[i].title+'...</a></li>';  			
+					}
+//					console.log(str);
+					oUl.html(str);
+					iH=oUl.find('li').height();
+					oBtnup.click(function(){
+						doMove(-1);
+					});
+					oBtndown.click(function(){
+						doMove(1);
+					});
+					
+					oDiv.hover(function(){
+						clearInterval(timer);                       //鼠标移至update区域时，定时器停止
+					},autoPlay);                                    //此处不要写括号
+					
+					function autoPlay(){
+						timer=setInterval(function(){
+							doMove(-1);
+						},1000);
+					}
+					autoPlay();
+					
+					function doMove(num){                                   //点击多次，就会调用多次doMove函数，iNow的值也会随之累积
+						iNow+=num;
+						if(Math.abs(iNow)>arrData.length-1){
+							iNow=0;
+						}
+						if(iNow>0){
+							iNow=(arrData.length-1)*-1;
+						}
+						oUl.stop().animate({'top':iH*iNow},1000);
+					}
+				})();
+					
+				//options选项卡的切换
+				(function(){
+					fnTab($('.tabNav1'),$('.tabCon1'));
+					function fnTab(oNav,aCon){
+						var aElem=oNav.children();             //找到该元素的所有子元素
+						aCon.hide().eq(0).show();              //aCon中除了第0个其他所有元素都隐藏 
+						aElem.each(function(index){
+							$(this).click(function(){
+								aElem.removeClass('active').addClass('gradient');         //这里不能用attr来改，因为这里是要指定修改掉active样式
+								$(this).removeClass('gradient').addClass('active');
+								aElem.find('a').attr('class','triangle_down_gray');
+								$(this).find('a').attr('class','triangle_down_red');
+								aCon.hide().eq(index).show();
+							})
+						});
+					}
+				})();
+				
+				//焦点图的切换
+				(function(){
+					var oDiv=$('#fade');
+					var aUlLi=oDiv.find('ul li');
+					var aOlLi=oDiv.find('ol li');
+					var iNow=0;
+					var timer="";
+					
+					fnFade();
+					aOlLi.click(function(){
+						iNow=$(this).index();
+						fnFade();
+					});
+					
+					oDiv.hover(function(){
+						clearInterval(timer);
+					},autoPlay);                          //注意这里面的函数不能加();
+					
+					function autoPlay(){
+						timer=setInterval(function(){
+							iNow++;
+							iNow%=3;
+							fnFade();
+						},3000);				
+					}
+					autoPlay();
+
+					function fnFade(){
+						aOlLi.each(function(i){           //所有的ul或ol都会有索引值i
+							if(i!=iNow){
+								aUlLi.eq(i).fadeOut(2000).css('zindex',1);	
+								
+							}else{
+								aUlLi.eq(i).fadeIn(2000).css('zindex',2);
+								
+							}
+						});
+					}
+				})();
+				
+				
+				//日历的提示
+				(function(){
+					var aSpan=$('.calendar h3 span');
+					var aImg=$('.calendar .img');
+					var oPrpmpt=$('.today_info');
+					var oStrong=oPrpmpt.find('strong');
+					
+					aImg.hover(function(){
+						var iTop=$(this).parent().position().top-30;
+						var iLeft=$(this).parent().position().left+55;
+						var iIndex=$(this).parent().index()%aSpan.size();
+						oPrpmpt.fadeIn(1000).css({'left':iLeft,'top':iTop});
+						oStrong.text(aSpan.eq(iIndex).text());
+						
+					},function(){
+						oPrpmpt.fadeOut(1000);
+					});
+				})();
+				
+				//BBS highlight
+				(function(){
+					var oLi= $('.bbs ol li');
+					oLi.mouseover(function(){
+						oLi.removeClass('active').eq($(this).index()).addClass('active');
+					});
+				})();
+				
+				//红人烧客
+				(function(){
+					var arr=[
+					'用户1<br />人气1',				
+					'用户2<br />人气1',
+					'用户名:性感宝贝<br />区域:朝阳CBD<br />人气:123466',
+					'用户3<br />人气1',
+					'用户4<br />人气1',
+					'用户5<br />人气1',
+					'用户6<br />人气1',
+					'用户7<br />人气1',
+					'用户8<br />人气1',
+					'用户9<br />人气1',
+					'用户10<br />人气1',
+					'用户11<br />人气1',
+				
+					];
+					$('.hot_area li').mouseover(function(){
+						if($(this).index()==0)return;                  //让第一张图片没有覆盖层
+						$('.hot_area li p').remove();
+						$(this).append('<p style="width: '+($(this).width()-12)+'px; height:'+($(this).height()-12)+'px;">'+arr[$(this).index()]+'</p>');
+					})
+				})();
+			});

@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+		    *{margin: 0; padding: 0;}
+		    html,body{width: 100%; height: 100%;}
+			.outer{position: relative; width: 100%; height: 20px;  overflow: hidden;}
+			.outer .wrap{position: absolute; top: 0; left: 0;}
+		</style>
+	</head>
+	<body>
+		<div class="outer">
+			<div class="wrap">
+				<p>one</p>
+				<p>two</p>
+				<p>three</p>
+				<p>four</p>
+				<p>five</p>
+				<p>six</p>
+				<p>seven</p>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery-1.8.0.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var oWrap = $(".wrap"),
+		    iTimer = null
+		    
+		iTimer = setInterval(function(){
+			 oWrap.stop().animate({top:-20},500,function(){
+			 	 $(this).css({top:0}).find('p:first').appendTo(this);
+			 })
+		},1000)
+		
+	</script>
+</html>

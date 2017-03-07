@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no" />
+		<title></title>
+		<style type="text/css">
+		     html,body{height: 100%; margin: 0;}
+			.box{width: 100px; height: 100px; margin: 150px auto; border: 1px solid #000; -webkit-perspective: 800px; perspective: 800px;}
+			.div{
+				width: 100px; height: 100px; 
+				position: relative; 
+				transform-style: preserve-3d; -webkit-transform-style: preserve-3d; 
+				transform-origin: center center -153.8841768587px; -webkit-transform-origin: center center -153.8841768587px;
+			}
+			.div div{
+				position: absolute; left: 0; top: 100px; width: 100%;
+				transform-style: preserve-3d; -webkit-transform-style: preserve-3d; 
+				transform-origin: top; -webkit-transform-origin: top;
+				transform: rotateX(-36deg); -webkit-transform: rotateX(-36deg);
+			}
+			.div>div{top: 0; transform: rotateX(0deg); -webkit-transform: rotateX(0deg);}
+			.div span{width: 98px; height: 98px; border: 1px solid #000; background: #ccc; text-align: center; font: 50px/98px "宋体"; display: block;}
+			/*正n边形的外角和=360°
+			 正n边形外角等于360/n
+			 所以设置每个.div div的rotateX为36deg
+			 * */
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="div"></div>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="touchScroll.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	    var $box = $('.box')[0];
+	    var scroll = new MScroll($box,'y',false,true,true);
+	    var last = 0;
+	    var lastTime = 0;
+	    var lastsDis = 0; //最后一次位移的差值
+	    var lastTimeDis = 0; //最后一次位移的总时间
+		var setLayout = function(){
+		   	var str = '';
+		   	for (var i=0; i<10; i++) {
+		   		str = '<div ><span>'+(9-i)+'</span>'+str+'</div>';
+		   	}
+		   	$('.div').html(str);
+		};
+		
+		setLayout();
+		scroll.onscrollstart = function(){
+			lastTime = new Date().getTime();
+			lastTimeDis = 0;
+			last = this.iScroll;
+			lastsDis = 0;
+		};
+		scroll.onscroll = function(){
+			var nowTime = new Date().getTime();
+			//让角度等于滑动距离
+		    var deg = -this.iScroll; 
+		    this.oScroll.style.transform = this.oScroll.style.WebkitTransform = 'rotateX('+deg+'deg)';  //this.oScroll表示当前调用此方法的dom，也就是$box
+		    lastTimeDis = nowTime - lastTime;
+		    lastDis = this.iScroll - last;
+		};
+		scroll.onscrollend = function(){
+			clearInterval(this.timer);
+			//lastDis是开始滑动和最后滑动结束时手指的位移
+			//lastTimeDis是开始滑动和最后滑动结束时时间的差值
+			//所以lastDis/lastTimeDis是开始滑动和最后滑动结束时的平均速度,时间单位是毫秒
+			//这个插件是按照400毫秒为时间单位来做动画的,所以速度要乘以200显得大一些
+			var dis = (lastDis/lastTimeDis)*200; 
+			var target = -(dis+this.iScroll); //最终停下来的角度
+			//根据最终停下来的角度,推算出最终停下来的数字
+			var targetNum = Math.round(target/36);    //targetNum多圈数字
+			dis = -targetNum*36-this.iScroll; 
+			this.tweenMove(dis,'easeOut');
+//			console.log(target);
+//			console.log(this.iScroll);
+
+			targetNum%=10; //单圈显示的数字, (就是最后显示的数字)
+			if(targetNum<0){ //向下滑动时显示的数字
+				targetNum+=10;
+			}
+			console.log(targetNum);
+		};
+	</script>
+</html>

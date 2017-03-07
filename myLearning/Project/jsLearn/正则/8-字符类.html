@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//字符类:一组相似的字符元素   [] 中括号的整体代表一个字符;
+			var str = 'abc';
+			var re = /a[bde]c/;       //[]中括号内表示可以匹配b、d、e,中括号内的所有只表示字符串中的第二位
+			
+			alert(re.test(str));     //true
+
+
+           //排除:^如果写在[]里面的话,就代表排除的意思,相当于'非'的意思
+//         var str = 'abc';
+//         var re = /a[^bde]c/;    //表示第二个字符不能是b、d、e中的任何一个
+//         alert(re.test(str));   //false
+
+           //范围:[a-z] 表示a到z26个字母
+//         var str = 'abc';
+//         var re = /a[a-z0-9A-Z]c/;  //表示第二个字符是大小写的26个字母,或者是0到9的数字
+//         alert(re.test(str));  //false
+
+
+		</script>
+	</body>
+</html>

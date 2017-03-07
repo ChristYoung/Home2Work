@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.fathetr{}
+			.fathetr .list{float: left; width: 100px; height: 100px;}
+			.list1{background: red; margin-right: -100px;} /*文档流中前面的元素设置向右的负边距后后面的元素会向前覆盖*/
+			.list2{background: green;}
+			.list3{background: yellow;/* margin-left: -200px;*/}/*文档流中后面的元素设置向左的负边距后会向前覆盖*/
+		</style>
+	</head>
+	<body>
+		<!--所以那些说得很好听的什么圣杯布局、双飞翼布局啊什么的，都是利用这个原理实现的。就是某个元素虽然是写在了后面，但可以通过负边距让它在浏览器显示的时候是在前面的。 -->
+	   <div class="fathetr">
+	   	   <div class="list list1"></div>
+	   	   <div class="list list2"></div>
+	   	   <div class="list list3"></div>
+	   </div>
+	</body>
+</html>

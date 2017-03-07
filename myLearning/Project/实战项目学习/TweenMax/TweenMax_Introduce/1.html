@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		    *{margin: 0; padding: 0;}
+			.div1{width: 100px; height: 100px; line-height: 100px; text-align: center; background: gray; position: absolute; left: 0; top: 0;}
+		</style>
+	</head>
+	<body>
+		<div class="div1" id="div1">asdas</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="../js/src/TweenMax.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//new TimelineMax() 得到动画的实例
+		//to():添加动画
+		    //参数说明
+		       //1.元素选择器或对象
+		       //2.持续时间(单位是秒)
+		       //3.对象
+		            //变化的属性->值
+		       //4.[可选] 动画延迟发生的时间 可写数字, "-=0.5", "+=0.5"单位是秒;     
+		$(function(){
+			var t = new TimelineMax();
+			
+			//t.to('#div1',1,{left:600,width:300});
+			
+//			t.to('#div1',2,{width:300}); //如果要逐步进行多个动画的话,需要逐个写(但是如果写了第四个参数也就是延迟时间,那么就按照延迟时间的顺序来,比如下面的旋转1s后会立即执行)
+//			t.to('#div1',2,{left:300});
+//			t.to('#div1',2,{top:300});
+//			t.to('#div1',2,{rotationZ:360},1);
+//			t.to('#div1',2,{opacity:0});
+			
+			t.to('#div1',2,{width:300});
+			t.to('#div1',0.8,{left:300},"-=1");  //-=表示在上一动画执行的基础上提前对应的时间执行这个动画
+			t.to('#div1',2,{top:300});
+			t.to('#div1',2,{rotationZ:360},"+=5"); //+=表示不管上面的动画执行了多长时间,此动画都会在上一个动画执行的基础上进行相应的延迟
+			t.to('#div1',2,{opacity:0});
+
+            
+		});
+	</script>
+</html>

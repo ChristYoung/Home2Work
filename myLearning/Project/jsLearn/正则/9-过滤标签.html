@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		替换前<br />
+		<textarea name="uid" id="uid" rows="" cols=""></textarea><br />
+		
+		替换前<br />
+		<textarea name="uid" id="uid" rows="" cols=""></textarea><br />
+		<input type="button" name="btn" id="btn" value="确定" />
+	</body>
+	<script type="text/javascript">
+	    var aT = document.getElementsByTagName('textarea');
+		var oBtn = document.getElementById("btn");
+		oBtn.onclick = function(){
+			var re = /<[^>]+>/g;
+			aT[1].value = aT[0].value.replace(re,'');
+		}
+	</script>
+</html>

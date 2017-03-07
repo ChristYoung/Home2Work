@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		替换前<br />
+		<textarea name="uid" id="uid" rows="" cols=""></textarea><br />
+		
+		替换前<br />
+		<textarea name="uid" id="uid" rows="" cols=""></textarea><br />
+		<input type="button" name="btn" id="btn" value="确定" />
+	</body>
+	<script type="text/javascript">
+	    // '|'在正则中是或的意思
+	    //replace中的第二个参数,可以是个字符串,也可以是个回调函数
+		window.onload = function(){
+			var aT = document.getElementsByTagName('textarea');
+			var oBtn = document.getElementById("btn");
+			var re = /日本|共产党/g;
+			oBtn.onclick = function(){
+				//aT[1].value = aT[0].value.replace(re,'*');
+				aT[1].value = aT[0].value.replace(re,function(str){
+					//回调函数的第一个参数:就是匹配成功的字符
+					//alert(str);
+					var result = '';
+					for(var i=0; i<str.length; i++){
+						result+='*';
+					}
+					return result;
+				});
+			}
+		}
+	</script>
+</html>

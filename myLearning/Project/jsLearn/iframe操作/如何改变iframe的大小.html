@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var aIpunt = document.getElementsByTagName('a');
+				var oIframe = document.getElementById("iframe1");
+				
+				function changeHeight(){
+					setTimeout(function(){       //让函数延迟进行,避免和转换src同时进行
+						 oIframe.height = oIframe.contentWindow.document.body.offsetHeight;
+						   //oIframe.height = 300+'px';
+					},100)
+				}
+				changeHeight();
+				
+				aIpunt[0].onclick = function(){
+					//oIframe.src = 'iframe4.html';
+					changeHeight();
+				}
+				
+				aIpunt[1].onclick = function(){
+					//oIframe.src = 'iframe5.html';
+					changeHeight();
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<!--<input type="button" name="btn1" id="btn1" value="切换1" />
+		<input type="button" name="btn2" id="btn2" value="切换2" />-->
+		<a href="iframe4.html" target="myView">切换1</a>
+		<a href="iframe5.html" target="myView">切换2</a>
+		<iframe src="iframe4.html" name="myView" width="" height="" id="iframe1" ></iframe>
+	</body>
+</html>

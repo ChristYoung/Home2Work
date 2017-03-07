@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var btn = document.getElementById("btn1");
+				btn.onclick = function(){
+					window.parent.document.getElementById('div1').style.color = 'red';      //获取该iframe的父层页面
+				
+				    //window.top   如果嵌套多层iframe的话,表示最顶层
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="button" name="btn1" id="btn1" value="改变" />
+	</body>
+</html>

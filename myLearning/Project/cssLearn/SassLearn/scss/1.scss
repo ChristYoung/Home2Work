@@ -1,0 +1,14 @@
+$color:red;
+$height:50px;
+$width:50px;
+#container{
+    height: $height;
+    width: $width;
+    background: $color;
+    .wrapper{
+        $color:yellow;
+        height: $height;
+        width: $width;
+        background: $color;
+    }
+}

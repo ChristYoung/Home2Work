@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">点击</button>
+	</body>
+	<script type="text/javascript">
+//		var singleFun = function(){//简单的单例模式,产生唯一的mask
+//			var mask;
+//			return function(){
+//				if(mask){
+//					alert('mask已经被定义');
+//				}else{
+//					mask = 'j';
+//					alert('mask第一次定义');
+//				}
+//			}
+//		}();
+//		var _Btn = document.getElementById("btn");
+//		_Btn.addEventListener('click',function(){
+//			singleFun();
+//		},false);
+
+var singleFun = function(fn){
+	var result;
+	return function(){
+		return result || (result = fn.apply(this,arguments));//执行fn并改变this指向
+	};
+};
+
+var createMask = singleFun(function(){
+	console.log(this);//如果fn不改变this指向的话,这时候打印出来的this是window;
+	return document.body.appendChild(document.createElement("div"));
+});
+
+var _Btn = document.getElementById("btn");
+_Btn.addEventListener('click',createMask,false); //=>console.log=>btn
+	</script>
+</html>

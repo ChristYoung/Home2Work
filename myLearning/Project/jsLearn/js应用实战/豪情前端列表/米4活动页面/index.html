@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>小米</title>
+		<style type="text/css">
+			 body{margin:0;font:14px/1.5 arial,"Microsoft Yahei","Hiragino Sans GB",sans-serif;color:#8c8c8c;background-color:#fff}
+			div{ display:block;}
+			.slide{position:absolute;top:0;left:0;width:100%;height:100%;z-index:1;overflow:hidden}
+			.mi4-content-feature-h{background-repeat:repeat-x;background-position:center center;background-image:url('bgbgbg.png');background-image:-webkit-linear-gradient(to bottom,#070607,#2e2e30);background-image:-o-linear-gradient(to bottom,#070607,#2e2e30);background-image:linear-gradient(to bottom,#070607,#2e2e30);-webkit-transform:translateZ(0)}
+			
+			/*image-set可以根据用户设备的分辨率匹配合适的图像*/
+			.feature-img-a{z-index:1;position:absolute;top:50%;left:50%;width:1099px;height:569px;margin-left:-914px;margin-top:-264px;background-repeat:no-repeat;background-position:center center;background-image:url('fea-37.png');background-image:-webkit-image-set(url('fea-37.png') 1x,url('fea-37_2x.png') 2x)}
+			.feature-img-b{z-index:1;position:absolute;top:50%;left:50%;width:1093px;height:608px;margin-left:-184px;margin-top:-223px;background-repeat:no-repeat;background-position:center center;background-image:url('fea-38.png');background-image:-webkit-image-set(url('fea-38.png') 1x,url('fea-38_2x.png') 2x)}
+			.feature-float-high.widthani{-webkit-transition:width .9s cubic-bezier(.86,0,.07,1);-moz-transition:width .9s cubic-bezier(.86,0,.07,1);-o-transition:width .9s cubic-bezier(.86,0,.07,1);transition:width .9s cubic-bezier(.86,0,.07,1)}
+			.feature-float-control{position:absolute;top:50%;width:50px;height:50px;z-index:16;margin-top:50px;cursor:move;display:none;background-repeat:no-repeat;background-position:center center;background-image:url('fea-28.png');background-image:-webkit-image-set(url('fea-28.png') 1x,url('fea-28_2x.png') 2x)}
+			.feature-float-high{position:absolute;top:0px;right:0px;width:0px;height:100%;z-index:10;overflow:hidden;background-color:#fff;-webkit-transform:translateZ(0)}
+			.feature-float-font-title{position:absolute;top:50%;left:50%;margin-left:-75px;margin-top:390px;width:150px;font-size:24px;color:#c3c3c3;line-height:30px}
+			.feature-float-img-a{z-index:11;position:absolute;top:50%;width:1102px;height:566px;margin-top:-261px;background-repeat:no-repeat;background-position:center center;background-image:url('fea-35.png');background-image:-webkit-image-set(url('fea-35.png') 1x,url('fea-35_2x.png') 2x)}
+			.feature-float-img-b{z-index:10;position:absolute;top:50%;width:1096px;height:607px;margin-top:-223px;background-repeat:no-repeat;background-position:center center;background-image:url('fea-36.png');background-image:-webkit-image-set(url('fea-36.png') 1x,url('fea-36_2x.png') 2x)}
+		</style>
+	</head>
+	<body>
+		<div id="box" class="slide mi4-content-feature-h">
+			    <div class="feature-img-a"></div>
+			    <div class="feature-img-b"></div>
+			    <div id="sub" class="feature-float-high J_feature_float">
+			        <div class="feature-float-img-a J_feature_float_imga"></div>
+			        <div class="feature-float-img-b J_feature_float_imgb"></div>
+			    </div>
+			    <div id="bar" class="feature-float-control J_feature_control"></div>
+        </div>
+	</body>
+	<script type="text/javascript">
+		 //获取元素
+		 var box = document.getElementById("box"),
+		        bar = document.getElementById("bar"),
+		        sub = document.getElementById("sub"),
+		        div = sub.getElementsByTagName('div'),
+		        img = box.getElementsByTagName('div'),
+		        startX = 0;
+		        
+				 act(sub, 'width', 0, function(){
+		            act(sub, 'width', w_width() - 80, function(){
+		                bar.style.display = 'block';
+		                bar.style.right = w_width() - 105 + 'px';
+		            });
+		        });
+		        drag(bar, sub);
+		        
+		        //设置sub的初始位置
+		        sub.style.width = w_width() - 80 + 'px';
+		        //设置sub内的两张图片的具体初始位置
+		        div[0].style.right  =  914 + w_width()/2 - 1102 + 'px';
+		        div[1].style.right = 184 + w_width()/2-1096+'px';
+		        
+		        //拖动函数
+		        function drag(obj,sub){
+		        	 obj.onmousedown = function(e){
+		        	 	e = e || event;
+		        	 	startX = e.clientX - obj.offsetLeft; //鼠标距离元素左侧的距离
+		        	 	document.onmousemove = function(e){
+		        	 		e = e || event;
+		        	 		var x = e.clientX - startX;
+		        	 		x = w_width() - x;
+		        	 		obj.style.right = x - 25 + 'px';
+		        	 		sub.style.width = x+'px';
+		        	 	};
+		        	 	document.onmouseup = function(){
+		        	 		document.onmousemove = null;
+		        	 		document.onmouseup = null;
+		        	 	};
+		        	 	return false;
+		        	 }
+		        };
+		        
+		        //获取样式的函数
+		        function css(obj,attr){
+		        	if(obj.currentStyle){
+		        		return obj.currentStyle[attr];
+		        	}else{
+		        		return getComputedStyle(obj,null)[attr];
+		        	}
+		        }
+		        
+		        //动画函数
+		        function act(obj,attr,target,fn){
+		        	obj.timer && clearInterval(obj.timer);
+		        	obj.timer = setInterval(function(){
+		        		var cur = parseInt(css(obj,attr));
+		        		var speed = (target - cur)/8;
+		        		speed = speed>0?Math.ceil(speed):Math.floor(speed);
+		        		var stop = true;
+		        		if(cur !=  target){
+		        			stop = false;
+		        			obj.style[attr] = cur + speed + 'px';
+		        		};
+		        		if(stop){
+		        			clearInterval(obj.timer);
+		        			obj.timer = null;
+		        			fn && fn();
+		        		}
+		        	},30);
+		        }
+		        
+		        //返回当前窗口可视区域的宽度和高度
+		        function w_width(){
+		        	return document.documentElement.clientWidth || document.body.clientWidth;
+		        };
+		        function w_height(){
+		        	return document.documentElement.clientHeight || document.body.clientHeight;
+		        }
+	</script>
+</html>

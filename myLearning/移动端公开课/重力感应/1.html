@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<!-- 可隐藏地址栏，仅针对IOS的Safari（注：IOS7.0版本以后，safari上已看不到效果） -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<!-- 仅针对IOS的Safari顶端状态条的样式 (可选default/black/black-translucent)-->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!-- IOS中禁用将数字识别为电话号码/忽略Android平台中对邮箱地址的识别 -->
+		<meta name="format-detection" content="telephone=no, email=no">
+		<!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+		<meta name="HandheldFriendly" content="true">
+		<!-- uc强制竖屏 -->
+		<meta name="screen-orientation" content="portrait">
+		<!-- 微信x5强制竖屏 -->
+		<meta name="x5-orientation" content="portrait">
+		<!-- windows phone 点击无高光 -->
+		<meta name="msapplication-tap-highlight" content="no">
+		<style type="text/css">
+			#box{position: absolute; left: 50%; top: 50%; margin: -25px 0 0 -25px; width: 50px; height: 50px; background: red; color: #fff; font-size: 20px;}
+		</style>
+		<title></title>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script src="m.Tween2.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var isAndroid = function(){
+				var u = navigator.userAgent;
+			    return u.indexOf('Android')>-1 || u.indexOf('Adr')>-1; //判断是否是安卓机
+			};
+			
+		    //在ios和android数值的正负刚好相反
+			var box = document.querySelector('#box');
+			css(box,'translateX',0);
+			window.addEventListener('devicemotion',function(e){ //此事件只能加在window上
+				var motion = e.accelerationIncludingGravity; //加速度
+				var motionObj = null;
+				var tx = css(box,'translateX'); //获取x方向上的初始值
+				if(isAndroid()){
+					motionObj = {x:Math.round(-motion.x),y:Math.round(-motion.y),z:Math.round(-motion.z)};
+				}else{
+					motionObj = {x:Math.round(motion.x),y:Math.round(motion.y),z:Math.round(motion.z)};
+				}
+				//box.innerHTML = "x:"+motionObj.x+"<br />y:"+motionObj.y+"<br />z:"+motionObj.z;
+				css(box,'translateX',tx+motionObj.x);
+			});
+		</script>
+	</body>
+</html>

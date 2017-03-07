@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+				  body{background: #ECF0F1;}
+				  .preloader_wrapper{position: absolute; width: 54px; top: 50%; left: 50%; margin-left: -27px;}
+				  #preloader_1{position: relative; width: 40px; height: 40px;}
+				  #preloader_1 span{position: absolute; bottom: 0; width: 20px; height: 20px; display: block; background: #9b59b6;}
+		          #preloader_1 span:nth-of-type(1){-webkit-animation: preload_1 1.5s infinite ease-in-out;}
+		          #preloader_1 span:nth-of-type(2){left: 20px; -webkit-animation: preload_2 1.5s infinite ease-in-out;}
+		          #preloader_1 span:nth-of-type(3){top: 0; -webkit-animation: preload_3 1.5s infinite ease-in-out;}
+		          #preloader_1 span:nth-of-type(4){left: 20px; top: 0; -webkit-animation: preload_4 1.5s infinite ease-in-out;}
+		          
+		          @-webkit-keyframes preload_1{
+		          	  0%{-webkit-transform: translateX(0px) translateY(0px) rotate(0deg); border-radius: 0px; background: #9b59b6;}
+		          	  50%{-webkit-transform: translateX(-20px) translateY(-10px) rotate(-180deg); border-radius: 20px; background: #3498db;}
+		          	  100%{-webkit-transform: translateX(0px) translateY(0px) rotate(0deg); border-radius: 0px; background: #9b59b6;}
+		          }
+		          
+		          @-webkit-keyframes preload_2{
+		          	  0%{-webkit-transform: translateX(0px) translateY(0px) rotate(0deg); border-radius: 0px; background: #9b59b6;}
+		          	  50%{-webkit-transform: translateX(20px) translateY(-10px) rotate(180deg); border-radius: 20px; background: #3498db;}
+		          	  100%{-webkit-transform: translateX(0px) translateY(0px) rotate(0deg); border-radius: 0px; background: #9b59b6;}
+		          }
+		          
+		          @-webkit-keyframes preload_3{
+		          	  0%{-webkit-transform: translateX(0px) translateY(0px) rotate(0deg); border-radius: 0px; background: #9b59b6;}
+		          	  50%{-webkit-transform: translateX(-20px) translateY(10px) rotate(-180deg); border-radius: 20px; background: #3498db;}
+		          	  100%{-webkit-transform: translateX(0px) translateY(0px) rotate(0deg); border-radius: 0px; background: #9b59b6;}
+		          }
+		          
+		          @-webkit-keyframes preload_4{
+		          	  0%{-webkit-transform: translateX(0px) translateY(0px) rotate(0deg); border-radius: 0px; background: #9b59b6;}
+		          	  50%{-webkit-transform: translateX(20px) translateY(10px) rotate(180deg); border-radius: 20px; background: #3498db;}
+		          	  100%{-webkit-transform: translateX(0px) translateY(0px) rotate(0deg); border-radius: 0px; background: #9b59b6;}
+		          }
+		</style>
+	</head>
+	<body>
+		<div class="preloader_wrapper">
+			  <div id="preloader_1">
+			                <span></span>
+			                <span></span>
+			                <span></span>
+			                <span></span>
+			   </div>
+        </div>
+	</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title></title>
+		<style type="text/css">
+		    .window_select{z-index: 10; position: absolute; width: 94%; margin: 0 auto; left: 3%; bottom: 0;}
+	    	.window_select a{display: block; line-height: 48px; text-align: center; color: #4893AA; background: #FFFFFF;}
+	    	.window_select .listItem{max-height: 288px; overflow-y: scroll; overflow-x: hidden;}
+	    	.window_select .listItem a{border-bottom: 1px solid #DCDCDC;}
+	    	.window_select .listItem a:nth-of-type(1){border-radius: 5px 5px 0 0;}
+	    	.window_select .listItem a:nth-last-of-type(1){border-radius: 0 0 5px 5px;}
+	    	.window_select a.select_cancel{margin-top: 8px; border-radius: 5px 5px 0 0;}
+	    	#window-mask{position: fixed; width: 100%; height: 100%; background: rgba(47,47,47,0.6); top: 0; left: 0; z-index: 8;}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="institude" value="" readonly="readonly" placeholder="全部院级/系部"/>
+		<!--<div class="window_select" id="institudeList">
+			<div class="listItem">
+				<a data-id="0">计算机</a>	
+				<a data-id="1">哲学</a>	
+				<a data-id="2">物理</a>	
+				<a data-id="3">马克思</a>	
+			</div>
+			<a class="select_cancel">取消</a>
+		</div>
+		<div class="window_select" id="institudeList">
+			<div class="listItem"></div>
+			<a class="select_cancel">取消</a>
+		</div>	-->
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="x.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$('#institude').click(function(){
+			var sel = new windowSelect({tag:$('#institude'),callBack:function(){
+				alert($(this).val());
+			}}).init();
+		});
+	</script>
+</html>

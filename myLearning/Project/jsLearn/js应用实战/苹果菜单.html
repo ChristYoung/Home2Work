@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0; padding: 0;}
+			#wrapDiv{width: 100%; height: auto; position: absolute; bottom: 0; text-align: center;}
+			#wrapDiv img{width: 64px;}
+		</style>
+		<script type="text/javascript">
+//			Math.pow(3,2)     //表示3的平方;
+//			Math.sqrt(9);     //表示9的开方;
+            window.onload = function(){
+            	var aInput = document.getElementsByTagName('input');
+            	var oDiv = document.getElementById("wrapDiv");
+            	var aImg = oDiv.getElementsByTagName('img');
+            	
+            	document.onmousemove = function(ev){
+            		var ev = ev || window.event;
+            		
+            		for(var i=0; i<aImg.length; i++){
+	            		 //寻找到每张图的中心点
+	            		 var x = aImg[i].offsetLeft+aImg[i].offsetWidth/2;
+	            		 var y = aImg[i].offsetTop+aImg[i].offsetHeight/2+oDiv.offsetTop;         
+	            		 //因为img的父集div有定位,而offsetTop值表示到有定位的父集的距离，（如果所有父集都没有定位那么就是默认到body的距离）,所以还要加上父集div的offsetTop值,不然显示的y值就都是32
+	            		 
+	//          		 aInput[i].value = 'x轴:'+x+';'+'y轴:'+y;
+	                     
+	                     var a = ev.clientX-x;
+	                     var b = ev.clientY-y;
+	                     var c = Math.sqrt(Math.pow(a,2)+Math.pow(b,2));
+            	         var scale = 1-c/300;
+            	         //确立一个scale作为比例值
+            	         
+            	         if(scale<0.5) scale = 0.5;
+            	         
+            	         aInput[i].value = scale;
+            	         aImg[i].style.width = scale*128+'px';
+            	         aImg[i].style.height = scale*128+'px';
+            		}
+            	}
+            	
+            	
+            }
+		</script>
+	</head>
+	<body>
+		<!--显示图片的5个中心点-->
+		<input type="text" name="s1" id="s1" value="" />
+		<input type="text" name="s2" id="s2" value="" />
+		<input type="text" name="s3" id="s3" value="" />
+		<input type="text" name="s4" id="s4" value="" />
+		<input type="text" name="s5" id="s5" value="" />
+		<div id="wrapDiv">
+			<img src="1.png"/>
+			<img src="2.png"/>
+			<img src="3.png"/>
+			<img src="4.png"/>
+			<img src="5.png"/>
+		</div>
+	</body>
+</html>

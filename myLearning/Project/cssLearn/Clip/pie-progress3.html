@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#circle{width: 300px; height: 300px; position: absolute; background: #0F2E2E; left: 50%; margin-left: -100px; margin-top: 50px;}
+			.con-left,.con-right,.con-left-orbit,.con-right-orbit{display: block; width: 200px; height: 200px; border-radius: 50%; position: absolute; top: 50px; left: 50px; -webkit-transition: 3s;}
+			.con-left{clip: rect(0 auto auto 100px); background: #2DC7C2; z-index: 3;}
+			.con-right{clip: rect(0 100px auto 0); background: #2DC7C2; z-index: 5;}
+			.con-left-orbit{clip: rect(0 auto auto 100px); background: #FFFFFF; z-index: 4;}
+			.con-right-orbit{clip: rect(0 100px auto 0); background: #FFFFFF; z-index: 6;}
+			.mask{width: 150px; height: 150px; border-radius: 50%; left: 75px; top: 75px; background: #FFFFFF; position: absolute; text-align: center; line-height: 150px; font-size: 35px; z-index: 20;}  
+		</style>
+	</head>
+	<body>
+		<div id="circle">
+			<div class="con-left"></div>
+			<div class="con-left-orbit"></div>
+			<div class="con-right"></div>
+			<div class="con-right-orbit"></div>
+			<div class="mask">
+				<span>60</span>%
+			</div>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var _index=0,
+			   Tag = $('#circle').find('span').html(),
+			   num = Tag*3.6;
+			   
+			if(num<180){
+				$('.con-right').css('-webkit-transform','rotate('+num+'deg)');
+			}else{
+				$('.con-right').on('webkitTransitionEnd',function(){
+					$('.con-right-orbit').css('z-index',1);
+					$('.con-left').css('-webkit-transform','rotate('+(num-180)+'deg)');
+				});
+				$('.con-right').css('-webkit-transform','rotate(180deg)');
+			}
+		});
+	</script>
+</html>

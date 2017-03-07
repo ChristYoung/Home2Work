@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body{background: black;}
+			#c1{background: white;}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var oC=document.getElementById("c1");
+				var oGc = oC.getContext('2d');                
+				
+				oGc.beginPath();
+				oGc.moveTo(100,100);        //起始点（通过改变这个值，可以另行画图）
+				oGc.lineTo(200,200);          //结束点
+				oGc.lineTo(300,200);
+				oGc.closePath();                  //闭合（起点和终点进行闭合）
+				oGc.stroke();                     //以画线方式来绘制
+				
+				oGc.beginPath();
+				oGc.moveTo(100,200);        //起始点（通过改变这个值，可以另行画图）
+				oGc.lineTo(200,300);          //结束点
+				oGc.lineTo(300,300);
+				oGc.closePath();                  //闭合（起点和终点进行闭合）
+				oGc.fill();                     //以填充方式来绘制
+			}
+		</script>
+	</head>
+	<body>
+		<canvas id="c1" width="400" height="400"></canvas>
+	</body>
+</html>

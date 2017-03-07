@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var str = 'bbb';
+			//var re = /b/g;   //匹配出所有的b
+			//str = str.replace(re,'a');      //把匹配到的b换成a
+			
+			var re = /b+/g;          //b+表示至少出现一次b,这种替换会将三个b都替换成a
+			str = str.replace(re,'a');
+			alert(str);
+		</script>
+	</body>
+</html>

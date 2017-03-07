@@ -1,0 +1,22 @@
+//从编译出来的 CSS 代码可以看出，通过 @extend 调用的占位符，编译出来的代码会将相同的代码合并在一起。这也是我们希望看到的效果，也让你的代码变得更为干净。
+%mt15{
+    margin-top: 15px;
+}
+%pt15{
+    padding-top: 15px;
+}
+.btn6 {
+
+  @extend %mt15;
+
+  @extend %pt15;
+
+}
+
+.block {  
+
+  @extend %mt15;
+
+  @extend %pt15;
+
+}

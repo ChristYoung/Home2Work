@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+        	打开两次
+        -->
+		<input type="checkbox" name="" id="" value="banana" />香蕉
+		<input type="checkbox" name="" id="" value="apple" />苹果
+		<input type="checkbox" name="" id="" value="orange" />橙子
+		<input type="checkbox" name="" id="" value="mango" />芒果
+		<script type="text/javascript">
+			var aInput = document.getElementsByTagName('input');
+			for(var i=0; i<aInput.length; i++){
+				aInput[i].onclick = function(){
+					if(this.checked){
+						window.localStorage.setItem('sel',this.value);
+					}else{
+						window.localStorage.setItem('onsel',this.value);
+					}
+				};
+			};
+			window.addEventListener('storage',function(ev){
+				if(ev.key == 'sel'){
+						for(var i=0; i<aInput.length; i++){
+							if(ev.newValue == aInput[i].value){
+								aInput[i].checked = true;
+							}
+						}
+				}else if(ev.key == 'onsel'){
+						for(var i=0; i<aInput.length; i++){
+							if(ev.newValue == aInput[i].value){
+								aInput[i].checked = false;
+							}
+						}
+				}
+			});
+		</script>
+	</body>
+</html>

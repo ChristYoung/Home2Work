@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		//找出字符串中出现次数最多的字符和他出现的次数
+			var str = 'ashdasdaskdsddddsaswdddddada845s88a9sddsa';
+			var arr = str.split('');
+			str = arr.sort().join('');
+			//alert(str);
+			var value = '';
+			var index = 0;
+			var re = /(\w)\1+/g;
+			str.replace(re,function(a,b){
+				//alert(a);
+				if(index<a.length){
+					index = a.length;
+					value = b;
+				}
+			});
+			alert('最多的字符是:'+value+',重复的次数是:'+index+'次');
+		</script>
+	</body>
+</html>

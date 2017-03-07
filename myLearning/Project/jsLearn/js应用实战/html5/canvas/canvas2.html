@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body{background: black;}
+			#c1{background: white;}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var oC=document.getElementById("c1");
+				var oGc = oC.getContext('2d');                //绘制环境，目前只支持2d环境的场景
+				oGc.fillStyle='red';                                //设置填充颜色
+				oGc.strokeStyle='blue';                          //设置边框颜色
+				oGc.lineWidth=10;                              //设置边线宽度
+//				oGc.fillRect(20,50,100,100);                 //填充的方块
+                oGc.strokeRect(50.5,50.5,100,100)       //为了使边框是默认的1px,必须多加0.5
+			}
+		</script>
+	</head>
+	<body>
+		<canvas id="c1" width="400" height="400"></canvas>
+	</body>
+</html>

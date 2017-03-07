@@ -1,0 +1,22 @@
+body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,form,input,textarea,th,td,select{margin: 0;padding: 0;}
+em{font-style: normal;}
+li{list-style: none;}
+a{text-decoration: none;}
+img{border: none;vertical-align: top;}
+table{border-collapse: collapse;}
+input,textarea{outline: none;}
+textarea{resize: none;overflow: auto;}
+body{font-size: 12px;font-family: "微软雅黑";}
+
+.getOut{ border:1px solid #c0c0c0; position:absolute; top:20px; left:300px; background:#fff; display:none; width: 300px; height: 400px; border-radius: 20px; box-shadow: 10px 10px 10px rgba(0,0,0,0.4);}
+.getOut .oData{padding-left: 20px; }
+.getOut h4,.getOut ul,.getOut li,.getOut strong{margin-bottom: 20px;}
+.getOut h4{text-align: center; font-size: 24px; color: #CCCCCC; height: 30px; line-height: 30px;}
+.getOut ul{}
+.getOut li{font-size: 18px; height: 20px; line-height: 20px;}
+.getOut strong{font-size: 20px; height: 120px; display: block;}
+.getOut .wrap{padding-left: 20px;}
+#oClose,#oSub{width: 60px;}
+#oClose{margin-right: 120px;}
+
+

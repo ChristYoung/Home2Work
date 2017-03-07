@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript">
+			(function(){
+				var w = window.screen.width;
+				var targetW = 320;
+				var scale = w/targetW;
+				var meta = document.createElement("meta");
+				meta.name = "viewport";
+				meta.content = "user-scalable=no,initial-scale="+scale+",minimum-scale="+scale+",maximum-scale="+scale+"";
+				document.head.appendChild(meta);
+			})();
+		</script>
+		<title></title>
+		<style type="text/css">
+			/*常见适配方案
+			 * 1.百分比
+			 * 2.viewport适配通过js生成<meta>
+			 * (function(){
+				var w = window.screen.width;
+				var targetW = 320;
+				var scale = w/targetW;
+				var meta = document.createElement("meta");
+				meta.name = "viewport";
+				meta.content = "user-scalable=no,initial-scale="+scale+",minimum-scale="+scale+",maximum-scale="+scale+"";
+				document.head.appendChild(meta);
+				 * 接下了页面的viewport被强制设置为了320px,现在如果要让元素占页面的一半，只需写width:160px
+			})();
+			 *
+			 * 
+			 * */
+			*{margin: 0; padding: 0;}
+			.wrap{width: 100%;}
+			.wrap .wrap_item{width: 80px; height: 50px; float: left;}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="wrap_item" style="background: red;"></div>
+			<div class="wrap_item" style="background: green;"></div>
+			<div class="wrap_item" style="background: yellow;"></div>
+			<div class="wrap_item" style="background: blue;"></div>
+		</div>
+	</body>
+</html>

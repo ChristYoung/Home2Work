@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+		    *{margin: 0; padding: 0;}
+			.wrapper{width: 400px; height: 200px; background: red; position: relative;} 
+			#child{position: absolute; width: 200px; height: 200px; left: 20px; margin-left: 30px; background: yellow;}  /*某元素设为绝对定位后,margin值依然有效,但是margin:0 auto不能实现相对于父元素居中了*/
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oChild = document.getElementById("child");
+				alert(oChild.offsetLeft)
+			}
+		</script>
+	</head>
+	<body>
+		<div class="wrapper">
+			 <div id="child">
+			 	
+			 </div>
+		</div>
+	</body>
+</html>

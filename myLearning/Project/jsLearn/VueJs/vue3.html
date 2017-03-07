@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>render函数</title>
+	</head>
+	<style type="text/css">
+		.bg{background: yellow;}
+	</style>
+	<body>
+		<div id="template">
+			
+		</div>
+	</body>
+	<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var data = {
+			message:'hello,vue'
+		};
+		var vm = new Vue({
+			el:'#template',
+			data:data,
+			render:function(createElement){
+				return createElement(
+					"ul",
+					{class:{bg:true},style:{fontSize:"50px"},attrs:{abc:"miaov"}},
+					[
+					  createElement("li",1),
+					  createElement("li",2),
+					  createElement("li",3),
+					]
+				)
+			}
+		});
+	</script>
+</html>

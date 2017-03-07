@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0; padding: 0;}
+			#item-container{
+				display: flex;
+				display: -ms-flexbox; 
+				-ms-box-orient: horizontal;  /*IE10中显不一行，类似于flex-direction:row功能*/
+				
+				display: -webkit-flex;
+				display: -moz-flex;
+				display: -ms-flex;
+				height: 300px;
+				background-color: hsl(34,88%,90%);
+			   justify-content: space-between;
+			   /*垂直对齐,*/
+			   align-items: center;
+			}
+			.square{
+				/*将square置于前面,
+				 * flexbox是首个允许你控制元素顺序的css布局系统,
+				 * 真的很酷,flexbox摆脱了代码顺序对文档内容显示的束缚,
+				 * 按照惯例,HTML文档中最先出现的元素往往也最先渲染在页面中,传统的css对这种改变显得很无力
+				 * 这个领域也一直被javascript占据着
+				 */
+				order: -1;
+				width: 200px;
+				height: 200px;
+				background-color: hsl(50,88%,50%);
+			}
+			.circle{
+				border-radius: 50%;
+				width: 150px;
+				height: 150px;
+				background-color: hsl(22,88%,50%);
+			}
+		</style>
+	</head>
+	<body>
+		<p>将三个div元素放到另一个容器内部</p>
+		<div id="item-container">
+			<div class="circle"></div>
+		    <div class="square"></div>
+		    <div class="circle"></div>
+		</div>
+	</body>
+</html>

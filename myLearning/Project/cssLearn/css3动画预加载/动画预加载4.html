@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+		    /*设置了position:relative后，top不能设置百分比*/
+		    *{margin: 0; padding: 0;}
+		    body{background: salmon;}
+			.wrapper{width: 100px; height: 100px;
+					 position: absolute; top: 50%; margin-top: -50px;
+					 left: 50%; margin-left: -50px;
+			 }
+			 .wrapper span{position: absolute; background: #FFFFFF; height: 20px; width: 20px; border-radius: 50%; -webkit-animation: preloader_4 1.5s infinite ease-in-out;}
+			 .wrapper span:nth-of-type(1){top: 0; left: 40px;}
+			 .wrapper span:nth-of-type(2){top: 11.7157px; left: 68.2843px; -webkit-animation-delay: .2s;}
+			 .wrapper span:nth-of-type(3){top: 40px; left: 80px;-webkit-animation-delay: .4s;}
+			 .wrapper span:nth-of-type(4){bottom: 11.7157px; left: 68.2843px;-webkit-animation-delay: .6s;}
+			 .wrapper span:nth-of-type(5){top: 80px; left: 40px;-webkit-animation-delay: .8s;}
+			 .wrapper span:nth-of-type(6){bottom: 11.7157px; right: 68.2843px;-webkit-animation-delay: 1s;}
+			 .wrapper span:nth-of-type(7){top: 40px; left: 0;-webkit-animation-delay: 1.2s;}
+			 .wrapper span:nth-of-type(8){top: 11.7157px; right: 68.2843px;-webkit-animation-delay: 1.4s;}
+			 
+			 @-webkit-keyframes preloader_4{
+			 	0%{-webkit-transform: scale(0);}
+			 	50%{-webkit-transform: scale(1.2);}
+			 	100%{-webkit-transform: scale(0);}
+			 }
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+		</div>
+	</body>
+</html>

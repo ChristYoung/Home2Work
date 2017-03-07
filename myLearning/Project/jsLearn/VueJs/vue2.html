@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>vue声明式渲染</title>
+	</head>
+	<body>
+		<div id="template">
+			<span v-bind:cutomId="id" v-on:click="clickHandle">{{message}}</span>
+		</div>
+	</body>
+	<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	    var data = {message:"<script>alert(1)</script"+">",id:"123"};
+	    var vm = new Vue({
+	    	el:'#template',
+	    	data:data,
+	    	methods:{
+	    		clickHandle:function(){
+	    			alert('hello');
+	    		}
+	    	}
+	    });
+	</script>
+</html>

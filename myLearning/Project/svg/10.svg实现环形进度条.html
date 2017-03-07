@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			circle {
+			    -webkit-transition: stroke-dasharray .8s;
+			    -ms-transition: stroke-dasharray .8s;
+			    -moz-transition: stroke-dasharray .8s;
+			    transition: stroke-dasharray .8s;
+            }
+		</style>
+	</head>
+	<body>
+		<!--
+        	在浏览器的兼容性上还是有问题的
+        	,具体请移步Clip文件夹，看如何用clip属性制作环形进度条
+        -->
+		<svg width="440" height="440" viewbox="0 0 440 440">
+		    <circle cx="220" cy="220" r="170" stroke-width="50" stroke="#D1D3D7" fill="none"></circle>
+		    <circle cx="220" cy="220" r="170" stroke-width="50" stroke="#00A5E0" fill="none" transform="matrix(0,-1,1,0,0,440)" stroke-dasharray="0 1069"></circle>
+		</svg>
+		<p>拖我：<input id="range" type="range" min="0" max="100" value="0" style="width:300px;"></p>
+	</body>
+	<script type="text/javascript">
+		 if (window.addEventListener) {
+		    var range = document.querySelector("#range"), circle = document.querySelectorAll("circle")[1];
+		    if (range && circle) {
+		        range.addEventListener("change", function() {
+		            var percent = this.value / 100, perimeter = Math.PI * 2 * 170;
+		            circle.setAttribute('stroke-dasharray', perimeter * percent + " " + perimeter * (1- percent));
+		        });
+		    }
+		}
+	</script>
+</html>

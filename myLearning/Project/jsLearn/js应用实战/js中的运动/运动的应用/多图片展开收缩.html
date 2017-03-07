@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+		    *{margin: 0; padding: 0;}
+		    #ul1{width: 330px; margin: 120px auto; position: relative;}
+			li{list-style: none; width: 100px; height: 100px; background: red; float: left; margin: 10px 0 0 10px;}
+		</style>
+		<script src="move.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			
+			//在布局的时候将元素设为浮动的,在js中将元素设为定位的
+			
+			window.onload = function(){
+			//在转换布局的时候,元素相对于用户的位置保持不变	offsetLeft offsetTop(到有定位父集的距离)
+				
+				var oUl = document.getElementById("ul1");
+				var aLi = oUl.getElementsByTagName('li');
+				var arr = [];
+				var zIndex = 1;
+				
+				//1.先设置好元素的top和left值
+				for(var i=0; i<aLi.length; i++){
+					aLi[i].style.left = aLi[i].offsetLeft+'px';
+					aLi[i].style.top = aLi[i].offsetTop+'px';  
+					arr.push({left:aLi[i].offsetLeft,top:aLi[i].offsetTop})
+				}
+				
+				//2.将元素改成绝对定位
+				for(var i=0; i<aLi.length; i++){
+//					aLi[i].style.left = aLi[i].offsetLeft+'px';
+//					aLi[i].style.top = aLi[i].offsetTop+'px';  
+					aLi[i].style.position = 'absolute';             //用js设置css样式时:在同一个代码块中,有些css样式的设置的权限要高于其他的样式(比如这个absolute就比left和top要高),因此要放到不同的代码快中
+				    aLi[i].style.margin = '0px';            //因为改成绝对定位后margin值不会被覆盖,依然还保留在那边,因此改成绝对定位后会引起方向上的偏移,所以要将margin值清0
+				    aLi[i].index = i;
+				    
+				    aLi[i].onmouseover = function(){
+				    	this.style.background = 'green';
+				    	this.style.zIndex = zIndex++;
+				    	
+				    	startMove(this,{
+				    		width:200,                  //要实现元素居中放大,除了要改变元素的宽高以外,还要改变元素的定位(left,top),如果图片放大一倍,那么位移放大到宽高的一半
+				    		height:200,
+				    		left:arr[this.index].left - 50,
+				    		top:arr[this.index].top - 50
+				    	})
+				    }
+				    
+				    aLi[i].onmouseout = function(){
+				    	this.style.background = 'red';
+				    	
+				    	startMove(this,{
+				    		width:100,                  //要实现元素居中放大,除了要改变元素的宽高以外,还要改变元素的定位(left,top),如果图片放大一倍,那么位移放大到宽高的一半
+				    		height:100,
+				    		left:arr[this.index].left,
+				    		top:arr[this.index].top
+				    	})
+				    }
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<ul id="ul1">
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</body>
+</html>

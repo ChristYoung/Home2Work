@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="uid" id="uid" value=""/>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+	   $.fn.reSpeStr = function(){
+	   	  var rex = /[`~!@#\$%\^\&\s\*\(\)_\+<>\?:"\{\},\.\\\/;'\[\]]/g;
+		  this.blur(function(){
+		  	if($(this).val() != ''){
+//			  	  if(rex.test($(this).val())){
+//			   	  	 alert('请不要输入特殊字符')
+//			   	  }else{
+//			   	  	alert('正确');
+//			   	  }
+                  var str = $(this).val();
+                  str = str.replace(rex,'');
+                  $(this).val(str);
+		  	}
+		  });
+	   };
+	   $('#uid').reSpeStr();
+	</script>
+</html>

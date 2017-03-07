@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body{background: black;}
+			#c1{background: white;}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var oC=document.getElementById("c1");
+				var oGc = oC.getContext('2d');                
+				
+				oGc.lineWidth=20;
+				oGc.lineCap='round';
+				oGc.moveTo(100,100);
+		        oGc.lineTo(200,200)      
+				oGc.stroke();                    
+			}
+		</script>
+	</head>
+	<body>
+		<canvas id="c1" width="400" height="400"></canvas>
+	</body>
+</html>

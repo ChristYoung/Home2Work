@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="set" id="set" value="设置" />
+		<input type="button" name="get" id="get" value="获取" />
+		<input type="button" name="del" id="del" value="删除" />
+		<input type="text" name="show" id="show" value="" />
+		<script type="text/javascript">
+			var aInout = document.getElementsByTagName('input');
+			aInout[0].onclick = function(){
+				//localStorage:临时存储,关闭浏览器就不存在
+			    //localStorage:永久存储,但是只能在一个浏览器内实现数据共享
+			    window.localStorage.setItem('name',aInout[3].value);
+			};
+			aInout[1].onclick = function(){
+			    alert(window.localStorage.getItem('name'));				
+			};
+			aInout[2].onclick = function(){
+				window.localStorage.removeItem('name');
+				//window.localStorage.clear();    删除全部数据
+			};
+			//当前修改的页面不会触发storage事件.这个页面必须同时打开两次,第一个页面修改localstorage值,另一个页面会触发storage事件
+			window.addEventListener('storage',function(ev){
+				alert('1');
+				console.log(ev.key);        //修改或删除的key值,如果调用clear(),key为null
+				console.log(ev.newValue);  //新设置的值,如果调用removeStorage(),key为null
+				console.log(ev.oldValue);  //调用改变前的value值
+				console.log(ev.storageArea);  //当前的storage对象
+				console.log(ev.url);   //触发该脚本变化的文档的url
+				//注:session窗口才可以,例子:iframe操作
+				//例子:同步购物车
+			});
+		</script>
+	</body>
+</html>

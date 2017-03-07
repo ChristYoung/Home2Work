@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body{background: black;}
+			#c1{background: white;}
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				 var oC=document.getElementById("c1");
+				 var oGc=oC.getContext('2d');
+				 
+				 var yImg = new Image();              //创建一个image对象
+				 yImg.onload = function(){
+				 	draw(this);
+				 }
+				 
+				 yImg.src = '2.png';
+				 function draw(obj){
+				 	  oGc.drawImage(obj,0,0,400,400);
+				 }
+			}
+		</script>
+	</head>
+	<body>
+		<canvas id="c1" width="400" height="400"></canvas>
+	</body>
+</html>

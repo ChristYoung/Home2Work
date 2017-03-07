@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.a-btn{width: 300px; height: 300px; background: red;}
+		</style>
+	</head>
+	<body>
+		<div id="a-btn" class="a-btn">
+		</div>
+	</body>
+	<script type="text/javascript">
+		//ev.touches 当前位于*屏幕*上的所有手指的列表[数组]
+		//ev.targetTouches 位于当前Dom元素上的手指列表[数组]
+		//ev.changeTouches 涉及当前事件的手指的一个列表[数组]
+		var aBtn = document.getElementById("a-btn");
+		aBtn.addEventListener('touchstart',function(ev){
+			console.log(ev);
+			console.log(ev.touches);
+			console.log(ev.touches[0].clientX);
+			console.log(ev.touches.length);
+		});
+	</script>
+</html>

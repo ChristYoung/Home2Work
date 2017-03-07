@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" name="qqNUm" id="qqNUm" value="" />
+		<input type="button" name="confirm" id="confirm" value="确 定" />
+		<script type="text/javascript">
+			//量词:出现的次数
+			//{n,m},  至少出现n次,最多出现m次
+			
+			//常用量词
+			//{n,}  至少n次
+			// * 任意次(包括0次)
+			// ? 零次或者1次  {0,1}
+			//+  一次或者任意次{1,}
+			//{n}  正好n次
+			
+			//查找QQ号码
+			
+			//^:放到正则的最开始位置,就代表起始的意思
+			//$:放到正则的最后位置,就代表结束的意思
+			var oBtn = document.getElementById("confirm");
+			var oText = document.getElementById("qqNUm");
+			var re = /^[1-9]\d{4,11}$/;    //表示起始的位置必须是一个1到9的数字,结束位置必须是数字
+			oBtn.onclick = function(){
+				if(re.test(oText.value)){
+					alert('是QQ号');
+				}else{
+					alert('不是qq号');
+				}
+			}
+		</script>
+	</body>
+</html>

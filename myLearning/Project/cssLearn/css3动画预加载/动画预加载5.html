@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0; padding: 0;}
+			html,body{width: 100%; height: 100%;}
+			body{background: #000000;}
+			.circle{
+					position: absolute; 
+					width: 100px; 
+					height: 100px; 
+					left: 50%; 
+					top: 50%; 
+					margin-left: -50px; 
+					margin-top: -50px;
+					border-radius: 50%;
+					border:10px solid rgba(255,255,255,0.2);
+					border-left-color: #FFFFFF;
+					-webkit-animation: load 1.1s infinite linear;
+				}
+				
+			@-webkit-keyframes load{
+				from{-webkit-transform: rotate(0deg);}
+				to{-webkit-transform: rotate(360deg);}
+			}	
+		</style>
+	</head>
+	<body>
+		<div class="circle">
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="reset.css"/>
+		<style type="text/css">
+		    html,body{width: 100%;}
+		    body{background: #71AFF0;}
+		    #sence{width: 400px; height: 400px; margin: 0 auto; transform-style: preserve-3d; perspective: 1000px; position: relative;}
+		    #sence .box{width: 100%; height: 100%; transform-style: preserve-3d; margin-top: 160px;}
+		    #sence .ring{width: 100%; height: 100%; position: relative;}
+		    #sence .ring li{position: absolute;}
+		    #sence .item{position: absolute; width: 400px; top: 100px;}
+		    #sence .item p{font-size: 14px; line-height: 24px; font-family: "微软雅黑"; word-break: break-all;}
+		    #sence .item a{display: inline-block; width: 19px; height: 19px; text-align: center; position: absolute; top: -30px; right: -30px;} 		
+		</style>
+	</head>
+	<body>
+		<div id="sence">
+			<div class="box">
+				<ul class="ring">
+				</ul>
+			</div>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+	var arr = [1,3,5,7,9,11,13,15,17];
+	var oSence = $('#sence');
+		var oBox = $('.box');
+		var oUl = $('.box ul');
+		var phi = 0;  //theata角可以自定义
+		var r = 150;
+		for(var i=0; i<arr.length; i++){
+			phi = 2*Math.PI/arr[i];
+			for(var j=0; j<arr[i]; j++){
+				var li = document.createElement("li");
+				$(li).html('——————————————');
+				drawCone(li,phi,i,j);
+				oUl.append($(li));
+			}
+		}
+		var aLi = oUl.find('li');
+		for(var i=0; i<aLi.length; i++){
+			$(aLi[i]).css('transform','translate3D('+aLi[i].conX+'px,'+aLi[i].conY+'px,'+aLi[i].conZ+'px) rotateY('+aLi[i].conePhi+'rad) rotateX('+aLi[i].coneTheta+'rad)')
+		}
+		var angleX = 0;
+		setInterval(function(){
+			angleX++;
+			oBox.css('transform','rotateX('+angleX+'deg) rotateY('+angleX+'deg)');
+		},20);
+		function drawCone(obj,phi,i,j){
+			obj.conX = (2*r/arr.length)*i*Math.tan(Math.PI/6)*Math.sin(phi*j)+200;
+			obj.conY = 2*r/arr.length*i;
+			obj.conZ = (2*r/arr.length)*i*Math.tan(Math.PI/6)*Math.cos(phi*j)+200
+			obj.coneTheta = Math.PI/6;
+			obj.conePhi = phi*j;
+		}
+	</script>
+</html>

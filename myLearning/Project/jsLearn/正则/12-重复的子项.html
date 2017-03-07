@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		// \1表示重复的第一个子项
+		// \2表示重复的第二个子项...以此类推
+			var str = 'abca';
+			var re = /(a)(b)(c)\1/;     //==>表示abca,匹配成功
+			var re = /(a)(b)(c)\2/;     //==>表示abcb,匹配失败
+			
+			
+		</script>
+	</body>
+</html>

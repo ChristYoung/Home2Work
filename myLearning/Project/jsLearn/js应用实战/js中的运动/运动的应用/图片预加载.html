@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			img{width: 300px;}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oImage = new Image(); 
+//Image对象属性src,当我们给Image对象的src属性附一个url值的时候,这个Image对象就会去加载图片资源,加载完成后的资源被保存到了浏览器的缓存文件夹里面
+//事件onload:当资源加载完成后触发
+//事件onerror:当资源加载失败时触发
+//Image对象就相当于一个迅雷下载器
+                var oImg = document.getElementById("img");
+                var arr = [
+                    'http://t12.baidu.com/it/u=4095575894,102452705&fm=32&s=A98AA55F526172A6F6A058E50300A060&w=623&h=799&img.JPEG',
+                    'http://t12.baidu.com/it/u=4224136820,222817142&fm=32&s=CE73A55661C252F05E652DCE010070E2&w=623&h=799&img.JPEG',
+                    'http://t11.baidu.com/it/u=4160086798,232892126&fm=32&s=ABE0CD124F1250CC0241E1DB010030B0&w=623&h=799&img.JPEG',
+                    'http://t11.baidu.com/it/u=4128163546,182722190&fm=32&s=81F85D940B5245C6546D3DD2030010B0&w=800&h=623&img.JPEG',
+                    'http://t11.baidu.com/it/u=4045482025,86679145&fm=32&s=0DE0E11747C246F0507DE9CE0300E022&w=623&h=799&img.JPEG'
+                ]
+			    var iCur = 0;
+			    var iNow = 0;
+			    function xunleiDownLoad(){
+			    	oImage.src = arr[iCur];       //预加载
+			    	oImage.onload = function(){
+			    		iCur++;
+			    		if(iCur<arr.length){    //如果不满足条件则跳出递归
+			    		   xunleiDownLoad() 
+			    		}  //递归
+			    		
+			    		document.title = iCur+'/'+arr.length;
+			    	}
+			    }
+			    xunleiDownLoad();
+			    
+			    oImg.onclick = function(){
+			    	iNow++;
+			    	iNow%=5;
+			    	oImg.src = arr[iNow];
+			    }
+			}
+		</script>
+	</head>
+	<body>
+		<img src="http://t12.baidu.com/it/u=4095575894,102452705&fm=32&s=A98AA55F526172A6F6A058E50300A060&w=623&h=799&img.JPEG" id="img"/>
+	</body>
+</html>

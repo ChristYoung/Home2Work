@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			 window.onload=function(){
+			 	  var oPro=document.getElementById("progressBar");
+			 	  var oBtn=document.getElementById("btn");
+			 	  var num=oPro.value;
+			 	  var timer=''
+			 	  oBtn.onclick=function(){
+			 	  	    clearInterval(timer);
+			 	  	    timer=setInterval(function(){
+			 	  	    	 num++;
+			 	  	    	 oPro.value=num;
+			 	  	    	 if(num>=100){
+			 	  	    	 	 clearInterval(timer);
+			 	  	    	 }
+			 	  	    },30);
+			 	  }
+			 }
+		</script>
+	</head>
+	<body>
+		 <progress max="100" value="0" id="progressBar">
+		 	   dsdsddsd
+		 </progress>
+		 <input type="button" name="btn" id="btn" value="go" />
+	</body>
+</html>

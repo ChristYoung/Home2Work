@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div:before {
+			    content: "";
+			    position: absolute;
+			    top: 100%;
+			    left: 0;
+			    right: 0;
+			    bottom: -100%;
+			    background-image: inherit;
+			    transform: rotateX(180deg);
+            }
+		</style>
+	</head>
+	<body>
+		<!--
+        	inherit 是啥，每个 CSS 属性定义的概述都指出了这个属性是默认继承的 (“Inherited: Yes”) 还是默认不继承的 (“Inherited: no”)。
+        	这决定了当你没有为元素的属性指定值时该如何计算值。
+                          灵活使用 inherit 继承父值，可以解决许多看似复杂的问题。
+                          对于本题，我们对图片容器添加一个伪元素，使用 background-image:inherit 继承父值的背景图值，就可以做到无论图片如何变，我们的 CSS 代码都无需改动：
+                          我们使用伪元素 background-image: inherit; 继承父元素的背景图，再使用 transform 旋转容器达到反射的效果。
+        -->
+	</body>
+</html>

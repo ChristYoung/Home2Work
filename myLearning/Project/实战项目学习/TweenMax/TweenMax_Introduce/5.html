@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		    *{margin: 0; padding: 0;}
+			#div1{width: 100px; height: 100px; line-height: 100px; text-align: center; background: gray; position: absolute; left: 0; top: 50px;}
+		</style>
+	</head>
+	<body>
+		<div id="div1"></div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="../js/src/TweenMax.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+	   //totalDuration() 获取动画总时长(包含动画的延迟时间)
+	   
+	  //getLabelTime() 返回从开始到当前状态的时间(包含动画的延迟时间)
+	     //参数说明 (表示状态的字符串, 返回值是一个数字)
+	  
+	 //currentLabel() 获取当前的状态
+	 
+	 //getLabelAfter() 获取下一个状态 参数是时间(number),返回的是状态的字符串,如果没有状态返回null
+	 //getLabelBefore() 获取上一个状态  参数是时间(number),返回的是状态的字符串,如果没有状态返回null
+	 
+	 //ease 动画运动形式 (查看本地例子)
+	 
+			var t = new TimelineMax();
+			t.to('#div1',1,{left:300,ease:Bounce.easeIn});  
+			t.to('#div1',1,{top:300});  
+			
+			alert(t.totalDuration());
+			
+		});
+	</script>
+</html>

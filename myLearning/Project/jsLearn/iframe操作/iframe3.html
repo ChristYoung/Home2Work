@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="aa">
+			aaa
+		</div>
+	</body>
+	<script type="text/javascript">
+			//防止被非法嵌套
+			if(window != window.top){     //如果当前的window对象不是最顶层,就把顶层的href地址链为当前window的href地址, 防止被非法嵌套
+				window.top.location.href = window.location.href;    //
+			}
+	</script>
+</html>

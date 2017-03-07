@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<canvas id="myChart" width="800" height="400"></canvas>
+	</body>
+	<script src="js/Chart.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	    var data = {
+	    	labels:['周一','周二','周三','周四','周五','周六','周日','周一','周二','周三','周四','周五','周六','周日','周一','周二','周三','周四','周五','周六','周日','周一','周二','周三','周四','周五','周六','周日','周一','周二','周三','周四','周五','周六','周日'],
+	    	datasets:[{
+	    		fillColor:'#87BD71',
+	    		strokeColor:'rgba(220,220,220,1)',
+	    		pointColor:'#fff',
+	    		pointStrokeColor : '#fff',
+	    		data:[65,59,90,81,56,55,40,65,59,90,81,56,55,40,65,59,90,81,56,55,40,65,59,90,81,56,55,40,65,59,90,81,56,55,40,65,59,90,81,56,55,40]
+	    	}]
+	    };
+		var ctx = document.getElementById("myChart").getContext('2d');
+		var myNewChart = new Chart(ctx).Bar(data,{
+			   scaleOverride : true,
+			   scaleSteps : 10,       //将纵轴等分成多少份
+			   scaleStepWidth : 50,  //纵轴数值间隔
+			   scaleStartValue : 10, //纵轴初始值
+			   //scaleShowLabels : true, //纵轴显示文字
+			   //scaleLabel : "睿博",
+			   scaleShowGridLines : true, //是否显示网格
+			   scaleGridLineColor : "red", //网格颜色
+			   onAnimationComplete:function(){
+		          console.log('1');
+			   }
+		});
+	</script>
+</html>

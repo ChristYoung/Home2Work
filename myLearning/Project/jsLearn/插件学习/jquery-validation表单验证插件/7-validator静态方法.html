@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			label{
+				color: red;
+				font-size: 12px;
+			}
+			.labelFor{
+				color: #000000;
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<form action="" id="dataForm" method="get">
+			<fieldset id="">
+				<legend>用户登录</legend>
+				<p>
+					<label for="username" class="labelFor">用户名</label>
+					<input type="text" name="username" id="username" value="" />
+				</p>
+				<p>
+					<label for="u_password" class="labelFor">密码</label>
+					<input type="password" name="u_password" id="u_password" value="" />
+				</p>
+				<p>
+					<label for="confirm-password" class="labelFor">确认密码</label>
+					<input type="password" name="confirm-password" id="confirm-password" value="" />
+				</p>
+				<p>
+					<input type="submit" value="登录"/>
+				</p>
+			</fieldset>
+		</form>
+	</body>
+	<script src="js/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.validate.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        var validator;     //定义为一个全局变量,是方便在控制台写代码调试的
+    	$(document).ready(function(){
+    		 validator = $('#dataForm').validate({              //validate方法会返回validator对象,所以可以用这种方法来捕获validator对象
+		  			    //debug:true,           
+		    			rules:{
+		    				username:{
+		    					required:true,
+		    					rangelength:[2,10],
+		    					email:true
+		    				},
+		    				u_password:{
+		    					required:true,
+		    					rangelength:[6,16]
+		    				},
+		    				'confirm-password':{              //因为这个name加了横杠,所以要用引号将它引起来
+		    					required:true,
+		    					rangelength:[6,16],
+		    					equalTo:'#u_password'        //这里跟上的是id值不是name值
+		    				}
+		    			},
+		    			messages:{
+		    				username:{
+		    					required:'用户名不能为空!',
+		    					rangelength:'用户名长度在2-10位之间!',
+		    					email:'邮箱格式不正确!'
+		    				},
+		    				u_password:{
+		    					required:'密码不能为空!',
+		    					rangelength:'密码长度在6-16位之间!'
+		    				},
+		    				'confirm-password':{              
+		    					required:'确认密码不能为空!',
+		    					rangelength:'密码长度在6-16位之间!',
+		    					equalTo:'两次输入的密码不一致'        
+		    				}
+		    			}
+    		});
+//  		validator.showErrors({
+//  			username:'你填错啦，呵呵哒'        //validator对象方法,针对某个元素显示特定的错误信息
+//  		})
+
+//         $.validator.addClassRules({
+//         	   txt:{                          //validator对象的静态方法,针对指定的含有txt类的元素加上required方法
+//         	   	required:'true'
+//         	   }
+//         })
+    	});
+    </script>
+</html>

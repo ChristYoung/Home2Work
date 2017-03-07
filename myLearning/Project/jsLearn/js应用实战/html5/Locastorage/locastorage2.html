@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" name="set" id="set" value="设置" />
+		<input type="button" name="get" id="get" value="获取" />
+		<input type="button" name="del" id="del" value="删除" />
+		<input type="text" name="show" id="show" value="" />
+		<script type="text/javascript">
+			var aInout = document.getElementsByTagName('input');
+			aInout[0].onclick = function(){
+				//localStorage:临时存储,关闭浏览器就不存在
+			    //localStorage:永久存储,但是只能在一个浏览器内实现数据共享
+			    window.localStorage.setItem('name',aInout[3].value);
+			};
+			aInout[1].onclick = function(){
+			    alert(window.localStorage.getItem('name'));				
+			};
+			aInout[2].onclick = function(){
+				window.localStorage.removeItem('name');
+				//window.localStorage.clear();    删除全部数据
+			}
+		</script>
+	</body>
+</html>

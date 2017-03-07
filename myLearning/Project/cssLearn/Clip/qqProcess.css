@@ -1,0 +1,47 @@
+body{background: #3ec2f2;}
+.circle-out{
+	 border-radius: 300px; 
+	 width: 154px; height: 154px; 
+	 display: block;
+	 position: relative;
+	 background: #78d4f6;
+}
+.circle-out-left{
+	position: absolute;
+	width: 50%;
+	left: 0;
+	bottom: 0;
+	top: 0;
+	overflow: hidden;
+}
+.circle-out-right{
+	position: absolute;
+	width: 50%;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	overflow: hidden;
+}
+.circle-range-left{
+	width: 200%;
+	height: 100%;
+	position: absolute;
+	top: 0; left: 0;
+	border-radius: 300px;
+	/*这个背景色表示这个div元素的左半部分是透明的,右半部分显示白色*/
+	background: -webkit-gradient(linear, 0 0, 100% 0, from(transparent), color-stop(50%, transparent), color-stop(50%, #fff), to(#fff)); 
+}
+.circle-range-right{
+	width: 200%;
+	height: 100%;
+	position: absolute;
+	top: 0; right: 0;
+	border-radius: 300px;
+	/*这个背景色表示这个div元素的右半部分是透明的,左半部分显示白色*/
+	background: -webkit-gradient(linear, 0 0, 100% 0, from(#fff), color-stop(50%, #fff), color-stop(50%, transparent), to(transparent));
+}
+.circle-inner-center{
+	position: absolute;
+	top: 4px; left: 4px; right: 4px; bottom: 4px;
+	border-radius: 200px; background: #3ec2f2; color: #fff; z-index: 9;
+}

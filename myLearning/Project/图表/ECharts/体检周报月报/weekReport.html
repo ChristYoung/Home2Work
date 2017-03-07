@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>健康吧周报</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="css/weekReport.css"/>
+    <script type="text/javascript">
+    	document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.clientWidth+'px';
+    </script>
+</head>
+<body>
+	<div id="load">
+		  <div class="loadCircle"></div>
+		  <p>不要急哦,<br />正在努力生成您的周报......</p>
+    </div>
+	<script type="text/javascript">
+		var oLoad = document.getElementById("load");
+		oLoad.style.height = document.documentElement.clientHeight+'px';
+	</script>
+     <div class="health-title">
+     	<div class="ow">
+     		<h1>健康吧测试周报</h1>
+     	    <strong id="startDate">2015-04-13</strong>
+     	    <b>--</b>
+     	    <strong id="endDate">2015-04-19</strong>
+     	</div>
+        <p>您定制的周报已经生成,内容如下</p>
+     </div>
+     <div class="health-index">
+     	<div class="up-line">
+     		
+     	</div>
+     	<div class="next-line">
+     		<h3>体重|BMI</h3>
+     	</div>
+     	<div class="index-wrap">
+     		<ul>
+     			<li style="display: none;">
+     				<div class="indexTimes">
+     					<div class="vertical">
+     						 <h2>健康指数</h2>
+	     					 <h5 id="indexUp">环比上升5%</h5>
+	     				     <h5 id="indexDown" style="display: none;">环比下降5%</h5>
+     					</div>
+     				</div>
+     				<div class="indexData">
+     					<!--<div class="circleWrap"></div>-->
+     					<div class="vertical">
+     						 <h1>97</h1>
+     					</div>
+     				</div>
+     			</li>
+     			<li>
+     				<div class="indexTimes">
+     					 <div class="vertical">
+     						 <h2>测量次数</h2>
+	     					 <h5 id="indexUp">环比上升5%</h5>
+	     				     <h5 id="indexDown" style="display: none;">环比下降5%</h5>
+     					</div>
+     				</div>
+     				<div class="indexData">
+     					<!--<div class="circleWrap"></div>-->
+     					<div class="vertical">
+     						 <h1>97</h1>
+     					</div>
+     				</div>
+     			</li>
+     		</ul>
+     	</div>
+     </div>
+     <div class="health-bmi">
+     	<div class="charts_bmi" id="bmi">1</div>
+     </div>
+     <div class="health-temper">
+     	 <div class="charts_temper" id="temper"></div>
+     	 <div class="up-line">
+     	 	<h3>体温</h3>
+     	 </div>
+     	 <div class="next-line">
+     	 	<h3>血压</h3>
+     	 </div>
+     </div>
+     <div class="health-bp">
+     	 <div class="nav-wrap">
+     	 	 <ul id="bp-ul">
+     	 	 	<li class="active">血压</li>
+     	 	 	<li>脉搏</li>
+     	 	 </ul>
+     	 </div>
+     	 <div class="charts_bp" id="bp" style="z-index: 10;"></div>
+     	<div class="charts_bp" id="mb" style="opacity: 0;"></div>
+     </div>
+     <div class="health-gl">
+     	<div class="charts_gl" id="gl"></div>
+     	<div class="up-line">
+     		<h3>血糖</h3>
+     	</div>
+     	<div class="next-line">
+     		<h3>人体成分</h3>
+     	</div>
+     </div>
+     <div class="health-bci">
+     	<div class="nav-wrap">
+     		<ul id="bci-ul">
+     			<li class="active">脂肪率</li>
+     			<li>肌肉含量</li>
+     			<li>水分含量</li>
+     			<li>基础代谢</li>
+     		</ul>
+     	</div>
+     	<div class="charts_bci" id="fat" style="z-index: 10;"></div>
+     	<div class="charts_bci" id="muscle" style="opacity: 0;"></div>
+     	<div class="charts_bci" id="water" style="opacity: 0;"></div>
+     	<div class="charts_bci" id="dx" style="opacity: 0;"></div>
+     </div>
+     <div class="health-bo">
+     	<div class="up-line">
+     	 	<h3 style="color: #FF6767;">血氧</h3>
+     	 </div>
+     	<div class="charts_bo" id="bo"></div>
+     </div>
+     <div class="footer">
+     	<img src="img/qrcode_for_gh_597d04287d6d_258.jpg"/>
+     	<div class="cloud">
+     		<p>关注睿博健康吧官方微信<br />了解更多最新资讯</p>
+     	</div>
+     </div>
+</body>
+<script src="js/jquery-1.11.0.min.js" charset="utf-8"></script>
+<script src="js/echarts-plain-original.js"  charset="utf-8"></script>
+<script type="text/javascript">
+(function(){
+	window.onload = function(){
+		$("#load").fadeOut(600);
+		 //点击切换
+			$("#bp-ul li").click(function(){
+				$("#bp-ul li").removeClass('active');
+				$(this).addClass('active');
+				$(".charts_bp").css({
+					'opacity':0,
+					'z-index':1
+				}).eq($(this).index()).css({
+					'opacity':1,
+					'z-index':10
+				});
+			});
+			
+			$("#bci-ul li").click(function(){
+				$("#bci-ul li").removeClass('active');
+				$(this).addClass('active');
+				$(".charts_bci").css({
+					'opacity':0,
+					'z-index':1
+				}).eq($(this).index()).css({
+					'opacity':1,
+					'z-index':10
+				});
+			})
+   }
+
+
+
+var mybP = echarts.init(document.getElementById('bp')),
+    mymB = echarts.init(document.getElementById('mb')),
+    mybMi = echarts.init(document.getElementById('bmi')),
+    myTemper = echarts.init(document.getElementById('temper')),
+    myGl = echarts.init(document.getElementById('gl')),
+    myFat = echarts.init(document.getElementById('fat')),
+    myMuscle = echarts.init(document.getElementById('muscle')),
+    myWater = echarts.init(document.getElementById('water')),
+    myBo = echarts.init(document.getElementById('bo')),
+    myDx = echarts.init(document.getElementById('dx'));
+    
+var option_bmi = {
+	tooltip : {
+	        trigger: 'axis'
+	    },
+	    legend: {
+	        data:['体重BMI']
+	    },
+	    grid:{
+	    	x:30,
+	    	y:45,
+	    	x2:30,
+	    	y2:45
+	    },
+	    
+	    xAxis : [
+	        {
+	            type : 'category',
+//	            boundaryGap : false,
+	            data : ['周一']
+	        }
+	    ],
+	    yAxis : [    
+	        {
+	            type : 'value',
+	            axisLabel : {
+                  formatter: '{value}'
+                },
+	            splitArea : {show : true}
+	        }
+	    ],
+	    series : [
+	        {
+	            name:'体重BMI',
+	            type:'bar',
+	            barWidth:20,
+	            data:[70],      //填入BMI数据
+	            itemStyle: {
+					    normal : { 
+                            lineStyle : {  
+                                width : 2  
+                            },  
+                            label : {  
+                                show : true,  
+                                position : 'top', 
+                                formatter:'正常',
+                                textStyle : {  
+                                    fontStyle : 'bolder',  
+                                    fontSize : 15
+                                }  
+                            }  
+                        }  
+	               }
+	        }
+	        
+		        
+		    ]
+}
+
+var option_bo = {
+	tooltip : {
+	        trigger: 'axis'
+	    },
+	    legend: {
+	        data:['血氧']
+	    },
+	    grid:{
+	    	x:30,
+	    	y:45,
+	    	x2:30,
+	    	y2:45
+	    },
+	    
+	    xAxis : [
+	        {
+	            type : 'category',
+//	            boundaryGap : false,
+	            data : ['1']     //日期
+	        }
+	    ],
+	    yAxis : [    
+	        {
+	            type : 'value',
+	            axisLabel : {
+                  formatter: '{value}'
+                },
+	            splitArea : {show : true}
+	        }
+	    ],
+	    series : [
+	        {
+	            name:'血氧',
+	            type:'bar',
+	            barWidth:20,
+	            data:[20],      //填入血氧数据
+	            itemStyle: {
+					    normal : { 
+                            lineStyle : {  
+                                width : 2  
+                            },
+                            color:'#FF6767',
+                            label : {  
+                                show : true,  
+                                position : 'top', 
+                                textStyle : {  
+                                    fontStyle : 'bolder',  
+                                    fontSize : 15
+                                }  
+                            }  
+                        }  
+	               }
+	        }
+	        
+		        
+		    ]
+}
+
+var option_temper = {
+	tooltip : {
+	        trigger: 'axis'
+	    },
+	    legend: {
+	        data:['体温']
+	    },
+	    grid:{
+	    	x:30,
+	    	y:45,
+	    	x2:30,
+	    	y2:45
+	    },
+	    xAxis : [
+	        { 
+	            type : 'category',
+//	            boundaryGap : false,
+	            data : ['周一']
+	        }
+	    ],
+	    yAxis : [    
+	        {
+	            
+	            type : 'value',
+	            axisLabel : {
+                  formatter: '{value}℃'
+                },
+	            splitArea : {show : true}
+	        }
+	    ],
+	    series : [
+	        {
+	            name:'体温',
+	            type:'bar',
+	            barWidth:20,
+	            data:[35],      //填入体温数据
+	            itemStyle: {
+					    normal : { 
+                            lineStyle : {  
+                                width : 2  
+                            },
+                            color:"#F5FF66",
+                            label : {  
+                                show : true,  
+                                position : 'top', 
+                                textStyle : {  
+                                    fontStyle : 'bolder',  
+                                    fontSize : 15
+                                }  
+                            }  
+                        }  
+	               }
+	        }
+	        
+		        
+		    ]
+}
+
+var option_bp = {
+	  tooltip : {
+	        trigger: 'axis'
+	    },
+	    legend: {
+	        data:['高压','低压']
+	    },
+	    grid:{
+	    	x:30,
+	    	y:45,
+	    	x2:30,
+	    	y2:45
+	    },
+	    calculable : true,
+	    xAxis : [
+	        {
+	            type : 'category',
+//	            boundaryGap : false,
+	            data : ['周一','周二','周三','周四','周五','周六','周日']
+	        }
+	    ],
+	    yAxis : [    
+	        {
+	            type : 'value',
+	            axisLabel : {
+                  formatter: '{value}'
+                },
+	            splitArea : {show : true}
+	        }
+	    ],
+	    series : [
+	        {
+		            name:'高压',
+		            type:'line',
+			        data:[170,119,160,189,116,168,178],   //填入血压(高压)数据
+			        itemStyle: {
+					    normal : { 
+                            lineStyle : {  
+                                width : 2  
+                            },
+                            color:"#BE67FF",
+                            label : {  
+                                show : true,  
+                                position : 'top',  
+                                textStyle : {  
+                                    fontStyle : 'bolder',  
+                                    fontSize : 15
+                                }  
+                            }  
+                        }  
+	               }
+		    },
+	        {
+	            name:'低压',
+	            type:'line',
+	            data:[70],         //填入血压(低压)数据
+	            itemStyle: {
+					        normal : { 
+	                            lineStyle : {  
+	                                width : 2  
+	                            },  
+	                            label : {  
+	                                show : true,  
+	                                position : 'top', 
+	                                textStyle : {  
+	                                    fontStyle : 'bolder',  
+	                                    fontSize : 15
+	                                }  
+	                            }  
+                          }  
+	               }
+	        }
+	        
+		        
+		    ]
+}
+
+var option_gl = {
+	tooltip : {
+	        trigger: 'axis'
+	    },
+	    legend: {
+	        data:['饭前血糖','饭后血糖']
+	    },
+	    grid:{
+	    	x:30,
+	    	y:45,
+	    	x2:30,
+	    	y2:45
+	    	
+	    },
+	    xAxis : [
+	        { 
+	            type : 'category',
+//	            boundaryGap : false,
+	            data : ['周一','周二','周三','周四','周五','周六','周日']
+	        }
+	    ],
+	    yAxis : [    
+	        {
+	            
+	            type : 'value',
+	            axisLabel : {
+                  formatter: '{value}'
+                },
+	            splitArea : {show : true}
+	        }
+	    ],
+	    series : [
+	        {
+	            name:'饭前血糖',
+	            type:'bar',
+	            barWidth:20,
+	            data:[6.2, 6.3, 6.1, 7.2, 3.6, 5.5, 5.2],      //填入饭前血糖数据
+	            itemStyle: {
+					    normal : { 
+                            lineStyle : {  
+                                width : 2  
+                            },
+                            color:"#51D0CC",
+                            label : {  
+                                show : true,  
+                                position : 'top', 
+                                textStyle : {  
+                                    fontStyle : 'bolder',  
+                                    fontSize : 15
+                                }  
+                            }  
+                        }  
+	               }
+	        },
+	        {
+	            name:'饭后血糖',
+	            type:'bar',
+	            barWidth:20,
+	            data:[7.2, 7.3, 8.1, 5.2, 6.6, 7.5, 5.2],      //填入饭后血糖数据
+	            itemStyle: {
+					    normal : { 
+                            lineStyle : {  
+                                width : 2  
+                            },
+                            color:"#6F87CE",
+                            label : {  
+                                show : true,  
+                                position : 'top', 
+                                textStyle : {  
+                                    fontStyle : 'bolder',  
+                                    fontSize : 15
+                                }  
+                            }  
+                        }  
+	               }
+	        }
+	        
+		        
+		    ]
+}
+
+var option_fat = {
+	tooltip : {
+	        trigger: 'axis'
+	    },
+	    legend: {
+	        data:['脂肪含量']
+	    },
+	    grid:{
+	    	x:30,
+	    	y:45,
+	    	x2:30,
+	    	y2:45
+	    	
+	    },
+	    xAxis : [
+	        { 
+	            type : 'category',
+//	            boundaryGap : false,
+	            data : ['周一','周二','周三','周四','周五','周六','周日']
+	        }
+	    ],
+	    yAxis : [    
+	        {
+	            
+	            type : 'value',
+	            axisLabel : {
+                  formatter: '{value}%'
+                },
+	            splitArea : {show : true}
+	        }
+	    ],
+	    series : [
+	        {
+	            name:'脂肪含量',
+	            type:'bar',
+	            barWidth:20,
+	            data:[20, 16, 13, 17, 15, 13, 19],      //填入肌肉含量数据
+	            itemStyle: {
+					    normal : { 
+                            lineStyle : {  
+                                width : 2  
+                            },
+                            color:"#3BD6CD",
+                            label : {  
+                                show : true,  
+                                position : 'top', 
+                                textStyle : {  
+                                    fontStyle : 'bolder',  
+                                    fontSize : 15
+                                }  
+                            }  
+                        }  
+	               }
+	        }
+	        
+		        
+		    ]
+}
+
+var option_muscle = {
+	tooltip : {
+	        trigger: 'axis'
+	    },
+	    legend: {
+	        data:['肌肉含量']
+	    },
+	    grid:{
+	    	x:30,
+	    	y:45,
+	    	x2:30,
+	    	y2:45
+	    	
+	    },
+	    xAxis : [
+	        { 
+	            type : 'category',
+//	            boundaryGap : false,
+	            data : ['周一','周二','周三','周四','周五','周六','周日']
+	        }
+	    ],
+	    yAxis : [    
+	        {
+	            
+	            type : 'value',
+	            axisLabel : {
+                  formatter: '{value}%'
+                },
+	            splitArea : {show : true}
+	        }
+	    ],
+	    series : [
+	        {
+	            name:'肌肉含量',
+	            type:'bar',
+	            barWidth:20,
+	            data:[20, 16, 13, 17, 15, 13, 19],      //填入肌肉含量数据
+	            itemStyle: {
+					    normal : { 
+                            lineStyle : {  
+                                width : 2  
+                            },
+                            color:"#3BD6CD",
+                            label : {  
+                                show : true,  
+                                position : 'top', 
+                                textStyle : {  
+                                    fontStyle : 'bolder',  
+                                    fontSize : 15
+                                }  
+                            }  
+                        }  
+	               }
+	        }
+	        
+		        
+		    ]
+}
+
+var option_water = {
+	tooltip : {
+	        trigger: 'axis'
+	    },
+	    legend: {
+	        data:['水分含量']
+	    },
+	    grid:{
+	    	x:30,
+	    	y:45,
+	    	x2:30,
+	    	y2:45
+	    	
+	    },
+	    xAxis : [
+	        { 
+	            type : 'category',
+//	            boundaryGap : false,
+	            data : ['周一','周二','周三','周四','周五','周六','周日']
+	        }
+	    ],
+	    yAxis : [    
+	        {
+	            
+	            type : 'value',
+	            axisLabel : {
+                  formatter: '{value}%'
+                },
+	            splitArea : {show : true}
+	        }
+	    ],
+	    series : [
+	        {
+	            name:'水分含量',
+	            type:'bar',
+	            barWidth:20,
+	            data:[20, 16, 13, 17, 15, 13, 19],      //填入水分含量数据
+	            itemStyle: {
+					    normal : { 
+                            lineStyle : {  
+                                width : 2  
+                            },
+                            color:"#8CBF00",
+                            label : {  
+                                show : true,  
+                                position : 'top', 
+                                textStyle : {  
+                                    fontStyle : 'bolder',  
+                                    fontSize : 15
+                                }  
+                            }  
+                        }  
+	               }
+	        }
+	        
+		        
+		    ]
+}
+
+var option_dx = {
+	  tooltip : {
+	        trigger: 'axis'
+	    },
+	    legend: {
+	        data:['基础代谢']
+	    },
+	    grid:{
+	    	x:30,
+	    	y:45,
+	    	x2:30,
+	    	y2:45
+	    	
+	    },
+	    xAxis : [
+	        { 
+	            type : 'category',
+//	            boundaryGap : false,
+	            data : ['周一','周二','周三','周四','周五','周六','周日']
+	        }
+	    ],
+	    yAxis : [    
+	        {
+	            
+	            type : 'value',
+	            axisLabel : {
+                  formatter: '{value}'
+                },
+	            splitArea : {show : true}
+	        }
+	    ],
+	    series : [
+	        {
+	            name:'基础代谢',
+	            type:'bar',
+	            barWidth:20,
+	            data:[2336, 2788, 2913, 2817, 2615, 2513, 2919],      //填入水分含量数据
+	            itemStyle: {
+					    normal : { 
+                            lineStyle : {  
+                                width : 2  
+                            },
+                            color:"#FAC843",
+                            label : {  
+                                show : true,  
+                                position : 'top', 
+                                textStyle : {  
+                                    fontStyle : 'bolder',  
+                                    fontSize : 15
+                                }  
+                            }  
+                        }  
+	               }
+	        }
+	        
+		        
+		    ]
+}
+
+var option_mb = {
+	    tooltip : {
+	        trigger: 'axis'
+	    },
+//	    dataZoom : {
+//	        show : true,
+//	        realtime : true,
+//	        height: 20,
+//	        start : 40,
+//	        end : 60
+//      },
+	    legend: {
+	        data:['脉搏']
+	    },
+	    grid:{
+	    	x:30,
+	    	y:45,
+	    	x2:30,
+	    	y2:45
+	    },
+	    calculable : true,
+	    xAxis : [
+	        {
+	            type : 'category',
+//	            boundaryGap : false,
+	            data : ['1']
+	        }
+	    ],
+	    yAxis : [    
+	        {
+	            type : 'value',
+	            axisLabel : {
+                  formatter: '{value}'
+                },
+	            splitArea : {show : true}
+	        }
+	    ],
+	    series : [
+	        {
+	            name:'脉搏',
+	            type:'line',
+//	            symbol:'image://img/advisory.png',
+//	            symbolSize:18,
+	            data:[70],         //填入脉搏数据
+	            itemStyle: {
+					    normal : { 
+                            lineStyle : {  
+                                width : 2  
+                            },  
+                            color:"#BE67FF",
+                            label : {  
+                                show : true,  
+                                position : 'top', 
+                                textStyle : {  
+                                    fontStyle : 'bolder',  
+                                    fontSize : 15
+                                }  
+                            }  
+                        }  
+	               }
+	        }  
+	 ]
+};
+
+// 为echarts对象加载数据
+myTemper.setOption(option_temper,true);
+myGl.setOption(option_gl,true);
+myFat.setOption(option_fat,true);
+myWater.setOption(option_water,true);
+myMuscle.setOption(option_muscle,true);
+myDx.setOption(option_dx,true);
+myBo.setOption(option_bo,true);
+mybMi.setOption(option_bmi,true);
+mybP.setOption(option_bp,true);
+mymB.setOption(option_mb,true);
+
+})()
+
+
+
+</script>
+</html>

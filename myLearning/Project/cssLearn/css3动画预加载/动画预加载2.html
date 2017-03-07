@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body{background: #ECF0F1;}
+			.wrapper{width: 54px; position: absolute; top: 50%; left: 50%; margin-left: -27px;}
+			#preloder_2{position: relative;}
+			#preloder_2:before{position: absolute; width: 20px; height: 20px; background: #9b59b6; border-radius: 10px; content: ''; -webkit-animation: before 1.5s infinite ease-in-out;}
+		    #preloder_2:after{position: absolute; width: 20px; height: 20px; background: #2ecc71; border-radius: 10px; content: ''; left: 22px; -webkit-animation: after 1.5s infinite ease-in-out;}
+		
+			 @-webkit-keyframes before{
+			 	0%{-webkit-transform: translateX(0) rotate(0deg);}
+			 	50%{-webkit-transform: translateX(60px) scale(1.2) rotate(260deg); background: #2ecc71; border-radius: 0;}
+			 	100%{-webkit-transform: translateX(0) rotate(0deg);}
+			 }
+			 
+			  @-webkit-keyframes after{
+			 	0%{-webkit-transform: translateX(0) rotate(0deg);}
+			 	50%{-webkit-transform: translateX(-60px) scale(1.2) rotate(-260deg); background: #9b59b6; border-radius: 0;}
+			 	100%{-webkit-transform: translateX(0) rotate(0deg);}
+			 }
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div id="preloder_2">
+				
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#div1{width: 180px; height: 180px; overflow: hidden; position: relative;} 
+			#div1 span{width: 100px; height: 100px; background: yellow; opacity: 0.5; filter: alpha(opacity=50); position: absolute; left: 0; top: 0; display: none;}
+		   /* #mark{position: absolute; top: 0; left: 0; width: 180px; height: 180px; opacity: 0; filter: alpha(opacity=50);}*/ /*可以加一个和图片一样大小的透明层,来讲span和div隔开,阻止冒泡,因为这个mark层级比span高,所以鼠标实际上是在mark上面运动,并没有在span上面运动,也就不会触发冒泡*/
+		   #div2{width: 500px; height: 500px; position: absolute; top: 50px; left: 250px; overflow: hidden;}  /*大图片尺寸是900*900的,为了有放大镜效果,div2大小设为500*500的*/
+		   #div2 img{position: absolute; top: 0; left: 0;}
+		</style>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oDiv = document.getElementById("div1");
+				var oSpan = oDiv.getElementsByTagName('span')[0];
+				var oDiv2 = document.getElementById("div2");
+				var oImg = oDiv2.getElementsByTagName('img')[0];
+				oDiv.onmouseenter = function(){
+					oSpan.style.display = 'block';
+				}
+				oDiv.onmouseleave = function(){
+					oSpan.style.display = 'none';
+				}
+				oDiv.onmousemove = function(ev){
+					var ev = ev || window.event;
+					var L = (ev.clientX-oDiv.offsetLeft-oSpan.offsetWidth/2);  //需要减去oDiv相对于文档的偏移值
+					var T = (ev.clientY-oDiv.offsetTop-oSpan.offsetHeight/2);
+					
+					if(L<0){
+						L=0;
+					}else if(L>(oDiv.offsetWidth-oSpan.offsetWidth)){
+						L = oDiv.offsetWidth-oSpan.offsetWidth;
+					}
+					
+					if(T<0){
+						T=0;
+					}else if(T>(oDiv.offsetHeight-oSpan.offsetHeight)){
+						T = oDiv.offsetHeight-oSpan.offsetHeight;
+					}
+					
+					oSpan.style.left = L+'px';      
+					oSpan.style.top = T+'px';
+					
+					var scaleX = L/(oDiv.offsetWidth-oSpan.offsetWidth);
+					var scaleY = T/(oDiv.offsetHeight-oSpan.offsetHeight);
+					
+					oImg.style.left = -scaleX*(oImg.offsetWidth-oDiv2.offsetWidth)+'px';
+					oImg.style.top = -scaleY*(oImg.offsetHeight-oDiv2.offsetHeight)+'px';
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div id="div1">
+			<img src="b2.jpg"/>
+			<span></span>
+			<!--<div id="mark"></div>-->
+		</div>
+		<div id="div2">
+			<img src="b1.jpg"/>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		    *{margin: 0; padding: 0;}
+			.div1{width: 100px; height: 100px; line-height: 100px; text-align: center; background: gray; position: absolute; left: 0; top: 50px;}
+		</style>
+	</head>
+	<body>
+		<div class="div1" id="div1">asdas</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="../js/src/TweenMax.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//add--添加状态
+		    //参数说明:
+		       //字符串或一个函数
+		       
+		//TweenTo--完成指定的动画(过渡)
+		   //参数说明
+		      //指定的时间或状态的字符串(当参数是一个数字类型的时候,表示是时间)
+		
+		//seek--完成指定的动画(无过渡)
+		   //参数说明
+		      //1.指定时间或者状态
+		      //[可选]布尔值
+		           //true,不执行动画结束时回调函数,  false,执行动画结束时回调函数
+		           
+		//time-- 动画已执行的时间
+		
+		//clear 清除所有的动画
+		
+		$(function(){
+			var t = new TimelineMax();
+			
+			t.add("state1");
+			t.to('#div1',1,{left:300});  
+			t.to('#div1',1,{top:300});  
+//			t.add(function(){
+//				$('#div1').css('background','red');
+//			});
+			t.add("state2");
+			t.to('#div1',2,{width:300});  
+			
+			t.stop();
+//			t.tweenTo("state2"); //动画执行到指定的状态
+//         t.tweenTo(2.3);   //动画执行到指定的时间
+//         t.seek("state2");  //无过渡直接跳到动画的指定状态
+//            t.seek(2.3) //无过渡直接跳到动画的指定时间
+		});
+	</script>
+</html>

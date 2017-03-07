@@ -1,0 +1,63 @@
+$toobar-width:52px; //小工具的宽度
+$qr-code-width:172px; //二维码的宽度
+
+@mixin toolbar-item($normalPosition,$hoverPosition){ //定义一个background-position的方法
+    background-position: 0 $normalPosition;
+    &:hover{
+        background-position: 0 $hoverPosition;
+    }
+}
+
+.toobar{
+    position: fixed;
+    left: 50%;
+    bottom: 50%;
+    margin-left: -$toobar-width / 2;
+}
+.toolbar-item{
+    position: relative;
+    display: block;
+    width: $toobar-width;
+    height: $toobar-width;
+    background: url(../img/toolbar.png) no-repeat;
+    margin-top: 1px;
+    &:hover{
+        .toobar-layer{
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+}
+.toobar-layer{
+    position: absolute;
+    right: $toobar-width - 6;
+    bottom: -10px;
+    width: $qr-code-width;
+    background: url(../img/toolbar.png) no-repeat;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    transform: scale(0.01);
+}
+
+.toobar-item-wexin{
+    @include toolbar-item(-798px,-860px);
+    
+    .toobar-layer{
+        height: 212px;
+        background-position: 0 0;
+    }
+}
+.toobar-item-feedback{
+    @include toolbar-item(-426px,-488px);
+}
+.toobar-item-app{
+    @include toolbar-item(-550px,-612px);
+    
+    .toobar-layer{
+        height: 194px;
+        background-position: 0 -222px;
+    }
+}
+.toobar-item-top{
+    @include toolbar-item(-674px,-736px);
+}

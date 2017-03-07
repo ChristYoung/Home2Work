@@ -1,0 +1,171 @@
+/*public*/
+body{margin: 0; font-family: arial,"微软雅黑"; color: #666; position: relative;}
+.page{
+		  height: 100%; width: 100%; position: absolute; 
+	      left: 0; top: 0; overflow: auto; background-color: #FFFFFF; 
+	      font-size: 26px; z-index: 1; display: none;
+      }
+.pageShow{display: block;}
+.page:nth-of-type(1){z-index: 10;}
+.page:nth-of-type(2){z-index: 9;}
+.page:nth-of-type(3){z-index: 8;}
+.page:nth-of-type(4){z-index: 7;}
+.page:nth-of-type(5){z-index: 6;}
+
+.btn{
+		 position: absolute; bottom: 17px; left: 17px; 
+	     width: 606px; height: 74px; border-radius: 5px; background: #CACACA; 
+	     font-size: 30px; color: #5d5d5d;
+     }
+.canSubmit{background: #3C9BBB; color: #FFFFFF;}
+.subInfo{
+	      font-size: 26px; line-height: 60px; width: 100%; text-align: center;
+	      position: absolute; bottom: 90px; -webkit-transition: 0.5s; opacity: 0;
+	      -webkit-transform-origin: bottom;
+	      -webkit-transform: scale(0);
+	    }
+.scrollWrap{position: relative; height: 100%; min-height: 1136px; overflow: hidden;}	/*最小高度设置成iphone5的最小高度,Emulation中的高度乘以2*/    
+
+/*welcome*/
+#welcome{transition: 1s; -webkit-transition: 1s;}
+.welcome-tree{
+          position: absolute; left: 0; top: 10%; width: 100%; 
+          -webkit-transform: translateY(100px); transform: translateY(160px); opacity: 0;
+          -webkit-animation: 2s welcome-tree;
+          animation: 2s welcome-tree;
+          -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+    }
+
+#logo{ 
+	      position: absolute; text-align: center; bottom: 5%; left: 0; opacity: 0;width: 100%; 
+          -webkit-animation: 2s 1s welcome-tree;
+          animation: 2s 1s welcome-tree;
+          -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+     }
+
+.E-trip{
+	    position: relative; padding-top: 50px; 
+        -webkit-transform: translateY(50px); transform: translateY(50px); opacity: 0;
+        -webkit-animation: 1s .3s welcome-tree;
+        animation: 1s .3s welcome-tree;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+     }
+     
+.E-trip .shake{
+	           position: absolute; left: 509px; top: 12px; 
+               width: 28px; height: 31px; background: url(../img/shake.png) no-repeat;
+               -webkit-transform-origin: left bottom;
+               -webkit-animation: 1s 1s shake;
+             }
+
+.CCTV{
+	    padding-top: 20px; opacity: 0; 
+        -webkit-transform: translateY(30px); transform: translateY(30px); opacity: 0;
+        -webkit-animation: 1s .6s welcome-tree;
+        animation: 1s .6s welcome-tree;
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+    }
+
+.cloud{position: absolute; background: url(../img/cloud.png) no-repeat; background-size: contain;}
+.cloud:nth-of-type(1){
+	                   left: 432px; top: 15px; width: 58px; height: 44px;
+	                   -webkit-animation: 3s cloudFloat infinite alternate linear; 
+	                   animation: 3s cloudFloat infinite alternate linear;
+                     }
+.cloud:nth-of-type(2){
+	                    left: 79px; top: 77px; width: 91px; height: 70px;
+	                    -webkit-animation: 3s 2s cloudFloat infinite alternate linear; 
+	                    animation: 3s 2s cloudFloat infinite alternate linear;
+                     }
+.cloud:nth-of-type(3){
+	                  left: 402px; top: 142px; width: 54px; height: 41px;
+	                  -webkit-animation: 3s 2.5s cloudFloat infinite alternate linear; 
+	                  animation: 3s 3s cloudFloat infinite alternate linear;
+	                }
+
+
+/*indexPage*/
+#index{transition: 0.5s; -webkit-transition: 0.5s;}
+#tabPic{overflow: hidden; position: relative;}
+#picList{overflow: hidden; width: 500%; transition: 1s; -webkit-transition: 1s;}
+#picList li{float: left; width: 20%;}
+#picList img{width: 100%; height: 342px;}
+
+.picMask{ height: 102px; position: absolute; bottom: 0; left: 0; width: 100%; background: rgba(0,0,0,0.1);}
+.picMask p{height: 100%; line-height: 120px; font-size: 29px; color: #FFFFFF; text-indent: 26px;}
+.picMask nav{position: absolute; right: 26px; top: 56px; height: 10px;}
+.picMask nav a{float: left; height: 10px; width: 10px; border-radius: 50%; background: #FFFFFF; opacity: 0.3; margin-left: 20px;}
+.picMask nav .active{opacity: 1;}
+
+#score{line-height: 60px; padding:17px 0 22px 26px; border-bottom: 1px solid #E5E5E5;}
+#score h2{font-size: 28px;}
+#score li{height: 60px; font-size:26px; position: relative;}
+#score nav{position: absolute; left: 187px; top: 12px;}
+#score nav a{float: left; background: url(../img/star.png) no-repeat -38px; width: 38px; height: 36px; margin-right: 39px; transition: .3s; -webkit-transition: .3s;}
+#score nav .active{background-position: 0 0;}
+
+#viewTags{padding: 21px 0 0 26px;}
+#viewTags h2{line-height: 53px; font-size: 28px;}
+#viewTags label{float: left; line-height: 50px; margin: 10px 14px 10px 3px;}
+#viewTags label input{display: none;}
+#viewTags label span{border: 1px solid #cdd6e1; padding: 0 24px; display: inline-block; border-radius: 26px;} 
+#viewTags input:checked+span{border-color: #3c9bbb; background: #3C9BBB; color: #FFFFFF;}
+#mask{background: rgba(0,0,0,0.5) url(../img/mask.png) no-repeat center 300px; opacity: 0; transition: 1s; -webkit-transition: 1s;}
+
+
+/*News*/
+#news{transition: 0.5s; -webkit-transition: 0.5s; background: #EEEEEE; opacity: 0;}
+#news h2{font-size: 26px; line-height: 80px; padding: 24px 0 0 35px;}
+.file{background: #FFFFFF; height: 188px;}
+.file label{width: 50%; height: 100%; float: left; box-sizing: border-box; padding-top: 100px; line-height: 52px; text-align: center;}
+.file label:nth-of-type(1){border-right: 1px solid #E5E5E5; background: url(../img/camera1.png) no-repeat center 20px;}
+.file label:nth-of-type(2){background: url(../img/camera2.png) no-repeat center 20px;}
+.file input{display: none;}   /*虽然input已经display:none但点击还是有效果的*/
+
+
+/*all animation*/
+@-webkit-keyframes welcome-tree{
+	100%{
+		-webkit-transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+@keyframes welcome-tree{
+	100%{
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes shake{
+	0%{-webkit-transform: rotate(0deg);}
+	20%{-webkit-transform: rotate(30deg);}
+	40%{-webkit-transform: rotate(-20deg);}
+	60%{-webkit-transform: rotate(15deg);}
+	80%{-webkit-transform: rotate(-10deg);}
+	100%{-webkit-transform: rotate(0deg);}
+}
+
+@keyframes shake{
+	0%{transform: rotate(0deg);}
+	20%{transform: rotate(30deg);}
+	40%{transform: rotate(-20deg);}
+	60%{transform: rotate(15deg);}
+	80%{transform: rotate(-10deg);}
+	100%{transform: rotate(0deg);}
+}
+
+@-webkit-keyframes cloudFloat{
+	0%{-webkit-transform: translateX(0px);}
+	100%{-webkit-transform: translateX(-50px);}
+}
+
+@keyframes cloudFloat{
+	0%{transform: translateX(0px);}
+	100%{transform: translateX(-50px);}
+}

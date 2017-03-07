@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			body{background: black;}
+			#c1{background: white;}
+		</style>
+		<script type="text/javascript">
+		    window.onload=function(){
+		    	var oC=document.getElementById("c1");
+		    	var oGc=oC.getContext('2d');
+		    	function drawClock(){
+		    		var x=200;
+			    	var y=200;
+			    	var r=150;
+			    	
+			    	oGc.clearRect(0,0,oC.width,oC.height);
+			    	
+			    	oDate = new Date();
+			    	oHours=oDate.getHours();
+			    	oMin=oDate.getMinutes();
+			    	oSec=oDate.getSeconds();
+			    	
+			    	//因为钟表上的时针是从12点开始作为起始点的而canvas标签是从右水平位置开始作为起始点的，所以要减去90度，来和钟表同步
+			    	var oHoursValue=(-90 + oHours*30  + oMin/2) * Math.PI/180;
+			    	//加上oSec/10是为了让分针随秒针的变化而变化
+			    	var oMinValue=(-90 + oMin*6 + oSec/10) * Math.PI/180;       
+			    	var oSecValue=(-90 + oSec*6) * Math.PI/180;
+			    	
+			    	oGc.beginPath();
+			    	for(var i=0; i<60; i++){
+			    		 oGc.moveTo(x,y);
+			    		 oGc.arc(x,y,r,6*i*Math.PI/180,6*(i+1)*Math.PI/180,false);
+			    	}
+			    	oGc.closePath();
+			    	oGc.stroke();                                         //先进行60等分
+			    	
+			    	oGc.fillStyle='white';
+			    	oGc.beginPath();
+			    	oGc.moveTo(x,y);
+			    	oGc.arc(x,y,r*19/20,0,360*Math.PI/180,false);
+			    	oGc.closePath();
+			    	oGc.fill();                                            //画一个白圆将其盖住
+			    	
+			    	
+			    	oGc.lineWidth=3;
+			    	oGc.beginPath();
+			    	for(var i=0; i<12; i++){
+			    		 oGc.moveTo(x,y);
+			    		 oGc.arc(x,y,r,30*i*Math.PI/180,30*(i+1)*Math.PI/180,false);
+			    	}
+			    	oGc.closePath();
+			    	oGc.stroke();                                    //再画粗线（将整个圆12等分）
+			    	
+			    	oGc.fillStyle='white';
+			    	oGc.beginPath();
+			    	oGc.moveTo(x,y);
+			    	oGc.arc(x,y,r*18/20,0,360*Math.PI/180,false);
+			    	oGc.closePath();
+			    	oGc.fill();                                        //再画一个白圆将其盖住
+			    	
+			    	oGc.lineWidth=5;
+			    	oGc.beginPath();
+			    	oGc.moveTo(x,y);
+			    	oGc.arc(x,y,r*11/20,oHoursValue,oHoursValue,false);
+			    	oGc.closePath();
+			    	oGc.stroke();                                    //绘制时针
+			    	
+			    	oGc.lineWidth=3;
+			    	oGc.beginPath();
+			    	oGc.moveTo(x,y);
+			    	oGc.arc(x,y,r*15/20,oMinValue,oMinValue,false);
+			    	oGc.closePath();
+			    	oGc.stroke();                                    //绘制分针
+			    	
+			    	oGc.lineWidth=1;
+			    	oGc.beginPath();
+			    	oGc.moveTo(x,y);
+			    	oGc.arc(x,y,r*17/20,oSecValue,oSecValue,false);
+			    	oGc.closePath();
+			    	oGc.stroke();                                    //绘制秒针
+		    	}
+		    	
+		    	setInterval(drawClock,1000);                 //调用函数不用加();
+		    	
+		    	drawClock();
+			    	
+		    }
+		</script>
+	</head>
+	<body>
+		<canvas id="c1" width="400" height="400"></canvas>
+	</body>
+</html>

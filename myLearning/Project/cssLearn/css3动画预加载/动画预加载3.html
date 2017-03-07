@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.wrapper{position: absolute; top: 50%; left: 50%; margin-left: -50px; margin-top: -10px;}    
+			#preloader_3{position: relative;}
+			#preloader_3 span{display: inline-block; position: absolute; width: 20px; height: 20px; background: #3498db; opacity: 0.5; border-radius: 100%; -webkit-animation: preloader_3 1s infinite ease-in-out;}
+		    #preloader_3 span:nth-of-type(2){left: 20px;-webkit-animation-delay: .2s;}
+		    #preloader_3 span:nth-of-type(3){left: 40px;-webkit-animation-delay: .4s;}
+		    #preloader_3 span:nth-of-type(4){left: 60px;-webkit-animation-delay: .6s;}
+		    #preloader_3 span:nth-of-type(5){left: 80px;-webkit-animation-delay: .8s;}
+		    
+		    @-webkit-keyframes preloader_3{
+		    	0%{opacity: 0.3; -webkit-transform: translateY(0px); box-shadow: 0px 0px 3px rgba(0,0,0,0.1);}
+		    	50%{opacity: 1; -webkit-transform: translateY(-10px); background:#f1c40f;  box-shadow: 0px 20px 3px rgba(0, 0, 0, 0.08);}   /*阴影会随着其元素的运动而运动*/
+		    	100%{opacity: 0.3; -webkit-transform: translateY(0px); box-shadow: 0px 0px 3px rgba(0,0,0,0.1);}
+		    }
+		</style>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div id="preloader_3">
+				<span></span>
+	            <span></span>
+	            <span></span>
+	            <span></span>
+	            <span></span>
+			</div>
+		</div>
+	</body>
+</html>

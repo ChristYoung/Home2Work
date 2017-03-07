@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.pie-right{width: 200px; height: 200px; position: absolute; top: 0; left: 0; background: #0cc;}
+			.con-right{width: 200px; height: 200px; background: #00aacc; border-radius: 50%; position: absolute; top: 0; left: 0; -webkit-transform: rotate(30deg);}
+			.pie-right,.con-right{clip: rect(0 auto auto 100px);}
+			.mask{width: 150px; height: 150px; border-radius: 50%; left: 25px; top: 25px; background: #FFFFFF; position: absolute; text-align: center; line-height: 150px; font-size: 20px; background: #0cc;}
+		</style>
+	</head>
+	<body>
+		<!--
+        	利用css的clip和transforsm制作环形进度条
+        -->
+        <div class="pie-right">
+        	<div class="con-right"></div>
+        	<div class="mask">
+        		<span>0</span>%
+        	</div>
+        </div>
+	</body>
+</html>

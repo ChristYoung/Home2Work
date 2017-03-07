@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>canvas倒计时</title>
+	</head>
+	<body>
+		<canvas id="canvas" width="1024" height="768" style="border: 1px solid #aaa; display: block; margin: 20px auto;">
+			当前浏览器不支持canvas,请更换浏览器
+		</canvas>
+	</body>
+	<script type="text/javascript">
+		var canvas = document.getElementById("canvas");
+		var contex = canvas.getContext('2d');
+		//使用context绘制
+		contex.moveTo(100,100);
+		contex.lineTo(700,700);
+		contex.stroke();
+	</script>
+</html>

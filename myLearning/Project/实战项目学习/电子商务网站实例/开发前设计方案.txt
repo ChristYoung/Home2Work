@@ -1,0 +1,22 @@
+								A.样式重置：
+								B.整站的公共样式：
+								fl(左浮动)
+								fr(右浮动)
+								clear(清浮动)
+								wrap(包裹层)
+								
+								C.布局模块：
+								header
+								nav
+								search
+								main
+								         section
+								         options
+								         main_ad
+								         
+								side
+								         section_side
+								         
+								footer
+								
+								D.结构模块：
