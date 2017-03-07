@@ -1,0 +1,53 @@
+.img_area{position: relative;}
+.img_area img{width: 100%;}
+.img_area .area_intro{position: absolute; left: 10%; bottom: 18%; color: #fff; line-height: 1.6;}
+
+.bg_area{padding: 210px 0 100px;}
+.bg_area .bg_h2{color: #fff; text-align: center; font-size: 28px; line-height: 2;}
+.bg_area .mail_mark{color: #ED7148;}
+
+.news_line{border-bottom: 1px solid #ddd;}
+.line_table{display: table; width: 100%;}
+.line_table_cell{display: table-cell; vertical-align: middle;}
+
+.row_title .pub_title{font-weight: bold;}
+.row_title .pub_s_share{display: inline-block; width: 41px; height: 40px; background: url(../../img/tb-shejiao.png) no-repeat; vertical-align: middle;}
+.row_title .pub_s_share:nth-of-type(1){background-position: 0 0;}
+.row_title .pub_s_share:nth-of-type(2){background-position: -41px 0;}
+.row_title .pub_s_share:nth-of-type(3){background-position: -82px 0;}
+.row_title .pub_s_share:nth-of-type(4){background-position: -123px 0;}
+
+.row_pub .mission_h4{text-align: center; line-height: 1.6;}
+.row_pub .mission_h4 .download_href{color: #ED7148;}
+.row_img img{max-width: 100%; height: auto;}
+.row_pub .pledge_h4{color: #813D94; font-size: 20px; font-weight: bold; text-align: center; line-height: 1.6;}
+.row_pub .pledge_li{text-align: center; font-size: 14px; margin-bottom: 12px;}
+.row_pub .pledge_li span{padding-left: 20px; position: relative; width: auto; font-size: 16px;}
+.row_pub .pledge_li span:before{position: absolute; content: ""; width: 5px; height: 5px; border-radius: 100%; background: #EB0088; left: 8px; top: 6px;}
+
+.pub_col_wp{background: #FBFCF6; max-width: 380px; margin: 10px auto;}
+.pub_col_wp img{border-radius: 50%;}
+.pub_col_wp h3{text-align: center;}
+.pub_col_wp strong{color: #8AB175;}
+.pub_col_wp .mail_href,.read_more_href{color: #ED7148;}
+.pub_col_wp .item{font-weight: 500; font-size: 18px; line-height: 25px; overflow: hidden; height: 375px; position: relative;}
+.pub_col_wp .item .txt_overflow::after{content: "......"; position: absolute; bottom: 0; right: 0; width: 40%; height: 25px; line-height: 25px; background: #fff; z-index: 2;}
+.read_more_href{display: block; text-align: center; line-height: 55px; cursor: pointer;}
+.read_more_href:hover{text-decoration: none; color: #ED7148;}
+
+.join_info{padding: 20px 0 8px; background: #f5f5f0; margin-top: 20px;}
+.join_info input{margin-bottom: 12px;}
+.join_span{display: inline-block; width: 100%; vertical-align: middle; text-align: center; font-size: 16px; line-height: 34px;}
+
+/*the arrow of the page of partners and press...*/
+.slide_h2{position: relative; font-size: 24px; border-bottom: 1px solid #ddd; line-height: 1.8;}
+.slide_h2 .h2_href{color: #666;}
+.slide_h2 .slide_arrow{position: absolute; top: 10px; right: 0; width: 24px; height: 24px; background: url(../../img/A-1.png); cursor: pointer;}
+.slide_h2 .h2_span{position: absolute; top: 10px; right: 0; font-size: 16px; color: #666;}
+.slide_h2 .slide_arrow.arrow_down{background: url(../../img/A-2.png);}
+.slide_h2{margin-bottom: 0; color: #664676;}
+.line_table_cell p{margin-bottom: 0; color: #AAADAF;}
+.news_title{color: #666; font-size: 16px;}
+.news_title:hover{text-decoration: none; color: #5CB85C;}
+.news_line{padding: 5px; min-height: 50px;}
+.news_date{font-size: 14px; float: right; font-weight: normal;}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		    *{margin: 0; padding: 0;}
+		    html,body{width: 100%;}
+		    html{font-size: 100%;}
+		    body{font-size: 1em;}
+			fieldset{width: 65%; margin: 0 auto; border: none;}
+			fieldset .c100{position: relative; font-size: 20em; width: 1em; height: 1em; background: #CCCCCC; margin: 0 auto; border-radius: 50%;}
+			fieldset .c100 span{
+				position: absolute; left: 0; top: 0; 
+				font-size: 0.2em; color: #CCCCCC; text-align: center;
+				display: block; width: 5em; line-height: 5em; 
+				z-index: 1;
+			} 
+			.c100 .slice{clip: rect(auto, auto, auto, auto);}
+			.c100:after{
+				  position: absolute;
+				  top: 0.08em;
+				  left: 0.08em;
+				  display: block;
+				  content: " ";
+				  border-radius: 50%;
+				  background-color: #f5f5f5;
+				  width: 0.84em;
+				  height: 0.84em;
+			}
+			.c100 .bar{
+			    transform: rotate(0);
+			    position: absolute;
+			    border: 0.08em solid #307bbb;
+			    width: 0.84em;
+			    height: 0.84em;
+			    clip: rect(0em, 0.5em, 1em, 0em);
+			    border-radius: 50%;
+			    transition: all 2s ease-in-out;
+			}
+			.c100 .fill{
+                position: absolute;
+				border: 0.08em solid #307bbb;
+				width: 0.84em;
+				height: 0.84em;
+				clip: rect(0em, 0.5em, 1em, 0em);
+				border-radius: 50%;
+				transform: rotate(180deg);
+				transition: all 2s ease-in-out;
+			}
+		</style>
+	</head>
+	<body>
+		<fieldset id="circle">
+			<div class="c100 orange p64">
+				<span>64%</span>
+				<div class="slice">
+					<div class="bar"></div>
+					<div class="fill"></div>
+				</div>
+			</div>
+		</fieldset>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.bar').css('-webkit-transform','rotate(230deg)')
+		});
+	</script>
+</html>

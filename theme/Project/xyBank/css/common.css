@@ -1,0 +1,28 @@
+/*body*/
+body{font-family: "微软雅黑", "Arial"; font-size: 12px; min-width: 1100px;}
+/*must&&error*/
+.must,.errorTips{color: red;}
+/*btn*/
+.xy-btn{display: inline-block; padding: 8px 12px; color: #FFFFFF; border: none; border-radius: 5px; cursor: pointer; text-align: center;}
+.btn-blue{background-color: #367FA9;}
+.btn-orange{background-color: #F39C12;}
+.btn-gray{background-color: #999999;}
+.btn-white{background-color: #FFFFFF; color: #000000;}
+/*input*/
+input[type=text],input[type=password]{width: 235px; padding-left:12px; padding-right: 12px; height: 30px; border: 1px solid #DDDDDD; font-family: "微软雅黑", "Arial";}
+/*input[type=text]:focus,input[type=password]:focus{border: 2px solid #f00;}*/
+select{height: 25px;}
+/*table*/
+.xy-table{width: 100%; border-collapse: collapse; border: none;}
+.xy-table thead th{color: #989898; border: none; border-bottom: 1px solid #DDDDDD; text-align: left; font-weight: normal; padding: 15px 0; font-size: 12px;}
+.xy-table tbody td{border: none; border-bottom: 1px dotted #DDDDDD; text-align: left; padding: 8px 0;}
+
+/*public style*/
+header{height: 60px; position: relative; background-color: #367FA9;}
+header .logo-wrap{width: 255px; position: absolute; top: 15px; left: 45px;} 
+header .logo-wrap img{max-width: 100%;}
+header .item-name{height: 60px; position: absolute; left: 310px;}
+header .item-name strong{line-height: 60px; color: #FFFFFF; font-size: 16px; display: inline-block; margin-right: 20px;}
+header .header-list{height: 60px; position: absolute; right: 0;}
+header .header-list a,header .header-list span{display: inline-block; font-size: 16px; color: #FFFFFF; line-height: 60px; margin-right: 50px;}
+header .header-list span{cursor: default;}

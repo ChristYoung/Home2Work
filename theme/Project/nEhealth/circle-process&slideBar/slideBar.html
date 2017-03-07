@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>slideBar</title>
+		<style type="text/css">
+			*{margin: 0; padding: 0;}
+			html,body{width: 100%;}
+			body{font-family: "微软雅黑";}
+			.slide-bar-mask{position: absolute; left: 0; top: 0; width: 40px; background: #E6EAEE;}
+		    .slide-bar-tab{position: relative; width: 32px; height: 32px; margin: 0 auto 12px; background: url(img/slide-bar.png) no-repeat;}
+		    .slide-bar-tab:nth-of-type(1){margin-top: 15px; background-position: 0 0;}
+		    .slide-bar-tab:nth-of-type(2){background-position: 0 -40px;}
+		    .slide-bar-tab:nth-of-type(3){background-position: 0 -80px;}
+		    .slide-bar-tab:nth-of-type(4){background-position: 0 -120px;}
+		    .slide-bar-tab:nth-of-type(5){background-position: 0 -160px;}
+		    .slide-bar-tab a{display: inline-block; width: 100%; height: 100%;}
+		    .slide-bar-tab .bar-tips{
+		    	            position: absolute; 
+		    	            line-height: 32px;
+		    	            width: 80px; height: 32px; cursor: pointer;
+		    	            background-color: rgba(39,33,33,0.7); color: #FFFFFF; 
+		    	            text-align: center; 
+		    	            font-size: 12px;
+		    	            top: 0; left: 85px;
+		    	            opacity: 0;
+		    	            display: none;
+		    }
+		    .bar-tips:before{
+		    	content: "";
+	            position: absolute; 
+	            width: 0; height: 0; 
+	            border: 5px solid transparent;
+	            border-right: 5px solid rgba(39,33,33,0.7);
+	            left: -10px; top: 12px;
+		    }
+		    
+		   .circle-wrap{width: 400px; height: 400px; background-color: #273238; border-radius: 100%; margin: 50px auto 0; position: relative; -webkit-transform: rotate(45deg);}
+		   .circle-wrap:hover .circle-range-left{-webkit-transform: rotate(130deg);}
+		   .circle-left,.circle-right{overflow: hidden; width: 210px; height: 420px; position: absolute; top: -10px; z-index: 5;}
+		   .circle-left{right: 200px;}
+		   .circle-right{left: 200px;}
+		   
+		   .circle-left .circle-range-left,.circle-right .circle-range-right{width: 420px; height: 420px; position: absolute; top: 0; bottom: 0; border-radius: 100%;}
+		   .circle-left .circle-range-left{
+		   	                              left: 0; 
+		                                  background: -webkit-gradient(linear, 0 0, 100% 0, from(transparent), color-stop(50%, transparent), color-stop(50%, #EE4F85), to(#EE4F85)); 
+		                                  -webkit-transition: .6s;
+		                                 }
+		   .circle-right .circle-range-right{right: 0; background: -webkit-gradient(linear, 0 0, 100% 0, from(#EE4F85), color-stop(50%, #EE4F85), color-stop(50%, transparent), to(transparent));}  
+		   
+		   .circle-inner{position: absolute; left: 15px; top: 15px; width: 370px; height: 370px; background: #FFFFFF; border-radius: 100%;}        
+		   .circle-inner-2{position: absolute; left: 25px; top: 25px; width: 350px; height: 350px; background: #FFFFFF; border-radius: 100%; z-index: 6;}
+		   
+		   .triangle-down{position: absolute; width: 0; height: 0; border: 20px solid transparent; border-bottom: 20px solid salmon; -webkit-transform: rotate(-45deg); bottom: 0; right: 0;}
+		   /*.bounceIn{
+		    	-webkit-animation: bounceIn .3s linear forwards;
+		   }
+		   /*animation*/
+		   /*@-webkit-keyframes bounceIn{
+			   	from{left: 85px;opacity: 0;}
+			   	to{left: 40px; opacity: 1;}
+		   }*/
+		</style>
+	</head>
+	<body>
+	    <!--人人菜单栏-->
+		<div class="slide-bar-mask">
+			<div class="slide-bar-tab">
+				<a href="http://www.baidu.com"></a>
+				<div class="bar-tips">首页</div>
+			</div>
+			<div class="slide-bar-tab">
+				<a href="http://www.baidu.com"></a>
+				<div class="bar-tips">消息</div>
+			</div>
+			<div class="slide-bar-tab">
+				<a href="http://www.baidu.com"></a>
+				<div class="bar-tips">咨询</div>
+			</div>
+			<div class="slide-bar-tab">
+				<a href="http://www.baidu.com"></a>
+				<div class="bar-tips">设置</div>
+			</div>
+			<div class="slide-bar-tab">
+				<a href="http://www.baidu.com"></a>
+				<div class="bar-tips">我的资料</div>
+			</div>
+		</div>
+		
+		<!--环形进度条-->
+		<div class="circle-wrap">
+			<div class="circle-left">
+				<div class="circle-range-left"></div>
+			</div>
+			<div class="circle-right">
+				<div class="circle-range-right"></div>
+			</div>
+			<div class="circle-inner"></div>
+			<div class="circle-inner-2"></div>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//设置slide-bar-mask的高度
+			function maskHeight(){
+				var H = $(window).height();
+				$('.slide-bar-mask').height(H);
+			};
+			window.onload = function(){
+				maskHeight();
+			};
+			window.onresize = function(){
+				maskHeight();
+			};
+			//tootips出现动画
+			$('.slide-bar-tab').hover(function(){
+				$(this).find('.bar-tips').show().animate({left:'32px',opacity:'1'},400);
+			},function(){
+				$(this).find('.bar-tips').animate({left:'85px',opacity:'0'},400,function(){
+						$(this).hide();
+				});
+			});
+		});
+	</script>
+</html>

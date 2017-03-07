@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />	
+		<title>会议助手</title>
+		<link rel="stylesheet" type="text/css" href="../../css/qyh_pc/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/qyh_pc/bootstrap-datetimepicker.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/qyh_pc/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/qyh_pc/vip_basicStyle.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/qyh_pc/vip_public.css"/>
+		<style type="text/css">
+		.query_header{width: 100%; overflow: hidden;}
+		#department,#week_input{width: 150px;}
+		.week_wp{display: inline-block;}
+		.week_textarea{width: 100%;}
+		.week_sel{-webkit-transition: .18s; transition: .18s;}
+		.week_sel:hover{background-color: #00BDAF; color: #fff; border-color: #fff;}
+		#week_input{background: url(../../img/qyh_pc/calendar.png) no-repeat 127px center; background-size: 17px 17px; cursor: pointer;}
+	    #send_arrengment{width: 120px; margin-bottom: 20px;}
+		    
+		/*自定义datePicker样式*/
+		.datetimepicker table tr td span.active:active, .datetimepicker table tr td span.active:hover:active, .datetimepicker table tr td span.active.disabled:active, .datetimepicker table tr td span.active.disabled:hover:active, .datetimepicker table tr td span.active.active, .datetimepicker table tr td span.active:hover.active, .datetimepicker table tr td span.active.disabled.active, .datetimepicker table tr td span.active.disabled:hover.active{background-color: #00BDAF;}	
+		.datetimepicker table tr td span.active, .datetimepicker table tr td span.active:hover, .datetimepicker table tr td span.active.disabled, .datetimepicker table tr td span.active.disabled:hover{background-image: none;}
+		.icon-arrow-right:before{content: "\e092";}
+		.icon-arrow-left:before{content: "\e091";}
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			 <h1 class="project-wrap">
+			 	Ehospital管理中心
+			 </h1>
+			 <a class="loginOut">
+			 	退出
+			 </a>
+		</div>
+		<div id="main">
+			<div id="side_menu">
+				<dl id="m_1">
+					<a href="#">
+						<dt>管理首页</dt>
+					</a>
+				</dl>
+				<dl id="m_2">
+					<a href="#">
+						<dt>会议助手</dt>
+					</a>
+				</dl>
+				<dl id="m_3">
+					<a href="#">
+						<dt>周程安排</dt>
+					</a>
+				</dl>
+				<dl id="m_4">
+					<a href="#">
+						<dt>院长日报</dt>
+					</a>
+				</dl>
+			</div>
+			<div id="main_body">
+				<p class="body_title">周程安排</p>
+				<div class="query_bar">
+					<form>
+						<select class="" name="" id="department" title="asdasdasd">
+							<option value="">研发部</option>
+							<option value="">研发部研发部研发部研发部研发部研发部</option>
+							<option value="">研发部</option>
+							<option value="">研发部</option>
+						</select>
+						<input type="text" name="" id="week_input" value="" data-date data-date-format="yyyy-MM" readonly="readonly"/>
+						<p class="week_wp">
+							<input type="hidden" name="" id="date_sel" value="" />
+							<a href="#" class="week_sel input_btn btn_bar active">41周(9.26-10.26)</a>
+							<a href="#" class="week_sel input_btn btn_bar">41周(9.26-10.26)</a>
+							<a href="#" class="week_sel input_btn btn_bar">41周(9.26-10.26)</a>
+							<a href="#" class="week_sel input_btn btn_bar">41周(9.26-10.26)</a>
+							<a href="#" class="week_sel input_btn btn_bar">41周(9.26-10.26)</a>
+						</a>
+					</form>
+				</div>
+				
+				<div class="query_tab">
+					<div class="query_header">
+						<p>周程列表</p>
+				        <button type="button" class="fr input_btn btn_green" id="send_arrengment">发送</button>
+					</div>
+				   <div class="tab_view">
+				   	  <table class="vip_table">
+				   	  	<thead>
+				   	  		<tr>
+				   	  			<th style="width: 100px;"></th>
+				   	  			<th>上午</th>
+				   	  			<th>下午</th>
+				   	  		</tr>
+				   	  	</thead>
+				   	  	<tbody>
+				   	  		<tr class="week_tr" id="monday">
+				   	  			<td class="textcenter">周一</td>
+				   	  			<td>
+				   	  				<textarea class="week_textarea morning" name="" rows="" cols="" maxlength="200" placeholder="添加事项"></textarea>
+				   	  			</td>
+				   	  			<td>
+				   	  				<textarea class="week_textarea afternoon" name="" rows="" cols="" maxlength="200" placeholder="添加事项"></textarea>
+				   	  			</td>
+				   	  		</tr>
+				   	  		<tr class="week_tr" id="tuesday">
+				   	  			<td class="textcenter">周二</td>
+				   	  			<td>
+				   	  				<textarea class="week_textarea morning" name="" rows="" cols="" maxlength="200" placeholder="添加事项"></textarea>
+				   	  			</td>
+				   	  			<td>
+				   	  				<textarea class="week_textarea afternoon" name="" rows="" cols="" maxlength="200" placeholder="添加事项"></textarea>
+				   	  			</td>
+				   	  		</tr>
+				   	  		<tr class="week_tr" id="wednesday">
+				   	  			<td class="textcenter">周三</td>
+				   	  			<td>
+				   	  				<textarea class="week_textarea morning" name="" rows="" cols="" maxlength="200" placeholder="添加事项"></textarea>
+				   	  			</td>
+				   	  			<td>
+				   	  				<textarea class="week_textarea afternoon" name="" rows="" cols="" maxlength="200" placeholder="添加事项"></textarea>
+				   	  			</td>
+				   	  		</tr>
+				   	  		<tr class="week_tr" id="thursday">
+				   	  			<td class="textcenter">周四</td>
+				   	  			<td>
+				   	  				<textarea class="week_textarea morning" name="" rows="" cols="" maxlength="200" placeholder="添加事项"></textarea>
+				   	  			</td>
+				   	  			<td>
+				   	  				<textarea class="week_textarea afternoon" name="" rows="" cols="" maxlength="200" placeholder="添加事项"></textarea>
+				   	  			</td>
+				   	  		</tr>
+				   	  		<tr class="week_tr" id="friday">
+				   	  			<td class="textcenter">周五</td>
+				   	  			<td>
+				   	  				<textarea class="week_textarea morning" name="" rows="" cols="" maxlength="200" placeholder="添加事项"></textarea>
+				   	  			</td>
+				   	  			<td>
+				   	  				<textarea class="week_textarea afternoon" name="" rows="" cols="" maxlength="200" placeholder="添加事项"></textarea>
+				   	  			</td>
+				   	  		</tr>
+				   	  		<tr class="week_tr" id="saturday">
+				   	  			<td class="textcenter">周六</td>
+				   	  			<td>
+				   	  				<textarea class="week_textarea morning" name="" rows="" cols="" maxlength="200" placeholder="添加事项"></textarea>
+				   	  			</td>
+				   	  			<td>
+				   	  				<textarea class="week_textarea afternoon" name="" rows="" cols="" maxlength="200" placeholder="添加事项"></textarea>
+				   	  			</td>
+				   	  		</tr>
+				   	  		<tr class="week_tr" id="sunday">
+				   	  			<td class="textcenter">周日</td>
+				   	  			<td>
+				   	  				<textarea class="week_textarea morning" name="" rows="" cols="" maxlength="200" placeholder="添加事项"></textarea>
+				   	  			</td>
+				   	  			<td>
+				   	  				<textarea class="week_textarea afternoon" name="" rows="" cols="" maxlength="200" placeholder="添加事项"></textarea>
+				   	  			</td>
+				   	  		</tr>
+				   	  	</tbody>
+				   	  </table>
+				   </div>
+				</div>
+		    </div>
+		</div>
+	</body>
+	<script src="../../js/plugin/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/qyh_pc/common.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/plugin/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/plugin/bootstrap-datetimepicker.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/plugin/bootstrap-datetimepicker.zh-CN.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/qyh_pc/week_schedule.js" type="text/javascript" charset="utf-8"></script>
+</html>

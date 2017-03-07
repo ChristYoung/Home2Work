@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<!-- 可隐藏地址栏，仅针对IOS的Safari（注：IOS7.0版本以后，safari上已看不到效果） -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<!-- 仅针对IOS的Safari顶端状态条的样式 (可选default/black/black-translucent)-->
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <!-- IOS中禁用将数字识别为电话号码/忽略Android平台中对邮箱地址的识别 -->
+        <meta name="format-detection" content="telephone=no, email=no">
+        <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+        <meta name="HandheldFriendly" content="true">
+        <!-- uc强制竖屏 -->
+        <meta name="screen-orientation" content="portrait">
+        <!-- 微信x5强制竖屏 -->
+       <meta name="x5-orientation" content="portrait">
+       <!-- windows phone 点击无高光 -->
+       <meta name="msapplication-tap-highlight" content="no">
+       <script type="text/javascript">
+			document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.clientWidth/10 +'px';
+	   </script>
+       <link rel="stylesheet" type="text/css" href="../../css/reset.css"/>
+       <link rel="stylesheet" type="text/css" href="../../css/qyh/qyh_common.css"/>
+       <link rel="stylesheet" type="text/css" href="../../css/qyh/qyh_module.css"/>
+	   <title>周程安排</title>
+	   <style type="text/css">
+	   	 .department_sel_wp{border-bottom: 8px solid #EBEBEB; position: relative;}
+	   	 .department_sel{position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 9; opacity: 0;}
+	   	 .department_sel_show{padding: 0.4rem 0.453rem;}
+	   	 .arrow{margin-left: 0.4rem;}
+	   </style>
+	</head>
+	<body>
+		<section class="department_sel_wp">
+			<select class="department_sel">
+				<option value="0">产品部</option>
+				<option value="1">研发部</option>
+				<option value="2">测试部</option>
+			</select>
+			<div class="department_sel_show f_flex">
+				<span class="f_flex1">选择部门</span>
+				<span class="department_name s_green">产品部</span>
+				<b class="arrow s_green">></b>
+			</div>
+		</section>
+		<section class="week_wp">
+			<input type="hidden" name="currentPage" id="currentPage" value="" /><!--分页显示,用于保存当前页码-->
+			<ul class="m_sel_list">
+				<li class="">
+					<a class="f_flex" href="#">
+						<h3 class="emphasis f_16">第44周</h3>
+						<span class="f_flex1">(10.31-11.06)</span>
+						<b>></b>
+					</a>
+				</li>
+				<li class="">
+					<a class="f_flex" href="#">
+						<h3 class="emphasis f_16">第44周</h3>
+						<span class="f_flex1">(10.31-11.06)</span>
+						<b>></b>
+					</a>
+				</li>
+			</ul>
+		</section>
+		<p id="loadingMore" class="s_gray f_16">点击加载更多...</p>
+	</body>
+	<script src="../../js/plugin/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	    //点击加载更多
+	    var ipage = $('#currentPage').val();
+		$('#loadingMore').click(function(){
+			if($(this).html() == '没有更多数据了'){
+				return;
+			}else{
+				$(this).html('正在加载...');
+				ipage++;
+				$.ajax({
+					type:'get',
+					url:'${link.contextPath}/wx/qyh/myMeeting/list.json?title='+$('#search_title').val()+'&meetingStatus='+$('#meetingStatus').val()+'&pageNum='+ipage,
+					async:true,
+					success:function(json){
+						//console.log(json);
+						var oLi = '';
+						var jsonArr = json.meetings;
+						if(!jsonArr || jsonArr.length<10){
+							$('#loadingMore').html('没有更多数据了');
+						}else{
+							$('#loadingMore').html('点击加载更多');
+						}
+						for(var i=0, len=jsonArr.length; i<len; i++){
+							oLi+='<li class="f_flex f_alignC">'+
+									'<a href="${link.contextPath}/wx/qyh/myMeeting/detail?meetingId='+jsonArr[i].meetingId+'" class="f_flex1 m_meeta">'+
+										'<span class="meet_name f_16">'+jsonArr[i].title+'</span><br  />'+
+										'<span class="meet_address f_14 s_gray"><i>地点:</i>'+jsonArr[i].roomName+'</span><br  />'+
+										'<span class="meet_time f_14 s_gray"><i>时间:</i>'+jsonArr[i].startTime+'至'+jsonArr[i].endTime+'</span>'+
+									    '<b class="nowDate f_14 s_gray">'+jsonArr[i].createTime+'</b>'+
+									'</a>'+
+								'</li>';
+						}
+						$('.m_meetlist').append($(oLi));
+					}
+				});
+				
+			}
+		});
+	    
+	
+		$('.department_sel').on('change',function(){
+			var _v = $(this).val();
+			var _html = $(this).find('option:selected').html();
+			$(this).siblings().find('.department_name').html(_html);
+			
+			//ajax something
+		});
+	</script>
+</html>

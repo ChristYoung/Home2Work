@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />	
+		<meta name="keywords" content="兴业银行缴费平台" />
+		<meta name="description" content="兴业银行缴费平台" />
+		<title>注册-设置登录密码</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/register.css"/>
+	</head>
+	<body>
+		<header>
+			<div class="logo-wrap">
+				<img src="../img/u2.png"/>
+			</div>
+			<div class="item-name"></div>
+			<div class="header-list"></div>
+		</header>
+		<section class="register-con">
+			<div class="register-process">
+				<ul>
+					<li class="r-round">
+						<div class="stepping">1</div>
+						<span class="checking">身份证检查</span>
+					</li>
+					<li class="r-line-ing"></li>
+					<li class="r-round">
+						<div class="stepping">2</div>
+						<span class="checking">设置登录密码</span>
+					</li>
+					<li class="r-line-ing"></li>
+					<li class="r-round">
+						<div class="step">3</div>
+						<span>完成</span>
+					</li>
+				</ul>
+			</div>
+			<div class="register-table">
+				<div class="t-header">
+					<h5>注册</h5>
+				</div>
+				<div class="t-info">
+					<form id="registerForm1">
+						<ul>
+							<li>
+								<h4 id="phoneIntroduce">以下是您在本平台接入机构登记过的手机号，我们将向选中手机号发送验证码</h4>
+								<div class="select-phone">
+									<input type="radio" name="phoneNo"  value="" checked="checked"/>131****6789
+								</div>
+								<div class="select-phone">
+									<input type="radio" name="phoneNo"  value="" />131****6789
+								</div>
+								<div class="select-phone">
+									<input type="radio" name="phoneNo"  value="" />131****6789
+								</div>
+								<div class="select-phone">
+									<input type="radio" name="phoneNo"  value="" />131****6789
+								</div>
+								<div class="select-phone">
+									<input type="radio" name="phoneNo"  value="" />131****6789
+								</div>
+							</li>
+							<li>
+								<span>验证码<i class="must">*</i> :</span>
+								<input type="text" name="validateCode" id="validateCode" value="" placeholder="接收到的验证码" maxlength="8"/>
+								<button type="button" class="xy-btn btn-orange" id="sendCode">发送验证码</button>
+							</li>
+							<li>
+								<span>登录密码<i class="must">*</i> :</span>
+								<input type="password" name="password" id="password" value="" placeholder="设置登录密码，8-16位数字字母组合" maxlength="16"/>
+							</li>
+							<li>
+								<span>确认密码<i class="must">*</i> :</span>
+								<input type="password" id="password-confirm" value="" placeholder="重复输入密码" maxlength="16"/>
+							</li>
+							<li>
+								<b class="errorTips"></b>
+							</li>
+							<li>
+								<button type="submit" class="xy-btn btn-blue">完&nbsp;&nbsp;成</button>
+							</li>
+					    </ul>
+					</form>
+				</div>
+			</div>
+		</section>
+	</body>
+	<script src="../js/plugin/jquery-2.0.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/plugin/vertify.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/main/register.js" type="text/javascript" charset="utf-8"></script>
+</html>

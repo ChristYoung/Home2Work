@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />	
+		<meta name="keywords" content="健康吧云管理平台" />
+		<meta name="description" content="睿博健康吧,创享智慧健康生活" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/emng-1.0.0.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+		
+		<!--theme-->
+		<link rel="stylesheet" type="text/css" href="../css/theme-origin/emng-origin.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/theme-origin/public-origin.css"/>
+		<title>用户管理批量注册</title>
+		<style type="text/css">
+			nav em{background-position: -180px 0;}
+			#file-trigger{display: none;}
+			.tab li{margin-bottom: 35px;}
+			#filepath{display: inline-block; margin-left: 20px; border: none; width: 400px; overflow: hidden; font-family: "microsoft yahei";}
+			#nofile{left: 205px; top: 8px;}
+		</style>
+	</head>
+	<body>
+		<nav class="emng-flex">
+			<em></em>
+			<p>用户管理 <span>->批量注册</span></p>
+		</nav>
+		<div class="btn-area emng-flex">
+			<a href="userManage.html" class="emng-btn btn-bg-blue" id="go-back">返回</a>
+			<button class="emng-btn btn-bg-blue" id="go-submit" type="button">导入</button>
+		</div>
+		<div class="tab">
+			<form name="" method="" action="" id="formUser">
+				<ul>
+					<li>
+						<span><i class="must">*</i>批次名称:</span>
+						<input type="text" id="user-batchname" name="" maxlength="20" placeholder="20个字之内    请勿输入空格等特殊字符"/>
+					    <label class="error">dsd</label>
+					</li>
+					<li>
+						<span></span>
+						<button class="emng-btn btn-bg-blue" id="select-file" type="button">选择文件</button>
+						<input type="file" id="file-trigger" value=""/>
+						<input type="text" id="filepath" value="" />
+						<label class="error" id="nofile"></label>
+					</li>
+					<li>
+						<span></span>
+						<a href="#" class="a-btn">下载模板</a>
+					</li>
+				</ul>
+			</form>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#select-file').click(function(){
+				$('#file-trigger').trigger('click');
+			});
+			
+			function fileCheck(){
+				var type,size;
+				type = this.files[0].type;
+				size = this.files[0].size/1024;
+				if(type.indexOf('excel') == -1 && type.indexOf('sheet') == -1){
+					alert('上传的文件只能是xls或xlsx格式');
+				}else if(size>2048){
+					alert('上传的文件不能大于2M');
+				}else{
+					var path = this.value;
+				    path = path.substring(path.lastIndexOf("\\")+1,path.length);
+					$('#filepath').val(path);
+				}
+			};
+			
+			$('#file-trigger')[0].onchange = fileCheck;
+		});
+	</script>
+</html>

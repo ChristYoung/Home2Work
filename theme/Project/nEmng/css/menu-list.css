@@ -1,0 +1,65 @@
+@charset "utf-8";
+/*menu-out*/
+.menu-out-wrapper{width: 200px; height: auto;}
+.menu-out-wrapper .menu-out-one{width: 200px; height: auto; border-bottom: 1px solid #D9D9D9;}
+.menu-out-wrapper .menu-out-two{display: none;}
+.menu-out-wrapper .menu-out-two li{width: 200px; line-height: 50px; text-indent: 65px;}
+.menu-out-wrapper .menu-out-two li a{
+	display: block;
+	font-size: 14px;
+   -webkit-transition:background-color .3s;
+   -moz-transition:background-color .3s;
+   -ms-transition:background-color .3s;
+   -moz-transition:background-color .3s;
+   transition:background-color .3s;
+}
+.menu-out-wrapper .menu-out-two li a:hover{color: #FFFFFF; position: relative;}
+.menu-out-wrapper .menu-out-two li a:hover:after{position: absolute; content: ''; height: 0; width: 0; border: 8px solid transparent; border-right: 8px solid #FFFFFF; top: 18px; left: 185px;}
+
+.menu-out-wrapper .menu-out-one .menu-out-header{width: 200px; line-height: 50px; display: flex; align-items: center;}
+.menu-out-header span a{font-size: 15px; display: block; height: 50px; width: 135px; margin-left: 15px; cursor: pointer;}
+.menu-out-header span:nth-of-type(1){height: 30px; width: 30px; margin-left: 20px;}
+#homepage{background-position: 0 0;}
+#icon-org{background-position: -60px 0;}
+#icon-auth{background-position: -120px 0;}
+#icon-userM{background-position: -180px 0;}
+#icon-doctorM{background-position: -240px 0;}
+#icon-text{background-position: -300px 0;}
+#icon-stat{background-position: -360px 0;}
+#icon-sysM{background-position: -420px 0;}
+#icon-vipM{background-position: -480px 0;}
+
+.menu-out-wrapper .menu-out-one .menu-out-header:hover,.menu-out-wrapper .menu-out-one .menu-out-header-click{}
+.menu-out-wrapper .menu-out-one .menu-out-header:hover span a,.menu-out-header-click span a{color: #FFFFFF;}
+.menu-out-wrapper .menu-out-one .menu-out-header:hover #homepage,.menu-out-header-click #homepage{background-position: -30px 0;}
+.menu-out-wrapper .menu-out-one .menu-out-header:hover #icon-org,.menu-out-header-click #icon-org{background-position: -90px 0;}
+.menu-out-wrapper .menu-out-one .menu-out-header:hover #icon-auth,.menu-out-header-click #icon-auth{background-position: -150px 0;}
+.menu-out-wrapper .menu-out-one .menu-out-header:hover #icon-userM,.menu-out-header-click #icon-userM{background-position: -210px 0;}
+.menu-out-wrapper .menu-out-one .menu-out-header:hover #icon-doctorM,.menu-out-header-click #icon-doctorM{background-position: -270px 0;}
+.menu-out-wrapper .menu-out-one .menu-out-header:hover #icon-text,.menu-out-header-click #icon-text{background-position: -330px 0;}
+.menu-out-wrapper .menu-out-one .menu-out-header:hover #icon-stat,.menu-out-header-click #icon-stat{background-position: -390px 0;}
+.menu-out-wrapper .menu-out-one .menu-out-header:hover #icon-sysM,.menu-out-header-click #icon-sysM{background-position: -450px 0;}
+.menu-out-wrapper .menu-out-one .menu-out-header:hover #icon-vipM,.menu-out-header-click #icon-vipM{background-position: -510px 0;}
+
+.menu-out-wrapper .menu-out-two .menu-two-click{color: #FFFFFF; position: relative;}   /*此两处书写,要注意css的权重问题*/
+.menu-out-wrapper .menu-out-two .menu-two-click:after{position: absolute; content: ''; height: 0; width: 0; border: 8px solid transparent; border-right: 8px solid #FFFFFF; top: 18px; left: 235px;}
+
+
+/*menu-in*/
+.menu-in-wrapper{width: 165px; height: auto;}
+.menu-in-wrapper a{font-size: 13px;}
+.menu-in-wrapper .menu-in-one{width: 165px; height: auto;}
+.menu-in-wrapper .menu-in-one .menu-in-header{width: 165px; height: 38px; line-height: 38px; display: flex; align-items: center; border-bottom: 1px solid #DBDBDB; position: relative;}
+.menu-in-wrapper .menu-in-one .menu-in-header a{position: absolute; left: 25px; top: 0;}
+.menu-in-header strong{display: inline-block; cursor: pointer; width: 25px; height: 38px;}
+
+.menu-in-wrapper .menu-in-two{display: none;}
+.menu-in-wrapper .menu-in-two li{width: 165px; height: 38px; line-height: 48px; display: flex; align-items: center; position: relative;}
+.menu-in-wrapper .menu-in-two li a{position: absolute; left: 40px; top: 0;}
+.menu-in-wrapper .menu-in-two span:nth-of-type(1){width: 30px; height: 38px; line-height: 48px; margin-left: 10px; text-align: center; cursor: pointer;}
+.menu-in-wrapper .menu-in-two span a{display: block; font-size: 14px; width: 160px; height: 48px;}
+
+.menu-in-wrapper .menu-in-three{display: none;}
+.menu-in-wrapper .menu-in-three li{width: 165px; line-height: 38px; display: flex; align-items: center;}
+.menu-in-wrapper .menu-in-three li:nth-last-of-type(1){border-bottom: none;}
+.menu-in-wrapper .menu-in-three li a{font-size: 14px; line-height: 48px; left: 50px;}

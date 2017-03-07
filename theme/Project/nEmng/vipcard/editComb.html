@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />	
+		<meta name="keywords" content="健康吧云管理平台" />
+		<meta name="description" content="睿博健康吧,创享智慧健康生活" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/emng-1.0.0.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+		
+		<!--theme-->
+		<link rel="stylesheet" type="text/css" href="../css/theme-origin/emng-origin.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/theme-origin/public-origin.css"/>
+		<title>编辑会员套餐</title>
+		<style type="text/css">
+			nav em{background-position: -480px 0;}
+			#validDateA{width: 692px;}
+			#list1,#list2{width: 270px;}
+			.switch-btn-area{margin: 10px 30px; width: 80px;}
+			.switch-btn-area button{margin-bottom: 10px; height: 30px; line-height: 30px;}
+			.tab li:nth-last-of-type(1){align-items: flex-start;}
+			@media (min-width: 1000px) and (max-width: 1499px){
+		    	#validDateA,#validDate{width: 789px;}
+		    	#list1,#list2{width: 320px;}
+            }
+            @media (min-width: 1500px) and (max-width:1600px){
+	            #validDateA,#validDate{width: 989px;}
+	            #list1,#list2{width: 424px;}
+            }
+            @media (min-width: 1620px) and (max-width:1800px){
+	           #validDateA,#validDate{width: 1289px;}
+	           #list1,#list2{width: 575px;}
+            }
+		</style>
+	</head>
+	<body>
+		<nav class="emng-flex">
+			<em></em>
+			<p>会员卡管理 -> 会员套餐<span> -> 编辑会员套餐</span></p>
+		</nav>
+		<div class="btn-area emng-flex">
+			<a href="vipComb.html" class="emng-btn btn-bg-blue">返回</a>
+			<button class="emng-btn btn-bg-blue" id="go-submit">保存</button>
+		</div>
+		<div class="tab">
+		 	<form>
+			 	<ul>
+				    <li>
+						<span><i class="must">*</i>套餐名称:</span>
+						<input type="text" id="combName" name="combName" maxlength="10" value=""/>
+					</li>
+					<li>
+						<span><i class="must">*</i>服务有效期:</span>
+						<a class="emng-select org" id="validDateA"><strong class="emng-curselect"></strong><select onchange="change(this)" id="validDate" name="validDate"><option></option><option>有效</option><option>无效</option></select></a>			   
+					</li>
+					<li>
+						<span><i class="must">*</i>积分:</span>
+						<input type="text" name="score" id="score" value="" placeholder="只能输入数字"/>
+					</li>
+					<li>
+						<span><i class="must">*</i>服务列表:</span>
+						<div class="switch-wrap emng-flex">
+								<select multiple="multiple" name="list1" id="list1" size="10">
+								</select>
+								<div class="switch-btn-area">
+									<button type="button" id="leftMove" class="emng-btn btn-bg-blue"> > </button>
+									<button type="button" id="leftAll" class="emng-btn btn-bg-blue"> >> </button>
+									<button type="button" id="rightMove" class="emng-btn btn-bg-blue"> < </button>
+									<button type="button" id="rightAll" class="emng-btn btn-bg-blue"> << </button>
+								</div>
+								<select multiple="multiple" name="list2" id="list2" size="10">
+									<option value="dsa">dsa1</option>
+									<option value="dsa">dsa2</option>
+									<option value="dsa">dsa3</option>
+								</select>
+			            </div>
+					</li>
+				</ul>
+		 	</form>
+		</div>
+	</body>
+</html>

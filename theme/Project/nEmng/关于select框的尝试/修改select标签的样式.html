@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* { 
+margin: 0; 
+padding: 0; 
+} 
+body { 
+padding: 50px 50px; 
+} 
+.btn-select { 
+border: 1px solid #DEDEDE;	
+position: relative; 
+display: inline-block; 
+width: 150px; 
+height: 30px; 
+background: url(../img/select-arrpw-down.png) no-repeat right center; 
+font: 14px/20px "Microsoft YaHei"; 
+color: #fff; 
+
+} 
+.btn-select .cur-select { 
+position: absolute; 
+display: block; 
+width: 150px; 
+height: 30px; 
+line-height: 30px; 
+text-indent: 10px; 
+} 
+
+.btn-select select { 
+position: absolute; 
+top: 0; 
+left: 0; 
+width: 150px; 
+height: 30px; 
+opacity: 0; 
+font: 14px/20px "Microsoft YaHei"; 
+} 
+
+		</style>
+	</head>
+	<body>
+		<form> 
+			<a class="btn-select" id="btn_select"> 
+				<span class="cur-select"></span> 
+				<select> 
+					<option>选项一</option> 
+					<option>选项二</option> 
+					<option>选项三</option> 
+					<option>选项四</option> 
+					<option>选项五</option> 
+				</select> 
+			</a> 
+        </form> 
+        <!--<select name="">
+        	<option>选项一</option> 
+			<option>选项二</option> 
+			<option>选项三</option> 
+			<option>选项四</option> 
+			<option>选项五</option> 
+        </select>-->
+	</body>
+	<script type="text/javascript">
+		var $$ = function (id) { 
+return document.getElementById(id); 
+} 
+window.onload = function () { 
+var btnSelect = $$("btn_select"); 
+var curSelect = btnSelect.getElementsByTagName("span")[0]; 
+var oSelect = btnSelect.getElementsByTagName("select")[0]; 
+var aOption = btnSelect.getElementsByTagName("option"); 
+oSelect.onchange = function () { 
+var text=oSelect.options[oSelect.selectedIndex].text; 
+curSelect.innerHTML = text; 
+} 
+} 
+	</script>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />	
+		<meta name="keywords" content="健康吧云管理平台" />
+		<meta name="description" content="睿博健康吧,创享智慧健康生活" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/emng-1.0.0.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+		
+		<!--theme-->
+		<link rel="stylesheet" type="text/css" href="../css/theme-origin/emng-origin.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/theme-origin/public-origin.css"/>
+		<title>批量注册</title>
+		<style type="text/css">
+			nav em{background-position: -180px 0;}
+			#batchName{width: 560px;}
+		</style>
+	</head>
+	<body>
+		<nav class="emng-flex">
+			<em></em>
+			<p>用户管理 -> <span>批量注册</span></p>
+		</nav>
+		<div class="check-factor-wrapper">
+			<article>查找</article>
+			<form>
+				 <div class="check-factor-1 emng-flex">
+					<ul class="emng-flex">
+						<li>
+							<span>批次名称:</span>
+							<input type="text" id="batchName" class="Trim" name="batchName" value=""/>
+						</li>
+					</ul>
+					<div class="check-search-wrapper emng-flex">
+					    <button class="emng-btn btn-bg-blue" type="submit">查找</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="pagebtn-wrapper emng-flex">
+			<div class="btn-wrap emng-flex">
+				<a href="#" class="emng-btn btn-bg-gray">批量导入</a>
+			</div>
+			<div class="page-wrap">
+				*此处显示页数
+			</div>
+		</div>
+		<div class="tab-wrapper">
+			<table class="emng-table">
+				<thead>
+					<tr>
+						<th>批次名</th>
+						<th>导入时间</th>
+						<th>导入成功数量</th>
+						<th>导入失败数量</th>
+						<th>状态</th>
+						<th>详情</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1.xlxs</td>
+						<td>2016.01.12 08:20:32</td>
+						<td>388</td>
+						<td>6</td>
+						<td>初始化</td>
+						<td><a href="#" class="a-btn">查看详情</a></td>
+					</tr>
+				</tbody>
+		    </table>
+		</div>
+	</body>
+</html>

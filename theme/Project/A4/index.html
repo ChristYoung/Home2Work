@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>中奇生物</title>
+		<style type="text/css">
+		    body{font-family: '黑体';}
+		    body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,form,input,textarea,th,td,select{margin: 0;padding: 0;}
+			h1,h2,h3,h4,h5,h6,strong,em{font-weight: normal; font-style: normal; color: #4F4F4F;}
+			a{text-decoration: none; color: #4F4F4F;}
+			li{list-style: none;}
+			
+			/*IE10中显不一行，类似于flex-direction:row功能*/
+			.flex{display: -ms-flexbox; -ms-box-orient: horizontal; display: -webkit-flex; display: -moz-flex; display: -ms-flex; display: flex;}
+			.container{width: 830px; margin: 0 auto; padding: 25px 20px; border: 1px solid #000;}
+			.container header{width: 100%; height: auto; position: relative;}
+			.container header .img-wrap{width: 168px; height: 80px; position: absolute; right: 40px; top: 5px;}
+			.container header .img-wrap img{max-width: 100%;}
+			.container header h2{padding: 10px 0 15px 0; font-size: 30px;}
+			.container header p{color: #BBBBBB; margin-top: 22px; line-height: 1.5; font-size: 18px;}
+			.container header li strong,.container header li span{font-size: 17px;}
+			
+			.info-1{margin-bottom: 10px;}
+			.info-1,.info-2{overflow: hidden;}
+			.info-1 li,.info-2 li{float: left;}
+			.info-1 li:nth-of-type(1){width: 210px;}
+			.info-1 li:nth-of-type(2){width: 170px;}
+			.info-1 li:nth-of-type(3){width: 130px;}
+			.info-1 li:nth-of-type(4){width: 90px;}
+			.info-2 li:nth-of-type(1){width: 380px;}
+			.info-2 li:nth-of-type(2){width: 205px;}
+			
+			.shape-wrap{width: 166px; height: 36px; margin-top: 20px; background-image: url(img/shape.png); background-size: contain; background-repeat: no-repeat;}
+		    .shape-wrap h5{color: #000; font-size: 18px; line-height: 36px; text-indent: 8px;}
+		    
+		    .tab-wrap{width: 780px; margin: 20px auto;}
+		    .zq-table{width: 100%; border-collapse: collapse;}
+		    .zq-table thead th{color: #000; font-size: 17px; text-align: center; border-bottom: 1px solid #EFEFEF; line-height: 35px;}
+		    .zq-table tbody td{color: #000; font-size: 16px; text-align: center; border-bottom: 1px solid #EFEFEF; line-height: 35px;}
+		    .zq-table tbody td b{font-weight: normal;}
+		     
+		    footer{text-align: center; margin-top: 158px;}
+		    footer p{color: #A4A4A4;}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<!--<div class="img-wrap">-->
+					<!--<img src="img/Logo.png"/>-->
+				<!--</div>-->
+				<h2>体检单号:<strong id="testNum"></strong></h2>
+				<ul class="info-1">
+					<li>
+						<strong>卡号:</strong><span class="myinfo" id="cardNum"></span>
+					</li>
+					<li>
+						<strong>姓名:</strong><span class="myinfo" id="userName"></span>
+					</li>
+					<li>
+						<strong>性别:</strong><span class="myinfo" id="userGender"></span>
+					</li>
+					<li>
+						<strong>年龄:</strong><span class="myinfo" id="userAge"></span>
+					</li>
+				</ul>
+				<ul class="info-2">
+					<li>
+						<strong>证件号:</strong><span class="myinfo" id="idNum"></span>
+					</li>
+					<li>
+						<strong>联系电话:</strong><span class="myinfo" id="phoneNum"></span>
+					</li>
+				</ul>
+				<p>本检测报告是以您在本健康咨询服务中心的检测数据为依据得出.(如本次只做了部分的检测, 则未检测项无数据)</p>
+			</header>
+			<div class="shape-wrap">
+				<h5>主要检测参数:</h5>
+			</div>
+			<div class="tab-wrap">
+				<table class="zq-table">
+					<thead>
+						<th>检测项目</th>
+						<th>本次结果</th>
+						<th>参考值</th>
+						<th>测量结果</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>身高</td>
+							<td><span class="data"></span><b>cm</b></td>
+							<td>--</td>
+							<td class="result">--</td>
+						</tr>
+						<tr>
+							<td>体重</td>
+							<td><span class="data"></span><b>kg</b></td>
+							<td>--</td>
+							<td class="result">--</td>
+						</tr>
+						<tr>
+							<td>BMI</td>
+							<td><span class="data" id="bmi"></span><b></b></td>
+							<td>[18.5-25]</td>
+							<td class="result"></td>
+						</tr>
+						<tr>
+							<td>高压</td>
+							<td><span class="data" id="hp"></span><b>mmHg</b></td>
+							<td>[90-130]</td>
+							<td class="result"></td>
+						</tr>
+						<tr>
+							<td>低压</td>
+							<td><span class="data" id="lp"></span><b>mmHg</b></td>
+							<td>[60-85]</td>
+							<td class="result"></td>
+						</tr>
+						<tr>
+							<td>脉搏</td>
+							<td><span class="data" id="mb"></span><b>次/分</b></td>
+							<td>[60-99]</td>
+							<td class="result"></td>
+						</tr>
+						<tr>
+							<td>体温</td>
+							<td><span class="data" id="tp"></span><b>℃</b></td>
+							<td>[34-37.3]</td>
+							<td class="result"></td>
+						</tr>
+						<tr style="display: none;">
+							<td></td>
+							<td><span class="data" id="gl-status"></span></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td id="gs">空腹血糖</td>
+							<td><span class="data" id="gl"></span><b>mmol/L</b></td>
+							<td id="gsS">[3.9-6.1]</td>
+							<td class="result"></td>
+						</tr>
+						<tr>
+							<td>血氧</td>
+							<td><span class="data" id="bo"></span><b>%</b></td>
+							<td>[95-99]</td>
+							<td class="result"></td>
+						</tr>
+						<tr>
+							<td>身体水分</td>
+							<td><span class="data" id="water"></span><b>%</b></td>
+							<td>男:[>50],女:[>45]</td>
+							<td class="result"></td>
+						</tr>
+						<tr>
+							<td>肌肉含量</td>
+							<td><span class="data" id="muscle"></span><b>%</b></td>
+							<td>男:[>37],女:[>27]</td>
+							<td class="result"></td>
+						</tr>
+						<tr>
+							<td>脂肪含量</td>
+							<td><span class="data" id="fatrate"></span><b>%</b></td>
+							<td>男:[10-20],<br />女:[20,30]</td>
+							<td class="result"></td>
+						</tr>
+						<tr>
+							<td>内脏脂肪等级</td>
+							<td><span class="data" id="neiz"></span><b></b></td>
+							<td>[<9]</td>
+							<td class="result"></td>
+						</tr>
+						<tr>
+							<td>腰围</td>
+							<td><span class="data"></span><b>cm</b></td>
+							<td>--</td>
+							<td>--</td>
+						</tr>
+						<tr>
+							<td>尿酸</td>
+							<td><span class="data" id="ns"></span><b>mmol/L</b></td>
+							<td>男:[0.2-0.42],<br/>女:[0.18-0.36]</td>
+							<td class="result"></td>
+						</tr>
+						<tr>
+							<td>胆固醇</td>
+							<td><span class="data" id="dgc"></span><b>mmol/L</b></td>
+							<td>[2.59-5.19]</td>
+							<td class="result"></td>
+						</tr>
+						<tr>
+							<td>心电</td>
+							<td><span class="data" id="xd" style="display: none;"></span><span class="fakeDate">--</span></td>
+							<td>--</td>
+							<td class="result"></td>
+						</tr>
+						<tr>
+							<td>尿胆原(URO)</td>
+							<td><span class="data"></span></td>
+							<td>--</td>
+							<td class="result">--</td>
+						</tr>
+						<tr>
+							<td>潜血(BLD)</td>
+							<td><span class="data"></span></td>
+							<td>--</td>
+							<td class="result">--</td>
+						</tr>
+						<tr>
+							<td>胆红素(BIL)</td>
+							<td><span class="data"></span></td>
+							<td>--</td>
+							<td class="result">--</td>
+						</tr>
+						<tr>
+							<td>酮体(KET)</td>
+							<td><span class="data"></span></td>
+							<td>--</td>
+							<td class="result">--</td>
+						</tr>
+						<tr>
+							<td>葡萄糖(GLU)</td>
+							<td><span class="data"></span></td>
+							<td>--</td>
+							<td class="result">--</td>
+						</tr>
+						<tr>
+							<td>蛋白质(PRO)</td>
+							<td><span class="data"></span></td>
+							<td>--</td>
+							<td class="result">--</td>
+						</tr>
+						<tr>
+							<td>PH</td>
+							<td><span class="data"></span></td>
+							<td>--</td>
+							<td class="result">--</td>
+						</tr>
+						<tr>
+							<td>亚硝酸盐(NIT)</td>
+							<td><span class="data"></span></td>
+							<td>--</td>
+							<td class="result">--</td>
+						</tr>
+						<tr>
+							<td>白细胞(LEU)</td>
+							<td><span class="data"></span></td>
+							<td>--</td>
+							<td class="result">--</td>
+						</tr>
+						<tr>
+							<td>比重(SG)</td>
+							<td><span class="data"></span></td>
+							<td>--</td>
+							<td class="result">--</td>
+						</tr>
+						<tr>
+							<td>维生素C(VC)</td>
+							<td><span class="data"></span></td>
+							<td>--</td>
+							<td class="result">--</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<footer>
+				<p>免责声明：本检测结果仅供参考，不做任何判定</p>
+			</footer>
+		</div>
+	</body>
+	<script src="img/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	   //showMsg用来显示用户信息和测量数据,传入两个参数,第一个参数是用户信息,第二个是测量数据
+	   function showMsg(userInfo,testResult){
+			var arrUserInfo = userInfo.split(','),
+			    arrTestResult = testResult.split(',');
+			$('.myinfo').each(function(i,e){
+				$(e).html(arrUserInfo[i]);
+			});
+			$('.data').each(function(i,e){
+				$(e).html(arrTestResult[i]);
+			});
+	   };
+	   //showMsg('3015UIPO,杨杰,男,23,320683199201120316,15051349421','178,78,19.3,120,112,78,0,5.8,99,88,38,18,8,59,0.3,0.3,3,6');
+	   $(document).ready(function(){
+			//自动生成体检单号
+			function showTestNum(){
+				var cardNum = $('#cardNum').html();
+				var lastFour = cardNum.substr(cardNum.length-4);
+				var tDate = new Date(),
+				    iYear = tDate.getFullYear(),
+				    iMonth = (tDate.getMonth()+1)<10?'0'+(tDate.getMonth()+1):(tDate.getMonth()+1);
+				    iDate = tDate.getDate()<10?'0'+tDate.getDate():tDate.getDate();
+				    $('#testNum').html(''+iYear+''+iMonth+''+iDate+lastFour);
+		    };
+			//分析体检结果
+			function showResult(){
+				var hp = $('#hp').html(),
+				    gender = $('#userGender').html(),
+				    gls = $('#gl-status').html(), 
+				    xd = $('#xd').html(),
+				    tp = $('#tp').html(),
+				    lp = $('#lp').html();
+				 
+				//bmi 
+				if($('#bmi').html()<18.5){
+					$('#bmi').parent().siblings('.result').html('偏瘦');
+				}else if($('#bmi').html()<=25 && $('#bmi').html()>=18.5){
+					$('#bmi').parent().siblings('.result').html('正常');
+				}else if($('#bmi').html()<=80 && $('#bmi').html()>30){
+					$('#bmi').parent().siblings('.result').html('过重');
+				}
+				
+				//体温
+				if(tp>=34 && tp<=37.3){
+					$('#tp').parent().siblings('.result').html('体温正常');
+				}else if(tp>37.3 && tp<=38.3){
+					$('#tp').parent().siblings('.result').html('低烧');
+				}else if(tp>38.3 && tp<42.5){
+					$('#tp').parent().siblings('.result').html('高烧');
+				}else{
+					$('#tp').parent().siblings('.result').html('低温');
+				}
+				
+				//高压
+				if(hp>=140 && lp<90){
+					$('#hp').parent().siblings('.result').html('单纯收缩期高血压');
+					$('#lp').parent().siblings('.result').html('单纯收缩期高血压');
+				}else if(hp>=180 || lp>=110){
+					$('#hp').parent().siblings('.result').html('重度高血压');
+					$('#lp').parent().siblings('.result').html('重度高血压');
+				}else if((hp<180 && hp>=160) || (lp>=100 && lp<110)){
+					$('#hp').parent().siblings('.result').html('中度高血压');
+					$('#lp').parent().siblings('.result').html('中度高血压');
+				}else if((hp<160 && hp>=140) || (lp>=90 && lp<100)){
+					$('#hp').parent().siblings('.result').html('轻度高血压');
+					$('#lp').parent().siblings('.result').html('轻度高血压');
+				}else if((hp<140 && hp>=130) || (lp>=85 && lp<90)){
+					$('#hp').parent().siblings('.result').html('血压正常稍高');
+					$('#lp').parent().siblings('.result').html('血压正常稍高');
+				}else if((hp<130 && hp>=120) || (lp>=80 && lp<85)){
+					$('#hp').parent().siblings('.result').html('血压正常');
+					$('#lp').parent().siblings('.result').html('血压正常');
+				}else if((hp<120 && hp>=90) || (lp>=60 && lp<80)){
+					$('#hp').parent().siblings('.result').html('血压理想');
+					$('#lp').parent().siblings('.result').html('血压理想');
+				}else if(hp<90 || lp<60){
+					$('#hp').parent().siblings('.result').html('血压偏低');
+					$('#lp').parent().siblings('.result').html('血压偏低');
+				}
+				
+				//脉搏
+				if($('#mb').html()>30 && $("#mb").html()<=59){
+					$('#mb').parent().siblings('.result').html('脉搏偏缓');
+				}else if($('#mb').html()>=60 && $("#mb").html()<=99){
+					$('#mb').parent().siblings('.result').html('脉搏正常');
+				}else if($('#mb').html()>=100){
+					$('#mb').parent().siblings('.result').html('脉搏偏速');
+				}
+				
+				//血糖
+				if(gls == 0){
+					$('#gs').html('空腹血糖');
+					$('#gsS').html('[3.9-6.1]');
+					if($('#gl').html()<2.8 && $('#gl').html()>1){
+						$('#gl').parent().siblings('.result').html('低血糖');
+					}else if($('#gl').html()<3.9 && $('#gl').html()>=2.8){
+						$('#gl').parent().siblings('.result').html('血糖偏低');
+					}else if($('#gl').html()<=6.1 && $('#gl').html()>=3.9){
+						$('#gl').parent().siblings('.result').html('血糖正常');
+					}else if($('#gl').html()<50 && $('#gl').html()>6.1){
+						$('#gl').parent().siblings('.result').html('血糖偏高');
+					}
+				}else if(gls == 1){
+					$('#gs').html('饭后血糖');
+					$('#gsS').html('[3.9-7.8]');
+					if($('#gl').html()<2.8 && $('#gl').html()>1){
+						$('#gl').parent().siblings('.result').html('低血糖');
+					}else if($('#gl').html()<3.9 && $('#gl').html()>=2.8){
+						$('#gl').parent().siblings('.result').html('血糖偏低');
+					}else if($('#gl').html()<=7.8 && $('#gl').html()>=3.9){
+						$('#gl').parent().siblings('.result').html('血糖正常');
+					}else if($('#gl').html()<50 && $('#gl').html()>7.8){
+						$('#gl').parent().siblings('.result').html('血糖偏高');
+					}
+				}
+				
+				//血氧
+				if($('#bo').html()<90 && $('#bo').html()>70){
+					$('#bo').parent().siblings('.result').html('饱和度低');
+				}else if($('#bo').html()<95 && $('#bo').html()>=90){
+					$('#bo').parent().siblings('.result').html('饱和度稍低');
+				}else if($('#bo').html()<=99 && $('#bo').html()>=95){
+					$('#bo').parent().siblings('.result').html('饱和度正常');
+				}
+				
+				//内脏脂肪等级
+				if($('#neiz').html()>9){
+					$('#neiz').parent().siblings('.result').html('偏高');
+				}else{
+					$('#neiz').parent().siblings('.result').html('正常');
+				}
+				
+				//胆固醇
+				if(parseFloat($('#dgc').html())>=2.59 && parseFloat($('#dgc').html())<=5.19){
+					$('#dgc').parent().siblings('.result').html('胆固醇正常');
+				}else if(parseFloat($('#dgc').html())>5.19 && parseFloat($('#dgc').html())<6.2){
+					$('#dgc').parent().siblings('.result').html('胆固醇偏高');
+				}else if(parseFloat($('#dgc').html())>=6.2 && parseFloat($('#dgc').html())<=10.35){
+					$('#dgc').parent().siblings('.result').html('胆固醇过高');
+				}
+				
+				//脂肪
+				if(gender == '男'){
+					if($('#water').html()<=50){
+						$('#water').parent().siblings('.result').html('偏低');
+					}else{
+						$('#water').parent().siblings('.result').html('正常');
+					}
+					
+					if($('#muscle').html()<37){
+						$('#muscle').parent().siblings('.result').html('偏低');
+					}else{
+						$('#muscle').parent().siblings('.result').html('正常');
+					}
+					
+					if($('#fatrate').html()<10){
+						$('#fatrate').parent().siblings('.result').html('偏低');
+					}else if($('#fatrate').html()<20 && $('#fatrate').html()>=10){
+						$('#fatrate').parent().siblings('.result').html('正常');
+					}else if($('#fatrate').html()>20){
+						$('#fatrate').parent().siblings('.result').html('偏高');
+					}
+					
+					if($('#ns').html()<0.2 && $('#ns').html()>=0.18){
+						$('#ns').parent().siblings('.result').html('尿酸偏低');
+					}else if($('#ns').html()<=0.42 && $('#ns').html()>=0.2){
+						$('#ns').parent().siblings('.result').html('尿酸正常');
+					}else if($('#ns').html()<=1.19 && $('#ns').html()>0.42){
+						$('#ns').parent().siblings('.result').html('尿酸偏高');
+					}
+				}else{
+					if($('#water').html()<=45){
+						$('#water').parent().siblings('.result').html('偏低');
+					}else{
+						$('#water').parent().siblings('.result').html('正常');
+					}
+					
+					if($('#muscle').html()<27){
+						$('#muscle').parent().siblings('.result').html('偏低');
+					}else{
+						$('#muscle').parent().siblings('.result').html('正常');
+					}
+					
+					if($('#fatrate').html()<20){
+						$('#fatrate').parent().siblings('.result').html('偏低');
+					}else if($('#fatrate').html()<30 && $('#fatrate').html()>=20){
+						$('#fatrate').parent().siblings('.result').html('正常');
+					}else if($('#fatrate').html()>=30){
+						$('#fatrate').parent().siblings('.result').html('偏高');
+					}
+					
+					if($('#ns').html()<0.18){
+						$('#ns').parent().siblings('.result').html('尿酸偏低');
+					}else if($('#ns').html()<=0.36 && $('#ns').html()>=0.18){
+						$('#ns').parent().siblings('.result').html('尿酸正常');
+					}else if($('#ns').html()<=1.19 && $('#ns').html()>0.36){
+						$('#ns').parent().siblings('.result').html('尿酸偏高');
+					}
+				};
+				
+				//心电
+				switch (xd){
+					case '0':
+					    $('#xd').parent().siblings('.result').html('心律无异常');
+						break;
+					case '1':
+					    $('#xd').parent().siblings('.result').html('疑似心跳稍快');
+						break;
+					case '2':
+					    $('#xd').parent().siblings('.result').html('疑似心跳过快');
+						break;
+					case '3':
+					    $('#xd').parent().siblings('.result').html('疑似阵发性心跳过快');
+						break;
+					case '4':
+					    $('#xd').parent().siblings('.result').html('疑似心跳稍缓');
+						break;
+					case '5':
+					    $('#xd').parent().siblings('.result').html('疑似心跳过缓');
+						break;
+					case '6':
+					    $('#xd').parent().siblings('.result').html('疑似心跳间期缩短');
+						break;
+					case '7':
+					    $('#xd').parent().siblings('.result').html('疑似心跳间期不规则');
+						break;
+					case '8':
+					    $('#xd').parent().siblings('.result').html('疑似心跳稍快伴有心跳间期缩短');
+						break;
+					case '9':
+					    $('#xd').parent().siblings('.result').html('疑似心跳稍缓伴有心跳间期缩短');
+						break;
+					case '10':
+					    $('#xd').parent().siblings('.result').html('疑似心跳稍缓伴有心跳间期不规则');
+						break;
+					case '11':
+					    $('#xd').parent().siblings('.result').html('波形有漂移');
+						break;
+					case '12':
+					    $('#xd').parent().siblings('.result').html('疑似心跳过快伴有波形漂移');
+						break;
+					case '13':
+					    $('#xd').parent().siblings('.result').html('疑似心跳过缓伴有波形漂移');
+						break;
+					case '14':
+					    $('#xd').parent().siblings('.result').html('疑似心跳间期缩短伴有波形漂移');
+						break;
+					case '15':
+					    $('#xd').parent().siblings('.result').html('疑似心跳间期不规则伴有波形漂移');
+						break;
+					case '16':
+					    $('#xd').parent().siblings('.result').html('信号较差，请重新测量');
+						break;
+					case '17':
+					    $('#xd').parent().siblings('.result').html('测量数据有误，请重新测量');
+						break;	
+					default:
+						break;
+				}
+				
+			  }
+			  
+			  //证件号和联系电话加*号
+			  function closeStr(){
+			  	  var ids = $('#idNum').html();
+			  	  var phones = $('#phoneNum').html();
+			  	  if(ids != ''){
+			  	  	 $('#idNum').html(ids.substr(0,ids.length-8)+'********');
+			  	  }
+			  	  if(phones != ''){
+			  	  	 $('#phoneNum').html(phones.substr(0,phones.length-4)+'****');
+			  	  }  
+			  }
+			  setTimeout(function(){
+					showTestNum();
+					showResult();
+					closeStr();
+					
+				  //如果没有测量结果显示--
+				  $('.data').each(function(i,e){
+				  	  if($(e).html() == ''){
+				  	  	 $(e).siblings('b').html('--');
+				  	  	 $(e).parent().siblings('.result').html('--');
+				  	  }
+				  });
+			  },300);
+			  
+			  if($('#userName').html() != '' && $('#userName').html().length>5){
+			  	var strUname = $('#userName').html().substring(0,5)+'...';
+			    $('#userName').html(strUname);
+			  }
+	   });
+	</script>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />	
+		<meta name="keywords" content="健康吧云管理平台" />
+		<meta name="description" content="睿博健康吧,创享智慧健康生活" />
+		<link rel="shortcut icon" href="img/favicon.ico"/>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/emng-1.0.0.css"/>
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		
+		<!--theme-->
+		<link rel="stylesheet" type="text/css" href="css/theme-origin/emng-origin.css"/>
+		<link rel="stylesheet" type="text/css" href="css/theme-origin/public-origin.css"/>
+		<title>首页</title>
+		<style type="text/css">
+		    html,body{width: 100%;}
+		    nav em{background-position: 0 0;}
+		    .home-container{min-width: 1100px; align-items: center; margin-top: 30px;}
+		    .home-container ul{width: 100%; justify-content: space-around;}
+		    .home-container li{
+		    	    width: 300px; background: #FAFAFA; 
+		            box-shadow: 0 0 0 transparent, 5px 0 6px #F3F3F3, 0 0 0 transparent, 0 5px 6px #F3F3F3;
+		        }
+		    .home-container li h3{width: 100%; height: 65px; line-height: 65px; font-size: 18px; padding-left: 16px;}    
+		    .home-container li h3 span{display: inline-block; margin-left: 12px;}
+		    .home-container li .charts-content{height: 128px; border-bottom: 1px solid #F2F4F6; margin-bottom: 5px; position: relative;}
+		    .home-container li .charts-content .tag{position: absolute; bottom: -8px; left: 15px;}
+		    .home-container li .charts-content .data-1,.home-container li .charts-content .data-2{position: absolute; bottom: 0; width: 28px; height: 0; transition: height .8s; -webkit-transition: height .8s; -moz-transition: height .8s; -ms-transition: height .8s;}
+		    .home-container li .charts-content .data-1 span,.home-container li .charts-content .data-2 span{display: inline-block; position: absolute; width: 28px; height: 28px; text-align: center; line-height: 25px; border-radius: 100%; top: -30px; left: 0;}
+		    .home-container li .charts-content .data-1{left: 60px;}
+		    .home-container li .charts-content .data-2{right: 60px;}
+		    .home-container li .charts-items span{display: inline-block; width: 50%; height: 18px; text-align: center;}
+		    .home-container li .data-footer{margin-top: 30px;}
+		    .home-container li .data-footer li{display: flex; height: 30px; line-height: 30px; position: relative;}
+		    .home-container li .data-footer li:nth-last-of-type(1){padding-bottom: 30px;}
+		    .home-container li .data-footer li a{margin: 10px 10px 0 30px;}
+		    .home-container li .data-footer li em{position: absolute; right: 40px;}
+		</style>
+	</head>
+	<body>
+		<nav class="emng-flex">
+			<em></em>
+			<p><span>首页</span></p>
+		</nav>
+		<div class="home-container emng-flex">
+			<ul class="emng-flex">
+				<li>
+					<h3>居民人数:<span id="residentNum">133</span></h3>
+					<div class="charts-wrap">
+						<div class="charts-content">
+							<a class="tag">0</a>
+							<div id="registerW" class="data-1"><span>911</span></div>
+							<div id="registerM" class="data-2"><span>22</span></div>
+						</div>
+						<div class="charts-items"><span>本周注册人数</span><span>本月注册人数</span></div>
+					</div>
+					<div class="data-footer">
+						<ul>
+							<li>
+								<a href="javascript:;" class="round"></a><span>本周注册人数</span><em>982</em>
+							</li>
+							<li>
+								<a href="javascript:;" class="round"></a><span>本周注册人数环比</span><em class="relativeRatio">-12.3%</em>
+							</li>
+							<li>
+								<a href="javascript:;" class="round"></a><span>本月注册人数</span><em>2</em>
+							</li>
+							<li>
+								<a href="javascript:;" class="round"></a><span>本月注册人数环比</span><em class="relativeRatio">2.5%</em>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+				    <h3>高危人群:<span id="highriskNum">12</span></h3>
+				    <div class="charts-wrap">
+						<div class="charts-content">
+							<a class="tag">0</a>
+							<div id="preH" class="data-1"><span>78</span></div>
+							<div id="glH" class="data-2"><span>15</span></div>
+						</div>
+						<div class="charts-items"><span>血压偏高人群</span><span>血糖偏高人群</span></div>
+					</div>
+					<div class="data-footer">
+						<ul>
+							<li>
+								<a href="javascript:;" class="round"></a><span>血压偏高人数</span><em>2</em>
+							</li>
+							<li>
+								<a href="javascript:;" class="round"></a><span>血压偏高人数环比</span><em class="relativeRatio">-28.3%</em>
+							</li>
+							<li>
+								<a href="javascript:;" class="round"></a><span>血糖偏高人数</span><em>82</em>
+							</li>
+							<li>
+								<a href="javascript:;" class="round"></a><span>血糖偏高人数环比</span><em class="relativeRatio">-9.7%</em>
+							</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<h3>慢病人群:<span id="slowillNum">58</span></h3>
+					<div class="charts-wrap">
+						<div class="charts-content">
+							<a class="tag">0</a>
+							<div id="preSick" class="data-1"><span>58</span></div>
+							<div id="glSick" class="data-2"><span>58</span></div>
+						</div>
+						<div class="charts-items"><span>高血压</span><span>糖尿病</span></div>
+					</div>
+					<div class="data-footer">
+						<ul>
+							<li>
+								<a href="javascript:;" class="round"></a><span>高血压人数</span><em>9</em>
+							</li>
+							<li>
+								<a href="javascript:;" class="round"></a><span>高血压人数环比</span><em class="relativeRatio">-9.2%</em>
+							</li>
+							<li>
+								<a href="javascript:;" class="round"></a><span>糖尿病人数</span><em>77</em>
+							</li>
+							<li>
+								<a href="javascript:;" class="round"></a><span>糖尿病人数环比</span><em class="relativeRatio">2.2%</em>
+							</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//柱形图高度动画
+			function getHeight(obj,x){
+				var y=0;
+				if(x<=10 && x>0){
+					y=x;
+				}else if(x>10 && x<=400){
+					y = parseInt(x/4);
+				}else{
+					y=122;
+				}
+				obj.css('height',y+'px');
+			};
+			$('.data-1').each(function(i,e){
+				getHeight($(this),$(this).find('span').html());
+			});
+			$('.data-2').each(function(i,e){
+				getHeight($(this),$(this).find('span').html());
+			});
+			
+			//上升下降的颜色渲染
+			$('.relativeRatio').each(function(){
+				if(parseFloat($(this).html())<0){
+					$(this).html($(this).html()+'↓');
+					$(this).addClass('lower');
+				}else{
+					$(this).removeClass('lower');
+				}
+			});
+		});
+	</script>
+</html>

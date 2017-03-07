@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />	
+		<meta name="keywords" content="健康吧云管理平台" />
+		<meta name="description" content="睿博健康吧,创享智慧健康生活" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/emng-1.0.0.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/jquery-ui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/jquery-ui.theme.min.css"/>
+		
+		<!--theme-->
+		<link rel="stylesheet" type="text/css" href="../css/theme-origin/emng-origin.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/theme-origin/public-origin.css"/>
+		<title>生成会员卡</title>
+		<style type="text/css">
+			nav em{background-position: -480px 0;}
+		    #vipLevelA{width: 692px;}
+		    #validDate{cursor: pointer;}
+		    /*设置日期框的宽度*/
+		    .ui-datepicker{width: 50em;}
+		    
+			@media (min-width: 1000px) and (max-width: 1499px){
+		    	#vipLevelA,#vipLevel{width: 789px;}
+		    	.ui-datepicker{width: 779px;}
+            }
+            @media (min-width: 1500px) and (max-width:1600px){
+	            #vipLevelA,#vipLevel{width: 989px;}
+	            .ui-datepicker{width: 979px;}
+            }
+            @media (min-width: 1620px) and (max-width:1800px){
+	           #vipLevelA,#vipLevel{width: 1289px;}
+	           .ui-datepicker{width: 1279px;}
+            }
+            
+            /*自定义datePicker的样式*/
+		   	.ui-widget-header{background: #2F2F2F; border: 1px solid #2F2F2F;}
+		    .ui-state-default, .ui-widget-content .ui-state-default{color: #2F2F2F;}
+		</style>
+	</head>
+	<body>
+		<nav class="emng-flex">
+			<em></em>
+			<p>会员卡管理 <span> -> 生成会员卡</span></p>
+		</nav>
+		<div class="btn-area emng-flex">
+			<button class="emng-btn btn-bg-blue" id="go-submit">批次生成</button>
+		</div>
+		<div class="tab">
+		 	<form id="vipForm" name="" action="" method="">
+			 	<ul>
+			 		<li>
+			 			<span><i class="must">*</i>批次名称:</span>
+			 			<input type="text" name="batchName" id="batchName" value="" maxlength="20" placeholder="10个字之内  请勿输入空格等特殊字符"/>
+			 		    <label class="error"></label>
+			 		</li>
+				    <li>
+						<span><i class="must">*</i>数量:</span>
+						<input type="text" id="vipAmount" name="vipAmount" maxlength="5" value="" placeholder="请输入1~10000之间的数字"/>
+						<label class="error"></label>
+					</li>
+					<li>
+						<span><i class="must">*</i>等级:</span>
+						<a class="emng-select org" id="vipLevelA"><strong class="emng-curselect"></strong><select  id="vipLevel" name="vipLevel"><option value=""></option><option value="E">有效</option><option value="F">无效</option></select></a>			   
+					    <label class="error"></label>
+					</li>
+					<li>
+						<span><i class="must">*</i>有效日期:</span>
+						<input type="text" name="validDate" id="validDate" readonly="readonly" value=""/>
+					    <label class="error"></label>
+					</li>
+					<li>
+						<span><i class="must">*</i>备注:</span>
+						<input type="text" name="vipRemarks" maxlength="10" id="vipRemarks" placeholder="10个字之内" value="" />
+					    <label class="error"></label>
+					</li>
+				</ul>
+		 	</form>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="../js/plugin/vertifycate.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/plugin/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/plugin/datepickerChinese.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		  $(document).ready(function(){
+		  	    //表单验证应用层,调用自定义的validator方法
+		  	    (function(){
+		  	        $('#go-submit').click(function(){
+			  	   	   if(!$('#batchName').validator({errorTips:'请勿输入特殊字符',required:true,requiredMsg:'批次名称不能为空',testType:'sPecial'})
+			  	   	   	  || !$('#vipAmount').validator({errorTips:'请输入数字',required:true,requiredMsg:'数量不能为空',testType:'onlyNum',minVal:1,maxVal:10000,valMsg:'请输入1~1000之间的数字'})
+			  	   	      || !$('#vipLevel').validator({errContainer:$('#vipLevel').parent().siblings('.error'),required:true,requiredMsg:'等级不能为空'})
+			  	   	      || !$('#validDate').validator({required:true,requiredMsg:'日期不能为空'}) 
+			  	   	      || !$('#vipRemarks').validator({required:true,requiredMsg:'备注不能为空'})){
+			  	   	   	       return false
+			  	   	   }else{
+			  	   	   	  $('#vipForm').submit();
+			  	   	   };
+			  	   });
+			  	   
+		  	      $('#vipAmount').blur(function(){
+		  	   	   	   $(this).validator({errorTips:'请输入数字',required:true,requiredMsg:'数量不能为空',testType:'onlyNum',minVal:1,maxVal:10000,valMsg:'请输入指定范围的数量'})
+		  	   	   });
+		  	   	   $('#vipRemarks').blur(function(){
+		  	   	   	    $(this).validator({required:true,requiredMsg:'备注不能为空'})
+		  	   	   });
+		  	   	   $('#batchName').blur(function(){
+		  	   	   	   $(this).validator({errorTips:'请勿输入特殊字符',required:true,requiredMsg:'批次名称不能为空',testType:'sPecial'})
+		  	   	   });
+		  	    })();
+		  	    
+		  	    //datePicker应用层
+		  	    (function(){
+		  	    	var minYear = new Date().getFullYear(),
+			            minMonth = new Date().getMonth(),
+			            minDate = new Date().getDate();
+					$('#validDate').datepicker({
+						changeYear:true,
+				    	changeMonth:true,
+				    	yearRange: ''+(minYear)+':'+2100+'',
+						minDate:new Date(minYear,minMonth,minDate),
+						onClose:function(){ //日期面板关闭后再验证日期文本框
+		  	   	   	        $('#validDate').validator({required:true,requiredMsg:'日期不能为空'});
+						}
+					});
+		  	    })();
+		  });
+	</script>
+</html>

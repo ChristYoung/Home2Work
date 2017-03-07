@@ -1,0 +1,40 @@
+/*button*/
+.btn-bg-gray{background-color: #D9D9D9; color: #000;}
+.btn-bg-blue{background-color: #2DC7C2; color: #FFFFFF;}
+.btn-bg-blue a{color: #FFFFFF;}
+
+/*table*/
+.emng-table thead th{background: #25A4A0; border-right: 1px solid #FFFFFF; color: #FFFFFF;}
+.emng-table tbody tr:nth-child(odd) td{background-color: #FAFAFA;}
+.emng-table tbody tr td{color: #494949;}
+.a-btn{color: #4DB0AC;}
+
+/*round*/
+.round{background: #2DC7C2;}
+
+/*window*/
+.window_boundingBox{background: #FFFFFF;}
+.window_cancelBtn{background: #FFFFFF;}
+.window_header{color: #2DC7C2;}
+.window_cancelBtn{color: #000000;}
+.emng-mask{background: rgba(0,0,0,0.8);}
+
+/*noty*/
+.noty{background: #25A4A0; color: #FFFFFF;}
+
+/*page*/
+.emng-page a{color: #2DC7C2;}
+
+/*homepage statics*/
+.home-container li .charts-content .data-1,.home-container li .charts-content .data-2{background: #2DC7C2;}
+.home-container li .charts-content .data-1 span,.home-container li .charts-content .data-2 span{background: #E6EBF0;}
+.home-container li .data-footer li .lower{color: #FE88A1;}
+
+/*ehealthManage.html*/
+#totalNav{background-color: #2F2F2F;}
+#loginInfo ul li em{background-image: url(../../img/list-icon.png);}
+#loginInfo ul li span{color: #FFFFFF;}
+#loginOut a{color: #FFFFFF;}
+#main-menu{background: #F1F1F1;}
+#main-in-menu{background: #FAFAFA;}
+._mCS_1 .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar{background: rgba(3,3,3,0.6);}

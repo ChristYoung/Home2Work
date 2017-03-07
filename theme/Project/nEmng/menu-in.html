@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/emng-1.0.0.css"/>
+		<link rel="stylesheet" type="text/css" href="css/menu-list.css"/>
+	</head>
+	<body>
+		<div class="menu-in-wrapper" style="margin: 80px auto;">
+			<ul>
+				<li class="menu-in-one">     
+					<div class="menu-in-header">
+						<strong class="icon-wrapper"></strong>   
+						<a href="#">上海虹口生活服务中心</a>
+					</div>
+					<ul class="menu-in-two">       
+						<li class="menu-two-header">
+							<span class="plus-or-minus">+</span>  
+							<a href="#">欧阳街道</a>
+						</li>
+						<ul class="menu-in-three">   
+							<li><a href="#">社区1</a></li>
+							<li><a href="#">社区2</a></li>
+						</ul>
+						<li class="menu-two-header">
+							<span class="plus-or-minus">+</span>  
+							<a href="#">提篮街道</a>
+						</li>
+						<ul class="menu-in-three">   
+							<li><a href="#">社区1</a></li>
+							<li><a href="#">社区2</a></li>
+						</ul>
+					</ul>
+				</li>
+				<li class="menu-in-one">
+					<div class="menu-in-header">
+						<strong class="icon-wrapper"></strong>
+						<a href="#">崇川区养老院</a>
+					</div>
+					<ul class="menu-in-two">
+						<li class="menu-two-header">
+							<span class="plus-or-minus">+</span>  
+							<a href="#">崇川太阳花</a>
+						</li>
+						<ul class="menu-in-three">   
+							<li><a href="#">社区1</a></li>
+							<li><a href="#">社区2</a></li>
+							<li><a href="#">社区3</a></li>
+						</ul>
+					</ul>
+				</li>
+				<li class="menu-in-one">
+					<div class="menu-in-header">
+						<strong class="icon-wrapper"></strong>
+						<a href="#" title="睿博信息科技股份有限公司">睿博信息科技股份有限...</a>
+					</div>
+					<ul class="menu-in-two">
+						<li class="menu-two-header">
+							<span class="plus-or-minus">+</span>  
+							<a href="#">崇川太阳花</a>
+						</li>
+						<ul class="menu-in-three">   
+							<li><a href="#">社区1</a></li>
+							<li><a href="#">社区2</a></li>
+							<li><a href="#">社区3</a></li>
+						</ul>
+					</ul>
+				</li>
+				<li class="menu-in-one">
+					<div class="menu-in-header">
+						<strong class="icon-wrapper"></strong>
+						<a href="#" title="睿博信息科技股份有限公司">杨杰科技股份有限...</a>
+					</div>
+					<ul class="menu-in-two">
+						<li class="menu-two-header">
+							<span class="plus-or-minus">+</span>
+							<a href="#">港闸太阳花</a>
+						</li>
+						<ul class="menu-in-three">   
+							<li><a href="#">南通</a></li>
+							<li><a href="#">科技</a></li>
+							<li><a href="#">美国花旗</a></li>
+							<li><a href="#">中国银行</a></li>
+							<li><a href="#">君光影视</a></li>
+							<li><a href="#">南通城管局</a></li>
+						</ul>
+						<li class="menu-two-header">
+							<span class="plus-or-minus">+</span>
+							<a href="#">大翠太阳花</a>
+						</li>
+						<ul class="menu-in-three">   
+							<li><a href="#">南通太阳花</a></li>
+							<li><a href="#">恒生电子科技</a></li>
+							<li><a href="#">美国花旗银行</a></li>
+							<li><a href="#">中国工商银行</a></li>
+							<li><a href="#">君光影视传媒</a></li>
+							<li><a href="#">南通市城管局</a></li>
+						</ul>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//菜单效果
+				var aMenuOne = $('.menu-in-one'),
+				    aMenuHeader = $('.menu-in-header'),
+				    aIconWrap = $('.icon-wrapper'),
+				    aMenuTwo = $('.menu-in-two'),
+				    aMenuTwoHeader = $('.menu-two-header'),
+				    aPlus = $('.plus-or-minus'),
+				    a1 = $('.menu-in-header a'),
+				    a2 = $('.menu-two-header a'),
+				    a3 = $('.menu-in-three a'),
+				    aMenuThree = $('.menu-in-three');
+				    aIconWrap.each(function(i,e){
+				    	$(this).click(function(){
+				    		if($(aMenuTwo[i]).css('display') == 'block'){
+				    			$(aMenuTwo[i]).hide();
+				    			$(this).parent().removeClass('header-click');
+				    		}else{
+				    			$(aMenuTwo[i]).show();
+				    			$(this).parent().addClass('header-click');
+				    		}
+				    	});
+				    });
+				    aPlus.each(function(i,e){
+				    	$(this).click(function(){
+				    		if($(aMenuThree[i]).css('display') == 'block'){
+				    			$(this).html('+');
+				    			$(aMenuThree[i]).hide();
+				    		}else{
+				    			$(this).html('-');
+				    			$(aMenuThree[i]).show();
+				    		}
+				    	});
+				    });
+				    //点击效果
+				    a1.click(function(){
+				    	$('.menu-in-wrapper a').css('color','#2F2F2F');
+				    	$(this).css('color','#3DAAA6');
+				    });
+				    a2.click(function(){
+				    	$('.menu-in-wrapper a').css('color','#2F2F2F');
+				    	$(this).css('color','#34B778');
+				    });
+				    a3.click(function(){
+				    	$('.menu-in-wrapper a').css('color','#2F2F2F');
+				    	$(this).css('color','#DA8F40');
+				    });
+			});
+		</script>
+	</body>
+</html>

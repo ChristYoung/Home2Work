@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />	
+		<meta name="keywords" content="兴业银行缴费平台" />
+		<meta name="description" content="兴业银行缴费平台" />
+		<title>个人设置</title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/mypay.css"/>
+	</head>
+	<body>
+		<header>
+			<div class="logo-wrap">
+				<img src="../img/u2.png"/>
+			</div>
+			<div class="item-name">
+				<strong class="pay-type">(教育缴费)</strong>
+				<strong class="school-name">南通大学</strong>
+			</div>
+			<div class="header-list">
+				<a href="#">选择缴费类别</a>
+				<a href="#">个人设置</a>
+				<a href="#">退出登录</a>
+			</div>
+		</header>
+		<aside class="menu-list">
+			<ul>
+				<li>
+					<a href="#">我的教育缴费</a>
+				</li>
+				<li>
+					<a href="#">待缴费项目</a>
+				</li>
+				<li>
+					<a href="#">缴费记录</a>
+				</li>
+				<li>
+					<a href="#">校园公告</a>
+				</li>
+			</ul>
+		</aside>
+		<section class="con-wrap">
+		    <div class="tab-module tab-blue">
+		       <h3>个人设置</h3>
+		       <div class="modify-phone">
+			       	<p>
+			       		<strong>修改手机号</strong>
+			       		<span>(在南通大学登记的手机号)</span>
+			       	</p>
+		       	    <p>
+		       	    	<b>当前登记手机号:</b>
+		       	    	<em>15051349421</em>
+		       	    	<button type="button" class="xy-btn btn-orange"><a href="#" data-toggle="modal" data-target="#change-phone">修改</a></button>
+		       	    </p>
+		       </div> 
+		       <div class="modify-noty">
+		       	   <p>
+		       	   	   <strong>设置缴费提醒</strong>
+		       	   </p>
+		       	   <p>
+		       	   	   <b>提前提醒天数:</b>
+		       	   	   <em id="em-days">3</em>
+		       	   	   <input type="text" name="info-days" id="info-days" style="display: none;" value="" placeholder="输入整数"/>
+		       	   	   <button type="button" class="xy-btn btn-orange" id="modify-days">修改</button>
+		       	   	   <button type="button" class="xy-btn btn-blue" style="display: none;" id="save-days">保存</button>
+		       	   	   <label class="days-error"></label>
+		       	   </p>
+		       	   <p>
+		       	   	 <span>我们将会在缴费项目截止日期前 3 天，向您登记的手机号发送缴费短信提醒。</span>
+		       	   </p>
+		       </div>
+		    </div>
+		</section>
+		
+		<!--修改登记手机号-->
+		<div class="modal fade" id="change-phone" tabindex="-1" role="dialog" aria-labelledby="modifyPhone">
+            <div class="modal-dialog" role="document" style="width: 400px;">
+                <div class="modal-content">
+	                <form id="phoneForm" name="" action="?" method="post">
+	                    <div class="modal-header">
+	                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	                        <h4 class="modal-title" id="modifyPhone">修改登记手机号</h4>
+	                    </div>
+	                    <div class="modal-body" id="phone-modal">
+	                    	<ul class="phone-data">
+	                    		<li>
+	                    			<span>新的手机号码:<i class="must">*</i></span>
+	                    			<input type="text" name="" id="new-phone" value="" placeholder="输入新的手机号码" maxlength="11"/>
+	                    		</li>
+	                    		<li>
+	                    			<span>验证码:<i class="must">*</i></span>
+	                    			<input type="text" name="" id="vali-code" value="" placeholder="收到的验证码" maxlength="8"/>
+	                    			<button type="button" class="xy-btn btn-orange" id="sendCode">发送验证码</button>
+	                    		</li>
+	                    		<li>
+	                    			<b class="errorTips"></b>
+	                    		</li>
+	                    	</ul>
+	                    </div>
+	                    <div class="modal-footer">
+	                        <button type="submit" class="btn btn-primary">确定</button>
+	                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+	                    </div>
+	                </form>
+                </div>
+            </div>
+        </div>
+		
+	</body>
+	<script src="../js/plugin/jquery-2.0.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/plugin/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/plugin/vertify.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/main/setting.js" type="text/javascript" charset="utf-8"></script>
+</html>

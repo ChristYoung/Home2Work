@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />	
+		<meta name="keywords" content="兴业银行缴费平台" />
+		<meta name="description" content="兴业银行缴费平台" />
+		<title>注册-完成</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/register.css"/>
+	</head>
+	<body>
+		<header>
+			<div class="logo-wrap">
+				<img src="../img/u2.png"/>
+			</div>
+			<div class="item-name"></div>
+			<div class="header-list"></div>
+		</header>
+		<section class="register-con">
+			<div class="register-process">
+				<ul>
+					<li class="r-round">
+						<div class="stepping">1</div>
+						<span class="checking">身份证检查</span>
+					</li>
+					<li class="r-line-ing"></li>
+					<li class="r-round">
+						<div class="stepping">2</div>
+						<span>设置登录密码</span>
+					</li>
+					<li class="r-line-ing"></li>
+					<li class="r-round">
+						<div class="stepping">3</div>
+						<span>完成</span>
+					</li>
+				</ul>
+			</div>
+			<div class="register-table">
+				<h3 id="success">注册成功! 将在  <em>5s</em> 后自动跳转</h3>
+			</div>
+		</section>
+	</body>
+	<script src="../js/plugin/jquery-2.0.0.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	    //5s后页面跳转,地址待完善
+		$(document).ready(function(){
+			var _index = 5,
+			   iTimer = null;
+			   iTimer = setInterval(function(){
+			   	  _index--;
+			   	  $('#success').find('em').html(_index+'s');
+			   	  if(_index == 0){
+			   	  	clearInterval(iTimer);
+			   	  	//window.location.href = 'http://www.baidu.com';
+			   	  };
+			   },1000);
+		});
+	</script>
+</html>

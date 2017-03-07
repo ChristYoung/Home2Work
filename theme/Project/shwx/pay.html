@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1,user-scalable=no">
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>	
+		<link rel="stylesheet" type="text/css" href="css/payer.css"/>
+		<title>缴费</title>
+	</head>
+	<body>
+		<header>
+			<ul class="wx-flex">
+				<li class="active">新的缴费者</li>
+				<li>选择缴费者</li>
+			</ul>
+		</header>
+		
+		<section id="page-0">
+			<form action="tobe-paied.html" method="get">
+				<div class="container-input">
+					<div class="input-wrap">
+						<ul>
+							<li class="wx-flex">
+								谁地方撒旦了麻烦事多立方米时
+							</li>
+						</ul>
+					</div>
+				</div>
+			    <p style="margin-left: 20px;">sadasdasd</p>
+				<div class="container-submit">
+					<input type="submit" name="" id="" value="查询待缴费的项目" />
+				</div>
+			</form>
+			<footer>
+				<p>
+					1. 验证码会发送至您在入学时提供给校方的手机号上；<br  />
+					2. 缴费成功后，我们会保存该缴费者信息，下次您只需要在“选择缴费者”中直接选择缴费者就可以查到相应的待缴费项目并为其缴费。
+				</p>
+		    </footer>
+		</section>
+		
+		<section id="page-1">
+			<div class="user-list">
+				<div class="container-userinfo wx-flex">
+					<div class="info-wrap">
+						<ul>
+							<li class="wx-flex">
+								<span>姓名:</span>
+								<a href="tobe-paied.html">张三</a>
+							</li>
+							<li class="wx-flex">
+								<span>身份证:</span>
+								<a href="tobe-paied.html">1101*****0123</a>
+							</li>
+						</ul>
+					</div>
+					<div class="info-for-more">
+						<a href="tobe-paied.html"></a>
+					</div>
+				</div>
+				<div class="delete-user">
+					<a href="javascript:void(0);">移除该消费者</a>
+				</div>
+			</div>
+			
+			<div class="user-list">
+				<div class="container-userinfo wx-flex">
+					<div class="info-wrap">
+						<ul>
+							<li class="wx-flex">
+								<span>姓名:</span>
+								<a href="tobe-paied.html">张三</a>
+							</li>
+							<li class="wx-flex">
+								<span>身份证:</span>
+								<a href="tobe-paied.html">1101*****0123</a>
+							</li>
+						</ul>
+					</div>
+					<div class="info-for-more">
+						<a href="tobe-paied.html"></a>
+					</div>
+				</div>
+				<div class="delete-user">
+					<a href="javascript:void(0);">移除该消费者</a>
+				</div>
+			</div>
+		</section>
+		
+		<!--弹出窗-->
+		<div id="window-mask"></div>
+		<div id="window-alert">
+			<p>支付成功后，系统会有稍许延迟，若已支付
+成功，请用户稍许等待后再进入该界面继续支付。</p>
+			<div class="window-footer">
+				<div class="u-btn" id="btn-confirm">确 认</div>
+				<div class="u-btn" id="btn-cancel">暂 不</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//选项卡切换
+			(function(){
+				$('header li').on('touchstart',function(e){
+					e.preventDefault()
+					var i = $(this).index();
+					$('header li').removeClass('active');
+					$(this).addClass('active');
+					$('section').hide();
+					$('#page-'+i).show();
+				});
+			})();
+			
+			//弹出框
+			(function(){
+				var me;
+				$('.delete-user a').on('click',function(e){
+					e.stopPropagation();
+					me = $(this).parents('.user-list');
+					$('#window-mask').show();
+					$('#window-alert').show();
+					//窗口弹出后禁止页面上下滚动
+					$(document).on('touchmove',function(e){
+						e.preventDefault();
+					});
+					
+				});
+				$('#btn-cancel').on('click',function(e){ //取消删除
+					e.stopPropagation();
+					$('#window-mask').hide();
+				    $('#window-alert').hide();
+				    $(document).off('touchmove');
+			    });
+				$('#btn-confirm').on('click',function(e){ //确认删除
+					e.stopPropagation();
+				    $(document).off('touchmove');
+					//确认删除后,向后台发送删除请求,请求成功后在前台将相关dom删除
+					//具体请求地址和需要发送到后台的数据待完善
+					
+//						$.ajax({
+//							type:"post",
+//                          data:{},
+//							url:"",
+//							async:true,
+//							success:function(){
+//								$('#window-mask').hide();
+//					            $('#window-alert').hide();
+//					            me.remove();
+//							}
+//						});
+				});
+			})();
+			
+			//身份证号显示和隐藏
+			$('#switchStatus').click(function(){
+				if($(this).hasClass('eye_close')){
+					$(this).removeClass('eye_close').addClass('eye_open');
+					$('#idNum').attr('type','text');
+				}else{
+					$(this).removeClass('eye_open').addClass('eye_close');
+					$('#idNum').attr('type','password');
+				}
+			});
+		});
+	</script>
+</html>

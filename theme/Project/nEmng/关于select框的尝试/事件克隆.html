@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+		    #wrapper{display: flex;}
+			.circle{width: 50px; height: 50px; background: red; margin-left: 20px;}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="div1" class="circle"></div>
+		</div>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var iN = 1;
+				$(".circle").on('click',function(){
+					iN++;
+					$('#wrapper').append($("#div1").clone(true).attr('id','#div'+iN));
+				});
+			});
+		</script>
+	</body>
+</html>

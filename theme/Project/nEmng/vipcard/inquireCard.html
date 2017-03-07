@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />	
+		<meta name="keywords" content="健康吧云管理平台" />
+		<meta name="description" content="睿博健康吧,创享智慧健康生活" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/emng-1.0.0.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+		
+		<!--theme-->
+		<link rel="stylesheet" type="text/css" href="../css/theme-origin/emng-origin.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/theme-origin/public-origin.css"/>
+		<title>卡查询</title>
+		<style type="text/css">
+		   nav em{background-position: -480px 0;}	
+		   #cardNum,#batchNum,#remark{width: 260px;}
+		   #vipLevel,#vipLevelA,#vipStatus,#vipStatusA{width: 270px;}
+		</style>
+	</head>
+	<body>
+		<nav class="emng-flex">
+			<em></em>
+			<p>会员卡管理 <span> -> 卡查询</span></p>
+		</nav>
+		<div class="check-factor-wrapper">
+			<article>查找</article>
+			    <form>
+			    	<div class="check-factor-2 emng-flex">
+						<div class="line-two emng-flex">
+							<div class="dk-1 emng-flex">
+								<ul class="emng-flex">
+									<li>
+										<span>卡号:</span>
+										<input type="text" name="cardNum" id="cardNum" class="Trim" placeholder="请输入卡号" value=""/>
+									</li>
+									<li>
+										<span>批次:</span>
+										<input type="text" name="batchNum" id="batchNum" class="Trim" placeholder="请输入批次号" value=""/>
+									</li>
+									<li>
+										<span>备注:</span>
+										<input type="text" name="remark" id="remark" placeholder="10个字之内" maxlength="10" value=""/>
+									</li>
+							    </ul>
+							</div>
+							<div class="dk-2 emng-flex">
+								<ul class="emng-flex">
+								    <li>
+										<span>等级:</span>
+										<a class="emng-select" id="vipLevelA"><strong class="emng-curselect"></strong><select name="vipLevel" id="vipLevel" onchange="change(this)"><option></option><option>有效</option><option>无效</option></select></a>
+									</li>
+									<li>
+										<span>状态:</span>
+										<a class="emng-select" id="vipStatusA"><strong class="emng-curselect"></strong><select name="vipStatus" id="vipStatus" onchange="change(this)"><option></option><option>有效</option><option>无效</option></select></a>
+									</li>
+							    </ul>
+							</div>
+						</div>
+						<div class="check-btn-wrap">
+							<button type="submit" class="emng-btn btn-bg-blue">卡查询</button>
+						</div>
+					</div>
+			    </form>
+		</div>
+		<div class="pagebtn-wrapper emng-flex">
+			<div class="page-wrap">
+				*此处显示页数
+			</div>
+		</div>
+		<div class="tab-wrapper">
+			<table class="emng-table">
+				<thead>
+					<tr>
+						<th>编号</th>
+						<th>批次</th>
+						<th>卡号</th>
+						<th>密钥</th>
+						<th>备注</th>
+						<th>等级</th>
+						<th>有效日期</th>
+						<th>状态</th>
+						<th>用户ID</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>20151023001081</td>
+						<td>BLR7PjFVWN</td>
+						<td>179667</td>
+						<td>1</td>
+						<td>1</td>
+						<td>2018-10-23</td>
+						<td>未使用</td>
+						<td><a href="#">$!{item.uid}</a></td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>20151023001081</td>
+						<td>BLR7PjFVWN</td>
+						<td>179667</td>
+						<td>1</td>
+						<td>1</td>
+						<td>2018-10-23</td>
+						<td>未使用</td>
+						<td><a href="#">$!{item.uid}</a></td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>20151023001081</td>
+						<td>BLR7PjFVWN</td>
+						<td>179667</td>
+						<td>1</td>
+						<td>1</td>
+						<td>2018-10-23</td>
+						<td>未使用</td>
+						<td><a href="#">$!{item.uid}</a></td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>20151023001081</td>
+						<td>BLR7PjFVWN</td>
+						<td>179667</td>
+						<td>1</td>
+						<td>1</td>
+						<td>2018-10-23</td>
+						<td>未使用</td>
+						<td><a href="#">$!{item.uid}</a></td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>20151023001081</td>
+						<td>BLR7PjFVWN</td>
+						<td>179667</td>
+						<td>1</td>
+						<td>1</td>
+						<td>2018-10-23</td>
+						<td>未使用</td>
+						<td><a href="#">$!{item.uid}</a></td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>20151023001081</td>
+						<td>BLR7PjFVWN</td>
+						<td>179667</td>
+						<td>1</td>
+						<td>1</td>
+						<td>2018-10-23</td>
+						<td>未使用</td>
+						<td><a href="#">$!{item.uid}</a></td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>20151023001081</td>
+						<td>BLR7PjFVWN</td>
+						<td>179667</td>
+						<td>1</td>
+						<td>1</td>
+						<td>2018-10-23</td>
+						<td>未使用</td>
+						<td><a href="#">$!{item.uid}</a></td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>20151023001081</td>
+						<td>BLR7PjFVWN</td>
+						<td>179667</td>
+						<td>1</td>
+						<td>1</td>
+						<td>2018-10-23</td>
+						<td>未使用</td>
+						<td><a href="#">$!{item.uid}</a></td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>20151023001081</td>
+						<td>BLR7PjFVWN</td>
+						<td>179667</td>
+						<td>1</td>
+						<td>1</td>
+						<td>2018-10-23</td>
+						<td>未使用</td>
+						<td><a href="#">$!{item.uid}</a></td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>20151023001081</td>
+						<td>BLR7PjFVWN</td>
+						<td>179667</td>
+						<td>1</td>
+						<td>1</td>
+						<td>2018-10-23</td>
+						<td>未使用</td>
+						<td><a href="#">$!{item.uid}</a></td>
+					</tr>
+				</tbody>
+		    </table>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="../js/plugin/vertifycate.min.js" type="text/javascript" charset="utf-8"></script>
+</html>

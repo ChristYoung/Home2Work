@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <title>健康体检项目</title>
+	    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	    <link rel="shortcut icon" href="/favicon.ico">
+	    <meta name="apple-mobile-web-app-capable" content="yes">
+	    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+	    <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<script type="text/javascript">
+			document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.clientWidth+'px';
+		</script>
+		<style type="text/css">
+		    *{box-sizing: border-box; -webkit-box-sizing: border-box;}
+		    html,body{overflow-x: hidden;}
+		    .t_header{width: 0.95rem; height: 0.52rem; margin: 0 auto;}
+			.medical_banner{display: block; width: 100%; height: 100%;}
+			/*原子类*/
+			.bgW{background-color: #FFFFFF; color: #000000; border: 1px solid #000000;}.bgG{background-color: #69B273; color: #FFFFFF;}
+			/*detail*/
+			.t_body{overflow: hidden;}
+			.t_item{width: 46%; margin-bottom: 20px; padding: 16px 8px;}
+			.t_item:nth-of-type(odd){float: left; margin-left: 3%;}
+			.t_item:nth-of-type(even){float: right; margin-right: 3%;}
+			
+			.t_item h3{font-size: 18px; padding-bottom: 5px;}
+			.bgG h3{border-bottom: 1px solid #FFFFFF;}
+			.bgW h3{border-bottom: 1px solid #000000; }
+			.t_item .t_name{font-size: 16px; padding-top: 10px;}
+			.t_item .t_content{font-size: 14px;}
+			
+			.callBanner{width: 100%; background-color: rgba(0,0,0,0.7); color: #FFFFFF; text-align: center; position: fixed; bottom: 0; left: 0;}
+			.callBanner h5{line-height: 38px; font-size: 32px;}
+			.callBanner h5 a{display: inline-block; width: 100%; color: #FFFFFF;}
+			.callBanner p{line-height: 20px;}
+		</style>
+	</head>
+	<body>
+		<div class="t_header">
+			<img src="../img/medical_banner.png" class="medical_banner"/>
+		</div>
+		<div class="t_body">
+			<div class="t_item bgG v0">
+				<h3>VIP豪华套餐(男)</h3>
+				<h4 class="t_name">常规检测</h4>
+				<p class="t_content">血压、身高、体重</p>
+				<h4 class="t_name">内科</h4>
+				<p class="t_content">心、肺听诊等内科检测项目耳鼻喉科、外耳道、鼓膜、鼻腔、鼻中隔、扁桃体、咽部</p>
+				<h4 class="t_name">眼科</h4>
+				<p class="t_content">视力、外眼、辩色力</p>
+				<h4 class="t_name">血糖</h4>
+				<p class="t_content">空腹血糖</p>
+				<h4 class="t_name">血常规全套</h4>
+				<p class="t_content">白细胞、血小板、血红蛋白等</p>
+				<h4 class="t_name">尿常规全套</h4>
+				<p class="t_content"> 蛋白质、葡萄糖、尿胆原等</p>
+				<h4 class="t_name">肾功能检查</h4>
+				<p class="t_content">尿素氮、肌酐、尿酸</p>
+				<h4 class="t_name">肝功能检查</h4>
+				<p class="t_content">谷丙转氨酶（ALT）、谷草转氨酶（AST）、谷氨酰转肽酶（γ-GT）、碱性磷酸酶（ALP）</p>
+				<h4 class="t_name">血脂检查</h4>
+				<p class="t_content">总胆固醇（CHOL）、甘油三脂（TG）、高密度脂蛋白（HDL）、低密度脂蛋白（LDL）</p>
+				<h4 class="t_name">心电图</h4>
+				<p class="t_content">十二导联心电图</p>
+				<h4 class="t_name">x光数字化摄片</h4>
+				<p class="t_content">胸部正位片DR</p>
+				<h4 class="t_name">B超检查</h4>
+				<p class="t_content">腹部B超（肝胆脾胰双肾）、甲状腺B超 、前列腺超声</p>
+				<h4 class="t_name">肿瘤筛查</h4>
+				<p class="t_content">甲胎蛋白（AFP）、癌胚抗原（CEA） 、神经元特异性烯醇化酶 NSE、总前列腺特异性抗原 PSA、游离前列腺特异性抗原</p>
+				<h4 class="t_name">幽门螺旋杆菌</h4>
+				<p class="t_content">HP血清抗体测定</p>
+				<h4 class="t_name">静脉抽血</h4>
+				<p class="t_content">含一次性采血针，真空管</p>
+				<h4 class="t_name">营养早餐</h4>
+				<p class="t_content">提供面包、鸡蛋等，根据不同医院配置</p>
+				<h4 class="t_name">体检报告直接寄送客户</h4>
+			</div>
+			<div class="t_item bgG s0">
+				<h3>VIP豪华套餐(女)</h3>
+				<h4 class="t_name">常规检测</h4>
+				<p class="t_content">血压、身高、体重</p>
+				<h4 class="t_name">内科</h4>
+				<p class="t_content">心、肺听诊等内科检测项目耳鼻喉科、外耳道、鼓膜、鼻腔、鼻中隔、扁桃体、咽部</p>
+				<h4 class="t_name">眼科</h4>
+				<p class="t_content">视力、外眼、辩色力</p>
+				<h4 class="t_name">妇科检查</h4>
+				<p class="t_content">妇科基础检查 -<b>已婚</b>、 白带常规-<b>已婚</b>、宫颈涂片-<b>已婚</b></p>
+				<h4 class="t_name">血糖</h4>
+				<p class="t_content">空腹血糖</p>
+				<h4 class="t_name">血常规全套</h4>
+				<p class="t_content">白细胞、血小板、血红蛋白等</p>
+				<h4 class="t_name">尿常规全套</h4>
+				<p class="t_content"> 蛋白质、葡萄糖、尿胆原等</p>
+				<h4 class="t_name">肾功能检查</h4>
+				<p class="t_content">尿素氮、肌酐、尿酸</p>
+				<h4 class="t_name">肝功能检查</h4>
+				<p class="t_content">谷丙转氨酶（ALT）、谷草转氨酶（AST）、谷氨酰转肽酶（γ-GT）、碱性磷酸酶（ALP）</p>
+				<h4 class="t_name">血脂检查</h4>
+				<p class="t_content">总胆固醇（CHOL）、甘油三脂（TG）、高密度脂蛋白（HDL）、低密度脂蛋白（LDL）</p>
+				<h4 class="t_name">心电图</h4>
+				<p class="t_content">十二导联心电图</p>
+				<h4 class="t_name">x光数字化摄片</h4>
+				<p class="t_content">胸部正位片DR</p>
+				<h4 class="t_name">B超检查</h4>
+				<p class="t_content">腹部B超（肝胆脾胰双肾）、甲状腺B超 、前列腺超声、子宫及附件超声、乳腺B超</p>
+				<h4 class="t_name">肿瘤筛查</h4>
+				<p class="t_content">甲胎蛋白（AFP）、癌胚抗原（CEA） 、糖链抗源测定CA125-<b>未婚</b>、糖链抗原测定 CA15-3-<b>未婚</b></p>
+				<h4 class="t_name">幽门螺旋杆菌</h4>
+				<p class="t_content">HP血清抗体测定</p>
+				<h4 class="t_name">静脉抽血</h4>
+				<p class="t_content">含一次性采血针，真空管</p>
+				<h4 class="t_name">营养早餐</h4>
+				<p class="t_content">提供面包、鸡蛋等，根据不同医院配置</p>
+				<h4 class="t_name">体检报告直接寄送客户</h4>
+			</div>
+			<div class="t_item bgW v1">
+				<h3>至尊健康套餐(男)</h3>
+				<h4 class="t_name">常规检测</h4>
+				<p class="t_content">血压、身高、体重</p>
+				<h4 class="t_name">内科</h4>
+				<p class="t_content">心、肺听诊等内科检测项目耳鼻喉科、外耳道、鼓膜、鼻腔、鼻中隔、扁桃体、咽部</p>
+				<h4 class="t_name">眼科</h4>
+				<p class="t_content">视力、外眼、辩色力、眼底检查</p>
+				<h4 class="t_name">血糖</h4>
+				<p class="t_content">空腹血糖、糖化血红蛋白</p>
+				<h4 class="t_name">血常规全套</h4>
+				<p class="t_content">白细胞、血小板、血红蛋白等</p>
+				<h4 class="t_name">尿常规全套</h4>
+				<p class="t_content"> 蛋白质、葡萄糖、尿胆原等</p>
+				<h4 class="t_name">肾功能检查</h4>
+				<p class="t_content">尿素氮、肌酐、尿酸</p>
+				<h4 class="t_name">肝功能检查</h4>
+				<p class="t_content">谷丙转氨酶（ALT）、谷草转氨酶（AST）、谷氨酰转肽酶（γ-GT）、碱性磷酸酶（ALP）、总胆红素（Tbil)、间接胆红素、直接胆红素、总蛋白（TP）、球蛋白白蛋白（ALB）、白/球比值</p>
+				<h4 class="t_name">血脂检查</h4>
+				<p class="t_content">总胆固醇（CHOL）、甘油三脂（TG）、高密度脂蛋白（HDL）、低密度脂蛋白（LDL）</p>
+				<h4 class="t_name">心电图</h4>
+				<p class="t_content">十二导联心电图</p>
+				<h4 class="t_name">x光数字化摄片</h4>
+				<p class="t_content">胸部正位片DR、颈椎侧位片DR</p>
+				<h4 class="t_name">B超检查</h4>
+				<p class="t_content">腹部B超（肝胆脾胰双肾）、甲状腺B超 、前列腺超声</p>
+				<h4 class="t_name">肿瘤筛查</h4>
+				<p class="t_content">甲胎蛋白（AFP）、癌胚抗原（CEA） 、神经元特异性烯醇化酶 NSE、总前列腺特异性抗原 PSA、游离前列腺特异性抗原</p>
+				<h4 class="t_name">幽门螺旋杆菌</h4>
+				<p class="t_content">C13呼气试验（空腹）</p>
+				<h4 class="t_name">甲状腺功能3项</h4>
+				<p class="t_content">T3、T4、TSH</p>
+				<h4 class="t_name">血流变</h4>
+				<p class="t_content">血粘度</p>
+				<h4 class="t_name">骨密度</h4>
+				<p class="t_content">脚裸或手腕</p>
+				<h4 class="t_name">静脉抽血</h4>
+				<p class="t_content">含一次性采血针，真空管</p>
+				<h4 class="t_name">营养早餐</h4>
+				<p class="t_content">提供面包、鸡蛋等，根据不同医院配置</p>
+				<h4 class="t_name">体检报告直接寄送客户</h4>
+			</div>
+			<div class="t_item bgW s1">
+				<h3>至尊健康套餐(女)</h3>
+				<h4 class="t_name">常规检测</h4>
+				<p class="t_content">血压、身高、体重</p>
+				<h4 class="t_name">内科</h4>
+				<p class="t_content">心、肺听诊等内科检测项目耳鼻喉科、外耳道、鼓膜、鼻腔、鼻中隔、扁桃体、咽部</p>
+				<h4 class="t_name">眼科</h4>
+				<p class="t_content">视力、外眼、辩色力、眼底检查</p>
+				<h4 class="t_name">妇科检查</h4>
+				<p class="t_content">妇科基础检查 -<b>已婚</b>、 白带常规-<b>已婚</b>、宫颈涂片-<b>已婚</b>、TCT-<b>已婚</b></p>
+				<h4 class="t_name">血糖</h4>
+				<p class="t_content">空腹血糖、糖化血红蛋白</p>
+				<h4 class="t_name">血常规全套</h4>
+				<p class="t_content">白细胞、血小板、血红蛋白等</p>
+				<h4 class="t_name">尿常规全套</h4>
+				<p class="t_content"> 蛋白质、葡萄糖、尿胆原等</p>
+				<h4 class="t_name">肾功能检查</h4>
+				<p class="t_content">尿素氮、肌酐、尿酸</p>
+				<h4 class="t_name">肝功能检查</h4>
+				<p class="t_content">谷丙转氨酶（ALT）、谷草转氨酶（AST）、谷氨酰转肽酶（γ-GT）、碱性磷酸酶（ALP）、总胆红素（Tbil)、间接胆红素、直接胆红素、总蛋白（TP）、球蛋白白蛋白（ALB）、白/球比值</p>
+				<h4 class="t_name">血脂检查</h4>
+				<p class="t_content">总胆固醇（CHOL）、甘油三脂（TG）、高密度脂蛋白（HDL）、低密度脂蛋白（LDL）</p>
+				<h4 class="t_name">心电图</h4>
+				<p class="t_content">十二导联心电图</p>
+				<h4 class="t_name">x光数字化摄片</h4>
+				<p class="t_content">胸部正位片DR、颈椎侧位片DR</p>
+				<h4 class="t_name">B超检查</h4>
+				<p class="t_content">腹部B超（肝胆脾胰双肾）、甲状腺B超 、子宫及附件超声-<b>未婚或无性生活女性</b>、乳腺B超、阴道超声-<b>已婚或有性生活女性</b></p>
+				<h4 class="t_name">肿瘤筛查</h4>
+				<p class="t_content">甲胎蛋白（AFP）、癌胚抗原（CEA） 、糖链抗源测定 CA125、糖链抗原测定  CA15-3</p>
+				<h4 class="t_name">幽门螺旋杆菌</h4>
+				<p class="t_content">C13呼气试验-<b>空腹</b></p>
+				<h4 class="t_name">甲状腺功能3项</h4>
+				<p class="t_content">T3、T4、TSH</p>
+				<h4 class="t_name">血流变</h4>
+				<p class="t_content">血粘度</p>
+				<h4 class="t_name">骨密度</h4>
+				<p class="t_content">脚裸或手腕</p>
+				<h4 class="t_name">静脉抽血</h4>
+				<p class="t_content">含一次性采血针，真空管</p>
+				<h4 class="t_name">营养早餐</h4>
+				<p class="t_content">提供面包、鸡蛋等，根据不同医院配置</p>
+				<h4 class="t_name">体检报告直接寄送客户</h4>
+			</div>
+			<div class="t_item bgG v2">
+				<h3>尊享人生套餐(男)</h3>
+				<h4 class="t_name">常规检测</h4>
+				<p class="t_content">血压、身高、体重</p>
+				<h4 class="t_name">内科</h4>
+				<p class="t_content">心、肺听诊等内科检测项目耳鼻喉科、外耳道、鼓膜、鼻腔、鼻中隔、扁桃体、咽部</p>
+				<h4 class="t_name">眼科</h4>
+				<p class="t_content">视力、外眼、辩色力、眼底检查、裂隙灯检查</p>
+				<h4 class="t_name">血糖</h4>
+				<p class="t_content">空腹血糖、糖化血红蛋白</p>
+				<h4 class="t_name">血常规全套</h4>
+				<p class="t_content">白细胞、血小板、血红蛋白等</p>
+				<h4 class="t_name">尿常规全套</h4>
+				<p class="t_content"> 蛋白质、葡萄糖、尿胆原等</p>
+				<h4 class="t_name">肾功能检查</h4>
+				<p class="t_content">尿素氮、肌酐、尿酸</p>
+				<h4 class="t_name">肝功能检查</h4>
+				<p class="t_content">谷丙转氨酶（ALT）、谷草转氨酶（AST）、谷氨酰转肽酶（γ-GT）、碱性磷酸酶（ALP）、总胆红素（Tbil)、间接胆红素、直接胆红素、总蛋白（TP）、球蛋白白蛋白（ALB）、白/球比值</p>
+				<h4 class="t_name">血脂检查</h4>
+				<p class="t_content">总胆固醇（CHOL）、甘油三脂（TG）、高密度脂蛋白（HDL）、低密度脂蛋白（LDL）、血清载脂蛋白A1测定（APO-AI）、血清载脂蛋白B测定（APO-B） </p>
+				<h4 class="t_name">心肌酶</h4>
+				<p class="t_content">乳酸脱氢酶（LDH）、肌酸激酶（CK)</p>
+				<h4 class="t_name">风湿检查</h4>
+				<p class="t_content">血沉（ESR）、类风湿因子（RF）、抗链球菌溶血素“O”（ASO）</p>
+				<h4 class="t_name">心电图</h4>
+				<p class="t_content">十二导联心电图</p>
+				<h4 class="t_name">x光数字化摄片</h4>
+				<p class="t_content">胸部正位片DR、颈椎侧位片DR、腰椎侧位片DR</p>
+				<h4 class="t_name">B超检查</h4>
+				<p class="t_content">腹部B超（肝胆脾胰双肾）、甲状腺B超 、前列腺超声</p>
+				<h4 class="t_name">肿瘤筛查</h4>
+				<p class="t_content">甲胎蛋白（AFP）、癌胚抗原（CEA） 、糖类抗原Ca19-9（胰腺）、 糖类抗原Ca-242（结直肠）、糖类抗原Ca72-4（消化道）、神经元特异性烯醇化酶 NSE、总前列腺特异性抗原 PSA、游离前列腺特异性抗原（free-PSA）</p>
+				<h4 class="t_name">幽门螺旋杆菌</h4>
+				<p class="t_content">C13呼气试验（空腹）</p>
+				<h4 class="t_name">甲状腺功能3项</h4>
+				<p class="t_content">T3、T4、TSH、FT3、FT4</p>
+				<h4 class="t_name">血流变</h4>
+				<p class="t_content">血粘度</p>
+				<h4 class="t_name">经颅多普勒</h4>
+				<p class="t_content">脑血管血流检测（TCD）</p>
+				<h4 class="t_name">肺功能能检测</h4>
+				<p class="t_content">肺活量(一秒钟用力吐气量)、最大中段流速量</p>
+				<h4 class="t_name">骨密度</h4>
+				<p class="t_content">脚裸或手腕</p>
+				<h4 class="t_name">静脉抽血</h4>
+				<p class="t_content">含一次性采血针，真空管</p>
+				<h4 class="t_name">营养早餐</h4>
+				<p class="t_content">提供面包、鸡蛋等，根据不同医院配置</p>
+				<h4 class="t_name">体检报告直接寄送客户</h4>
+			</div>
+			<div class="t_item bgG s2">
+				<h3>尊享人生套餐(女)</h3>
+				<h4 class="t_name">常规检测</h4>
+				<p class="t_content">血压、身高、体重</p>
+				<h4 class="t_name">内科</h4>
+				<p class="t_content">心、肺听诊等内科检测项目耳鼻喉科、外耳道、鼓膜、鼻腔、鼻中隔、扁桃体、咽部</p>
+				<h4 class="t_name">眼科</h4>
+				<p class="t_content">视力、外眼、辩色力、眼底检查、裂隙灯检查</p>
+				<h4 class="t_name">妇科检查</h4>
+				<p class="t_content">妇科基础检查 -<b>已婚</b>、 白带常规-<b>已婚</b>、宫颈涂片-<b>已婚</b>、TCT-<b>已婚</b></p>
+				<h4 class="t_name">血糖</h4>
+				<p class="t_content">空腹血糖、糖化血红蛋白</p>
+				<h4 class="t_name">血常规全套</h4>
+				<p class="t_content">白细胞、血小板、血红蛋白等</p>
+				<h4 class="t_name">尿常规全套</h4>
+				<p class="t_content"> 蛋白质、葡萄糖、尿胆原等</p>
+				<h4 class="t_name">肾功能检查</h4>
+				<p class="t_content">尿素氮、肌酐、尿酸</p>
+				<h4 class="t_name">肝功能检查</h4>
+				<p class="t_content">谷丙转氨酶（ALT）、谷草转氨酶（AST）、谷氨酰转肽酶（γ-GT）、碱性磷酸酶（ALP）、总胆红素（Tbil)、间接胆红素、直接胆红素、总蛋白（TP）、球蛋白白蛋白（ALB）、白/球比值</p>
+				<h4 class="t_name">血脂检查</h4>
+				<p class="t_content">总胆固醇（CHOL）、甘油三脂（TG）、高密度脂蛋白（HDL）、低密度脂蛋白（LDL）、血清载脂蛋白A1测定 (APO-AI)、血清载脂蛋白B测定（APO-B）</p>
+				<h4 class="t_name">心肌酶</h4>
+				<p class="t_content">乳酸脱氢酶（LDH）、肌酸激酶（CK)</p>
+				<h4 class="t_name">风湿检查</h4>
+				<p class="t_content">血沉（ESR）、类风湿因子（RF）、抗链球菌溶血素“O”（ASO）</p>
+				<h4 class="t_name">心电图</h4>
+				<p class="t_content">十二导联心电图</p>
+				<h4 class="t_name">x光数字化摄片</h4>
+				<p class="t_content">胸部正位片DR、颈椎侧位片DR、腰椎侧位片DR</p>
+				<h4 class="t_name">B超检查</h4>
+				<p class="t_content">腹部B超（肝胆脾胰双肾）、甲状腺B超 、子宫及附件超声-<b>未婚或无性生活女性</b>、乳腺B超、阴道超声-<b>已婚或有性生活女性</b></p>
+				<h4 class="t_name">肿瘤筛查</h4>
+				<p class="t_content">甲胎蛋白（AFP）、癌胚抗原（CEA） 、糖类抗原Ca19-9（胰腺）、糖类抗原Ca-242（结直肠）、神经元特异性烯醇化酶 N、 糖类抗原Ca72-4（消化道）、 糖类抗原Ca-125（卵巢）、糖类抗原Ca15-3（乳腺）</p>
+				<h4 class="t_name">幽门螺旋杆菌</h4>
+				<p class="t_content">C13呼气试验-<b>空腹</b></p>
+				<h4 class="t_name">甲状腺功能3项</h4>
+				<p class="t_content">T3、T4、TSH、FT3、FT4</p>
+				<h4 class="t_name">血流变</h4>
+				<p class="t_content">血粘度</p>
+				<h4 class="t_name">经颅多普勒</h4>
+				<p class="t_content">脑血管血流检测（TCD）</p>
+				<h4 class="t_name">肺功能能检测</h4>
+				<p class="t_content">肺活量(一秒钟用力吐气量)、最大中段流速量</p>
+				<h4 class="t_name">骨密度</h4>
+				<p class="t_content">脚裸或手腕</p>
+				<h4 class="t_name">静脉抽血</h4>
+				<p class="t_content">含一次性采血针，真空管</p>
+				<h4 class="t_name">营养早餐</h4>
+				<p class="t_content">提供面包、鸡蛋等，根据不同医院配置</p>
+				<h4 class="t_name">体检报告直接寄送客户</h4>
+			</div>
+		</div>
+	    <div class="callBanner">
+			<h5><a href="tel://18651311260">&#9990</a></h5>
+			<p>我要咨询</p>
+		</div>
+	</body>
+	<script src="../js/sui/zepto.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		function setHeight(obj1,obj2){
+			obj1.height(obj2.height());
+		};
+		for(var i=0; i<3; i++){
+			setHeight($('.v'+i),$('.s'+i));
+		};
+	</script>
+</html>

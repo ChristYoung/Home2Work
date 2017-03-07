@@ -1,0 +1,12 @@
+.print-content{margin-top: 178px;}
+.print-title-row{border-bottom: 1px solid #ddd;}
+.print-title{color: #5CB85C;}
+.print-icon{display: block; width: 44px; height: 44px; background: url(../../img/dayin.png) no-repeat; margin: 20px auto 0;}
+
+.print-content_form p,.print-content_form label{font-size: 16px;}
+.print-content_form label{font-weight: normal;}
+.print-content_form .radio{margin-top: 20px; margin-bottom: 20px;}
+.tips{color: #F4AE87; margin-top: 20px;}
+.print-content_form .dark_p{color: #000;}
+.print-content_form .gray_p{font-size: 14px; color: #A7A7A7;}
+.print-content_form .form-control{background: #F4F5EE; border: none;}

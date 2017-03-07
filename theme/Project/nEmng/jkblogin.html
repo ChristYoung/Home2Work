@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="renderer" content="webkit">
+		<meta name="keywords" content="健康吧云管理平台" />
+		<meta name="description" content="睿博健康吧,创享智慧健康生活" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>健康吧管理平台</title>
+		<link rel="shortcut icon" href="img/favicon.ico"/>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<style type="text/css">
+			html,body{width: 100%; height: 100%;}
+			body{background-image: url(img/login-bg.png); background-size: 100% 100%; background-repeat: no-repeat; font-family: "microsoft yahei";}
+		    .container{height: 100%; min-width: 1200px; display: flex; justify-content: center; align-items: center;}
+		    .container .emng-logo{width: 520px; height: 310px; margin-bottom: 40px;}
+		    .container .emng-form{width: 400px; height: 250px; margin-bottom: 40px; padding-top: 55px;}
+		    
+		    .container .emng-form ul{width: 100%;}
+		    .container .emng-form li{margin-bottom: 15px; width: 100%; position: relative;}
+		    .container .emng-form li span{display: inline-block; text-align: center; width: 80px; font-size: 18px; padding-right: 8px;}
+		    .container .emng-form li:nth-of-type(3){display: flex; align-items: center;}
+		    .container .emng-form li:nth-of-type(3) span{padding-right: 11px;}
+		    .container .emng-form li .l-text{width: 255px; padding-left: 8px; background: #FFFFFF; border: 2px solid #E4E4E4; height: 42px; font-size: 18px;}
+		    .container .emng-form li button{
+		    	                             width: 150px; margin: 0 93px; border: none; 
+		    	                             height: 45px; 
+		    	                             border-radius: 6px; color: #FFFFFF; 
+		    	                             text-align: center;
+		    	                             font-family: "microsoft yahei"; font-size: 18px;
+		    	                             cursor: pointer;
+		    	                             background: -webkit-linear-gradient(top,#4BDDD4,#2DC7C2);
+		    	                             background: -moz-linear-gradient(top,#4BDDD4,#2DC7C2);
+		    	                             background: -ms-linear-gradient(top,#4BDDD4,#2DC7C2);
+		    	                             background: linear-gradient(top,#4BDDD4,#2DC7C2);
+		    	                        }
+		    #errorTips{color: red; position: absolute; font-size: 16px; top: 15px; left: 255px; display: inline-block;}	                        
+		    #validCode{width: 140px;}
+		    img{max-width: 100%;}
+		    #validateImg{width: 118px; height: 46px;}
+		    #switchValidcode{position: absolute; right: -80px; top: 18px; color: darkolivegreen;}
+		    #switchValidcode:hover{text-decoration: underline;}
+		    
+		    .lower_browse{position: fixed; left: 0; right: 0; top: 0; height: 60px; text-align: center; background: red; display: none;}	                        
+		    .lower_browse a{display: block; line-height: 60px; color: #fff;}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h3 class="lower_browse"><a href="https://www.mozilla.org/zh-CN/firefox/new/" target="_blank">您的浏览器版本过低,为获得更好的体验,请点击更新您的浏览器版本</a></h3>
+			<div class="emng-logo">
+				<img src="img/login-logo.png"/>
+			</div>
+			<div class="emng-form">
+				<form action="" name="loginForm" id="loginForm" method="post">
+					<ul>
+						<li>
+							<span>用户名:</span>
+							<input type="text" name="userName" id="userName" class="l-text" value="" />
+						</li>
+						<li>
+							<span>密&nbsp;&nbsp;&nbsp;码:</span>
+							<input type="password" name="userPassword" id="userPassword" class="l-text" value="" />
+						</li>
+						<li>
+							<span>验证码:</span>
+							<input type="text" name="validCode" id="validCode" value="" class="l-text"/>
+							<img id="validateImg" src="img/login-logo.png"/>
+							<a href="javascript:;" id="switchValidcode">看不清楚,再换一张</a>
+						</li>
+						<li>
+							<label class="errorTips" id="errorTips"></label>
+							<button type="button" id="toLogin">登  录</button>
+						</li>
+					</ul>
+				</form>
+			</div>
+		</div>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="js/plugin/vertifycate.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('#toLogin').click(function(){
+					if(!$('#userName').validator({errContainer:$('#errorTips'),required:true,requiredMsg:'用户名不能为空'})
+					  ||!$('#userPassword').validator({errContainer:$('#errorTips'),required:true,requiredMsg:'密码不能为空'}) 
+					  ||!$('#validCode').validator({errContainer:$('#errorTips'),required:true,requiredMsg:'验证码不能为空'})){
+						return false;
+					}else{
+						$('#loginForm').submit();
+					}
+				});
+				
+                $('#loginForm').enterSub($('#toLogin'));
+			});
+		</script>
+	</body>
+</html>

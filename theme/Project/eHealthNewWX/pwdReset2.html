@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>忘记密码</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+    <!--<link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">-->
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+  </head>
+  <body>
+    <div class="page-group">
+        <div class="page page-current">
+            <h3 class="h-title">忘记密码</h3>
+            <p class="h-tips">我们已经向您的手机号:<a class="cr">186****7896</a>发送了验证码</p>
+            <form id="registerForm" name="" action="" method="">
+	            <div class="input-area">
+	            	<div class="info-line tab">
+	            		<div class="info-name tab-item cb">
+	            			<span class="">验证码</span>
+	            		</div>
+	            		<div class="info-value tab-item cb">
+	            			<input type="text" class="" name="" id="vertifyCode" value="" maxlength="6" placeholder="请输入验证码"/>
+	            		</div>
+	            		<div class="vertify-code tab-item cb" id="getCode">获取验证码</div>
+	            	</div>
+	            	<div class="info-line tab">
+	            		<div class="info-name tab-item cb">
+	            			<span class="">密码</span>
+	            		</div>
+	            		<div class="info-value tab-item cb">
+	            			<input type="text" class="" name="" id="password" value="" maxlength="32" placeholder="6~32位数字字母组合"/>
+	            		</div>
+	            	</div>
+	            	<p class="info-tips cr" id="errorTips" style="display: none;"></p>
+	            </div>	
+	            <p class="btn-area">
+            	  <button type="submit">完成注册</button>
+                </p>
+            </form>
+        </div>
+    </div>
+    <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script src="js/sui/vertifycate.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/main/getVertifyCode.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>

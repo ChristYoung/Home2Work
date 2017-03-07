@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>个人资料</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="css/sui/sui.css"/>
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+  </head>
+  <body>
+    <div class="page-group">
+        <div class="page page-current">
+            <h3 class="h-title">个人资料</h3>
+            <p class="h-tips">为了准确的分析您的检测数据,请完善下列相关信息</p>
+            <form id="profileForm" name="" method="" action="">
+		            <div class="input-area">
+			            	<div class="info-line tab">
+				            		<div class="info-name tab-item cb">
+				            			<span class="">姓名</span>
+				            		</div>
+				            		<div class="info-value tab-item cb">
+				            			<input type="text" class="" name="username" id="username" value="" maxlength="32" placeholder="请输入您的姓名"/>
+				            		</div>
+			            	</div>
+			            	<div class="info-line tab">
+				            		<div class="info-name tab-item cb">
+				            			<span class="">性别</span>
+				            		</div>
+				            		<div class="info-value tab-item cb">
+				            			<input type="text" class="" name="gender" id="gender" value="" maxlength="" readonly="readonly" placeholder="请选择您的性别"/>
+				            		</div>
+			            	</div>
+			            	<div class="info-line tab">
+				            		<div class="info-name tab-item cb">
+				            			<span class="">出生年月</span>
+				            		</div>
+				            		<div class="info-value tab-item cb">
+				            			<input type="text" class="" name="birth" id="birth" value="" maxlength="" readonly="readonly" placeholder="年-月-日"/>
+				            		</div>
+			            	</div>
+			            	<div class="info-line tab">
+				            		<div class="info-name tab-item cb">
+				            			<span class="">地区</span>
+				            		</div>
+				            		<div class="info-value tab-item cb">
+				            			<input type="text" class="" name="area" id="area" value="" maxlength="" readonly="readonly" placeholder="省-市-区"/>
+				            		</div>
+			            	</div>
+			            	<p class="info-tips cr" id="errorTips" style="display: none;"></p>
+		            </div>
+		            <p class="btn-area">
+		            	<button type="submit">完成注册</button>
+		            </p>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/sui/zepto.js" type="text/javascript" charset="utf-8"></script>
+    <!--<script src="//g.alicdn.com/msui/sm/0.6.2/js/??sm.min.js,sm-extend.min.js" type="text/javascript" charset="utf-8"></script>-->
+    <script src="js/sui/sui.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="js/sui/sui-cityPicker.js" charset="utf-8"></script>
+    <script src="js/sui/vertifycate.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        var _d = new Date().toISOString();
+        var maxDate = _d.substring(0,_d.indexOf('T'));
+        $(document).on('click','#gender',function(){
+        	var button1 = [
+        	  {
+        	  	text:'请选择性别',
+        	  	label:true
+        	  },
+        	  {
+        	  	text:'男',
+        	  	bold:true,
+        	  	onClick:function(){
+        	  		$('#gender').val('男');
+        	  	}
+        	  },
+        	  {
+        	  	text:'女',
+        	  	bold:true,
+        	  	onClick:function(){
+        	  		$('#gender').val('女');
+        	  	}
+        	  }
+        	];
+        	var groups = [button1];
+        	$.actions(groups);
+        });
+    	$('#birth').calendar({maxDate:maxDate});
+    	$('#area').cityPicker({
+    		toolbarTemplate:'<header class="bar bar-nav"><button class="button button-link pull-right close-picker">确定</button><h1 class="title">选择地区</h1></header>'
+    	});
+    	
+    	$('#profileForm').submit(function(){
+    		if(!$('#username').validator({required:true,requiredMsg:'姓名不能为空'})
+    		   ||!$('#gender').validator({required:true,requiredMsg:'性别不能为空'}) 
+    		   ||!$('#birth').validator({required:true,requiredMsg:'出生年月不能为空'})
+    		   ||!$('#area').validator({required:true,requiredMsg:'地区不能为空'})){
+    			 return false;
+    		}
+    	});
+    </script>
+  </body>
+</html>

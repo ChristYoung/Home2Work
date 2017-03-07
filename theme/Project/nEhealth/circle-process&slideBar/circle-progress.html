@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+		   *{margin: 0; padding: 0;}
+		   .circle-orbit{position: relative; border: 15px solid #000000; border-bottom: 15px solid #FFFFFF; width: 370px; height: 370px; border-radius: 100%; margin: 180px auto;}
+           .circle-wrap{width: 400px; height: 400px; background-color: transparent; border-radius: 100%; position: absolute; top: -15px; left: -15px; -webkit-transform: rotate(45deg);}	  
+		   .circle-left,.circle-right{overflow: hidden; width: 210px; height: 420px; position: absolute; top: -10px; z-index: 5;}
+		   .circle-left{right: 200px;}
+		   .circle-right{left: 200px;}
+		   
+		   .circle-left .circle-range-left,.circle-right .circle-range-right{width: 420px; height: 420px; position: absolute; top: 0; bottom: 0; border-radius: 100%;}
+		   .circle-left .circle-range-left{
+		   	                              left: 0; 
+		                                  background: -webkit-gradient(linear, 0 0, 100% 0, from(transparent), color-stop(50%, transparent), color-stop(50%, #EE4F85), to(#EE4F85)); 
+		                                  -webkit-transition: .6s;
+		                                 }
+		   .circle-right .circle-range-right{right: 0; background: -webkit-gradient(linear, 0 0, 100% 0, from(#EE4F85), color-stop(50%, #EE4F85), color-stop(50%, transparent), to(transparent));}  
+		   
+		   .circle-inner{position: absolute; left: 15px; top: 15px; width: 370px; height: 370px; background: #FFFFFF; border-radius: 100%;}        
+		   .circle-inner-2{position: absolute; left: 25px; top: 25px; width: 350px; height: 350px; line-height: 350px; text-align: center; background: #FFFFFF; border-radius: 100%; z-index: 6; -webkit-transform: rotate(-45deg);}
+		   .circle-inner-2 p{font-size: 32px; -webkit-font-smoothing: antialiased; font-weight: 900;}
+		
+		
+		    /*总结一下各个数值之间的关系*/
+		   /*
+		    *(1).circle-orbit表示的是一个轨道,是显示出来的,它的宽度加上其边框的长度应该和.circle-wrap相等,.circle-wrap的top和left值是.circle-orbit的border值
+		    *(2).circle-left和.circle-right的宽度要尽量比circle-wrap要宽,因为进度条的宽度要比轨道宽,.circle-left的top值等于-(.circle-left的height值-.circle-wrap的width值)/2
+		    *(3).circle-range-left的宽度是.circle-left的两倍,对应的.circle-range-right也是
+		    *(4).circle-inner的宽度和高度与.circle-orbit一样,只是没有border值,其作用是用来遮挡进度条模块使其像是环形进度条 ,其top值和left值等于.circle-orbit的border值
+		    *(5).circle-inner-2的left值和top值比.circle-inner的left值和top值要大,具体大的数值为.circle-left的top值的绝对值 
+		    * */
+		   
+		</style>
+	</head>
+	<body>
+		<div class="circle-orbit">
+			<div class="circle-wrap">
+				<div class="circle-left">
+					<div class="circle-range-left"></div>
+				</div>
+				<div class="circle-right">
+					<div class="circle-range-right"></div>
+				</div>
+				<div class="circle-inner"></div>
+				<div class="circle-inner-2">
+				  <p>血压</p>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.circle-range-left').css('-webkit-transform','rotate(130deg)')
+		});
+	</script>
+</html>

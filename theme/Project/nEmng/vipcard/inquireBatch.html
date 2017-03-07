@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />	
+		<meta name="keywords" content="健康吧云管理平台" />
+		<meta name="description" content="睿博健康吧,创享智慧健康生活" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/emng-1.0.0.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/jquery-ui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/jquery-ui.theme.min.css"/>
+		
+		<!--theme-->
+		<link rel="stylesheet" type="text/css" href="../css/theme-origin/emng-origin.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/theme-origin/public-origin.css"/>
+		<title>批次查询</title>
+		<style type="text/css">
+		   nav em{background-position: -480px 0;}	
+		   .check-factor-2 li span{display: inline-block; width: 60px; text-align: right;}
+		   #startDate,#endDate,#longBatch,#memo{width: 140px;}
+		   #combo,#comboA,#status,#statusA,#batch,#batchA{width: 230px;}
+		   
+		   /*自定义datePicker的样式*/
+		   	.ui-widget-header{background: #2F2F2F; border: 1px solid #2F2F2F;}
+		   .ui-state-default, .ui-widget-content .ui-state-default{color: #2F2F2F;}
+		</style>
+	</head>
+	<body>
+		<nav class="emng-flex">
+			<em></em>
+			<p>会员卡管理 <span> -> 批次查询</span></p>
+		</nav>
+		<div class="check-factor-wrapper">
+			<article>查找</article>
+			    <form>
+			    	<div class="check-factor-2 emng-flex">
+						<div class="line-two emng-flex">
+							<div class="dk-1 emng-flex">
+								<ul class="emng-flex">
+									<li class="date-wrap">
+										<span>开始日期:</span>
+										<input type="text" name="startDate" id="startDate"  value=""/>
+									    <a href="javascript:;" title="清空日期" class="clear-date"></a>
+									</li>
+									<li class="date-wrap">
+										<span>结束日期:</span>
+										<input type="text" name="endDate" id="endDate" value=""/>
+										<a href="javascript:;" title="清空日期" class="clear-date"></a>
+									</li>
+									<li>
+										<span>批次:</span>
+										<input type="text" name="longBatch" id="longBatch" class="Trim"  value=""/>
+									</li>
+									<li>
+										<span>备注:</span>
+										<input type="text" name="memo" id="memo" placeholder="10个字之内" maxlength="10" value=""/>
+									</li>
+							    </ul>
+							</div>
+							<div class="dk-2 emng-flex">
+								<ul class="emng-flex">
+									<li>
+										<span>套餐名称:</span>
+										<a class="emng-select" id="comboA">
+											<strong class="emng-curselect"></strong>
+											<select name="level" id="combo" onchange="change(this)">
+												<option></option>
+												<option>有效</option>
+												<option>无效</option>
+											</select>
+										</a>
+									</li>
+									<li>
+										<span>批次名称:</span>
+										<a class="emng-select" id="batchA">
+											<strong class="emng-curselect"></strong>
+											<select name="status" id="batch" onchange="change(this)">
+												<option></option>
+												<option>有效</option>
+												<option>无效</option>
+											</select>
+										</a>
+									</li>
+									<li>
+										<span>状态:</span>
+										<a class="emng-select" id="statusA">
+											<strong class="emng-curselect"></strong>
+											<select name="status" id="status" onchange="change(this)">
+												<option></option>
+												<option>有效</option>
+												<option>无效</option>
+											</select>
+										</a>
+									</li>
+							    </ul>
+							</div>
+						</div>
+						<div class="check-btn-wrap">
+							<button type="submit" class="emng-btn btn-bg-blue">批次查询</button>
+						</div>
+					</div>
+			    </form>
+		</div>
+		<div class="pagebtn-wrapper emng-flex">
+			<div class="page-wrap">
+				*此处显示页数
+			</div>
+		</div>
+		<div class="tab-wrapper">
+			<table class="emng-table">
+				<thead>
+					<tr>
+						<th>编号</th>
+						<th>批次</th>
+						<th>备注</th>
+						<th>等级</th>
+						<th>有效日期</th>
+						<th>使用数量</th>
+						<th>状态</th>
+						<th>操作</th>
+						<th>下载批次</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td><a href="#">20151023001081</a></td>
+						<td>BLR7PjFVWN</td>
+						<td>3</td>
+						<td>2018-10-23 23:59:59</td>
+						<td>1</td>
+						<td>有效</td>
+						<td><a href="javascript:;" class="a-btn">[失效]</a></td>
+						<td><a href="javascript:;" class="a-btn">[下载]</a></td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td><a href="#">20151023001081</a></td>
+						<td>BLR7PjFVWN</td>
+						<td>3</td>
+						<td>2018-10-23 23:59:59</td>
+						<td>1</td>
+						<td>有效</td>
+						<td><a href="javascript:;" class="a-btn">[失效]</a></td>
+						<td><a href="javascript:;" class="a-btn">[下载]</a></td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td><a href="#">20151023001081</a></td>
+						<td>BLR7PjFVWN</td>
+						<td>3</td>
+						<td>2018-10-23 23:59:59</td>
+						<td>1</td>
+						<td>有效</td>
+						<td><a href="javascript:;" class="a-btn">[失效]</a></td>
+						<td><a href="javascript:;" class="a-btn">[下载]</a></td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td><a href="#">20151023001081</a></td>
+						<td>BLR7PjFVWN</td>
+						<td>3</td>
+						<td>2018-10-23 23:59:59</td>
+						<td>1</td>
+						<td>有效</td>
+						<td><a href="javascript:;" class="a-btn">[失效]</a></td>
+						<td><a href="javascript:;" class="a-btn">[下载]</a></td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td><a href="#">20151023001081</a></td>
+						<td>BLR7PjFVWN</td>
+						<td>3</td>
+						<td>2018-10-23 23:59:59</td>
+						<td>1</td>
+						<td>有效</td>
+						<td><a href="javascript:;" class="a-btn">[失效]</a></td>
+						<td><a href="javascript:;" class="a-btn">[下载]</a></td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td><a href="#">20151023001081</a></td>
+						<td>BLR7PjFVWN</td>
+						<td>3</td>
+						<td>2018-10-23 23:59:59</td>
+						<td>1</td>
+						<td>有效</td>
+						<td><a href="javascript:;" class="a-btn">[失效]</a></td>
+						<td><a href="javascript:;" class="a-btn">[下载]</a></td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td><a href="#">20151023001081</a></td>
+						<td>BLR7PjFVWN</td>
+						<td>3</td>
+						<td>2018-10-23 23:59:59</td>
+						<td>1</td>
+						<td>有效</td>
+						<td><a href="javascript:;" class="a-btn">[失效]</a></td>
+						<td><a href="javascript:;" class="a-btn">[下载]</a></td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td><a href="#">20151023001081</a></td>
+						<td>BLR7PjFVWN</td>
+						<td>3</td>
+						<td>2018-10-23 23:59:59</td>
+						<td>1</td>
+						<td>有效</td>
+						<td><a href="javascript:;" class="a-btn">[失效]</a></td>
+						<td><a href="javascript:;" class="a-btn">[下载]</a></td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td><a href="#">20151023001081</a></td>
+						<td>BLR7PjFVWN</td>
+						<td>3</td>
+						<td>2018-10-23 23:59:59</td>
+						<td>1</td>
+						<td>有效</td>
+						<td><a href="javascript:;" class="a-btn">[失效]</a></td>
+						<td><a href="javascript:;" class="a-btn">[下载]</a></td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td><a href="#">20151023001081</a></td>
+						<td>BLR7PjFVWN</td>
+						<td>3</td>
+						<td>2018-10-23 23:59:59</td>
+						<td>1</td>
+						<td>有效</td>
+						<td><a href="javascript:;" class="a-btn">[失效]</a></td>
+						<td><a href="javascript:;" class="a-btn">[下载]</a></td>
+					</tr>
+				</tbody>
+		    </table>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="../js/plugin/vertifycate.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/plugin/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/plugin/datepickerChinese.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//datePicker应用层
+			(function(){
+				$('#startDate').datepicker({
+	            	onSelect:function(dateText,inst){
+	            		 //设置结束日期的最小日期
+	            		 $("#endDate").datepicker('option','minDate',new Date(dateText.replace('-',','))); 
+	            	}
+                });
+	            $('#endDate').datepicker({
+	              onSelect:function(dateText,inst){  
+	                 //设置开始日期的最大日期  
+	                 $('#startDate').datepicker('option','maxDate',new Date(dateText.replace('-',',')));  
+	              }
+	            });
+			})();
+		});
+	</script>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/emng-1.0.0.css"/>
+		<link rel="stylesheet" type="text/css" href="css/menu-list.css"/>
+	</head>
+	<body>
+		<!--以下是菜单-->
+		<div class="menu-out-wrapper">
+			<ul>
+				<li class="menu-out-one">        <!--所有menu-out-one是一级菜单项目  ps:此一级菜单下无二级菜单-->
+					<div class="menu-out-header">   
+						<span id="homepage"></span><span><a href="#" target="myView">首页</a></span>  <!--首页的a标签内填入首页的地址-->
+					</div>
+				</li>
+				<li class="menu-out-one">       <!--所有menu-out-one是一级菜单项目  ps:此一级菜单下有二级菜单-->
+					<div class="menu-out-header">   
+						<span id="icon-org"></span><span><a href="javascript:;">组织人员</a></span>  <!--所有menu-out-header下的a标签内不需要填入任何地址-->
+					</div>
+					<ul class="menu-out-two">                  <!--menu-out-two下的是二级菜单 -->
+						<li><a href="#" target="myView">组织信息管理</a></li>     <!--二级菜单项目下的a标签内填入相应页面的地址-->
+						<li><a href="#" target="myView">组织人员管理</a></li>
+						<li><a href="#" target="myView">组织接入管理</a></li>
+						<li><a href="#" target="myView">微信接入管理</a></li>
+					</ul>
+				</li>
+				<li class="menu-out-one">
+					<div class="menu-out-header">
+						<span id="icon-auth"></span><span><a href="javascript:;">权限管理</a></span>
+					</div>
+					<ul class="menu-out-two">
+						<li><a href="#" target="myView">角色管理</a></li>
+						<li><a href="#" target="myView">组织功能点管理</a></li>
+					</ul>
+				</li>
+				<li class="menu-out-one">
+					<div class="menu-out-header">
+						<span id="icon-userM"></span><span><a href="javascript:;">用户管理</a></span>
+					</div>
+					<ul class="menu-out-two">
+						<li><a href="#" target="myView">用户信息</a></li>
+						<li><a href="#" target="myView">修改用户组织</a></li>
+					</ul>
+				</li>
+				<li class="menu-out-one">
+					<div class="menu-out-header">
+						<span id="icon-doctorM"></span><span><a href="javascript:;">医生管理</a></span>
+					</div>
+					<ul class="menu-out-two">
+						<li><a href="#" target="myView">医生信息</a></li>
+						<li><a href="#" target="myView">医生认证</a></li>
+					</ul>
+				</li>
+				<li class="menu-out-one">
+					<div class="menu-out-header">
+						<span id="icon-text"></span><span><a href="javascript:;">短信平台</a></span>
+					</div>
+					<ul class="menu-out-two">
+						<li><a href="#" target="myView">发送短信</a></li>
+					</ul>
+				</li>
+				<li class="menu-out-one">
+					<div class="menu-out-header">
+						<span id="icon-stat"></span><span><a href="javascript:;">统计分析</a></span>
+					</div>
+					<ul class="menu-out-two">
+						<li><a href="#" target="myView">总人数统计分析</a></li>
+						<li><a href="#" target="myView">检测项目统计分析</a></li>
+						<li><a href="#" target="myView">性别统计分析</a></li>
+						<li><a href="#" target="myView">年龄统计分析</a></li>
+					</ul>
+				</li>
+				<li class="menu-out-one">
+					<div class="menu-out-header">
+						<span id="icon-sysM"></span><span><a href="javascript:;">系统管理</a></span>
+					</div>
+					<ul class="menu-out-two">
+						<li><a href="#" target="myView">设备管理</a></li>
+					</ul>
+				</li>
+				<li class="menu-out-one">
+					<div class="menu-out-header">
+						<span id="icon-vipM"></span><span><a href="javascript:;">会员卡管理</a></span>
+					</div>
+					<ul class="menu-out-two">
+						<li><a href="#" target="myView">生成会员卡</a></li>
+						<li><a href="#" target="myView">卡查询</a></li>
+						<li><a href="#" target="myView">批次查询</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				//使菜单下拉或上缩
+			(function(){
+				var aMenuOneLi = $('.menu-one-li');
+				var aMenuTwo = $('.menu-out-two');
+				var aMenuTwoItem = $('.menu-out-two a');
+				
+				$('.menu-out-header').each(function(i,e){
+					$(this).click(function(){
+						if( $(aMenuTwo[i-1]).css('display') == 'block' ){
+							$(aMenuTwo[i-1]).slideUp(300);
+						}else{
+							aMenuTwo.slideUp(300);
+							$(aMenuTwo[i-1]).slideDown(300);
+						}
+						$('.menu-out-header').removeClass('menu-out-header-click');
+					    $(this).addClass('menu-out-header-click');  
+					    aMenuTwoItem.removeClass('menu-two-click');
+					});
+				});
+				
+				aMenuTwoItem.click(function(){
+					aMenuTwoItem.removeClass('menu-two-click');
+					$(this).addClass('menu-two-click');
+				});
+			})();
+			});
+		</script>
+	</body>
+</html>

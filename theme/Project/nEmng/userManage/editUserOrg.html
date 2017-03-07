@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />	
+		<meta name="keywords" content="健康吧云管理平台" />
+		<meta name="description" content="睿博健康吧,创享智慧健康生活" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/emng-1.0.0.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+		
+		<!--theme-->
+		<link rel="stylesheet" type="text/css" href="../css/theme-origin/emng-origin.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/theme-origin/public-origin.css"/>
+		<title>编辑用户</title>
+		<style type="text/css">
+			nav em{background-position: -180px 0;}
+		    @media (min-width: 1000px) and (max-width: 1499px){
+			    .org,.org select,.emng-select .emng-curselect{width: 263px;}
+            }
+            @media (min-width: 1500px) and (max-width:1600px){
+			    .org,.org select,.emng-select .emng-curselect{width: 329px;}
+            }
+            @media (min-width: 1620px) and (max-width:1800px){
+			   .org,.org select,.emng-select .emng-curselect{width: 429px;}
+            }
+		</style>
+	</head>
+	<body>
+		<nav class="emng-flex">
+			<em></em>
+			<p>用户管理 -> 用户信息<span> ->编辑用户</span></p>
+		</nav>
+		<div class="btn-area emng-flex">
+			<a href="userOrgMng.html" class="emng-btn btn-bg-blue" id="go-back">返回</a>
+			<button class="emng-btn btn-bg-blue" id="go-submit">提交</button>
+		</div>
+		<div class="tab">
+			<form id="editForm" name="" method="" action="">
+				<ul>
+					<li>
+						<span>用户名:</span>
+						<input type="text" name="userName" id="userName" value="" class="readyonly" readonly="readonly" />
+					</li>
+					<li>
+						<span>姓名:</span>
+						<input type="text" id="fullName" name="fullName" maxlength="32" value="" class="readyonly" readonly="readonly"/>
+					</li>
+					<li>
+						<span><i class="must">*</i>组织信息</span>
+						<a class="emng-select org"><strong class="emng-curselect"></strong><select id="loc_0" name="orgTwo"><option value=""></option><option value="M">男</option><option value="F">女</option></select></a>
+						<a class="emng-select org"><strong class="emng-curselect"></strong><select><option></option><option>男</option><option>女</option></select></a>
+						<a class="emng-select org"><strong class="emng-curselect"></strong><select><option></option><option>男</option><option>女</option></select></a>
+					    <label class="error"></label>
+					</li>
+				</ul>
+			</form>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="../js/plugin/vertifycate.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#go-submit').click(function(){
+				if(!$('#loc_0').validator({errContainer:$('#loc_0').parent().siblings('.error'),required:true,requiredMsg:'组织信息不能为空'})){
+					return false;
+				}else{
+					$('#editForm').submit();
+				}
+			});
+		});
+	</script>
+</html>

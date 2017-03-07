@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />	
+		<meta name="keywords" content="健康吧云管理平台" />
+		<meta name="description" content="睿博健康吧,创享智慧健康生活" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/emng-1.0.0.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+		
+		<!--theme-->
+		<link rel="stylesheet" type="text/css" href="../css/theme-origin/emng-origin.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/theme-origin/public-origin.css"/>
+		<title>编辑医生</title>
+		<style type="text/css">
+			nav em{background-position: -240px 0;}
+		    #hospital,#title,#hospital select,#title select{width: 690px;}
+		    .org,.org select,.emng-select .emng-curselect{width: 345px;}
+			@media (min-width: 1000px) and (max-width: 1499px){
+				#hospital,#title,#hospital select,#title select{width: 789px;}
+			    .org,.org select,.emng-select .emng-curselect{width: 394px;}
+            }
+            @media (min-width: 1500px) and (max-width:1600px){
+	            #hospital,#title,#hospital select,#title select{width: 989px;}
+			    .org,.org select,.emng-select .emng-curselect{width: 494px;}
+            }
+            @media (min-width: 1620px) and (max-width:1800px){
+	           #hospital,#title,#hospital select,#title select{width: 1289px;}
+			   .org,.org select,.emng-select .emng-curselect{width: 644px;}
+            }
+		</style>
+	</head>
+	<body>
+		<nav class="emng-flex">
+			<em></em>
+			<p>医生管理 -> 医生信息<span> -> 编辑医生</span></p>
+		</nav>
+		<div class="btn-area emng-flex">
+			<a href="doctorConsult.html" class="emng-btn btn-bg-blue" id="go-back">返回</a>
+			<button class="emng-btn btn-bg-blue" id="go-submit">提交</button>
+		</div>
+		<div class="tab">
+			<form id="doctorForm" name="" method="" action="">
+				<ul>
+					<li>
+						<span>手机号码:</span>
+						<input type="text" id="pNum" name="pNum" value="13813758884" maxlength="11" class="readyonly" readonly="readonly"/>
+					    <label class="error"></label>
+					</li>
+					<li>
+						<span><i class="must">*</i>姓名:</span>
+						<input type="text" id="uname" name="uname" maxlength="32"  value="" placeholder="32个字之内 请勿输入空格等特殊字符"/>
+					    <label class="error"></label>
+					</li>
+					<li>
+						<span><i class="must">*</i>省市:</span>
+						<a class="emng-select org"><strong class="emng-curselect"></strong><select id="loc0"><option></option><option>男</option><option>女</option></select></a>
+						<a class="emng-select org"><strong class="emng-curselect"></strong><select id="loc1"><option></option><option>男</option><option>女</option></select></a>
+					    <label class="error"></label>
+					</li>
+					<li>
+						<span><i class="must">*</i>医院:</span>
+						<a class="emng-select" id="hospital"><strong class="emng-curselect"></strong><select name="hospitalId" id="hospitalSelect"><option></option><option>男</option><option>女</option></select></a>
+					    <label class="error"></label>
+					</li>
+					<li>
+						<span><i class="must">*</i>科室:</span>
+						<a class="emng-select org"><strong class="emng-curselect"></strong><select name="office_1" id="office_1"><option></option><option>男</option><option>女</option></select></a>
+						<a class="emng-select org"><strong class="emng-curselect"></strong><select name="office_2" id="office_2"><option></option><option>男</option><option>女</option></select></a>
+					    <label class="error"></label>
+					</li>
+					<li>
+						<span><i class="must">*</i>职称:</span>
+						<a class="emng-select" id="title"><strong class="emng-curselect"></strong><select name="titleId" id="doctorTitleSelect"><option></option><option>男</option><option>女</option></select></a>
+					    <label class="error"></label>
+					</li>
+					<li>
+						<span><i class="must">*</i>科室电话:</span>
+						<input type="text" maxlength="32" name="depPhone" id="depPhone"/>
+						<label class="error"></label>
+					</li>
+					<li>
+						<span><i class="must">*</i>专业领域:</span>
+						<input type="text" name="specialitiesArea" id="specialitiesArea" maxlength="50" placeholder="50个字之内 请勿输入空格等特殊字符"/>
+					    <label class="error"></label>
+					</li>
+					<li>
+						<span><i class="must">*</i>简介:</span>
+						<input type="text" name="summary" id="summary" maxlength="100" placeholder="50个字之内"/>
+					    <label class="error"></label>
+					</li>
+			    </ul>
+			</form>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="../js/plugin/vertifycate.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/main/doc.js" type="text/javascript" charset="utf-8"></script>
+</html>

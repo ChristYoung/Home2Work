@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />	
+		<meta name="keywords" content="健康吧云管理平台" />
+		<meta name="description" content="睿博健康吧,创享智慧健康生活" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/emng-1.0.0.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/authorization.css"/>
+		
+		<!--theme-->
+		<link rel="stylesheet" type="text/css" href="../css/theme-origin/emng-origin.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/theme-origin/public-origin.css"/>
+		<title>功能授权</title>
+	</head>
+	<body>
+		<nav class="emng-flex">
+			<em></em>
+			<p>组织人员 -> 组织人员管理<span>->功能授权</span></p>
+		</nav>
+		<div class="btn-area emng-flex">
+			<p><span>登录账号:</span>南通太阳花</p>
+			<a class="emng-btn btn-bg-blue" id="go-back" href="personManage.html">返回</a>
+			<button class="emng-btn btn-bg-blue" id="go-submit">提交</button>
+		</div>
+		<form method="post" name="myform">
+			<div class="switch-wrap emng-flex">
+				<div class="select-wrap">
+					<h3>未授予的功能</h3>
+					<div class="select-list">
+						<ul id="list1">
+							<li data-value="">das</li>   <!--在自定义属性data-value中传入相应功能的value值-->
+							<li data-value="">das</li>
+							<li data-value="">das</li>
+						</ul>
+					</div>
+				</div>
+				<div class="switch-btn-area">
+					<button type="button" class="emng-btn btn-bg-gray" id="leftOne"> > </button>
+					<button type="button" class="emng-btn btn-bg-gray" id="leftAll"> >> </button>
+					<button type="button" class="emng-btn btn-bg-gray" id="rightOne"> < </button>
+					<button type="button" class="emng-btn btn-bg-gray" id="rightAll"> << </button>
+				</div>
+				<div class="select-wrap">
+					<h3>授予的功能</h3>
+					<div class="select-list">
+						<ul id="list2"></ul>
+					</div>
+				</div>
+			</div>
+			<input type="hidden" name="" id="dataList" value="" />
+		</form>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="../js/main/authorization.js" type="text/javascript" charset="utf-8"></script>
+</html>

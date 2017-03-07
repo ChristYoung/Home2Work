@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />	
+		<meta name="keywords" content="兴业银行缴费平台" />
+		<meta name="description" content="兴业银行缴费平台" />
+		<title>首页</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/home.css"/>
+	</head>
+	<body>
+		<header>
+			<div class="logo-wrap">
+				<img src="img/u2.png"/>
+			</div>
+			<div class="header-list">
+				<span>当前登录:3302******0123</span>
+				<a href="#" data-toggle="modal" data-target="#change-password">修改登录密码</a>
+				<a href="#">退出登录</a>
+			</div>
+		</header>
+		<section class="paytype-wrap">
+			<h1>选择缴费类别</h1>
+			<div class="pay-type">
+				<ul>
+					<li>
+					    <a href="#" data-toggle="modal" data-target="#select-school">
+					    	<img src="img/u9.png"/>
+						    <span>教育缴费</span>
+					    </a>
+					</li>	
+				</ul>
+			</div>
+		</section>
+		<!--选择学校弹出框-->
+		<div class="modal fade" id="select-school" tabindex="-1" role="dialog" aria-labelledby="selectSchool">
+            <div class="modal-dialog" role="document" style="width: 400px;">
+                <div class="modal-content">
+	                <form id="" name="" action="?" method="post">
+	                    <div class="modal-header">
+	                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	                        <h4 class="modal-title" id="selectSchool">选择学校</h4>
+	                    </div>
+	                    <div class="modal-body">
+	                    	<ul class="school-list">
+	                    		<li>
+	                    			<input type="radio" name="school-name" value="" checked="checked"/><em>南通大学</em>
+	                    		</li>
+	                    		<li>
+	                    			<input type="radio" name="school-name" value="" /><em>南京邮电大学</em>
+	                    		</li>
+	                    		<li>
+	                    			<input type="radio" name="school-name" value="" /><em>上海交通大学</em>
+	                    		</li>
+	                    		<li>
+	                    			<input type="radio" name="school-name" value="" /><em>南京信息工程学院</em>
+	                    		</li>
+	                    		<li>
+	                    			<input type="radio" name="school-name" value="" /><em>北京大学</em>
+	                    		</li>
+	                    		<li>
+	                    			<input type="radio" name="school-name" value="" /><em>南京林业大学</em>
+	                    		</li>
+	                    	</ul>
+	                    </div>
+	                    <div class="modal-footer">
+	                        <button type="submit" class="btn btn-primary">确定</button>
+	                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+	                    </div>
+	                </form>
+                </div>
+            </div>
+        </div>
+        
+        <!--修改密码弹出框-->
+        <div class="modal fade" id="change-password" tabindex="-1" role="dialog" aria-labelledby="modifyPassword" onclick="clearError()">
+            <div class="modal-dialog" role="document" style="width: 400px;">
+                <div class="modal-content">
+	                <form id="passwordForm" name="" action="?" method="post">
+	                    <div class="modal-header">
+	                        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearError()"><span aria-hidden="true">&times;</span></button>
+	                        <h4 class="modal-title" id="modifyPassword">修改缴费平台登录密码</h4>
+	                    </div>
+	                    <div class="modal-body" id="password-modal">
+	                    	<ul class="password-data">
+	                    		<li>
+	                    			<span>当前密码<i class="must">*</i></span>
+	                    			<input type="password" name="" id="current-password" value="" placeholder="输入当前密码" maxlength="16"/>
+	                    		</li>
+	                    		<li>
+	                    			<span>新密码<i class="must">*</i></span>
+	                    			<input type="password" name="" id="new-password" value="" placeholder="新密码,8-16位数字字母组合" maxlength="16"/>
+	                    		</li>
+	                    		<li>
+	                    			<span>重复一次<i class="must">*</i></span>
+	                    			<input type="password" name="" id="confirm-password" value="" placeholder="再输一次新密码" maxlength="16"/>
+	                    		</li>
+	                    		<li>
+	                    			<b class="errorTips"></b>
+	                    		</li>
+	                    	</ul>
+	                    </div>
+	                    <div class="modal-footer">
+	                        <button type="submit" class="btn btn-primary">确定</button>
+	                        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+	                    </div>
+	                </form>
+                </div>
+            </div>
+        </div>
+	</body>
+	<script src="js/plugin/jquery-2.0.0.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/plugin/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/plugin/vertify.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/main/home.js" type="text/javascript" charset="utf-8"></script>
+</html>

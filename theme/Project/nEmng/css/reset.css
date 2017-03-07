@@ -1,0 +1,45 @@
+@charset "utf-8";
+body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,form,input,textarea,th,td,select{margin: 0;padding: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,form,a,th,td,select,em,span,strong{-webkit-touch-callout: inherit; -webkit-user-select: auto;}
+h1,h2,h3,h4,h5,h6,strong,em{font-weight: normal; font-style: normal;}
+
+body {
+  width: 100%;
+  font-family: "microsoft yahei";
+  font-size: 14px;
+  background-color: #fff;
+}
+ul,li{list-style: none;}
+a {
+	color: #2F2F2F;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+a:hover {
+  text-decoration: none;
+}
+button,input,select,textarea {
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+dt,dd {
+  display: inline-block;
+}
+textarea,input {
+  resize: none;
+  outline: none;
+}
+textarea {
+  resize: none;
+  -webkit-appearance: none;
+}
+em {
+  font-style: normal;
+}
+
+/*select{-webkit-appearance: none; -moz-appearance: none; appearance: none; -ms-progress-appearance: none;}*/
+
+/*去除IE浏览器input自带的X*/
+input[type=text]::-ms-clear{display: none;}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />	
+		<meta name="keywords" content="健康吧云管理平台" />
+		<meta name="description" content="睿博健康吧,创享智慧健康生活" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/emng-1.0.0.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/menu-list.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+		
+		<!--theme-->
+		<link rel="stylesheet" type="text/css" href="../css/theme-origin/emng-origin.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/theme-origin/menu-list-origin.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/theme-origin/public-origin.css"/>
+		<title>组织接入管理</title>
+		<style type="text/css">
+		    nav em{background-position: -180px 0;}
+		    .menu-in-wrapper .menu-in-one .menu-in-header a{display: block; width: 165px; height: 100%; left: 0; text-indent: 25px;}
+		    #test-content{flex: 1; -webkit-flex: 1; -moz-flex: 1; -ms-flex: 1; height: 510px;}
+		    
+			.check-factor-wrapper .check-factor-1 li .emng-select{width: 155px;margin-left: 10px;}
+			.check-factor-wrapper .check-factor-1 li .emng-select .emng-curselect{width: 155px;}
+            .check-factor-wrapper .check-factor-1 li .emng-select select{width: 155px;}
+            
+            .pagebtn-wrapper{margin: 0 auto; height: 45px;}
+		</style>
+	</head>
+	<body>
+		<nav class="emng-flex">
+			<em></em>
+			<p>用户管理 -> 用户信息  -> <span>健康档案</span></p>
+		</nav>
+		<div id="main-section" class="emng-flex">
+			<section id="test-list">
+				<div class="menu-in-wrapper">
+					<ul>
+						<li class="menu-in-one"> 
+							<div class="menu-in-header">
+								<a href="#">血压</a>
+							</div>
+						</li>
+						<li class="menu-in-one">
+							<div class="menu-in-header">
+								<a href="#">血氧</a>
+							</div>
+						</li>
+						<li class="menu-in-one">
+							<div class="menu-in-header">
+								<a href="#">身高体重</a>
+							</div>
+						</li>
+						<li class="menu-in-one">
+							<div class="menu-in-header">
+								<a href="#">体温</a>
+							</div>
+						</li><li class="menu-in-one">
+							<div class="menu-in-header">
+								<a href="#">人体成分</a>
+							</div>
+						</li>
+						<li class="menu-in-one">
+							<div class="menu-in-header">
+								<a href="#">心电</a>
+							</div>
+						</li>
+						<li class="menu-in-one">
+							<div class="menu-in-header">
+								<a href="#">腰围</a>
+							</div>
+						</li>
+						<li class="menu-in-one">
+							<div class="menu-in-header">
+								<a href="#">尿酸</a>
+							</div>
+						</li>
+						<li class="menu-in-one">
+							<div class="menu-in-header">
+								<a href="#">胆固醇</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+			<section id="test-content">
+				<div class="check-factor-wrapper">
+					<article>查找</article>
+					<form>
+						 <div class="check-factor-1 emng-flex">
+							<ul class="emng-flex">
+					            <li class="date-wrap">
+									<span>开始时间:</span>
+									<input type="text" name="startDate" id="startDate" readonly="readonly" value="2015-09-14"/>
+								</li>
+								<li class="date-wrap">
+									<span>结束时间:</span>
+									<input type="text" name="endDate" id="endDate" readonly="readonly" value="2015-10-14"/>
+								</li>
+							</ul>
+							<div class="check-search-wrapper emng-flex">
+							    <button class="emng-btn btn-bg-blue" type="submit">查找</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="pagebtn-wrapper emng-flex">
+					<div class="btn-wrap emng-flex"></div>
+					<div class="page-wrap">
+						*此处显示页数
+					</div>
+				</div>
+				<div class="tab-wrapper">
+					<table class="emng-table">
+						<thead>
+							<tr>
+								<th>测试时间</th>
+								<th>高压(mmHg)</th>
+								<th>低压(mmHg)</th>
+								<th>脉搏(次/分)</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>2015.11.01</td>
+								<td>Data</td>
+								<td>Data</td>
+								<td>Data</td>
+							</tr>
+						</tbody>
+				    </table>
+				</div>
+		    </section>
+		</div>
+	</body>
+</html>

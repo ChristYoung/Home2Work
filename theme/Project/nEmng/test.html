@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/emng-1.0.0.css"/>
+		<style type="text/css">
+		    html,body{width: 100%;}
+			table{margin-top: 10%;}
+		</style>
+	</head>
+	<body>
+		<!--<table class="emng-table">
+			<thead>
+				<tr>
+					<th><label class="emng-checkbox-wrap"><input type="checkbox" class="emng-checkbox emng-checkbox-all" name="check-all" id="check-all" value="" /><b></b></label>你好</th>
+					<th>你好</th>
+					<th>你好</th>
+					<th>哈哈</th>
+					<th>你好</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><label class="emng-checkbox-wrap"><input type="checkbox" class="emng-checkbox emng-checkbox-item" name="check-item" value="" /><span></span></label>Data</td>
+					<td>Data</td>
+					<td>Data</td>
+					<td>Data</td>
+					<td>Datadddddddddddddddddddddddddddddddddddd</td>
+				</tr>
+				<tr>
+					<td><label class="emng-checkbox-wrap"><input type="checkbox" class="emng-checkbox emng-checkbox-item" name="check-item" value="" /><span></span></label>Data</td>
+					<td>Data</td>
+					<td>Data</td>
+					<td>Data</td>
+					<td>Data</td>
+				</tr>
+				<tr>
+					<td><label class="emng-checkbox-wrap"><input type="checkbox" class="emng-checkbox emng-checkbox-item" name="check-item" value="" /><span></span></label>Data</td>
+					<td>Data</td>
+					<td>Data</td>
+					<td>Data</td>
+					<td>Datasssssssssssssss</td>
+				</tr>
+				<tr>
+					<td><label class="emng-checkbox-wrap"><input type="checkbox" class="emng-checkbox emng-checkbox-item" name="check-item" value="" /><span></span></label>Dataddddddddddddddd</td>
+					<td>Data</td>
+					<td>Data</td>
+					<td>Data</td>
+					<td>Data</td>
+				</tr>
+				<tr>
+					<td><label class="emng-checkboxValid-wrap"><input type="checkbox" class="emng-checkbox emng-checkboxValid" name="s" value="" /><span></span></label>Data</td>
+					<td>Data</td>
+					<td>Data</td>
+					<td>Data</td>
+					<td>Data</td>
+				</tr>
+			</tbody>
+		</table>-->
+		
+		
+		
+		
+		
+		
+		<!--window开始-->
+		<!--<div class="emng-mask"></div>-->
+		<!--<div class="window_boundingBox" style="width: 300px; height: 120px; left: 533px; top: 20px;">
+			<div class="window_header">提示</div>
+			<div class="window_body">请选择要删除的组织!</div>
+			<div class="window_footer">
+				<input type="button" value="确定" class="emng-btn btn-bg-blue window_alertBtn">
+			</div>
+		</div>-->
+		
+		<!--<div class="window_boundingBox" style="width: 300px; height: 120px; left: 533px; top: 20px;">
+			<div class="window_header">提示</div>
+			<div class="window_body">您确定删除该组织吗?</div>
+			<div class="window_footer">
+				<input type="button" value="取消" class="window_cancelBtn">
+				<input type="button" value="确定" class="emng-btn btn-bg-blue window_confirmBtn">
+			</div>
+		</div>-->
+		
+		<!--<div class="window_boundingBox window_skin_a" style="width: 300px; height: 150px; left: 533px; top: 50px;">
+			<div class="window_header">补卡</div>
+			<div class="window_body">
+				<p class="window_promptInputWrapper">
+					<input type="text" class="window_promptInput">
+				</p>
+			</div>
+			<div class="window_footer">
+				<input type="button" value="取消" class="window_cancelBtn">
+				<input type="button" value="确认输入" class="emng-btn btn-bg-blue window_confirmBtn">
+			</div>
+		</div>-->
+		
+		<a href="javascript:;" id="al">弹出alert框</a>
+		<a href="javascript:;" id="con">弹出confirm框</a>
+		<a href="javascript:;" id="pro">弹出prompt框</a>
+		
+		<!--window 结束-->
+		
+		
+		
+		
+		<p id="op">大龄帅空间的拉升空间发沙发沙发das</p>
+		
+		<!--<a class="emng-select"> 
+			<span class="emng-curselect">选项一</span> 
+			<select onchange="change(this)"> 
+				<option>选项一</option> 
+				<option>选项二</option> 
+				<option>选项三</option> 
+				<option>选项四</option> 
+				<option>选项五</option> 
+			</select> 
+		</a> -->
+		
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="js/Widget.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/Window.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/test-plugin.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+//		$(function(){
+//			//全选
+//			var len = $('input[name=check-item]').length;
+//			$('#check-all').click(function(){
+//				$('input[name=check-item]').prop('checked',this.checked);
+//			});
+//			$('input[name=check-item]').click(function(){
+//				$('#check-all').prop('checked',$('input[name=check-item]').filter(':checked').length == len?true:false);
+//			});
+//			select
+//			$(".emng-select").click(function(){
+//				var b = $(this).attr('data-flag');
+//				if(b == 'true'){
+//					$(this).find('.emng-select-list').fadeIn(300);
+//					$(this).attr('data-flag','false');
+//				}else{
+//					$(this).find('.emng-select-list').fadeOut(300);
+//					$(this).attr('data-flag','true');
+//				}
+//			})
+            function change(obj){
+			   $(obj).siblings('.emng-curselect').html($(obj).val());
+		    }
+//		});
+		$(function(){
+			$("#al").click(function(){
+				var Win = new Window().alert({         //new一个Window对象的实例,并调用alert方法
+						width:300,
+						height:120,
+						content:'欢迎来到睿博健康吧!',
+						y:20,
+						handler4AlertBtn:function(){alert('you click the confirm button')},
+						handler4CloseBtn:function(){alert('you click the close button')},
+						text4AlertBtn:'好  的'
+			    });  
+			}); 
+			$("#con").click(function(){
+				var Win = new Window().confirm({
+			        width:300,
+					height:120,
+					content:'确定要退出?',
+					y:20,
+					dragHandle:'.window_header'
+		        });
+			});
+			$("#pro").click(function(){
+				var Win = new Window().prompt({
+					width:300,
+					height:150,
+					y:50,
+					text4PromptBtn:'确认输入',
+					defaultValue4PromptInput:'张三',
+					handler4PromptBtn:function(inputValue){
+						alert('您输入的内容为:'+inputValue);
+					},
+					testRules:function(inputValue){
+						if(inputValue == ''){
+							$('.labelError').html('请输入正确的卡号');
+							return false;
+						}else{
+							return true;
+						}
+					}
+		        });
+			});
+			
+			$('#op').cutlongStr(5);
+		});
+	</script>
+</html>

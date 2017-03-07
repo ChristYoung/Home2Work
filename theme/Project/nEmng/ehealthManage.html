@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />	
+		<meta name="keywords" content="健康吧云管理平台" />
+		<meta name="description" content="睿博健康吧,创享智慧健康生活" />
+		<title>健康吧管理平台</title>
+		<link rel="shortcut icon" href="img/favicon.ico"/>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/emng-1.0.0.css"/>
+		<link rel="stylesheet" type="text/css" href="css/menu-list.css"/>
+		<link rel="stylesheet" type="text/css" href="css/jquery.mCustomScrollbar.min.css"/>
+			
+		<!--theme-->
+		<link rel="stylesheet" type="text/css" href="css/theme-origin/emng-origin.css"/>
+		<link rel="stylesheet" type="text/css" href="css/theme-origin/menu-list-origin.css"/>
+		<style type="text/css">
+		    html,body{width: 100%;}
+			body{overflow-y: hidden;}
+			nav{height: 60px; min-width: 1200px; align-items: center;}
+			
+			#logowrap{flex: 1;-webkit-flex: 1;-moz-flex: 1;-ms-flex: 1; padding-left: 20px;}
+			#loginInfo{height: 60px;}
+			#loginInfo ul{align-items: center;}
+			#loginInfo ul li{margin-right: 25px;align-items: center;}
+			#loginInfo ul li:nth-of-type(3){margin-right: 0;}
+		    #loginInfo ul li em{display: inline-block; width: 30px; height: 30px; background-repeat: no-repeat;}
+		    #loginInfo ul li span{cursor: default;}
+		    #loginOut a{}
+		    #loginName{position: relative; height: 60px;}
+		    #loginName .dropdown-list{position: absolute; right: -10px; top: 55px; background: #FFFFFF; box-shadow: 10px 10px 10px #DADADA; display: none;}
+			#loginName .dropdown-list:before{content: ""; position: absolute; top: -20px; right: 10px; border: 10px solid transparent; border-bottom: 10px solid #FFFFFF;}
+			#loginName .dropdown-list h3{width: 150px; height: 30px; line-height: 30px; text-align: center; font-size: 14px;}
+			#loginName .dropdown-list h3:hover{background-color: #2DC7C2;}
+			#loginName .dropdown-list h3 a{color: #000000; display: inline-block; width: 100%; height: 100%;}
+			#loginName .dropdown-list h3:hover a{color: #FFFFFF;}
+		    #loginName em{background-position: -540px 0;}
+		    #loginTime em{background-position: -570px 0;}
+		    #mainFrame{width: 100%; margin: 0 auto 0;}
+		    #main-menu{/*overflow-y: auto; overflow-x: hidden;*/ width: 205px; height: 550px;}
+		    #mainFrame #iframe-container-1{flex: 1; -webkit-flex: 1;-moz-flex: 1;-ms-flex: 1; height: 550px;}
+		    
+		    @media only screen and (min-width: 1650px) {
+		    	#main-menu{height: 760px;}
+		    	#mainFrame #iframe-container-1{height: 960px;}
+		    }
+		    
+		    /*设置滚动条的样式*/
+		   /* 1st scrollbar dragger style */
+		   .mCSB_inside .mCSB_container{margin-right: 0;}
+		   .mCSB_scrollTools{right: -6px;}
+		</style>
+	</head>
+	<body>
+		<nav class="emng-flex" id="totalNav">
+			<div id="logowrap">
+				<img src="img/emng-logo.png"/>
+			</div>
+			<div id="loginInfo" class="emng-flex">
+				<ul class="emng-flex">
+					<li id="loginName" class="emng-flex">
+						<div class="dropdown-list">
+							<h3>
+								<a href="#">修改密码</a>
+							</h3>
+							<h3>
+								<a href="#">退出</a>
+							</h3>
+				        </div>
+						<em></em>
+						<span>超级管理员杰哥杰哥杰哥哈哈哈哈</span>
+					</li>
+					<li id="loginTime" class="emng-flex">
+						<em></em>
+						<span>2015-9-16</span>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div id="mainFrame" class="emng-flex">
+			<!--主菜单容器-->
+			<section id="main-menu">
+				<!--菜单开始-->
+				<div class="menu-out-wrapper">
+					<ul>
+						<li class="menu-out-one">        <!--menu-out-one下的是一级菜单项目  ps:此一级菜单下无二级菜单-->
+							<div class="menu-out-header">   
+								<span id="homepage"></span><span><a href="homepage.html" target="myView">首页</a></span>
+							</div>
+						</li>
+						<li class="menu-out-one">       <!--menu-out-one下的是一级菜单项目  ps:此一级菜单下有二级菜单-->
+							<div class="menu-out-header">   
+								<span id="icon-org"></span><span><a>组织人员</a></span>
+							</div>
+							<ul class="menu-out-two">        <!--menu-out-two下的是二级菜单-->
+								<li><a href="orgInfoMng/orgInfoMng.html" target="myView">组织信息管理</a></li>
+								<li><a href="personManage/personManage.html" target="myView">组织人员管理</a></li>
+								<li><a href="accessMng/accessManage.html" target="myView">组织接入管理</a></li>
+								<li><a href="wxAccessMng/wxAccessMng.html" target="myView">微信接入管理</a></li>
+							</ul>
+						</li>
+						<li class="menu-out-one">
+							<div class="menu-out-header">
+								<span id="icon-auth"></span><span><a>权限管理</a></span>
+							</div>
+							<ul class="menu-out-two">
+								<li><a href="roleManage/roleManage.html" target="myView">角色管理</a></li>
+								<li><a href="orgFunPot/orgFunpointManage.html" target="myView">组织功能点管理</a></li>
+							</ul>
+						</li>
+						<li class="menu-out-one">
+							<div class="menu-out-header">
+								<span id="icon-userM"></span><span><a>用户管理</a></span>
+							</div>
+							<ul class="menu-out-two">
+								<li><a href="userManage/userManage.html" target="myView">用户信息</a></li>
+								<li><a href="userManage/userOrgMng.html" target="myView">修改用户组织</a></li>
+								<li><a href="#" target="myView">批量注册</a></li>
+								<li><a href="#" target="myView">数据批量导出</a></li>
+								<li><a href="#" target="myView">批量导出</a></li>
+							</ul>
+						</li>
+						<li class="menu-out-one">
+							<div class="menu-out-header">
+								<span id="icon-doctorM"></span><span><a>医院管理</a></span>
+							</div>
+							<ul class="menu-out-two">
+								<li><a href="doc/doctorConsult.html" target="myView">医生信息</a></li>
+								<li><a href="doc/doctorValidate.html" target="myView">医生认证</a></li>
+								<li><a href="doc/hosipitalMng.html" target="myView">医院管理</a></li>
+							</ul>
+						</li>
+						<li class="menu-out-one">
+							<div class="menu-out-header">
+								<span id="icon-text"></span><span><a>短信平台</a></span>
+							</div>
+							<ul class="menu-out-two">
+								<li><a href="sendText/sendText.html" target="myView">发送短信</a></li>
+							</ul>
+						</li>
+						<li class="menu-out-one">
+							<div class="menu-out-header">
+								<span id="icon-stat"></span><span><a>统计分析</a></span>
+							</div>
+							<ul class="menu-out-two">
+								<li><a href="staAnalysis/userNumstat.html" target="myView">总人数统计分析</a></li>
+								<li><a href="staAnalysis/testNumStat.html" target="myView">检测项目统计分析</a></li>
+								<li><a href="staAnalysis/genderStat.html" target="myView">性别统计分析</a></li>
+								<li><a href="staAnalysis/ageStat.html" target="myView">年龄统计分析</a></li>
+								<li><a href="staAnalysis/userRegSrc.html" target="myView">注册来源统计分析</a></li>
+							</ul>
+						</li>
+						<li class="menu-out-one">
+							<div class="menu-out-header">
+								<span id="icon-sysM"></span><span><a>系统管理</a></span>
+							</div>
+							<ul class="menu-out-two">
+								<li><a href="equipments/equipments.html" target="myView">设备管理</a></li>
+							</ul>
+						</li>
+						<li class="menu-out-one">
+							<div class="menu-out-header">
+								<span id="icon-vipM"></span><span><a>会员卡管理</a></span>
+							</div>
+							<ul class="menu-out-two">
+								<li><a href="vipcard/generateVip.html" target="myView">生成会员卡</a></li>
+								<li><a href="vipcard/inquireCard.html" target="myView">卡查询</a></li>
+								<li><a href="vipcard/inquireBatch.html" target="myView">批次查询</a></li>
+								<li><a href="vipcard/vipComb.html" target="myView">会员套餐</a></li>
+								<li><a href="vipcard/vipCustomLevel.html" target="myView">自定义等级</a></li>
+								<li><a href="vipcard/vipImport.html" target="myView">卡导入</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+		    </section>
+		    <section id="iframe-container-1">
+		    	<iframe src="homepage.html" name="myView" width="100%" height="100%" frameborder="0"></iframe>
+		    </section>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="js/plugin/jquery-ui-1.10.4.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/plugin/jquery.mousewheel.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/plugin/jquery.mCustomScrollbar.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/plugin/Widget.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/plugin/Window.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/plugin/vertifycate.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			//弹出框
+			$('#loginName').hover(function(){
+				$('.dropdown-list').show();
+			},function(){
+				$('.dropdown-list').hide();
+			});
+			
+			//使菜单下拉或上缩
+			(function(){
+				var aMenuOneLi = $('.menu-one-li');
+				var aMenuTwo = $('.menu-out-two');
+				var aMenuTwoItem = $('.menu-out-two a');
+				
+				$('.menu-out-header').each(function(i,e){
+					$(this).click(function(){
+						if( $(aMenuTwo[i-1]).css('display') == 'block' ){
+							$(aMenuTwo[i-1]).slideUp(300);
+						}else{
+							aMenuTwo.slideUp(300);
+							$(aMenuTwo[i-1]).slideDown(300);
+						}
+						$('.menu-out-header').removeClass('menu-out-header-click');
+					    $(this).addClass('menu-out-header-click');  
+					    aMenuTwoItem.removeClass('menu-two-click');
+					});
+				});
+				
+				aMenuTwoItem.click(function(){
+					aMenuTwoItem.removeClass('menu-two-click');
+					$(this).addClass('menu-two-click');
+				});
+			})();
+			
+			//设置自定义滚动条
+			$('#main-menu').mCustomScrollbar({scrollInertia:50});   //设置惯性值,设置惯性值可以使滚动更平滑
+		    
+		    //退出时的弹窗
+		    $('#loginOut a').click(function(){
+		    	var Win = new Window().confirm({
+			        width:300,
+					height:120,
+					title:'提示',
+					content:'您确定要退出?',
+					handler4ConfirmBtn:function(){location.href='http://www.baidu.com';}
+		        });
+		    });
+		    
+		    //过长字符串删减
+            $('#loginName span').cutlongStr(5);
+	});
+	</script>
+</html>

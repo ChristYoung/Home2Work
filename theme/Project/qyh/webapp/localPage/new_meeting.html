@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<!-- 可隐藏地址栏，仅针对IOS的Safari（注：IOS7.0版本以后，safari上已看不到效果） -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<!-- 仅针对IOS的Safari顶端状态条的样式 (可选default/black/black-translucent)-->
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <!-- IOS中禁用将数字识别为电话号码/忽略Android平台中对邮箱地址的识别 -->
+        <meta name="format-detection" content="telephone=no, email=no">
+        <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+        <meta name="HandheldFriendly" content="true">
+        <!-- uc强制竖屏 -->
+        <meta name="screen-orientation" content="portrait">
+        <!-- 微信x5强制竖屏 -->
+       <meta name="x5-orientation" content="portrait">
+       <!-- windows phone 点击无高光 -->
+       <meta name="msapplication-tap-highlight" content="no">
+       <script type="text/javascript">
+			document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.clientWidth/10 +'px';
+		</script>
+       <link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+       <link rel="stylesheet" type="text/css" href="../css/qyh/qyh_common.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/qyh/qyh_module.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/qyh/mobiscroll.custom-3.0.0-beta2.min.css"/>
+		<title>新建会议</title>
+		<style type="text/css">
+			body{background-color: #F7F7F7;}
+			#attLI{padding: 0.293rem 0.453rem;}
+			#attendNum{border-radius: 0.106rem; border: 1px solid #C5C2BC; outline: none; width: 3.2rem; padding: 0.2rem 0.333rem; margin-right: 0.266rem;}
+			.btn_footer{padding: 0.666rem 0.453rem;}
+		</style>
+	</head>
+	<body>
+		<form id="meetForm" name="" method="" action="">
+			<ul class="m_input_list">
+				<li class="f_flex f_alignC">
+					<span class="input_tit f_16">开始时间</span>
+					<input type="text" class="f_14 f_flex1" name="" id="startTime" value="" placeholder="选择会议开始时间"/>
+				</li>
+				<li class="f_flex f_alignC">
+					<span class="input_tit f_16">结束时间</span>
+					<input type="text" class="f_14 f_flex1" name="" id="endTime" value="" placeholder="选择会议结束时间"/>
+				</li>
+				<li class="f_flex f_alignC" id="attLI">
+					<span class="input_tit f_16">参会人数</span>
+					<input type="text" class="f_14" name="" id="attendNum" value="2" placeholder=""/>
+					<i>人</i>
+				</li>
+			</ul>
+			
+			<p class="m_prtit f_16" id="metting_title">可使用设备</p>
+			<ul class="m_sel_list">
+				<li class="f_flex f_alignC">
+					<input type="checkbox" class="sel_check check_all" name=""  value="" />
+					<b class="sel_bg"></b>
+					<span class="sel_vl f_16">全选</span>
+				</li>
+				<li class="f_flex f_alignC">
+					<input type="checkbox" class="sel_check check_item" name=""  value="" />
+					<b class="sel_bg"></b>
+					<span class="sel_vl f_16">投影仪</span>
+				</li>
+				<li class="f_flex f_alignC">
+					<input type="checkbox" class="sel_check check_item" name=""  value="" />
+					<b class="sel_bg"></b>
+					<span class="sel_vl f_16">麦克风</span>
+				</li>
+				<li class="f_flex f_alignC">
+					<input type="checkbox" class="sel_check check_item" name=""  value="" />
+					<b class="sel_bg"></b>
+					<span class="sel_vl f_16">主讲台</span>
+				</li>
+			</ul>
+			<footer class="btn_footer">
+				<button type="submit" class="u_btn u_btn_blue u_btn_lg">下一步</button>
+			</footer>
+		</form>
+	</body>
+	<script src="../js/plugin/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/plugin/mobiscroll.custom-3.0.0-beta2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/plugin/vertifycate.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/qyh/dateSelector.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/qyh/newMeeting.js" type="text/javascript" charset="utf-8"></script>
+</html>

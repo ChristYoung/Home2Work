@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="renderer" content="webkit">
+		<meta name="keywords" content="健康吧云管理平台" />
+		<meta name="description" content="健康吧,创享智慧健康生活" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/vip_basicStyle.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/vip_public.css"/>
+		<title>服务模板管理</title>
+		<style type="text/css">
+			#moudle_name{width: 408px;}
+		</style>
+		<!--[if lt IE 9]>
+		<script src="${link.contextPath}/js/plugin/html5shiv.js"></script>
+		<script src="${link.contextPath}/js/plugin/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div id="header">
+			 <h1 class="project-wrap">
+			 	<span></span>
+			 	资源管理系统
+			 </h1>
+			 <div class="login-info">
+			    <p>
+			    	<em id="user-icon"></em>
+				    <span id="username">睿博</span>
+			    </p>
+			 	<p>
+			 		<em id="time-icon"></em>
+				    <span id="time">2016-06-01</span>
+			 	</p> 
+				<p>
+					<a href="javscript:;" id="loginout-a">
+						<span id="loginout">退出</span>
+				        <em id="loginout-icon"></em>
+					</a>
+				</p>
+			 </div>
+		</div>
+		<div id="main">
+			<div id="side_menu">
+				<dl id="m_1">
+					<dt>服务套餐<span class="circle"></span><span class="arrow"></span></dt>
+					<dd>
+						<ul>
+							<li id="m_1_1"><a href="../serverModule/moudleMng.html">服务模板管理<span class="circle"></span></a></li>
+							<li id="m_1_2"><a href="../serverModule/comboMng.html">套餐管理<span class="circle"></span></a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="m_2">
+					<dt>会员卡管理<span class="circle"></span><span class="arrow"></span></dt>
+					<dd>
+						<ul>
+							<li id="m_2_1"><a href="../cardMng/cardIn.html">会员卡入库<span class="circle"></span></a></li>
+							<li id="m_2_2"><a href="../cardMng/cardOut.html">会员卡出库<span class="circle"></span></a></li>
+						    <li id="m_2_3"><a href="../cardMng/cardQuery.html">会员卡查询<span class="circle"></span></a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl id="m_3">
+					<dt>系统管理<span class="circle"></span><span class="arrow"></span></dt>
+					<dd>
+						<ul>
+							<li id="m_3_1"><a href="#">操作记录<span class="circle"></span></a></li>
+						</ul>
+					</dd>
+				</dl>
+			</div>
+			<div id="main_body">
+				<p class="body_title">服务套餐  -> 服务模板管理</p>
+				<div class="query_bar">
+				   <div class="fl">
+				   	  <form id="" name="" action="moudleMng.html" method="get">
+				   	  	 <input class="waterMark vtag" type="text" name="moudleName" id="moudle_name" value="模板名称" maxlength="32"/>
+				   	  	 <button type="submit" class="input_btn btn_blue">查找</button>
+				   	  </form>
+				   </div>
+				   <div class="fr">
+				   	  <button type="button" class="input_btn btn_purple" data-toggle="modal" data-backdrop="static" data-target="#addModal">创建服务模板</button> 
+				   	  <button type="button" class="input_btn btn_black" id="deleteModule">删除</button>
+				   </div>
+				</div>
+				<div class="query_tab">
+				   <p>服务列表</p>
+				   <div class="tab_view">
+				   	  <table class="vip_table">
+				   	  	<thead>
+				   	  		<tr>
+				   	  			<th style="width: 40px;">
+				   	  				<input type="checkbox" name="checkAll" id="checkAll" value="" />
+				   	  			</th>
+				   	  			<th style="width: 120px;">服务模板名称</th>
+				   	  			<th style="width: 120px;">创建时间</th>
+				   	  			<th>备注</th>
+				   	  			<th style="width: 60px;">操作</th>
+				   	  		</tr>
+				   	  	</thead>
+				   	  	<tbody>
+				   	  		<tr>
+				   	  			<td>
+				   	  				<input type="checkbox" name="checkItem" value="" />
+				   	  			</td>
+				   	  			<td>医生咨询</td>
+				   	  			<td>2016-05-06</td>
+				   	  			<td>医生资源服务有效期不限</td>
+				   	  			<td><a href="javascript:;"  class="operate">编辑</a></td>
+				   	  		</tr>
+				   	  		<tr>
+				   	  			<td>
+				   	  				<input type="checkbox" name="checkItem" value="" />
+				   	  			</td>
+				   	  			<td>医生咨询</td>
+				   	  			<td>2016-05-06</td>
+				   	  			<td>医生资源服务有效期不限</td>
+				   	  			<td><a href="javascript:;"  class="operate">编辑</a></td>
+				   	  		</tr>
+				   	  		<tr>
+				   	  			<td>
+				   	  				<input type="checkbox" name="checkItem" value="" />
+				   	  			</td>
+				   	  			<td>医生咨询</td>
+				   	  			<td>2016-05-06</td>
+				   	  			<td>医生资源服务有效期不限</td>
+				   	  			<td><a href="javascript:;" class="operate">编辑</a></td>
+				   	  		</tr>
+				   	  	</tbody>
+				   	  </table>
+				   </div>
+				   <div class="page_view"></div>
+				</div>
+			</div>
+			
+			<!--创建服务模板的模态框-->
+			<div class="modal" id="addModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+			   <div class="modal-dialog">
+			      <div class="modal-content">
+			         <div class="modal-header">
+			            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			            <h4 class="modal-title" id="">创建服务模板</h4>
+			         </div>
+			         <div class="modal-body">
+			         	<ul>
+			         		<li>
+			         			<span><i class="must">*</i>模板编码:</span>
+			         			<input type="text" id="module_n_code" value="" maxlength="16" placeholder="16个字内"/>
+			         		</li>
+			         		<li>
+			         			<span><i class="must">*</i>模板名称:</span>
+			         			<input type="text" id="module_n_name" value="" maxlength="32" placeholder="32个字内"/>
+			         		</li>
+			         		<li>
+			         			<span style="vertical-align: top;">备注:</span>
+			         			<textarea name="" rows="5" cols="35" maxlength="50" placeholder="50个字内"></textarea>
+			         		</li>
+			         	</ul>
+			         	<p>
+			         		<label class="errorTips">模板编码不能为空</label>
+			         	</p>
+			         </div>
+			         <div class="modal-footer">
+			            <button type="button" class="input_btn btn_gray" data-dismiss="modal">关闭</button>
+			            <button type="button" class="input_btn btn_blue">确定</button>
+			         </div>
+			      </div>
+			    </div>
+		    </div>
+		    
+		    <!--编辑模态框-->
+		    <div class="modal" id="editModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+			   <div class="modal-dialog">
+			      <div class="modal-content">
+			         <div class="modal-header">
+			            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			            <h4 class="modal-title" id="">编辑服务模板</h4>
+			         </div>
+			         <div class="modal-body">
+			         	<ul>
+			         		<li>
+			         			<span>模板编码:</span>
+			         			<input type="text" id="module_e_code" readonly="readonly" value="" maxlength="16" />
+			         		</li>
+			         		<li>
+			         			<span>模板名称:</span>
+			         			<input type="text" id="module_e_name" readonly="readonly" value="" maxlength="32" />
+			         		</li>
+			         		<li>
+			         			<span style="vertical-align: top;">备注:</span>
+			         			<textarea name="" rows="5" cols="35" maxlength="50"></textarea>
+			         		</li>
+			         	</ul>
+			         </div>
+			         <div class="modal-footer">
+			            <button type="button" class="input_btn btn_gray" data-dismiss="modal">关闭</button>
+			            <button type="button" class="input_btn btn_blue">确定</button>
+			         </div>
+			      </div>
+			    </div>
+		    </div>
+		    
+		    <!--确认删除模态框-->
+		    <div class="modal" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+			   <div class="modal-dialog">
+			      <div class="modal-content">
+			         <div class="modal-header">
+			            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+			            <h4 class="modal-title" id="">删除</h4>
+			         </div>
+			         <div class="modal-body">
+			         	<p>确认删除服务模板?</p>
+			         </div>
+			         <div class="modal-footer">
+			            <button type="button" class="input_btn btn_gray" data-dismiss="modal">关闭</button>
+			            <button type="button" class="input_btn btn_blue">确定</button>
+			         </div>
+			      </div>
+			    </div>
+		    </div>
+	</body>
+	<script src="../js/plugin/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/plugin/common.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/plugin/publicWays.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/plugin/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../js/plugin/autoMsg.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			(function(){
+				setSideMenu('#m_1', '#m_1_1');//菜单默认打开位置
+				$('#checkAll').checkAll($('input[name=checkItem]'));
+			})();
+			
+			//编辑模板消息时的信息使用ajax请求
+			(function(){
+				$('.operate').on('click',function(){
+					//ajax something
+					$('#editModal').modal({backdrop:'static',show:true});
+				});
+				
+				$('#deleteModule').on('click',function(){
+					var len = $('input[name=checkItem]').filter(':checked').length;
+					if(len != 0){
+						$('#deleteModal').modal({backdrop:'static',show:true});
+					}else{
+						noty({text:'请先选择要删除的套餐',type:'warn'});
+					}
+				});
+			})();
+		});
+	</script>
+</html>

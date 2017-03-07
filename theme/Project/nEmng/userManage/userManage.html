@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />	
+		<meta name="keywords" content="健康吧云管理平台" />
+		<meta name="description" content="睿博健康吧,创享智慧健康生活" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/emng-1.0.0.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+		
+		<!--theme-->
+		<link rel="stylesheet" type="text/css" href="../css/theme-origin/emng-origin.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/theme-origin/public-origin.css"/>
+		<title>用户管理</title>
+		<style type="text/css">
+			nav em{background-position: -180px 0;}
+			.check-factor-wrapper .check-factor-2 .line-two .dk-2 li:nth-of-type(1){margin-left: 25px;}
+		    .check-factor-wrapper .check-factor-2 .line-two .dk-2 li .emng-select{margin-left: 10px;}
+		</style>
+	</head>
+	<body>
+		<nav class="emng-flex">
+			<em></em>
+			<p>用户管理 -> <span>用户信息</span></p>
+		</nav>
+		<div class="check-factor-wrapper">
+			<article>查找</article>
+			    <form>
+			    	<div class="check-factor-2 emng-flex">
+						<div class="line-two emng-flex">
+							<div class="dk-1 emng-flex">
+								<ul class="emng-flex">
+									<li>
+										<span>用户名:</span>
+										<input type="text" name="userName"  class="Trim"  id="userName" value=""/>
+									</li>
+									<li>
+										<span>姓名:</span>
+										<input type="text" name="name" class="Trim"  id="name" value=""/>
+									</li>
+									<li>
+										<span>联系电话:</span>
+										<input type="text" name="phoneNo" class="Trim" id="phoneNo" value=""/>
+									</li>
+									<li>
+										<span>UID:</span>
+										<input type="text" name="uid" class="Trim" id="uid" value=""/>
+									</li>
+							    </ul>
+							</div>
+							<div class="dk-2 emng-flex">
+								<ul class="emng-flex">
+								<li>
+									<span>组织:</span>
+									<a class="emng-select"><strong class="emng-curselect"></strong><select onchange="change(this)"><option></option><option>有效</option><option>无效</option></select></a>
+									<a class="emng-select"><strong class="emng-curselect"></strong><select onchange="change(this)"><option></option><option>有效</option><option>无效</option></select></a>
+									<a class="emng-select"><strong class="emng-curselect"></strong><select onchange="change(this)"><option></option><option>有效</option><option>无效</option></select></a>
+								</li>
+								<li>
+									<label class="emng-checkbox-wrap"><input type="checkbox" checked="checked" class="emng-checkbox emng-checkbox-item" name="ifValid" id="ifValid" value="E" /><b></b></label><span class="includeD">包含下级</span>
+								</li>
+							</ul>
+							</div>
+						</div>
+						<div class="check-btn-wrap">
+							<button type="submit" class="emng-btn btn-bg-blue">查找</button>
+						</div>
+					</div>
+			    </form>
+		</div>
+		<div class="pagebtn-wrapper emng-flex">
+			<div class="btn-wrap emng-flex">
+				<a href="addUser.html" class="emng-btn btn-bg-gray">新建</a>
+			</div>
+			<div class="page-wrap">
+				*此处显示页数
+			</div>
+		</div>
+		<div class="tab-wrapper">
+			<table class="emng-table">
+				<thead>
+					<tr>
+						<th>用户名</th>
+						<th>姓名</th>
+						<th>昵称</th>
+						<th>性别</th>
+						<th>联系电话</th>
+						<th>状态</th>
+						<th>组织</th>
+						<th>健康档案</th>
+						<th>编辑</th>
+						<th>操作</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>sdasd</td>
+						<td>Data</td>
+						<td>Data</td>
+						<td>Data</td>
+						<td>Datadddddddddddddddddddddddddddddddddddd</td>
+						<td>sdasd</td>
+						<td>Data</td>
+						<td><a href="health-bci.html" class="a-btn">[健康档案]</a></td>
+						<td><a href="editUserinfo.html" class="emng-editbtn"></a></td>
+						<td><a href="addDoctor.html" class="a-btn">[添加医生]</a> | <a href="addDevice.html" class="a-btn">[添加设备]</a></td>
+					</tr>
+					<tr>
+						<td>sdasd</td>
+						<td>Data</td>
+						<td>Data</td>
+						<td>Data</td>
+						<td>Datadddddddddddddddddddddddddddddddddddd</td>
+						<td>sdasd</td>
+						<td>Data</td>
+						<td><a href="#" class="a-btn">[健康档案]</a></td>
+						<td><a href="editUserinfo.html" class="emng-editbtn"></a></td>
+						<td><a href="addDoctor.html" class="a-btn">[添加医生]</a> | <a href="addDevice.html" class="a-btn">[添加设备]</a></td>
+					</tr>
+					<tr>
+						<td>sdasd</td>
+						<td>Data</td>
+						<td>Data</td>
+						<td>Data</td>
+						<td>Datadddddddddddddddddddddddddddddddddddd</td>
+						<td>sdasd</td>
+						<td>Data</td>
+						<td><a href="#" class="a-btn">[健康档案]</a></td>
+						<td><a href="editUserinfo.html" class="emng-editbtn"></a></td>
+						<td><a href="addDoctor.html" class="a-btn">[添加医生]</a> | <a href="addDevice.html" class="a-btn">[添加设备]</a></td>
+					</tr>
+					<tr>
+						<td>sdasd</td>
+						<td>Data</td>
+						<td>Data</td>
+						<td>Data</td>
+						<td>Datadddddddddddddddddddddddddddddddddddd</td>
+						<td>sdasd</td>
+						<td>Data</td>
+						<td><a href="#" class="a-btn">[健康档案]</a></td>
+						<td><a href="editUserinfo.html" class="emng-editbtn"></a></td>
+						<td><a href="addDoctor.html" class="a-btn">[添加医生]</a> | <a href="addDevice.html" class="a-btn">[添加设备]</a></td>
+					</tr>
+					<tr>
+						<td>sdasd</td>
+						<td>Data</td>
+						<td>Data</td>
+						<td>Data</td>
+						<td>Datadddddddddddddddddddddddddddddddddddd</td>
+						<td>sdasd</td>
+						<td>Data</td>
+						<td><a href="#" class="a-btn">[健康档案]</a></td>
+						<td><a href="editUserinfo.html" class="emng-editbtn"></a></td>
+						<td><a href="addDoctor.html" class="a-btn">[添加医生]</a> | <a href="addDevice.html" class="a-btn">[添加设备]</a></td>
+					</tr>
+					<tr>
+						<td>sdasd</td>
+						<td>Data</td>
+						<td>Data</td>
+						<td>Data</td>
+						<td>Datadddddddddddddddddddddddddddddddddddd</td>
+						<td>sdasd</td>
+						<td>Data</td>
+						<td><a href="#" class="a-btn">[健康档案]</a></td>
+						<td><a href="editUserinfo.html" class="emng-editbtn"></a></td>
+						<td><a href="addDoctor.html" class="a-btn">[添加医生]</a> | <a href="addDevice.html" class="a-btn">[添加设备]</a></td>
+					</tr>
+					<tr>
+						<td>sdasd</td>
+						<td>Data</td>
+						<td>Data</td>
+						<td>Data</td>
+						<td>Datadddddddddddddddddddddddddddddddddddd</td>
+						<td>sdasd</td>
+						<td>Data</td>
+						<td><a href="#" class="a-btn">[健康档案]</a></td>
+						<td><a href="editUserinfo.html" class="emng-editbtn"></a></td>
+						<td><a href="addDoctor.html" class="a-btn">[添加医生]</a> | <a href="addDevice.html" class="a-btn">[添加设备]</a></td>
+					</tr>
+					<tr>
+						<td>sdasd</td>
+						<td>Data</td>
+						<td>Data</td>
+						<td>Data</td>
+						<td>Datadddddddddddddddddddddddddddddddddddd</td>
+						<td>sdasd</td>
+						<td>Data</td>
+						<td><a href="#" class="a-btn">[健康档案]</a></td>
+						<td><a href="editUserinfo.html" class="emng-editbtn"></a></td>
+						<td><a href="addDoctor.html" class="a-btn">[添加医生]</a> | <a href="addDevice.html" class="a-btn">[添加设备]</a></td>
+					</tr>
+					<tr>
+						<td>sdasd</td>
+						<td>Data</td>
+						<td>Data</td>
+						<td>Data</td>
+						<td>Datadddddddddddddddddddddddddddddddddddd</td>
+						<td>sdasd</td>
+						<td>Data</td>
+						<td><a href="#" class="a-btn">[健康档案]</a></td>
+						<td><a href="editUserinfo.html" class="emng-editbtn"></a></td>
+						<td><a href="addDoctor.html" class="a-btn">[添加医生]</a> | <a href="addDevice.html" class="a-btn">[添加设备]</a></td>
+					</tr>
+					<tr>
+						<td>sdasd</td>
+						<td>Data</td>
+						<td>Data</td>
+						<td>Data</td>
+						<td>Datadddddddddddddddddddddddddddddddddddd</td>
+						<td>sdasd</td>
+						<td>Data</td>
+						<td><a href="#" class="a-btn">[健康档案]</a></td>
+						<td><a href="editUserinfo.html" class="emng-editbtn"></a></td>
+						<td><a href="addDoctor.html" class="a-btn">[添加医生]</a> | <a href="addDevice.html" class="a-btn">[添加设备]</a></td>
+					</tr>
+				</tbody>
+		    </table>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="../js/plugin/vertifycate.min.js" type="text/javascript" charset="utf-8"></script>
+</html>

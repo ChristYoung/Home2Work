@@ -1,0 +1,74 @@
+/*menu style*/
+#header{background-color: #E3E1DE; height: 50px; position: relative; min-width: 1345px;}
+#header h1{width: 210px; line-height: 50px; text-align: center; background-color: #0083E9; color: #FFFFFF; font-size: 18px; position: relative;}
+#header h1 span{position: absolute; top: 5px; left: 5px; display: inline-block; width: 45px; height: 45px; background-image: url(../img/icon-list.png); background-position: 0 -2px;}
+#header .login-info{position: absolute; right: 18px; top: 0;}
+#header .login-info p{float: left; line-height: 50px;}
+#header .login-info p em,.header .login-info p span{display: inline-block; vertical-align: middle; cursor: default;}
+.login-info p span{margin-right: 20px;}
+#header .login-info p em{width: 16px; height: 16px; background-image: url(../img/icon-list2.png);}
+#user-icon{background-position:-50px -9px;}
+#time-icon{background-position:-85px -9px;}
+#loginout{margin-right: 10px; display: inline-block; vertical-align: middle; cursor: pointer;}
+#header .login-info p #loginout-icon{width: 35px; height: 35px; background-position:-114px 0; cursor: pointer;}
+
+#main{position: relative;}
+
+#side_menu{position: absolute; top: 0; left: 0; width: 210px; min-height: 100%; padding: 10px 0; background-color: #222d32;}
+#side_menu dl{margin: 0;}
+#side_menu dl dt{height: 44px; padding: 0 42px 0 36px; border-left: 4px solid #222d32; position: relative; font-size: 14px; color: #7E8A8F; line-height: 44px; cursor: pointer;}
+#side_menu dl dt span.circle{position: absolute; top: 50%; left: 10px; margin-top: -6px; width: 12px; height: 12px; background: url(../img/circle.png) no-repeat 0 0;}
+#side_menu dl dt span.arrow{position: absolute; top: 50%; right: 15px; margin-top: -6px; width: 12px; height: 12px; background: url(../img/arrow.png) no-repeat 0 0;}
+#side_menu dl dd{background-color: #2c3b41; display: none;}
+#side_menu dl.active dd{display: block;}
+#side_menu dl dd ul{margin: 0; padding: 0; list-style: none;}
+#side_menu dl dd ul li{margin: 0; padding: 0; list-style: none;}
+#side_menu dl dd ul li a{display: block; height: 30px; padding: 0 20px 0 66px; color: #6a818a; line-height: 30px; cursor: pointer; position: relative;}
+#side_menu dl dd ul li a span.circle{position: absolute; top: 50%; left: 40px; margin-top: -6px; width: 12px; height: 12px; background: url(../img/circle.png) no-repeat 0 0;}
+
+#side_menu dl dt:hover,
+#side_menu dl.active dt{background-color: #1e282c; border-left-color: #ED448F; color: #fff;}
+#side_menu dl dt:hover span.circle,
+#side_menu dl.active dt span.circle{background-position: 0 -12px;}
+#side_menu dl dt:hover span.arrow{background-position: 0 -12px;}
+#side_menu dl.active dt span.arrow{background-position: 0 -24px;}
+
+#side_menu dl dd ul li a:hover,
+#side_menu dl dd ul li.active a{color: #fff; text-decoration: none;}
+#side_menu dl dd ul li a:hover span.circle,
+#side_menu dl dd ul li.active a span.circle{background-position: 0 -12px;}
+
+#side_menu dl dt,
+#side_menu dl dd ul li a,
+#side_menu dl dd ul li a span.circle{transition: all 300ms; -moz-transition: all 300ms; -webkit-transition: all 300ms; -o-transition: all 300ms;}
+
+#main_body{margin-left: 210px; padding: 10px; min-width: 1135px;}
+#main_body .body_title{color: #829DA2; padding-bottom: 10px; font-weight: bold;}
+
+/*querybar style*/
+.query_bar{border-top: 2px solid #D0DAD9; padding: 10px; overflow: hidden;}
+.query_bar .fc a,.query_bar .fc span{display: inline-block; vertical-align: middle; font-size: 14px; margin-right: 10px;}
+.query_bar .fc span{font-weight: bold;}
+.query_bar .fc a{width: 75px; text-align: right;}
+.query_tab{background: #FFFFFF; padding: 10px; border-top: 3px solid #AEBFC1;}
+.query_tab p{font-size: 14px; font-weight: bold; margin-bottom: 10px; float: left; width: 200px; margin-right: 10px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; cursor: default;}
+.query_clear{width: 100%; overflow: hidden;}
+/*operate*/
+.operate{color: #60AAFF;}
+
+/*bootstrap modale style*/
+.modal-title{font-size: 18px; font-weight: 700;}
+.modal-dialog{width: 400px;}
+.modal-content{border-radius: 0;}
+.modal-body li{margin-bottom: 20px;}
+.modal-body li span{display: inline-block; vertical-align: middle; width: 70px; text-align: right; margin-right: 10px;}
+.modal-body li span i{color: red;}
+.modal-body li input[type=text],.modal-body li select{width: 250px;}
+.modal-body p .errorTips{margin-left: 85px;}
+
+/*datePicker style*/
+.ui-widget-header{background: #0083E9;}
+.ui-state-default, .ui-widget-content .ui-state-default{color: #2F2F2F;}
+.ui-widget-header{border: 1px solid #2F2F2F;}
+
+/*input type file*/

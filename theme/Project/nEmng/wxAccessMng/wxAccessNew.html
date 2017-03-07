@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />	
+		<meta name="keywords" content="健康吧云管理平台" />
+		<meta name="description" content="睿博健康吧,创享智慧健康生活" />
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/emng-1.0.0.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/public.css"/>
+		
+		<!--theme-->
+		<link rel="stylesheet" type="text/css" href="../css/theme-origin/emng-origin.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/theme-origin/public-origin.css"/>
+		<title>微信接入管理新建</title>
+		<style type="text/css">
+		    nav em{background-position: -60px 0;}
+			.org,.org select,.emng-select .emng-curselect{width: 230px;}
+			@media (min-width: 1000px) and (max-width: 1499px){
+			    .org,.org select,.emng-select .emng-curselect{width: 263px;}
+            }
+            @media (min-width: 1500px) and (max-width:1600px){
+			    .org,.org select,.emng-select .emng-curselect{width: 329px;}
+            }
+            @media (min-width: 1620px) and (max-width:1800px){
+			   .org,.org select,.emng-select .emng-curselect{width: 429px;}
+            }
+		</style>
+	</head>
+	<body>
+		<nav class="emng-flex">
+			<em></em>
+			<p>组织人员 -> 微信接入管理<span> ->新建</span></p>
+		</nav>
+		<div class="btn-area emng-flex">
+			<a href="wxAccessMng.html" class="emng-btn btn-bg-blue" id="go-back">返回</a>
+			<button class="emng-btn btn-bg-blue" id="go-submit">提交</button>
+		</div>
+		<div class="tab">
+			<form name="addForm" id="addForm" method="" action="">
+				<ul>
+				    <li>
+						<span>组织名称:</span>
+						<a class="emng-select org"><strong class="emng-curselect"></strong><select onchange="change(this)"><option></option><option>有效</option><option>无效</option></select></a>
+						<a class="emng-select org"><strong class="emng-curselect"></strong><select onchange="change(this)"><option></option><option>有效</option><option>无效</option></select></a>
+						<a class="emng-select org"><strong class="emng-curselect"></strong><select onchange="change(this)"><option></option><option>有效</option><option>无效</option></select></a>
+					</li>
+					<li>
+						<span><i class="must">*</i>二维码地址:</span>
+						<input type="text" id="qrUrl" name="qrUrl"  value=""/>
+						<label class="error"></label>
+					</li>
+					<li>
+						<span><i class="must">*</i>数据上传接口:</span>
+						<input type="text" id="upLoadUrl" name="upLoadUrl" value=""/>
+						<label class="error"></label>
+					</li>
+					<li>
+						<span>备注:</span>
+						<input type="text" id="others" name="others"  value="" />
+					</li>
+			    </ul>
+			</form>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="../js/plugin/vertifycate.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#go-submit').click(function(){
+				if(!$('#qrUrl').validator({errorTips:'请输入正确的地址',required:true,requiredMsg:'二维码地址不能为空',testType:'webAddress'})
+				  || !$('#upLoadUrl').validator({errorTips:'请输入正确的接口地址',required:true,requiredMsg:'数据上传接口不能为空',testType:'webAddress'})){
+					return false
+				}else{
+					$('#addForm').submit();
+				}
+			});
+			
+			$('#qrUrl').blur(function(){
+				$(this).validator({errorTips:'请输入正确的地址',required:true,requiredMsg:'二维码地址不能为空',testType:'webAddress'});
+			});
+			$('#upLoadUrl').blur(function(){
+				$(this).validator({errorTips:'请输入正确的接口地址',required:true,requiredMsg:'数据上传接口不能为空',testType:'webAddress'});
+			});
+		});
+	</script>
+	
+</html>
