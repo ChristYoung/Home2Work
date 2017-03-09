@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>百度商业服务市场-轮换图片</title>
-    <style>
-    *{ margin:0; padding:0;}
+<style>
+*{ margin:0; padding:0;}
 body{font:12px/1.125 Arial,Helvetica,sans-serif;background:#fff;}
 table{border-collapse:collapse;border-spacing:0;}
 li{list-style:none;}
@@ -27,7 +27,7 @@ a:hover{text-decoration:underline;}
 /* main.css */
 .wrapper{text-align:center;width:980px;margin:0px auto;position:relative}
 #index-banner{width:980px;height:208px}
-.img-li-float{float:left; width: 980px; height: 210px;}
+.img-li-float{float:left; width: 980px; font-size: 20px; color: #fff; height: 210px; line-height: 210px;}
 .img-li-float:nth-of-type(1){background: red; }
 .img-li-float:nth-of-type(2){background: green;}
 .img-li-float:nth-of-type(3){background: yellow;}
@@ -47,7 +47,7 @@ a:hover{text-decoration:underline;}
 .banner-left-btn,.banner-right-btn{ z-index:3;width:50px;height:50px;display:inline-block;position:absolute;top:50%;margin-top:-25px;}
 .banner-left-btn{background:url(../img/banner-btn.png) 0 0 no-repeat;left:0;}
 .banner-right-btn{background:url(../img/banner-btn.png) -50px 0 no-repeat;right:0;}
-    </style>
+</style>
 </head>
 <body>
 <!--https://open2.baidu.com/-->
@@ -55,11 +55,11 @@ a:hover{text-decoration:underline;}
     <div id="index-banner">
         <div id="box" style="width: 980px; position: relative; height: 210px; overflow:hidden;">
             <ul style="position: absolute;top: 0;left: 0;width: 9800px;">
-                <li class="img-li-float"></li>
-                <li class="img-li-float"></li>
-                <li class="img-li-float"></li>
-                <li class="img-li-float"></li>
-                <li class="img-li-float"></li>
+                <li class="img-li-float">1</li>
+                <li class="img-li-float">2</li>
+                <li class="img-li-float">3</li>
+                <li class="img-li-float">4</li>
+                <li class="img-li-float">5</li>
             </ul>
             <div id="ico" class="banner-ico-box">
                 <a class="active"></a><a class=""></a><a class=""></a><a class=""></a><a></a>
@@ -69,111 +69,103 @@ a:hover{text-decoration:underline;}
     </div>
 </div>
 <script>
-    (function(){
-        var box = document.getElementById('box');
-        var ul = box.getElementsByTagName('ul')[0];
-        ul.innerHTML += ul.innerHTML;
-        var li = ul.getElementsByTagName('li');
-        //var img = ul.getElementsByTagName('img');
-        var l = li.length;
-        var len = li.length / 2;
-        var half = len / 2;
-        //var ico = document.getElementById('ico').getElementsByTagName('a');
-        var prev = document.getElementById('prev');
-        var next = document.getElementById('next');
-        var li_w = li[0].offsetWidth;
-//      img[0].onload = function(){
-//          li_w = li[0].offsetWidth;
-//      };
-        var timer = null;
-        var now = 0;
-
-        function auto(){
-            next.onclick();
-        };
-        timer = setInterval(auto, 3000);
-
-        prev.onclick = function(){
-            if(now > 0){
-                now--;
-            } else {
-                now = len - 1;
-                ul.style.left = -(li_w * len) + 'px';
-            }
-            scroll();
-        };
-        next.onclick = function(){
-            if(now < l - 1){
-                now++;
-            } else { //当图片切换到最后一张图片时,将整个ul置换到中间位置(复制出来的li的第一个)
-                now = len;
-                ul.style.left = -(li_w * (len - 1)) + 'px';
-                alert('1');
-                alert((li_w * (len - 1)));
-            };
-            scroll();
-        };
-
-        box.onmouseover = function(){
-            clearInterval(timer);
-        }
-        box.onmouseout = function(){
-            timer = setInterval(auto, 3000);
-        }
-
-        function scroll(){
-            act(ul, 'left', -li_w * (now));
-            //tab();
-        }
-
-//      function tab(){
-//          for(var i = 0; i < ico.length; i++){
-//              ico[i].className = '';
-//          }
-//          ico[now % 5].className = 'active';
-//      }
-
-        function css(obj, attr){
-            if(obj.currentStyle){
-                return obj.currentStyle[attr];
-            } else {
-                return getComputedStyle(obj, false)[attr];
-            }
-        }
-
-        function act(obj, attr, target, fn){
-            obj.timer && clearInterval(obj.timer);
-
-            obj.timer = setInterval(function(){
-                var stop = true;
-                var cur = parseInt(css(obj, attr));
-                var speed = (target - cur) / 8;
-                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
-                if(cur != target){
-                    stop = false;
-                    obj.style[attr] = cur + speed + 'px';
-                }
-
-                if(stop){
-                    clearInterval(obj.timer);
-                    obj.timer = null;
-                    fn && fn();
-                }
-            }, 30);
-        }
-        function loadImage(url, callback) {
-            var img = new Image(); //创建一个Image对象，实现图片的预下载
-            img.src = url;
-
-            if(img.complete) { // 如果图片已经存在于浏览器缓存，直接调用回调函数
-                callback.call(img);
-                return; // 直接返回，不用再处理onload事件
-            }
-            img.onload = function () { //图片下载完毕时异步调用callback函数。
-                callback.call(img);//将回调函数的this替换为Image对象
-            };
-        };
-    }());
+   (function(){
+   	//获取页面dom元素
+   	var box = document.getElementById('box');
+   	var ul = box.getElementsByTagName('ul')[0];
+   	ul.innerHTML += ul.innerHTML; //将所有的li再复制一份
+   	var li = ul.getElementsByTagName('li');
+   	
+   	var l = li.length;
+   	//真实的li的长度
+   	var len = l/2;
+   	var prev = document.getElementById('prev');
+    var next = document.getElementById('next');
+    var li_w = li[0].offsetWidth;
+   	var now = 0,
+   	    timer = null;
+   	
+   	var css = function(obj,attr){ //css方法读取css中的元素属性值
+   	 	return obj.currentStyle ? obj.currentStyle[attr] : getComputedStyle(obj,false)[attr];
+   	 };
+   	 
+   	var act = function(obj,attr,target,fn){ //改变某个元素的属性,(并未考虑opacity)
+   	 	obj.timer &&　clearInterval(obj.timer);
+   	 	obj.timer = setInterval(function(){
+   	 		var stop = true;
+   	 		var curr = parseInt(css(obj,attr));
+   	 		var speed = (target - curr) / 8;
+   	 		speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed); //cur+speed只会无限趋近于target不会等于target,所以要进行取整处理
+   	 		
+   	 		if(curr != target){
+   	 			stop = false;
+   	 			obj.style[attr] = curr + speed +'px';
+   	 		}
+   	 		
+   	 		if(stop){
+   	 			clearInterval(obj.timer);
+   	 			obj.timer = null;
+   	 			fn && fn();
+   	 		}
+   	 		
+   	 	},30);
+   	 };
+   	 
+	function scroll(){
+	 	act(ul,'left',-li_w*(now));
+	};
+	 
+	prev.onclick = function(){
+	 	if(now>0){
+	 		now--
+	 	}else{
+	 		now = len-1;
+	 		ul.style.left = -(li_w*len)+'px';
+	 	}
+	 	scroll();
+	};
+	 
+	next.onclick = function(){
+	 	if(now<l-1){
+	 		now++
+	 	}else{
+	 		now = len;
+	 		ul.style.left = -(li_w*(len-1))+'px'; //当图片切换到最后一张图片时,将整个ul置换到中间位置(复制出来的li的第一个),然后再执行scroll()动画
+	 	}
+	 	scroll();
+	};
+	 
+	function auto(){
+	 	next.onclick();
+	 };
+	 
+	 timer = setInterval(auto,2300);
+	 
+	 box.onmouseover = function(){
+	 	clearInterval(timer);
+	 };
+	 
+	 box.onmouseout = function(){
+	 	timer = setInterval(auto,2300);
+	};
+	 
+	 
+	 //图片预加载
+	var loadImage = function(url,callBack){
+	 	var img = new Image(); //创建一个Image对象,实现图片的预加载
+	 	img.src = url;
+	 	
+	 	if(img.complete){ //如果图片已经存在浏览器缓存,则直接调用回调函数
+	 		callBack.call(img);
+	 		return; // 直接返回,不用再处理onload事件
+	 	};
+	 	
+	 	img.onload = function(){ //图片下载完毕时异步调用callback函数
+	 		callBack.call(img); //将回调函数的this替换为Image对象
+	 	}
+	};
+   	 
+   })();
 </script>
 </body>
 </html>

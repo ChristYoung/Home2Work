@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0; padding: 0;}
+			#box{position: absolute; top: 50px; left: 50px; width: 200px; height: 200px; background: green;}
+		</style>
+	</head>
+	<body>
+		<span>asdasd</span>
+		<div id="box"></div>
+	</body>
+	<script type="text/javascript">
+		var box = document.getElementById("box");
+		var disX = disY = 0;
+		
+		box.onmousedown = function(e){
+			var e = e || window.event;
+			//e.preventDefault();
+			disX = e.clientX - box.offsetLeft;
+			disY = e.clientY - box.offsetTop;
+			
+			document.onmousemove = function(e){
+				var e = e || window.event;
+				box.style.left = e.clientX - disX + 'px';
+				box.style.top = e.clientY - disY + 'px';
+			}
+			
+			document.onmouseup = function(){
+				document.onmousemove = null;
+				document.onmouseup = null;
+			}
+			
+			return false; //用来阻止浏览器的默认事件,也可以用e.preventDefault();
+		}
+	</script>
+</html>
