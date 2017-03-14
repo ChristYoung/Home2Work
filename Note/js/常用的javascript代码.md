@@ -68,7 +68,12 @@ function addEvt(oTarget,sEvtType,fnHandle){
 例如：$('window').scrollTop()获取的就是当前这个页面超出窗口最上端的高度，scrollLeft与此同理
 
 
-6.原生JavaScript常用的正则表达式
+6.移动端判断是否是android
+var nua = navigator.userAgent
+var isAndroid = (nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android') > -1 && nua.indexOf('AppleWebKit') > -1 && nua.indexOf('Chrome') === -1)
+
+
+7.原生JavaScript常用的正则表达式
 //正整数
 /^[0-9]*[1-9][0-9]*$/;
 
