@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>健康问卷</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/questionnaire.min.css"/>
+	<style>
+		.col-xs-2-5 { width:20%; float:left; position: relative; min-height: 1px;}
+		#submitButton{background: #3EA45A;}
+	</style>
+  </head>
+  <body>
+
+    <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+      <div class="container">
+          <h1>健康档案问卷</h1>
+      </div>
+    </header>
+
+    <form action="" id="questionForm" method="post">
+      <div class="container question-desc">
+      <ul>
+        <!--<li class="adv">
+			"睿博健康吧"根据中华中医药学会《中医体质分类及判定》标准定制
+        </li>-->
+      </ul>
+      </div>
+
+      <div class="container question-container" id="questions"></div>
+
+      <div class="container option-container">
+        	<button type="submit" id="submitButton" class="submit btn btn-success">提 交</button>
+      </div>
+
+    </form>
+    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery.tap.js"></script>
+    <script src="js/selfTest.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>

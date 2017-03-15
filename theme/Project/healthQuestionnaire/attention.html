@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<title>健康档案问卷</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<style type="text/css">
+			.navbar{background:#3EA45A;height:60px;margin-bottom:0}
+			.navbar h1{font-size:20px;color:#FFF;text-align:center;line-height:60px;font-weight:700;margin:0;padding:0}
+			
+			.attention_con{font-size: 16px; margin-top: 32px; line-height: 30px; text-indent: 30px;}
+			
+			.learnMore_box{position: relative; width: 100%; height: 60px; line-height: 60px;}
+			.learnMore_box .circle{display: inline-block; vertical-align: middle; margin-bottom: 3px; width: 20px; height: 20px; border-radius: 50%; border: 1px solid #E1E1E1;}
+			#learnMore{position: absolute; width: 100%; height: 100%; opacity: 0; z-index: 9;}
+			#learnMore:checked+.circle{background: #3EA45A;}
+			
+			.btn_containet{width: 100%; margin-top: 40px;}
+			.btn_containet .getStarted{width: 100%; line-height: 30px; font-size: 16px; background: #3EA45A;}
+		</style>
+	</head>
+	<body>
+		<header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+	      <div class="container">
+	          <h1>健康档案问卷</h1>
+	      </div>
+	    </header>
+	    <section>
+	    	<div class="container">
+	    		<p class="attention_con">
+	    			您好！欢迎您参加 “个人健康风险评估”服务。本项服务目的在于了解您的健康状况，评估健康风险，进而指导您获得健康的生活方式。 我们充分尊重个人信息隐私权，任何个人或机构未经您的许可或授权，均不能获得任何个人信息。请您认真回答每个问题，问卷的填写会直接影响您的评估结果。谢谢您的合作！
+	    		</p>
+	    		<div class="learnMore_box">
+	    			<input type="checkbox" name="learnMore" id="learnMore" checked="checked" value="1" />
+	    			<span class="circle"></span>
+	    			<span>我已了解</span>
+	    		</div>
+	    		<div class="btn_containet">
+	    			<a href="#" class="getStarted btn btn-success">开 始</a>
+	    		</div>
+	    	</div>
+	    </section>
+	</body>
+</html>

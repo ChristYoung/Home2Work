@@ -1,0 +1,1314 @@
+.form-control:focus {
+	border-color: #3879D9;
+	/*box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(245,150,170,.6);*/
+	box-shadow: inset 0 1px 1px rgba(0,0,0,0),0 0 8px rgba(0,0,0,0);
+	border-width: 2px;
+	background: #FFF;
+	padding: 6px 11px;
+}
+
+.form-control {
+	box-shadow: inset 0 0px 0px rgba(0,0,0,.075);
+	border-radius: 6px;
+	border-color: #DDDDDD;
+	background: #FBFBFB;
+}
+
+body {
+	background: #FFFFFF;
+}
+
+/*adv*/
+.adv{text-align: center;}
+.advtitle{text-align: center; font-size: 20px; color: #959488;}
+/*adv end*/
+
+
+.navbar {
+	background: #3EA45A;
+	height: 60px;
+	margin-bottom:0;
+}
+
+.navbar h1 {
+	font-size: 20px;
+	color: #FFF;
+	text-align: center;
+	line-height: 60px;
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+}
+
+.question-container, .question-desc {
+	max-width: 640px;
+	border-color: #EEE;
+	border-style: solid;
+	border-width: 0 1px 1px 1px;
+	padding: 0;
+}
+
+.question-desc ul {
+	margin: 0;
+	padding: 40px;
+	color: #959488;
+	font-size: 18px;
+}
+
+.question-desc li {
+	list-style: none;
+}
+
+.question-desc li b {
+	color: #3879D9;
+}
+
+.question-container .question {
+	border-bottom: 1px solid #EEE;
+	padding: 30px 40px 35px 40px;
+	position: relative;
+	display: none;
+}
+
+.question-container .question h3 {
+	margin: 0;
+	color: #BDBDAC;
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+
+.question-container .question h3 .question-no{
+	margin-right: 5px;
+	font-family:"HelveticaNeue-Light";
+}
+
+.question-container .question:nth-last-child(1) {
+	border-bottom: 0;
+}
+
+/* question normal mode */
+
+.question-container .question.normal {
+	display: block;
+}
+
+/* question active mode */
+
+.question-container .question.active {
+	background: #FFFFFF;
+	display: block;
+}
+
+.question-container .question.active h3
+{
+	height: 170px;
+	padding-top: 30px;
+	font-size: 26px;
+	vertical-align:middle;
+	display:table-cell;
+	line-height: 150%;
+	color: #3EA45A;
+	margin: 0;
+}
+
+.question-container .question.active h3 .question-no{
+	position: absolute;
+	top: 30px;
+	left: 40px;
+	display: block;
+	font-family:"HelveticaNeue-Light";
+	font-size: 26px;
+}
+
+.question-container .question.active h3 .question-no b{
+	font-family:"HelveticaNeue-Bold";
+	font-size: 30px;
+}
+
+
+/* question disabled mode */
+
+.question-container .question.disabled {
+	padding: 0px 40px 0px 40px;
+	display: block;
+}
+
+.question-container .question.disabled h3
+{
+	text-overflow:ellipsis;
+	font-size: 16px;
+	height: 60px;
+	white-space:nowrap;
+	overflow:hidden;
+	line-height: 60px;
+	margin: 0;
+}
+
+.question-container .question.disabled .question-options {
+	display: none;
+}
+
+/* question options */
+
+.question-options ul {
+	height: 46px;
+	margin: 0;
+	padding: 0;
+}
+
+.question-options li {
+	list-style: none;
+	height: 46px;
+	text-align: center;
+	line-height: 46px;
+	font-size: 16px;
+	color: #3EA45A;
+	cursor: pointer;
+	border: 1px solid #3EA45A;
+	background: #FFFFFF;
+	margin-left: -1px;
+}
+
+.question-options li:hover {
+	background: #3EA45A;
+	color: #FFF;
+}
+
+.question-options li.active {
+	background: #3EA45A;
+	border-right: 1px solid #3EA45A;
+	margin-left: -1px;
+	color: #FFF;
+}
+
+.question-options li input{
+	display: none;
+}
+
+.question-options li:nth-child(1) {
+	border-radius: 10px 0 0 10px;
+	margin-left: 0px;
+}
+
+.question-options li:nth-last-child(1) {
+	border-radius: 0 10px 10px 0 ;
+}
+
+
+/* basicinfo */
+
+.basicinfo-container {
+	max-width: 640px;
+	border-color: #EEE;
+	border-style: solid;
+	border-width: 0 1px 1px 1px;
+	padding: 0;
+}
+
+.basicinfo-container .basicinfo-title {
+	border-bottom: 1px solid #EEE;
+}
+
+.basicinfo-container .basicinfo-title h2 {
+	text-align: center;
+	color: #3879D9;
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 80px;
+	margin-bottom: 25px;
+}
+
+.basicinfo-container .row {
+	border-bottom: 1px solid #EEE;
+}
+
+.basicinfo-container .row:nth-last-child(1) {
+	border-bottom: 0;
+}
+
+.basicinfo-container .row {
+	margin-left: 0px;
+	margin-right: 0px;
+	background: #FFF;
+	padding: 15px 0;
+}
+
+.basicinfo-container .control-label {
+	display: block;
+	font-size: 18px;
+	text-align: right;
+	margin-bottom: 0px;
+	height: 34px;
+	line-height: 34px;
+	color: #3879D9;
+	font-weight: normal;
+}
+
+.basicinfo-container .date-select {
+	font-size: 22px;
+	margin-right: 6px;
+	height: 30px;
+	margin-top: 7px;
+}
+
+.basicinfo-container input {
+	width: 180px;
+}
+
+
+/* submit zone */
+
+.option-container {
+	max-width: 640px;
+	border-color: #EEE;
+	border-style: solid;
+	border-width: 0 1px ;
+	padding: 0 0 50px 0;
+}
+
+.option-container .submit {
+	display: block;
+	margin:  50px auto 0;
+	font-size: 16px;
+	width:220px;
+	height:60px;
+	-webkit-border-radius:9px;
+	border-radius:9px;
+}
+
+
+.option-container .submit img {
+	width:220px;
+	height:60px;
+	background: url(../img/imgbtn.jpg) no-repeat;
+	background-size: 220px 60px;
+	border-radius: 12px;
+}
+
+.hidden-button { display: none; }
+
+
+/* result */
+
+.result-container {
+	max-width: 640px;
+	border-color: #EEE;
+	border-style: solid;
+	border-width: 0 1px 1px 1px;
+	padding: 0 0 20px 0;
+}
+
+.typeinfo {
+	margin:0;
+}
+
+.constellation-image {
+	padding: 50px 0 40px 20px;
+
+}
+
+.typeinfo-text {
+	padding: 55px 30px 30px 40px;
+}
+
+.constellation-image .xz-image {
+	width: 100%;
+}
+
+#and_detail{font-size: 20px;margin: 0; padding: 0;}
+#minor_detail{font-size: 16px;}
+.typeinfo-text h4 { margin: 0 0 5px 0; padding: 0; font-size: 18px; color: #CCCCBF; }
+.typeinfo-text h1 { margin: 0 0 15px 0; padding: 0; }
+.typeinfo-text h1 span {}
+.typeinfo-text .typeinfo-desc { font-size: 14px; color: #666666; line-height: 150%; }
+
+
+/* rankbar! */
+
+.rankinfo {
+	margin: 0;
+	position: relative;
+	border-bottom: 1px solid #EEE;
+}
+
+.rankinfo .rank-bar {
+	display: block;
+	width: 100%;
+	height: 8px;
+	background: url(http://img.huofar.com/webapp/tizhi/images/ranking_bar.png) no-repeat;
+	background-size: 100%;
+}
+
+.rankinfo #rankPointer {
+	display: block;
+	position: absolute;
+	width: 30px;
+	height: 38px;
+	background: url(http://img.huofar.com/webapp/tizhi/images/ranking_bar_point.png) no-repeat;
+	background-size: 100%;
+	top: -23px;
+	left: 300px;
+}
+
+.rankinfo .rank-desc {
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	font-size: 16px;
+	color: #E67990;
+}
+
+.rankinfo .rank-desc span {
+	background: #FFBF00;
+	height: 40px;
+	border-radius: 5px;
+	padding: 3px 8px;
+	margin: 0 8px;
+	font-size: 20px;
+	font-weight: bold;
+	color: #FFF;
+}
+
+.rankinfo .tag_healthy {
+	position: absolute;
+	right: 4px;
+	top: -22px;
+	font-size: 14px;
+	color: #8DDEA5;
+}
+
+
+.rankinfo .tag_unhealthy {
+	position: absolute;
+	left: 4px;
+	top: -22px;
+	font-size: 14px;
+	color: #FF6666;
+}
+
+/* chart! */
+
+.chart {
+	margin: 0 0 50px 0;
+	position: relative;
+}
+
+.chart .legend {
+	list-style: none;
+	margin: 0 auto;
+	padding: 0;
+	text-align: center;
+}
+
+.chart .legend li {
+	list-style: none;
+	display: inline;
+	height: 80px;
+	line-height: 80px;
+	font-size: 14px;
+	color: #777777;
+	margin-right: 12px;
+}
+
+.chart .legend li em {
+	border-radius: 4px;
+	margin-right: 6px;
+	width: 18px;
+	height: 18px;
+	vertical-align: -5%;
+	display: inline-block;
+}
+
+.legend-my em { background: #FFDC73 }
+.legend-average em { background: #FF9999 }
+.legend-health-baseline em { background: #A1D904 }
+
+
+.chart-baselines {}
+.chart-baselines .line { background: #F2F2F2; height: 1px; font-size: 0; overflow: hidden; margin-bottom: 30px; }
+.chart-baselines .green { background: #A1D904; height: 2px; }
+
+.histogram { padding: 0; margin:0 0 0 0; position: absolute; bottom: 0; width: 100%; }
+
+.histogram li {
+	display: inline-block;
+ 	width: 10%;
+ 	background: #FFDC73;
+ 	height: 50px;
+ 	margin: 0 6% 0 0;
+ 	padding: 0;
+ 	position: relative;
+ 	font-size: 0;
+ 	zoom:0;
+ }
+
+.histogram li:nth-child(1) {
+	margin-left: 5.5%;
+}
+
+.histogram li:nth-last-child(1) {
+	margin:0;
+}
+
+.histogram li span {
+	position: absolute;
+	bottom: -30px;
+	width: 100%;
+	font-size: 16px;
+	color: #666666;
+	text-align: center;
+}
+
+.dots {
+	padding: 0; margin:0 0 0 0; position: absolute; bottom: 0; width: 100%;
+}
+
+.dots .dot {
+	display: inline-block;
+	width: 10%;
+	height: 50px;
+	margin: 0 6% 0 0;
+	padding: 0;
+	position: relative;
+	font-size: 0;
+	zoom:0;
+	list-style: none;
+}
+
+.dots .dot:nth-child(1) {
+	margin-left: 5.5%;
+}
+
+.dots .dot:nth-last-child(1) {
+	margin:0;
+}
+
+.dots .dot span {
+	background: #FF9999;
+	width: 12px;
+	height: 12px;
+	border-radius: 6px;
+	display: block;
+	margin: 0 auto;
+}
+
+.desktop-line {
+	position:absolute;
+	bottom:16px;
+	width:80.5%;
+	height:44px;
+	margin: 0 6% 0 9.5%;
+}
+
+.bottom-line { background: rgba(0,0,0,0.1); height: 1px; font-size: 0; position: absolute; bottom: 5px; width: 100%; }
+
+/* desc-list */
+
+.desc-list {
+	/*margin: 0 5.5%;*/
+	margin: 0;
+	padding: 0;
+}
+
+.desc-list h3 {
+	height: 70px;
+	margin: 0 ;
+	padding: 0 0 0 5.4%;
+	line-height: 70px;
+	font-weight: bold;
+	color: #3EA45A;
+	border-bottom: 1px solid #EEE;
+	font-size: 22px;
+	cursor: pointer;
+}
+.desc-list h3:hover {
+	background: #F8F8F8;
+}
+
+.desc-list h3 em {
+	display: inline;
+	float: right;
+	margin: 28px 5.5% 0 0;
+	background: url(../img/arrow_down.jpg);
+	width: 18px;
+	height: 14px;
+	background-size: 100%;
+}
+
+.desc-list .content {
+	display: none;
+	border-bottom: 1px solid #EEE;
+	line-height: 150%;
+	font-size: 18px;
+	color: #666666;
+	margin: 0 ;
+	padding:30px 5.5% 30px;
+}
+
+.desc-list .item.active .content {
+	display: block;
+}
+
+.desc-list .item.active h3 em {
+	background: url(../img/arrow_up.jpg);
+	background-size: 100%;
+}
+
+.desc-list ul {
+	margin:0;
+	padding: 0;
+}
+
+.desc-list ul li {
+	list-style:square outside url(../img/list_point.jpg);
+	margin-left: 30px;
+	line-height: 150%;
+	margin-bottom: 10px;
+	font-size: 18px;
+}
+
+ul.ul_check li {
+	list-style:square outside url('http://img.huofar.com/webapp/tizhi/images/list_check.png?type=1');
+}
+
+
+/* peculiarity */
+
+.peculiarity { margin: 0; padding: 0 5.5% !important;  }
+
+.peculiarity-item {
+	border-bottom: 1px solid #EEE;
+	padding:20px 0;
+	position: relative;
+}
+
+.peculiarity-item:nth-last-child(1) {
+	margin-bottom: 60px;
+}
+
+.peculiarity-item img {
+	width: 66px;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -33px;
+}
+
+.peculiarity-item h4
+{
+	margin:0 0 6px 85px;
+	font-weight: bold;
+	color: #E77990;
+	font-size: 22px;
+}
+
+.peculiarity-item p
+{
+	margin:0 0 0 85px;
+	font-size: 18px;
+}
+
+/* action area */
+
+.weixin {
+	margin: 50px 0 0 0;
+	padding: 0 0 50px 0;
+	border-bottom: 1px solid #EEE;
+}
+
+.weixin .title {
+	display: block;
+	margin:auto;
+}
+
+.weixin .qr {
+	display: block;
+	margin:30px auto 0 auto;
+}
+
+.result-actions {
+	margin: 25px 0 0 0;
+	padding: 0 0 20px 0;
+	border-bottom: 1px solid #EEE;
+}
+
+.result-actions a {
+	display: block;
+	height: 70px;
+	margin: 0 30px 30px 30px;
+	background: #000;
+	border-radius: 15px;
+}
+
+.result-actions a:nth-last-child(1) {
+	margin: 0 30px 0 30px;
+}
+
+.result-actions .share-to-weibo {
+	background: url(http://img.huofar.com/webapp/test/images/share_to_weibo.png) #FFBF02 center center no-repeat;
+	background-size: 280px 55px;
+}
+
+.result-actions .share-to-weibo:hover {
+	background-color: #EEB201
+}
+
+.result-actions .share-to-weixin {
+	background: url(http://img.huofar.com/webapp/test/images/share_to_weixin.png) #FFBF02 center center no-repeat;
+	background-size: 280px 55px;
+	display: none;
+	margin-bottom: 0 !important;
+}
+
+
+.result-actions .share-to-weixin:hover {
+	background-color: #EEB201
+}
+
+
+.result-actions .save-and-register {
+	background: url(http://img.huofar.com/webapp/test/images/save_and_register.png) #3879D9 center center no-repeat;
+	background-size: 280px 55px;
+}
+
+.result-actions .save-and-register:hover {
+	background-color: #41A55B;
+}
+
+.designed-by { margin: 0 !important; }
+.designed-by img { text-align: center; margin:50px auto; display: block;}
+
+/* register */
+
+.register-container, .login-container {
+	max-width: 640px;
+	border-color: #EEE;
+	border-style: solid;
+	border-width: 0 1px 1px 1px;
+	padding: 0;
+}
+
+.login-by-huofar-accounts {
+	margin: 50px 5%;
+}
+
+.login-by-huofar-accounts .use-dailylife, .login-by-huofar-accounts .use-ylyh {
+	border:1px solid #EEE;
+	display: block;
+	height: 60px;
+	line-height: 60px;
+	position: relative;
+	padding-left: 80px;
+	color: #676759;
+	font-size: 18px;
+}
+
+.login-by-huofar-accounts .use-dailylife em, .login-by-huofar-accounts .use-ylyh em {
+	background: url(http://img.huofar.com/webapp/test/images/go_arrow.png);
+	background-size: 12px 20px;
+	width: 12px;
+	height: 20px;
+	position: absolute;
+	right: 3%;
+	top: 50%;
+	margin-top: -10px;
+}
+
+.login-by-huofar-accounts .use-dailylife:hover, .login-by-huofar-accounts .use-ylyh:hover {
+	text-decoration: none;
+	background: #F8F8F8;
+}
+
+.login-by-huofar-accounts .use-dailylife img, .login-by-huofar-accounts .use-ylyh img { position: absolute; }
+.login-by-huofar-accounts .use-dailylife img { left: 22px; top:11px; }
+.login-by-huofar-accounts .use-ylyh img { left: 15px; top:8px; }
+
+.login-by-huofar-accounts .use-dailylife {
+	border-radius: 10px 10px 0 0;
+}
+
+.login-by-huofar-accounts .use-ylyh {
+	border-radius:  0 0 10px 10px;
+	margin-top: -1px;
+}
+
+.hf-form {
+	margin: 0 5%;
+	border-top: 1px solid #EEE;
+}
+
+.hf-form .form-group {
+	border-bottom: 1px solid #EEE;
+	margin: 0;
+	padding: 15px 0;
+}
+
+.hf-form .form-group .control-label {
+	padding: 0;
+	text-align: left;
+	font-size: 20px;
+	color: #676759;
+	line-height: 35px;
+}
+
+.hf-form .form-group .control-label img {
+	margin-right: 6px;
+	vertical-align: -25%;
+}
+
+.hf-form .submit {
+	display: block;
+	background: #3879D9;
+	border-radius: 10px;
+	width: 320px;
+	margin:50px auto 100px;
+	font-size: 24px;
+	color: #FFF;
+	line-height: 50px;
+	text-align: center;
+	height: 50px;
+}
+
+.hf-form .submit:hover {
+	text-decoration: none;
+	background: #369750;
+}
+
+.hf-form .submit img {
+	background: url(http://img.huofar.com/webapp/test/images/check_white.png);
+	background-size: 28px 28px;
+	width: 28px;
+	height: 28px;
+	margin-right: 7px;
+	vertical-align: -10%;
+}
+
+.login-container {
+	padding: 50px 0 0 0;
+}
+
+.form-message {
+	background: #FFBF00;
+	color: #FFF;
+	margin: 0 5%;
+	display: block;
+	padding: 15px 20px;
+	border-radius: 10px;
+	font-size: 18px;
+	margin-bottom: 30px;
+	border: 1px solid #EFB401;
+}
+
+
+/*ok!*/
+.ok-container {
+	max-width: 640px;
+	border-color: #EEE;
+	border-style: solid;
+	border-width: 0 1px 1px 1px;
+	padding: 0;
+}
+
+.ok-status { padding: 60px 0; border-bottom: 1px solid #EEE; }
+
+.ok-status h2 {
+	font-weight: bold;
+	color: #E67990;
+	font-size: 30px;
+	margin: auto;
+	text-align: center;
+}
+
+.ok-status h2 img { width: 40px; vertical-align: -27%; margin-right: 10px; }
+.ok-status p { margin: 15px 5% 0; font-size: 20px; color: #666666; line-height: 150%; }
+
+
+.ylyh-ad {
+	height: 300px;
+	background: url(http://img.huofar.com/webapp/test/images/ylyh-feature.jpg) no-repeat right center;
+	background-size: 260px 260px;
+}
+
+.ylyh-ad .title {
+	width: 300px;
+	margin: 65px 60px 30px 60px;
+}
+
+.download {
+	background: #2CCC72;
+	border-radius: 10px;
+	width: 300px;
+	height: 55px;
+	margin-left: 60px;
+	display: block;
+ }
+
+.download:hover {
+	background:#2CCC72;
+}
+
+.download img{
+	width: 300px;
+	height: 55px;
+}
+
+
+.option-statement {
+	max-width: 640px;
+	border-color: #EEE;
+	border-style: solid;
+	border-width: 0 1px ;
+	padding: 0 30px 50px 30px;
+	color: #BDBDAC;
+	line-height: 150%;
+}
+
+.option-statement h4 {
+	text-align: center;
+	color: #BDBDAC;
+	font-size: 17px;
+}
+
+.copyright-container {
+	max-width: 640px;
+	border-color: #EEE;
+	border-style: solid;
+	border-width: 1px 1px 0 1px;
+	margin:auto !important;
+}
+
+.section_header {
+	max-width: 640px;
+	background: #FFF;
+	height: 60px;
+	border-bottom: 1px solid #EEE;
+}
+
+.section_header h2 {
+	font-size: 18px;
+	font-weight: bold;
+	margin: 0;
+	padding: 0 0 0 40px;
+	color: #3EA45A;
+	line-height: 60px;
+}
+
+.section_header.fixed {
+	min-width: 638px;
+	position: fixed;
+	visibility: normal;
+	top:0;
+	border-bottom: 0 !important;
+	z-index: 10000;
+	box-shadow: 0px 1px 10px rgba(0,0,0,0.1);
+}
+
+.section_header_placeholder {
+	height: 60px;
+}
+
+.qrcode {
+	
+	width:110px;
+	height:150px;
+	position:fixed;
+	left:50%;
+	top:350px;
+	margin-left:-400px;
+}
+
+.notsure {
+	display: inline-block;
+	padding: 4px 10px;
+	background: #bbb;
+	color: #FFF;
+	border-radius: 5px;
+}
+
+.notsure:hover {
+	text-decoration: none;
+	background: #AAA;
+	color: #FFF;
+}
+
+/* weixin share alertview */
+
+#shareAlertView {
+	width: 100%;
+	height: 1000px;
+	background: rgba(0,0,0,0.4);
+	position: absolute;
+	top:0;
+	display: none;
+	z-index: 100000;
+}
+
+#shareAlertView .share-tip {
+	position: fixed;
+	top: 0;
+	right: 10px;
+}
+
+.test-intro h1{
+	margin: 0;
+	font-size: 32px;
+}
+
+.test-intro h3{
+	margin: 5px 0 0 0;
+	font-size: 16px;
+	line-height: 150%;
+}
+
+.small-tip-2 {
+	color: #999;
+	margin-top: 10px;
+	display: block;
+}
+
+.tizhi-pics {
+	height: 170px;
+	overflow: auto;
+	padding: 0 25px 0 25px;
+}
+
+.tizhi-pics .pic-frame img
+{
+	width: 150px;
+	height: 150px;
+	margin-right: 10px;
+	float: left;
+	display: inline;
+}
+
+.weixin-hidden {
+	display: none;
+}
+
+.result-form {
+	background: #FFFEF2;
+	padding: 30px 0;
+	margin: 0;
+	border-bottom: 1px solid #EEE;
+}
+
+.result-form .submit {
+	margin-bottom: 0px !important;
+	margin-top: 20px !important;
+}
+
+.result-form h3 {
+	color: #3879D9;
+	margin: 0 5% 15px;
+}
+
+.result-form ul {
+	margin:0 5% 20px;
+	padding: 0;
+}
+
+.result-form li {
+	list-style-position: inside;
+}
+
+.result-form .hf-form{
+	border: 0 !important;
+}
+
+.result-ia {
+	padding: 30px 0;
+	margin: 0;
+	text-align: center;
+	border-bottom: 1px solid #EEE;
+}
+
+.result-ia ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.result-ia li {
+	list-style: none;
+	font-family: inherit;
+	color: #666666;
+}
+
+.result-ia span{
+	color: darkgray;
+	padding-top: 10px;
+	display: block;
+} 
+
+.result-ia a{
+	display: block;
+	margin:20px auto 0px;
+	font-size: 24px;
+	color: #FFF;
+	line-height: 50px;
+	text-align: center;
+	height: 50px;
+}
+
+.result-ia a:hover {
+	text-decoration: none;
+}
+/*mobile part*/
+@media (max-width: 768px) {
+
+	.test-intro {
+		margin:  25px 25px 10px 25px;
+	}
+	.section_header h2 {
+		font-size: 16px;
+		padding-left: 20px;
+	}
+
+	.question-desc ul {
+		margin: 0;
+		padding: 20px;
+		color: #959488;
+		font-size: 16px;
+	}
+
+	.result-container,.question-container,.register-container,.login-container {
+		border-left : 0 !important;
+		border-right : 0 !important;
+	}
+
+	.typeinfo {
+		position: relative;
+	}
+
+	.constellation-image {
+		position: absolute;
+		left: 50%;
+		top: 22px;
+		width: 130px !important;
+		margin-left: -140px;
+		padding: 0 !important;
+	}
+
+	.typeinfo-text {
+		margin: 0;
+		padding: 0 !important;
+	}
+
+	.typeinfo .col-xs-8 {
+		width: 100%;
+	}
+
+	.typeinfo-text h1 span {
+		display: block;
+	}
+
+
+	.typeinfo-desc {
+		margin: 15px 25px 30px 25px !important;
+	}
+
+	.desc-list .content {
+		font-size: 16px;
+		padding:20px 25px 20px;
+	}
+
+	.desc-list ul li {
+		margin-left: 25px;
+		margin-bottom: 10px;
+		font-size: 16px;
+	}
+
+	.peculiarity-item p {
+		margin:0 0 0 85px;
+		font-size: 16px;
+	}
+
+	.question.active {
+		padding: 10px 20px 20px 20px;
+	}
+
+	.question-container .question.active h3 .question-no {
+		left: 20px;
+		top: 15px;
+	}
+	.question-container .question.active h3 {
+
+		height: 140px;
+		padding-top: 15px;
+		font-size: 20px;
+		font-weight: bold;
+	}
+
+	.question-container .question.active h3 .question-no {
+		font-size: 20px;
+		font-weight: normal;
+	}
+
+	.question-container .question.active h3 .question-no b {
+		font-size:22px;
+	}
+
+	.question-options li {
+		font-weight: bold;
+	}
+
+	.question-container .question.disabled {
+		padding: 0px 20px 0px 20px;
+	}
+
+	.question-container .question {
+		padding: 20px 20px 20px 20px;
+
+	}
+
+	.question-options li:nth-child(1) {
+		border-radius: 6px 0 0 6px;
+	}
+
+	.question-options li:nth-last-child(1) {
+		border-radius: 0 6px 6px 0 ;
+	}
+
+	.basicinfo-container .date-select {
+		font-size: 14px;
+		margin-right: 0px;
+		height: 26px;
+		margin-top: 5px;
+	}
+
+
+	.basicinfo-container .col-xs-5 {
+		padding: 0;
+		width: 35%;
+		margin: 0;
+	}
+
+	.basicinfo-container .col-xs-7 {
+		padding: 0;
+		width: 65%;
+		margin: 0;
+	}
+
+	.basicinfo-container .control-label {
+		font-size: 14px;
+		margin-right: 10px;
+		font-weight: bold;
+	}
+
+	.result-actions {
+		margin: 25px 0 0 0;
+		padding: 0 0 25px 0;
+	}
+
+	.result-actions a {
+		border-radius: 8px;
+		height: 50px;
+		margin: 0 20px 20px;
+	}
+
+	.share-to-weibo {
+		display: none !important;
+	}
+
+	.share-to-weixin {
+		/*display: block !important;*/
+		background-size: 224px 44px !important;
+
+	}
+
+	.result-actions a:nth-last-child(1) {
+		margin: 0 20px 0 20px;
+	}
+
+	.result-actions .save-and-register {
+		background-size: 224px 44px;
+	}
+
+	.desc-list h3 {
+		height: 50px;
+		line-height: 50px;
+		font-size: 18px;
+	}
+
+	.desc-list h3 em {
+		margin-top: 20px;
+	}
+
+	.chart .legend li {
+		height: 60px;
+		line-height: 60px;
+	}
+
+	.hf-form .col-xs-3{
+		width:36% !important;
+	}
+
+	.hf-form .col-xs-9{
+		width:64% !important;
+	}
+
+	.hf-form .form-group .control-label {
+		font-size: 16px;
+	}
+
+	.ok-status p { margin: 15px 20px 0; font-size: 16px;}
+
+	.ylyh-ad {
+		height: auto;
+		background: #FFF;
+		background-image: none;
+		padding: 30px 0;
+	}
+
+	.ylyh-ad .title {
+		margin: 0 auto;
+		display:block;
+	}
+
+	.bg_ad{
+		height: 260px;
+		width: 260px;
+		background: url(http://img.huofar.com/webapp/tizhi/images/ylyh-feature.jpg) no-repeat right center;
+		background-size: 260px 260px;
+		margin:auto;
+		display:block;
+	}
+
+	.download {
+		margin: 0 auto;
+	}
+
+	.weixin {
+		display: none;
+	}
+
+	.notsure {
+		display: block;
+		width: 80px;
+		text-align: center;
+		margin-top: 10px;
+	}
+
+	.login-by-huofar-accounts .use-dailylife, .login-by-huofar-accounts .use-ylyh {
+		font-size: 16px;
+		font-weight: bold;
+		padding-left: 70px
+	}
+
+	.hf-form .submit {
+		width: 100%;
+	}
+
+	.login-by-huofar-accounts .use-dailylife img {
+		left: 18px;
+	}
+
+	.login-by-huofar-accounts .use-ylyh img {
+		left: 12px;
+	}
+
+	.login-by-huofar-accounts {
+		margin:30px 5%;
+	}
+
+
+}
