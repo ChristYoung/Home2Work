@@ -2,12 +2,29 @@
 	     	
       function makeQuestionHtml(questionIndex,questionTagId,questionTitle,allQuestionCount,optionNum,b1,b2,b3,b4,b5) {
         if (optionNum == 2) {
-          var optionHtml = '<ul class="row"><li class="col-xs-6" value="1">男</li><li class="col-xs-6" value="2">女</li></ul><input name="question['+questionTagId+']" type="hidden"/>';
+          var optionHtml = '<ul class="row">'+
+                               '<li class="col-xs-6" value="1">男</li>'+
+                               '<li class="col-xs-6" value="2">女</li>'+
+                            '</ul>'+
+                            '<input name="question['+questionTagId+']" type="hidden"/>';
         } else {
-          var optionHtml = '<ul class="row"><li class="col-xs-2-5" value="1">'+b1+'</li><li class="col-xs-2-5" value="2">'+b2+'</li><li class="col-xs-2-5" value="3">'+b3+'</li><li class="col-xs-2-5" value="4">'+b4+'</li><li class="col-xs-2-5" value="5">'+b5+'</li></ul><input name="question['+questionTagId+']"  type="hidden"/>';
+          var optionHtml = '<ul class="row">'+
+                              '<li class="col-xs-2-5" value="1">'+b1+'</li>'+
+                              '<li class="col-xs-2-5" value="2">'+b2+'</li>'+
+                              '<li class="col-xs-2-5" value="3">'+b3+'</li>'+
+                              '<li class="col-xs-2-5" value="4">'+b4+'</li>'+
+                              '<li class="col-xs-2-5" value="5">'+b5+'</li>'+
+                            '</ul>'+
+                            '<input name="question['+questionTagId+']" type="hidden"/>';
         };
 
-        var html = '<div class="question disabled" question-no="'+questionIndex+'" question-tag="'+questionTagId+'"><h3><span class="question-no"><b>'+questionIndex+'</b>/'+allQuestionCount+'</span><span class="real-title">'+questionTitle+'</span></h3><div class="question-options">'+optionHtml+'</div></div>';
+        var html = '<div class="question disabled" question-no="'+questionIndex+'" question-tag="'+questionTagId+'">'+
+                      '<h3>'+
+                       '<span class="question-no"><b>'+questionIndex+'</b>/'+allQuestionCount+'</span>'+
+                       '<span class="real-title">'+questionTitle+'</span>'+
+                      '</h3>'+
+                      '<div class="question-options">'+optionHtml+'</div>'+
+                    '</div>';
         
         return html;
       }
@@ -16,39 +33,29 @@
         return '<div class="section_header_placeholder" ' + extraTag + '><div class="section_header"><h2>' + title + '</h2></div></div>';
       }
 
-      function in_array(needle, haystack) { //判断某一项是否在指定的数组中
+      function in_array(needle, haystack) { //判断某一项是否在指定的对象中
           for(var i in haystack) {
               if(haystack[i] == needle) return true;
           }
           return false;
       }
 
-//    function setQuestionVisibilityByTags(tags, isShow) {
-//        $(tags).each(function(i) {
-//          if (isShow) {
-//            $('div[question-tag="'+tags[i]+'"]').show();
-//          } else {
-//            $('div[question-tag="'+tags[i]+'"]').find('input').removeAttr('checked');
-//            $('div[question-tag="'+tags[i]+'"]').find('li').removeClass('active');
-//            $('div[question-tag="'+tags[i]+'"]').hide().attr('class','question disabled');
-//          }
-//        });
-//    }
+
 
       $(function(){
 
         var Questions =  jQuery.parseJSON('[{"tagID":1,"tag":"请选择您的性别"},{"tagID":2,"tag":"您体力充沛吗？"},{"tagID":3,"tag":"您容易疲乏吗？"},{"tagID":4,"tag":"您说话声音低弱无力吗？"},{"tagID":5,"tag":"您感觉胸闷不乐，情绪低沉吗？"},{"tagID":6,"tag":"您比一般人耐受不了寒冷（冬天是寒冷，夏天的冷空调。电扇等）吗？"},{"tagID":7,"tag":"您能适应外界自然和社会环境变化吗？"},{"tagID":8,"tag":"您容易失眠吗？"},{"tagID":9,"tag":"您容易忘事（健忘）吗？"},{"tagID":10,"tag":"您容易气短（呼吸短促，喘不上气）吗？"},{"tagID":11,"tag":"您容易心慌吗？"},{"tagID":12,"tag":"您容易头晕或站起时眩晕吗？"},{"tagID":13,"tag":"您比别人容易患感冒吗？"},{"tagID":14,"tag":"您喜欢安静，懒得说话吗？"},{"tagID":15,"tag":"您活动量稍大就容易出虚汗吗？"},{"tagID":16,"tag":"您手脚发凉吗？"},{"tagID":17,"tag":"您胃脘部、背部、腰膝部怕冷吗？"},{"tagID":18,"tag":"您感到怕冷，衣服比别人穿得多吗？"},{"tagID":19,"tag":"您冬天更怕冷，夏天不喜欢冷空调、电扇等吗？"},{"tagID":20,"tag":"您吃（喝）凉的东西会感到不舒服或者怕吃（喝）凉的东西吗？"},{"tagID":21,"tag":"您受凉或吃（喝）凉的东西后，容易腹泻拉肚子吗？"},{"tagID":22,"tag":"您感到脚心发热吗？"},{"tagID":23,"tag":"您感觉身体、脸上发热吗？"},{"tagID":24,"tag":"您皮肤或口唇干吗？"},{"tagID":25,"tag":"您口唇的颜色比一般人红吗？"},{"tagID":26,"tag":"您容易便秘或大便干燥吗？"},{"tagID":27,"tag":"您面部两颊潮红或偏红吗？"},{"tagID":28,"tag":"您感到眼睛干涩吗？"},{"tagID":29,"tag":"您感到口干咽燥，总想喝水吗？"},{"tagID":30,"tag":"您感到胸闷或腹部胀满吗？"},{"tagID":31,"tag":"您感觉身体沉重不轻松或不爽快吗？"},{"tagID":32,"tag":"您腹部肥满松软吗？"},{"tagID":33,"tag":"您有额部油脂分泌多的现象吗？"},{"tagID":34,"tag":"您上眼睑比别人肿（上眼睑有轻微隆起的现象）吗？"},{"tagID":35,"tag":"您嘴里有黏黏的感觉吗？"},{"tagID":36,"tag":"您平时痰多，特别是感到咽喉部总有痰堵着吗？"},{"tagID":37,"tag":"您舌苔厚腻或有舌苔厚厚的感觉吗？"},{"tagID":38,"tag":"您面部或鼻部有油腻感或者油亮发光吗？"},{"tagID":39,"tag":"您脸上容易生座疮或皮肤容易生疮疖吗？"},{"tagID":40,"tag":"您感到口苦或嘴里有苦味吗？"},{"tagID":41,"tag":"您大便有粘滞不爽，有解不尽的感觉吗？"},{"tagID":42,"tag":"您小便时尿道有发热感、尿色浓（深）吗？"},{"tagID":43,"tag":"您的阴囊潮湿吗？"},{"tagID":44,"tag":"您的皮肤在不知不觉中会出现青紫瘀斑（皮下出血）吗？"},{"tagID":45,"tag":"您两颧部有细微红斑吗？"},{"tagID":46,"tag":"您身上有哪里疼痛吗？"},{"tagID":47,"tag":"您有额部油脂分泌多的现象吗？"},{"tagID":48,"tag":"您面色晦暗或容易出现褐斑吗？"},{"tagID":49,"tag":"您会出现黑眼圈吗？"},{"tagID":50,"tag":"您口唇颜色偏黯吗？"},{"tagID":51,"tag":"您感到闷闷不乐、情绪低沉吗？"},{"tagID":52,"tag":"您精神紧张、焦虑不安吗？"},{"tagID":53,"tag":"您多愁善感、感情脆弱吗？"},{"tagID":54,"tag":"您容易感到害怕或受到惊吓吗？"},{"tagID":55,"tag":"您肋部或乳房胀痛吗？"},{"tagID":56,"tag":"您无缘无故叹气吗？"},{"tagID":57,"tag":"您咽喉部有异物感，口吐之不出，咽之不下吗？"},{"tagID":58,"tag":"您没有感冒也会打喷嚏吗？"},{"tagID":59,"tag":"您没有感冒也会鼻痒、流鼻涕吗？"},{"tagID":60,"tag":"您有因季节变化、地理变化或异味等原因而喘促的现象吗？"},{"tagID":61,"tag":"您容易过敏（药物、食物、气味、花粉、季节交替时、气候变化）吗？"},{"tagID":62,"tag":"您的皮肤起荨麻疹（风团、风疹块、风疙瘩）吗？"},{"tagID":63,"tag":"您的皮肤因过敏出现紫癜（紫红色瘀点、瘀斑）吗？"},{"tagID":64,"tag":"您的皮肤一抓就红，并出现抓痕吗？"},{"tagID":100,"tag":"请选择您的年龄段"}]');
-        QuestionTagsWithTwoOptions = jQuery.parseJSON('["1"]');
+        QuestionTagsWithTwoOptions = jQuery.parseJSON('["1"]'); //将字符串转换成数组
 		QuestionTagForAge = "100";
         QuestionTagsWithSepacilOptionName = jQuery.parseJSON('["3","4","5","6","8","9"]');
 
         currentQuestion = 1;
         allQuestionNum = Questions.length;
         $(Questions).each(function(i){
-          if (in_array(this.tagID,QuestionTagsWithTwoOptions)) {
+          if (in_array(this.tagID,QuestionTagsWithTwoOptions)) { //如果tagID等于1
             var questionHtml = makeQuestionHtml(i+1,this.tagID,this.tag,allQuestionNum,2);
           } else {
-		    if (this.tagID == QuestionTagForAge)
+		    if (this.tagID == QuestionTagForAge) //如果tagID等于100
 			  var questionHtml = makeQuestionHtml(i+1,this.tagID,this.tag,allQuestionNum,4,'28以下','28~35','35~45','45~60','60以上');
 			else if (in_array(this.tagID,QuestionTagsWithSepacilOptionName))
 			  var questionHtml = makeQuestionHtml(i+1,this.tagID,this.tag,allQuestionNum,4,'总是','经常','有时','很少','没有');

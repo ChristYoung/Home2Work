@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no, email=no">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="msapplication-tap-highlight" content="no">
     <title>健康问卷</title>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/questionnaire.min.css"/>
@@ -21,23 +27,176 @@
     </header>
 
     <form action="" id="questionForm" method="post">
-      <div class="container question-desc">
-      <ul>
-        <!--<li class="adv">
-			"睿博健康吧"根据中华中医药学会《中医体质分类及判定》标准定制
-        </li>-->
-      </ul>
+      <div class="container question-container" id="questions">
+      	
+      	  <div class="question active" question-no="1" question-tag="1">
+      	  	<h3>
+      	  		<span class="question-no">1/12</span>
+      	  		<span class="real-title">请选择您的性别</span>
+      	  	</h3>
+      	  	<div class="question-options">
+      	  		<ul class="row">
+      	  			<li class="col-xs-6" data-value="">男</li>
+      	  			<li class="col-xs-6" data-value="">女</li>
+      	  			<input type="hidden" name="" id="questionsInput_1" value="" />
+      	  		</ul>
+      	  	</div>
+      	  </div>
+      	  <div class="question disabled" question-no="2" question-tag="2">
+      	  	<h3>
+      	  		<span class="question-no">2/12</span>
+      	  		<span class="real-title">请问您是否吸烟?</span>
+      	  	</h3>
+      	  	<div class="question-options">
+      	  		<ul class="row">
+      	  			<li class="col-xs-6" data-value="">吸</li>
+      	  			<li class="col-xs-6" data-value="">不吸</li>
+      	  			<input type="hidden" name="" id="questionsInput_2" value="" />
+      	  		</ul>
+      	  	</div>
+      	  </div>
+      	  <div class="question disabled" question-no="3" question-tag="3">
+      	  	<h3>
+      	  		<span class="question-no">3/12</span>
+      	  		<span class="real-title">请问您是否患有糖尿病?</span>
+      	  	</h3>
+      	  	<div class="question-options">
+      	  		<ul class="row">
+      	  			<li class="col-xs-6" data-value="">有</li>
+      	  			<li class="col-xs-6" data-value="">没有</li>
+      	  			<input type="hidden" name="" id="questionsInput_3" value="" />
+      	  		</ul>
+      	  	</div>
+      	  </div>
+      	  <div class="question disabled" question-no="4" question-tag="4">
+      	  	<h3>
+      	  		<span class="question-no">4/12</span>
+      	  		<span class="real-title">请问您是否患有高血压?</span>
+      	  	</h3>
+      	  	<div class="question-options">
+      	  		<ul class="row">
+      	  			<li class="col-xs-6" data-value="">有</li>
+      	  			<li class="col-xs-6" data-value="">没有</li>
+      	  			<input type="hidden" name="" id="questionsInput_4" value="" />
+      	  		</ul>
+      	  	</div>
+      	  </div>
+      	  <div class="question disabled" question-no="5" question-tag="5">
+      	  	<h3>
+      	  		<span class="question-no">5/12</span>
+      	  		<span class="real-title">请问您血脂正常吗?</span>
+      	  	</h3>
+      	  	<div class="question-options">
+      	  		<ul class="row">
+      	  			<li class="col-xs-6" data-value="">正常</li>
+      	  			<li class="col-xs-6" data-value="">不正常</li>
+      	  			<input type="hidden" name="" id="questionsInput_5" value="" />
+      	  		</ul>
+      	  	</div>
+      	  </div>
+      	  <div class="question disabled" question-no="6" question-tag="6">
+      	  	<h3>
+      	  		<span class="question-no">6/12</span>
+      	  		<span class="real-title">请问您每天睡眠超过8小时吗?</span>
+      	  	</h3>
+      	  	<div class="question-options">
+      	  		<ul class="row">
+      	  			<li class="col-xs-6" data-value="">是</li>
+      	  			<li class="col-xs-6" data-value="">不是</li>
+      	  			<input type="hidden" name="" id="questionsInput_6" value="" />
+      	  		</ul>
+      	  	</div>
+      	  </div>
+      	  <div class="question disabled" question-no="7" question-tag="7">
+      	  	<h3>
+      	  		<span class="question-no">7/12</span>
+      	  		<span class="real-title">请问您经常体育锻炼吗?</span>
+      	  	</h3>
+      	  	<div class="question-options">
+      	  		<ul class="row">
+      	  			<li class="col-xs-4" data-value="">偶尔</li>
+      	  			<li class="col-xs-4" data-value="">从不</li>
+      	  			<li class="col-xs-4" data-value="">经常</li>
+      	  			<input type="hidden" name="" id="questionsInput_7" value="" />
+      	  		</ul>
+      	  	</div>
+      	  </div>
+      	  <div class="question disabled" question-no="8" question-tag="8">
+      	  	<h3>
+      	  		<span class="question-no">8/12</span>
+      	  		<span class="real-title">请问您是否经常喝酒?</span>
+      	  	</h3>
+      	  	<div class="question-options">
+      	  		<ul class="row">
+      	  			<li class="col-xs-6" data-value="">是</li>
+      	  			<li class="col-xs-6" data-value="">不是</li>
+      	  			<input type="hidden" name="" id="questionsInput_8" value="" />
+      	  		</ul>
+      	  	</div>
+      	  </div>
+      	  <div class="question disabled" question-no="9" question-tag="9">
+      	  	<h3>
+      	  		<span class="question-no">9/12</span>
+      	  		<span class="real-title">请问您是否长期精神紧张?</span>
+      	  	</h3>
+      	  	<div class="question-options">
+      	  		<ul class="row">
+      	  			<li class="col-xs-6" data-value="">是</li>
+      	  			<li class="col-xs-6" data-value="">不是</li>
+      	  			<input type="hidden" name="" id="questionsInput_9" value="" />
+      	  		</ul>
+      	  	</div>
+      	  </div>
+      	  <div class="question disabled" question-no="10" question-tag="10">
+      	  	<h3>
+      	  		<span class="question-no">10/12</span>
+      	  		<span class="real-title">请问您的饮食是否偏咸?</span>
+      	  	</h3>
+      	  	<div class="question-options">
+      	  		<ul class="row">
+      	  			<li class="col-xs-6" data-value="">是</li>
+      	  			<li class="col-xs-6" data-value="">不是</li>
+      	  			<input type="hidden" name="" id="questionsInput_10" value="" />
+      	  		</ul>
+      	  	</div>
+      	  </div>
+      	  <div class="question disabled" question-no="11" question-tag="11">
+      	  	<h3>
+      	  		<span class="question-no">11/12</span>
+      	  		<span class="real-title">请问您父母是否有糖尿病?</span>
+      	  	</h3>
+      	  	<div class="question-options">
+      	  		<ul class="row">
+      	  			<li class="col-xs-4" data-value="">仅一人</li>
+      	  			<li class="col-xs-4" data-value="">都有</li>
+      	  			<li class="col-xs-4" data-value="">都没有</li>
+      	  			<input type="hidden" name="" id="questionsInput_11" value="" />
+      	  		</ul>
+      	  	</div>
+      	  </div>
+      	  <div class="question disabled" question-no="12" question-tag="12">
+      	  	<h3>
+      	  		<span class="question-no">12/12</span>
+      	  		<span class="real-title">请问您父母是否有糖尿病?</span>
+      	  	</h3>
+      	  	<div class="question-options">
+      	  		<ul class="row">
+      	  			<li class="col-xs-4" data-value="">仅一人</li>
+      	  			<li class="col-xs-4" data-value="">都有</li>
+      	  			<li class="col-xs-4" data-value="">都没有</li>
+      	  			<input type="hidden" name="" id="questionsInput_12" value="" />
+      	  		</ul>
+      	  	</div>
+      	  </div>
+      	  
       </div>
-
-      <div class="container question-container" id="questions"></div>
-
       <div class="container option-container">
         	<button type="submit" id="submitButton" class="submit btn btn-success">提 交</button>
       </div>
-
     </form>
-    <script src="js/jquery-1.11.0.min.js"></script>
+    <script src="js/jquery-2.0.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/jquery.tap.js"></script>
-    <script src="js/selfTest.js" type="text/javascript" charset="utf-8"></script>
+    <!--<script src="js/selfTest.js" type="text/javascript" charset="utf-8"></script>-->
+    <script src="js/healthQuestionaire.js" type="text/javascript" charset="utf-8"></script>
   </body>
 </html>
