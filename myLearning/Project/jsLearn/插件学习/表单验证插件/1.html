@@ -11,6 +11,14 @@
 		</style>
 	</head>
 	<body>
+		<!--
+			Validate.js是一个轻量级的JavaScript表单验证类库，
+			它不依赖于其它任何JavaScript框架，经GZIP压缩后仅有1KB大小。
+			它所提供的验证类型有：是否为空、数字、Email地址、判断输入值是否在某一范围内等，
+			此外你也可以自定义验证规则，它也支持在一个输入框中使用多种验证规则。
+			验证规则的提示信息是默认设置在JS文件中的，
+			它也提供了函数让你可以自定义提示信息。
+		-->
 		<form name="uopn" action="http://www.baidu.com" method="get">
 			<ul>
 				<li>
@@ -39,10 +47,10 @@
 				console.log(this.messages.rule);
 				//alert(typeof errors);
 				console.log(errors);
-				//alert(errors[0].message);
-				var errorContainer = $('.errorContainer');
+				alert(errors[0].id);
+				//alert(errors[0].messages);
 				for(var i=0, len = errors.length; i<len; i++){
-					errorContainer[i].innerHTML = errors[i].message;
+					$('#'+errors[i].id).next().html(errors[i].message); 
 				}
 			}
 		});
