@@ -24,14 +24,14 @@
             exact_length: 'The %s field must be exactly %s characters in length.',
             greater_than: 'The %s field must contain a number greater than %s.',
             less_than: 'The %s field must contain a number less than %s.',
-            alpha: 'The %s field must only contain alphabetical characters.',
-            alpha_numeric: 'The %s field must only contain alpha-numeric characters.',
-            alpha_dash: 'The %s field must only contain alpha-numeric characters, underscores, and dashes.',
+            alpha: '%s只能输入字母.',
+            alpha_numeric: '%s只能输入字母和数字',
+            alpha_dash: '%s只能包含字母数字、横线、下划线.',
             numeric: '%s只能输入数字',
             integer: '%s只能输入整数',
-            decimal: 'The %s field must contain a decimal number.',
-            is_natural: 'The %s field must contain only positive numbers.',
-            is_natural_no_zero: 'The %s field must contain a number greater than zero.',
+            decimal: '%s必须包含小数.',
+            is_natural: '%s只能输入正数.',
+            is_natural_no_zero: '%s必须包含一个大于0的数',
             valid_ip: '请输入正确的IP地址',
             valid_base64: 'The %s field must contain a base64 string.',
             valid_credit_card: '请输入正确的信用卡号',
@@ -84,8 +84,8 @@
     var FormValidator = function(formNameOrNode, fields, callback) {
         this.callback = callback || defaults.callback;
         this.errors = [];
-        this.fields = {};
-        this.form = this._formByNameOrNode(formNameOrNode) || {};
+        this.fields = {}; //保存form中单独input的相关信息和参数
+        this.form = this._formByNameOrNode(formNameOrNode) || {}; //找到需要验证的form节点
         this.messages = {};
         this.handlers = {};
         this.conditionals = {};
@@ -93,18 +93,14 @@
         for (var i = 0, fieldLength = fields.length; i < fieldLength; i++) {
             var field = fields[i];
 
-            // If passed in incorrectly, we need to skip the field.
-            if ((!field.name && !field.names) || !field.rules) {
+            if ((!field.name && !field.names) || !field.rules) { //如果传入错误的name值或者rules则跳过验证并报错
                 console.warn('validate.js: The following field is being skipped due to a misconfiguration:');
                 console.warn(field);
                 console.warn('Check to ensure you have properly configured a name and rules for this field');
                 continue;
             }
 
-            /*
-             * Build the master fields array that has all the information needed to validate
-             */
-
+            //保存所有需要验证的信息和参数
             if (field.names) {
                 for (var j = 0, fieldNamesLength = field.names.length; j < fieldNamesLength; j++) {
                     this._addField(field, field.names[j]);
@@ -113,11 +109,9 @@
                 this._addField(field, field.name);
             }
         }
-
-        /*
-         * Attach an event callback for the form submission
-         */
-
+        //console.log(JSON.stringify(this.fields));
+        
+        //为form表单绑定一个submit事件
         var _onsubmit = this.form.onsubmit;
 
         this.form.onsubmit = (function(that) {
@@ -127,12 +121,13 @@
                 } catch(e) {}
             };
         })(this);
+        
     },
 
-    attributeValue = function (element, attributeName) {
+    attributeValue = function (element, attributeName) { //获取元素的指定属性值
         var i;
 
-        if ((element.length > 0) && (element[0].type === 'radio' || element[0].type === 'checkbox')) {
+        if ((element.length > 0) && (element[0].type === 'radio' || element[0].type === 'checkbox')) { //传入的元素有多个的情况
             for (i = 0, elementLength = element.length; i < elementLength; i++) {
                 if (element[i].checked) {
                     return element[i][attributeName];
@@ -167,7 +162,7 @@
             this.handlers[name] = handler;
         }
 
-        // return this for chaining
+        // 返回this便于链式调用
         return this;
     };
 
@@ -190,16 +185,12 @@
      * Determines if a form dom node was passed in or just a string representing the form name
      */
 
-    FormValidator.prototype._formByNameOrNode = function(formNameOrNode) {//找出form节点
+    FormValidator.prototype._formByNameOrNode = function(formNameOrNode) { 
         return (typeof formNameOrNode === 'object') ? formNameOrNode : document.forms[formNameOrNode];
     };
 
-    /*
-     * @private
-     * Adds a file to the master fields array
-     */
 
-    FormValidator.prototype._addField = function(field, nameValue)  {
+    FormValidator.prototype._addField = function(field, nameValue)  { 
         this.fields[nameValue] = {
             name: nameValue,
             display: field.display || nameValue,
