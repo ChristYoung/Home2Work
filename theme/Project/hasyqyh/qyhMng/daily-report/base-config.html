@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>基本配置</title>
+		<link rel="stylesheet" type="text/css" href="../../css/common/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/common/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/common/public.css"/>
+		<style type="text/css">
+			/*private style*/
+			.base-config .panel-body .base-intro{text-align: center; font-size: 16px; margin-bottom: 15px;}
+			.base-config .panel-body span{line-height: 30px;}
+			.time-adjust{margin-top: 15px;}
+			.time-adjust .control-label{width: 120px;}
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<h1 class="pro_name">企业号</h1>
+		</div>
+		<div id="main">
+			<div id="side_menu">
+				<ul class="menu_1"> <!--menu-1表示一级菜单-->
+					<li class="menu_item_1"><a href="" class="menu_href">医联套件</a></li>
+					<li class="menu_item_1"><a href="" class="menu_href active">院长日报</a></li>
+				</ul>
+			</div>
+		    <div id="main_body">
+		    	<div class="container-fluid">
+		    		<div class="row">
+		    			<ul class="nav nav-tabs">
+						  <li role="presentation" class=""><a href="dev-config.html">开发配置</a></li>
+						  <li role="presentation" class="active"><a href="#">基本设置</a></li>
+						  <li role="presentation"><a href="ind-config.html">指标设置</a></li>
+						</ul>
+		    		</div>
+		    		<div class="row panel-wrap base-config">
+		    			<div class="panel panel-default">
+						  <div class="panel-heading">基本数据同步时间</div>
+						  <div class="panel-body">
+						    <h4 class="base-intro">设置说明</h4>
+						    1、<span>应用会每天定时同步接口中的前一天的数据，并存储到本地。存储到本地之后，用户查询的日报数据从本地获取，不再从接口获取</span><br />
+						    2、<span>数据同步时间说明：请根据医院实际情况，配置为数据已经完整的时间，否则当同步数据时，接口数据尚不完整，将会造成数据错误。默认配置时间为06:00，<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;同步时间只能配置为整点</span><br />
+						    3、<span>消息推送时间说明：请设置为晚于数据同步时间的时间点。默认配置为07:00，消息推送时间可设置为整点或半点</span>
+						   <form class="form-horizontal time-adjust">
+							  <div class="form-group">
+							    <label for="inputEmail3" class="col-sm-1 control-label">数据同步时间</label>
+							    <div class="col-sm-5">
+							      <input type="text" name="" class="form-control j-base-input1" id="" readonly="readonly" placeholder="" value="6:00">
+							    </div>
+							    <button type="button" class="btn btn-warning j-adjust-btn" data-toggle="modal" data-target="#timeModal1">修改</button>
+							    <button type="submit" class="btn btn-success j-post-btn">提交</button>
+							  </div>
+							</form>
+							<form class="form-horizontal time-adjust">
+							  <div class="form-group">
+							    <label for="inputPassword3" class="col-sm-1 control-label">消息推送时间</label>
+							    <div class="col-sm-5">
+							      <input type="text" name="" class="form-control j-base-input2" id="" readonly="readonly" placeholder="" value="7:00">
+							    </div>
+							    <button type="button" class="btn btn-warning j-adjust-btn" data-toggle="modal" data-target="#timeModal2">修改</button>
+							    <button type="submit" class="btn btn-success j-post-btn">提交</button>
+							  </div>
+							</form>
+						  </div>
+                        </div>
+		    		</div>
+		    		
+		    		<div class="modal fade" id="timeModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					  <div class="modal-dialog" role="document">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					        <h4 class="modal-title" id="">选择时间</h4>
+					      </div>
+					      <div class="modal-body">
+					        <div class="row">
+					        	<ul>
+					        		<li class="col-sm-4 timeModal-item">0:00</li>
+					        		<li class="col-sm-4 timeModal-item">1:00</li>
+					        		<li class="col-sm-4 timeModal-item">2:00</li>
+					        		<li class="col-sm-4 timeModal-item">3:00</li>
+					        		<li class="col-sm-4 timeModal-item">4:00</li>
+					        		<li class="col-sm-4 timeModal-item">5:00</li>
+					        		<li class="col-sm-4 timeModal-item">6:00</li>
+					        		<li class="col-sm-4 timeModal-item">7:00</li>
+					        		<li class="col-sm-4 timeModal-item">8:00</li>
+					        		<li class="col-sm-4 timeModal-item">9:00</li>
+					        		<li class="col-sm-4 timeModal-item">10:00</li>
+					        		<li class="col-sm-4 timeModal-item">11:00</li>
+					        		<li class="col-sm-4 timeModal-item">12:00</li>
+					        		<li class="col-sm-4 timeModal-item">13:00</li>
+					        		<li class="col-sm-4 timeModal-item">14:00</li>
+					        		<li class="col-sm-4 timeModal-item">15:00</li>
+					        		<li class="col-sm-4 timeModal-item">16:00</li>
+					        		<li class="col-sm-4 timeModal-item">17:00</li>
+					        		<li class="col-sm-4 timeModal-item">18:00</li>
+					        		<li class="col-sm-4 timeModal-item">19:00</li>
+					        		<li class="col-sm-4 timeModal-item">20:00</li>
+					        		<li class="col-sm-4 timeModal-item">21:00</li>
+					        		<li class="col-sm-4 timeModal-item">22:00</li>
+					        		<li class="col-sm-4 timeModal-item">23:00</li>
+					        	</ul>
+					        </div>
+					      </div>
+					    </div>
+					  </div>
+                    </div>
+                    
+                    
+                    <div class="modal fade" id="timeModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					  <div class="modal-dialog" role="document">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					        <h4 class="modal-title" id="">选择时间</h4>
+					      </div>
+					      <div class="modal-body">
+					        <div class="row">
+					        	<ul>
+					        		<li class="col-sm-4 timeModal-item">0:00</li>
+					        		<li class="col-sm-4 timeModal-item">1:00</li>
+					        		<li class="col-sm-4 timeModal-item">2:00</li>
+					        		<li class="col-sm-4 timeModal-item">3:00</li>
+					        		<li class="col-sm-4 timeModal-item">4:00</li>
+					        		<li class="col-sm-4 timeModal-item">5:00</li>
+					        		<li class="col-sm-4 timeModal-item">6:00</li>
+					        		<li class="col-sm-4 timeModal-item">7:00</li>
+					        		<li class="col-sm-4 timeModal-item">8:00</li>
+					        		<li class="col-sm-4 timeModal-item">9:00</li>
+					        		<li class="col-sm-4 timeModal-item">10:00</li>
+					        		<li class="col-sm-4 timeModal-item">11:00</li>
+					        		<li class="col-sm-4 timeModal-item">12:00</li>
+					        		<li class="col-sm-4 timeModal-item">13:00</li>
+					        		<li class="col-sm-4 timeModal-item">14:00</li>
+					        		<li class="col-sm-4 timeModal-item">15:00</li>
+					        		<li class="col-sm-4 timeModal-item">16:00</li>
+					        		<li class="col-sm-4 timeModal-item">17:00</li>
+					        		<li class="col-sm-4 timeModal-item">18:00</li>
+					        		<li class="col-sm-4 timeModal-item">19:00</li>
+					        		<li class="col-sm-4 timeModal-item">20:00</li>
+					        		<li class="col-sm-4 timeModal-item">21:00</li>
+					        		<li class="col-sm-4 timeModal-item">22:00</li>
+					        		<li class="col-sm-4 timeModal-item">23:00</li>
+					        	</ul>
+					        </div>
+					      </div>
+					    </div>
+					  </div>
+                    </div>
+		    	</div>
+		    </div>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="../../js/common/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/common/witon-alert.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/daily-report/base-config.js" type="text/javascript" charset="utf-8"></script>
+</html>

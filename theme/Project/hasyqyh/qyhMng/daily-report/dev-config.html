@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>开发配置</title>
+		<link rel="stylesheet" type="text/css" href="../../css/common/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/common/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/common/public.css"/>
+		<style type="text/css">
+		
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<h1 class="pro_name">企业号</h1>
+		</div>
+		<div id="main">
+			<div id="side_menu">
+				<ul class="menu_1"> <!--menu-1表示一级菜单-->
+					<li class="menu_item_1"><a href="" class="menu_href">医联套件</a></li>
+					<li class="menu_item_1"><a href="" class="menu_href active">院长日报</a></li>
+				</ul>
+			</div>
+		    <div id="main_body">
+		    	<div class="container-fluid">
+		    		<div class="row">
+		    			<ul class="nav nav-tabs">
+						  <li role="presentation" class="active"><a href="#">开发配置</a></li>
+						  <li role="presentation"><a href="base-config.html">基本设置</a></li>
+						  <li role="presentation"><a href="ind-config.html">指标设置</a></li>
+						</ul>
+		    		</div>
+		    		<div class="row panel-wrap base-config">
+		    			<div class="panel panel-default">
+						  <div class="panel-heading">获取院长日报数据</div>
+						  <div class="panel-body">
+						    <form class="form-horizontal time-adjust">
+							  <div class="form-group">
+							    <label for="inputEmail3" class="col-sm-1 control-label">接口地址</label>
+							    <div class="col-sm-5">
+							      <input type="text" name="" class="form-control" id="port-address" maxlength="200" readonly="readonly" placeholder="" value="http://www.witontek.com/hospital/rest/getHospitalData">
+							    </div>
+							    <button type="button" class="btn btn-warning j-adjust-btn">修改</button>
+							    <button type="submit" class="btn btn-success j-post-btn" style="display: none;">提交</button>
+							  </div>
+							</form>
+						  </div>
+                        </div>
+		    		</div>
+		    	</div>
+		    </div>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="../../js/common/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/common/witon-alert.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/daily-report/dev-config.js" type="text/javascript" charset="utf-8"></script>
+</html>

@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>开发配置</title>
+		<link rel="stylesheet" type="text/css" href="../../css/common/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/common/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="../../css/common/public.css"/>
+		<style type="text/css">
+		  .ind-config{margin: 20px 0 0 20px;}
+		  .sel-area{margin-top: 20px;}
+		  .sel-area .form-control,.ind-input-items .form-control{display: inline-block; width: 180px;}
+		  .ind-tabs-items{/*text-align: right;*/ margin-top: 20px;}
+		  .ind-input-items{margin-bottom: 12px;}
+		  .ind-input-items .per-day{color: #1bb955;}
+		  .ind-input-items .ind-names{display: inline-block; width: 120px; text-align: right;}
+		  .app-btnarea{margin:20px 0 0 138px;}
+		</style>
+	</head>
+	<body>
+		<div id="header">
+			<h1 class="pro_name">淮安三院企业号</h1>
+		</div>
+		<div id="main">
+			<div id="side_menu">
+				<ul class="menu_1"> <!--menu-1表示一级菜单-->
+					<li class="menu_item_1"><a href="" class="menu_href">医联套件</a></li>
+					<li class="menu_item_1"><a href="" class="menu_href active">院长日报</a></li>
+				</ul>
+			</div>
+		    <div id="main_body">
+		    	<div class="container-fluid">
+		    		<div class="row">
+		    			<ul class="nav nav-tabs">
+						  <li role="presentation"><a href="dev-config.html">开发配置</a></li>
+						  <li role="presentation"><a href="base-config.html">基本设置</a></li>
+						  <li role="presentation" class="active"><a href="#">指标设置</a></li>
+						</ul>
+		    		</div>
+		    		<div class="ind-config">
+		    			<div class="ind-tabs">
+		    				<button type="button" class="btn btn-primary tabs-btn">门诊收入指标</button>
+		    				<button type="button" class="btn btn-primary tabs-btn">门诊药品定额</button>
+		    				<button type="button" class="btn btn-primary tabs-btn">床日收入指标</button>
+		    				<button type="button" class="btn btn-primary tabs-btn">住院收入指标</button>
+		    				<button type="button" class="btn btn-primary tabs-btn">住院药品定额</button>
+		    				<button type="button" class="btn btn-primary tabs-btn">住院检查定额</button>
+		    				<button type="button" class="btn btn-primary tabs-btn">医技术收入指标</button>
+		    			</div>
+		    			<div class="sel-area">
+	    				    <input type="text" name="" class="form-control" id="yearInput" readonly="readonly" placeholder="" value="">
+	    				    <input type="hidden" name="" id="monthInput" value="1" />
+	    				    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#yearModal">选择年份</button>
+		    				<div class="btn-group" role="group" aria-label="">
+							  <button type="button" class="btn btn-default month-tabs active" data-month="1">1月</button>
+							  <button type="button" class="btn btn-default month-tabs" data-month="2">2月</button>
+							  <button type="button" class="btn btn-default month-tabs" data-month="3">3月</button>
+							  <button type="button" class="btn btn-default month-tabs" data-month="4">4月</button>
+							  <button type="button" class="btn btn-default month-tabs" data-month="5">5月</button>
+							  <button type="button" class="btn btn-default month-tabs" data-month="6">6月</button>
+							  <button type="button" class="btn btn-default month-tabs" data-month="7">7月</button>
+							  <button type="button" class="btn btn-default month-tabs" data-month="8">8月</button>
+							  <button type="button" class="btn btn-default month-tabs" data-month="9">9月</button>
+							  <button type="button" class="btn btn-default month-tabs" data-month="10">10月</button>
+							  <button type="button" class="btn btn-default month-tabs" data-month="11">11月</button>
+							  <button type="button" class="btn btn-default month-tabs" data-month="12">12月</button>
+							</div>
+		    			</div>
+		    			<div class="row ind-tabs-items">
+		    				<div class="col-sm-6">
+			    				<ul>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">门诊:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="s" value=""/>
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">内科:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">外科:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">妇产科:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">神经科:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">肿瘤放射门诊:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">脑血管科:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">心理科:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">精神一门诊:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">精神专家二门诊:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">老年精神科:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+			    					</li>
+			    				</ul>
+		    				</div>
+		    				<div class="col-sm-6">
+			    				<ul>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">神经专家门诊:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">外院:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">精神科专家一门诊:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">心理一科:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">心理三科:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">康复科门诊:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">心理专家一门诊:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">心理专家二门诊:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">儿童心理科门诊:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">精神专家三门诊:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">急诊科:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+			    					</li>
+			    				</ul>
+		    				</div>
+		    			</div>
+		    		    <div class="row ind-tabs-items" style="display: none;">
+		    		    	<div class="col-sm-12">
+		    		    		<ul>
+		    		    			<li class="ind-input-items">
+		    		    				<span class="ind-names">全院:</span>
+		    		    				<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+		    		    			</li>
+		    		    		</ul>
+		    		    	</div>
+		    		    	<div class="col-sm-6">
+		    		    		<ul>
+		    		    			<li class="ind-input-items">
+		    		    				<span class="ind-names">门诊:</span>
+		    		    				<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+		    		    			</li>
+		    		    			<li class="ind-input-items">
+		    		    				<span class="ind-names">内科:</span>
+		    		    				<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+		    		    			</li>
+		    		    			<li class="ind-input-items">
+		    		    				<span class="ind-names">外科:</span>
+		    		    				<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+		    		    			</li>
+		    		    			<li class="ind-input-items">
+		    		    				<span class="ind-names">妇产科:</span>
+		    		    				<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+		    		    			</li>
+		    		    			<li class="ind-input-items">
+		    		    				<span class="ind-names">神经科:</span>
+		    		    				<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+		    		    			</li>
+		    		    			<li class="ind-input-items">
+		    		    				<span class="ind-names">肿瘤放射门诊:</span>
+		    		    				<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+		    		    			</li>
+		    		    			<li class="ind-input-items">
+		    		    				<span class="ind-names">脑血管科:</span>
+		    		    				<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+		    		    			</li>
+		    		    			<li class="ind-input-items">
+		    		    				<span class="ind-names">心理科:</span>
+		    		    				<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+		    		    			</li>
+		    		    			<li class="ind-input-items">
+		    		    				<span class="ind-names">精神一门诊:</span>
+		    		    				<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+		    		    			</li>
+		    		    			<li class="ind-input-items">
+		    		    				<span class="ind-names">精神专家二门诊:</span>
+		    		    				<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+		    		    			</li>
+		    		    			<li class="ind-input-items">
+		    		    				<span class="ind-names">老年精神科:</span>
+		    		    				<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+		    		    			</li>
+		    		    		</ul>
+		    		    	</div>
+		    		    	<div class="col-sm-6">
+			    				<ul>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">神经专家门诊:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">外院:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">精神科专家一门诊:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">心理一科:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">心理三科:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">康复科门诊:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">心理专家一门诊:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">心理专家二门诊:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">儿童心理科门诊:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">精神专家三门诊:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">急诊科:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    				</ul>
+		    				</div>
+		    		    </div>
+		    		    <div class="row ind-tabs-items" style="display: none;">
+		    		    	<div class="col-sm-6">
+		    		    		<ul>
+		    		    			<li class="ind-input-items">
+			    						<span class="ind-names">一区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">二区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">三区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">四区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">五区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">六区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">七区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">八区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">九区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+		    		    		</ul>
+		    		    	</div>
+		    		        <div class="col-sm-6">
+		    		        	<ul>
+		    		        		<li class="ind-input-items">
+			    						<span class="ind-names">十区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">十一区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+		    		        		<li class="ind-input-items">
+			    						<span class="ind-names">十二区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">十三区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">十四区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">十五区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">十六区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">康复科:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+		    		        	</ul>
+		    		        </div>
+		    		    </div>
+		    		    <div class="row ind-tabs-items" style="display: none;">
+		    		    	<div class="col-sm-6">
+		    		    		<ul>
+		    		    			<li class="ind-input-items">
+			    						<span class="ind-names">一区:</span>
+			    						<input type="text" class="form-control" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">二区:</span>
+			    						<input type="text" class="form-control" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">三区:</span>
+			    						<input type="text" class="form-control" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">四区:</span>
+			    						<input type="text" class="form-control" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">五区:</span>
+			    						<input type="text" class="form-control" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">六区:</span>
+			    						<input type="text" class="form-control" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">七区:</span>
+			    						<input type="text" class="form-control" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">八区:</span>
+			    						<input type="text" class="form-control" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">九区:</span>
+			    						<input type="text" class="form-control" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+		    		    		</ul>
+		    		    	</div>
+		    		        <div class="col-sm-6">
+		    		        	<ul>
+		    		        		<li class="ind-input-items">
+			    						<span class="ind-names">十区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">十一区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+		    		        		<li class="ind-input-items">
+			    						<span class="ind-names">十二区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">十三区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">十四区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">十五区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">十六区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">康复科:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+		    		        	</ul>
+		    		        </div>
+		    		    </div>
+		    		    <div class="row ind-tabs-items" style="display: none;">
+		    		    	<div class="col-sm-12">
+		    		    		<ul>
+		    		    			<li class="ind-input-items">
+		    		    				<span class="ind-names">全院:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+		    		    			</li>
+		    		    		</ul>
+		    		    	</div>
+		    		    	<div class="col-sm-6">
+		    		    		<ul>
+		    		    			<li class="ind-input-items">
+			    						<span class="ind-names">一区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">二区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">三区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">四区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">五区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">六区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">七区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">八区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">九区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+		    		    		</ul>
+		    		    	</div>
+		    		        <div class="col-sm-6">
+		    		        	<ul>
+		    		        		<li class="ind-input-items">
+			    						<span class="ind-names">十区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">十一区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+		    		        		<li class="ind-input-items">
+			    						<span class="ind-names">十二区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">十三区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">十四区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">十五区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">十六区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">康复科:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+		    		        	</ul>
+		    		        </div>
+		    		    </div>
+		    		    <div class="row ind-tabs-items" style="display: none;">
+		    		    	<div class="col-sm-12">
+		    		    		<ul>
+		    		    			<li class="ind-input-items">
+		    		    				<span class="ind-names">全院:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+		    		    			</li>
+		    		    		</ul>
+		    		    	</div>
+		    		    	<div class="col-sm-6">
+		    		    		<ul>
+		    		    			<li class="ind-input-items">
+			    						<span class="ind-names">一区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">二区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">三区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">四区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">五区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">六区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">七区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">八区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">九区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+		    		    		</ul>
+		    		    	</div>
+		    		        <div class="col-sm-6">
+		    		        	<ul>
+		    		        		<li class="ind-input-items">
+			    						<span class="ind-names">十区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">十一区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+		    		        		<li class="ind-input-items">
+			    						<span class="ind-names">十二区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">十三区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">十四区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">十五区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">十六区:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+			    					<li class="ind-input-items">
+			    						<span class="ind-names">康复科:</span>
+			    						<input type="text" class="form-control percentage-input" maxlength="4" name="" id="" value="" />
+			    						<span>%</span>
+			    					</li>
+		    		        	</ul>
+		    		        </div>
+		    		    </div>
+		    		    <div class="row ind-tabs-items" style="display: none;">
+		    		    	<div class="col-sm-6">
+		    		    		<ul>
+		    		    			<li class="ind-input-items">
+		    		    				<span class="ind-names">影像科:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+		    		    			</li>
+		    		    			<li class="ind-input-items">
+		    		    				<span class="ind-names">检验科:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+		    		    			</li>
+		    		    			<li class="ind-input-items">
+		    		    				<span class="ind-names">精神康复科:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+		    		    			</li>
+		    		    			<li class="ind-input-items">
+		    		    				<span class="ind-names">电休克治疗:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+		    		    			</li>
+		    		    			<li class="ind-input-items">
+		    		    				<span class="ind-names">司法鉴定室:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+		    		    			</li>
+		    		    		</ul>
+		    		    	</div>
+		    		    	<div class="col-sm-6">
+		    		    		<ul>
+		    		    			<li class="ind-input-items">
+		    		    				<span class="ind-names">陀螺刀室:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+		    		    			</li>
+		    		    			<li class="ind-input-items">
+		    		    				<span class="ind-names">临床药学室:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+		    		    			</li>
+		    		    			<li class="ind-input-items">
+		    		    				<span class="ind-names">心测室:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+		    		    			</li>
+		    		    			<li class="ind-input-items">
+		    		    				<span class="ind-names">中医康复科:</span>
+			    						<input type="text" class="form-control num-input" maxlength="20" name="" id="" value="" />
+			    						<span>元/月</span>
+			    						<span class="per-day"></span>元/天
+		    		    			</li>
+		    		    		</ul>
+		    		    	</div>
+		    		    </div>
+		    		    <div class="row">
+		    		    	<div class="app-btnarea">
+		    		    		<button type="button" class="btn btn-primary" id="appToMonth">应用至当月</button>
+		    		    	    <button type="button" class="btn btn-primary" id="appToYear">应用至全年</button>
+		    		    	</div>
+		    		    </div>
+		    		</div>
+		    		
+		    		<div class="modal fade" id="yearModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					  <div class="modal-dialog" role="document">
+					    <div class="modal-content">
+					      <div class="modal-header">
+					        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					        <h4 class="modal-title" id="">选择年份</h4>
+					      </div>
+					      <div class="modal-body">
+					        <div class="row">
+					        	<ul>
+					        		<li class="col-sm-3 timeModal-item">2008</li>
+					        		<li class="col-sm-3 timeModal-item">2009</li>
+					        		<li class="col-sm-3 timeModal-item">2010</li>
+					        		<li class="col-sm-3 timeModal-item">2011</li>
+					        		<li class="col-sm-3 timeModal-item">2012</li>
+					        		<li class="col-sm-3 timeModal-item">2013</li>
+					        		<li class="col-sm-3 timeModal-item">2014</li>
+					        		<li class="col-sm-3 timeModal-item">2015</li>
+					        		<li class="col-sm-3 timeModal-item">2016</li>
+					        		<li class="col-sm-3 timeModal-item">2017</li>
+					        		<li class="col-sm-3 timeModal-item">2018</li>
+					        		<li class="col-sm-3 timeModal-item">2019</li>
+					        		<li class="col-sm-3 timeModal-item">2020</li>
+					        		<li class="col-sm-3 timeModal-item">2021</li>
+					        		<li class="col-sm-3 timeModal-item">2022</li>
+					        		<li class="col-sm-3 timeModal-item">2023</li>
+					        		<li class="col-sm-3 timeModal-item">2024</li>
+					        		<li class="col-sm-3 timeModal-item">2025</li>
+					        		<li class="col-sm-3 timeModal-item">2026</li>
+					        		<li class="col-sm-3 timeModal-item">2027</li>
+					        		<li class="col-sm-3 timeModal-item">2028</li>
+					        		<li class="col-sm-3 timeModal-item">2029</li>
+					        		<li class="col-sm-3 timeModal-item">2030</li>
+					        		<li class="col-sm-3 timeModal-item">2031</li>
+					        		<li class="col-sm-3 timeModal-item">2032</li>
+					        		<li class="col-sm-3 timeModal-item">2033</li>
+					        		<li class="col-sm-3 timeModal-item">2034</li>
+					        		<li class="col-sm-3 timeModal-item">2035</li>
+					        		<li class="col-sm-3 timeModal-item">2036</li>
+					        		<li class="col-sm-3 timeModal-item">2037</li>
+					        		<li class="col-sm-3 timeModal-item">2038</li>
+					        		<li class="col-sm-3 timeModal-item">2039</li>
+					        		<li class="col-sm-3 timeModal-item">2040</li>
+					        		<li class="col-sm-3 timeModal-item">2041</li>
+					        		<li class="col-sm-3 timeModal-item">2042</li>
+					        		<li class="col-sm-3 timeModal-item">2043</li>
+					        		<li class="col-sm-3 timeModal-item">2044</li>
+					        		<li class="col-sm-3 timeModal-item">2045</li>
+					        		<li class="col-sm-3 timeModal-item">2046</li>
+					        		<li class="col-sm-3 timeModal-item">2047</li>
+					        		<li class="col-sm-3 timeModal-item">2048</li>
+					        		<li class="col-sm-3 timeModal-item">2049</li>
+					        		<li class="col-sm-3 timeModal-item">2050</li>
+					        	</ul>
+					        </div>
+					      </div>
+					    </div>
+					  </div>
+                    </div>
+		    	</div>
+		    </div>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="../../js/common/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/common/witon-alert.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../../js/daily-report/ind-config.js" type="text/javascript" charset="utf-8"></script>
+</html>
