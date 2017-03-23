@@ -6,8 +6,8 @@ var witonAlert = function() {
 			fadeSpeed: 300,
 			delay: 2000,
 			callBack: null
-		},
-		this.dom = $('<div class="witonAlert"></div>');
+	};
+	this.dom = $('<div class="witonAlert"></div>');
 };
 
 witonAlert.prototype.init = function(opt) {

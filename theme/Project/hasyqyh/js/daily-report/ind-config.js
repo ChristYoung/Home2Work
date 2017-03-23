@@ -67,6 +67,9 @@ $(function() {
 		var _index = $(this).index();
 		$tabItems.hide();
 		$tabItems.eq(_index).fadeIn(300);
+		
+		$tabsBtn.removeClass('active');
+		$(this).addClass('active');
 	});
 
 	$monthTabs.on('click', function() { //切换选择月份
@@ -74,6 +77,7 @@ $(function() {
 		$(this).addClass('active');
 		$('#monthInput').val($(this).attr('data-month'));
 		setReadonly();
+		//ajax something
 	});
 
 	setReadonly();
