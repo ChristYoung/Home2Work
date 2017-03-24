@@ -14,9 +14,14 @@ $(function() {
 	};
 
 	var setReadonly = function() { //当前月份之前的指标或定额，置灰不允许修改
-		var currentMonth = new Date().getMonth() + 1,
-			selectedMonth = $('#monthInput').val();
-		if(currentMonth > selectedMonth) {
+		var 
+		    _d = new Date(),
+		    currentMonth = _d.getMonth() + 1,
+		    currentYear = _d.getFullYear(),
+			selectedMonth = $('#monthInput').val(),
+			selectedYear = $yearInput.val();
+			
+		if((selectedYear*10000+selectedMonth*10)<(currentYear*10000+currentMonth*10)) {
 			$tabItems.find('.form-control').prop('readonly', true);
 		} else {
 			$tabItems.find('.form-control').prop('readonly', false);
@@ -50,6 +55,18 @@ $(function() {
 	$yearModal.on('click', '.timeModal-item', function() { //选择年份
 		$yearInput.val($(this).html());
 		$yearModal.modal('hide');
+		setReadonly();
+		//ajax something
+	});
+
+    $monthTabs.on('click', function() { //切换选择月份
+    	var selectedMonth = $(this).attr('data-month');
+		$monthTabs.removeClass('active');
+		$(this).addClass('active');
+		$('#monthInput').val(selectedMonth);
+		setReadonly();
+		selectedMonth>1?$('#appToYear').hide():$('#appToYear').show();
+		//ajax something
 	});
 
 	$numInput.each(function(i, e) { //初始化每天指标
@@ -70,14 +87,6 @@ $(function() {
 		
 		$tabsBtn.removeClass('active');
 		$(this).addClass('active');
-	});
-
-	$monthTabs.on('click', function() { //切换选择月份
-		$monthTabs.removeClass('active');
-		$(this).addClass('active');
-		$('#monthInput').val($(this).attr('data-month'));
-		setReadonly();
-		//ajax something
 	});
 
 	setReadonly();

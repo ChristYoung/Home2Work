@@ -1,11 +1,11 @@
 var witonAlert = function() {
 	this.options = {
-			type: 'success',
-			msg: '',
-			fade: true,
-			fadeSpeed: 300,
-			delay: 2000,
-			callBack: null
+		type: 'success',
+		msg: '',
+		fade: true,
+		fadeSpeed: 300,
+		delay: 2000,
+		callBack: null
 	};
 	this.dom = $('<div class="witonAlert"></div>');
 };
