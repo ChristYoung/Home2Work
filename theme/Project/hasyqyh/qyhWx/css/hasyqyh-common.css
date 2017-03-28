@@ -1,0 +1,39 @@
+/*function style*/
+.f_fl{float: left;}/*浮动*/
+.f_fr{float: right;}
+.f_cf{zoom: 1;}
+.f_cf:after{clear: both; height: 0; content: ''; visibility: hidden; display: block;}
+.f_flex{ /*flex布局下的对齐方式*/
+	display: -webkit-box; 
+	display: -webkit-flex;
+	display: -ms-flexbox; 
+	display: flex; 
+}
+.f_alignC{align-items: center; -webkit-align-items: center;}
+.f_alignT{align-items: flex-start; -webkit-align-items: flex-start;}
+.f_alignB{align-items: flex-end; -webkit-align-items: flex-end;}
+.f_fend{-webkit-justify-content: flex-end; justify-content: flex-end;}
+.f_fstart{-webkit-justify-content: flex-start; justify-content: flex-start;}
+.f_flex1{display: block; -webkit-box-flex: 1; -webkit-flex: 1; flex: 1;}
+.f_oflow{white-space: nowrap; overflow: hidden; text-overflow: ellipsis;} /*过长隐藏*/
+
+.f_12{font-size: 14px;} /*常用字体大小(因为部分安卓机上字体偏小所以调大4个像素)*/
+.f_14{font-size: 16px;} 
+.f_16{font-size:18px;}
+.f_18{font-size: 20px;}
+@media all and (max-width:370px) {
+	.f_14{font-size: 14px;} 
+	.f_16{font-size:16px;}
+	.f_18{font-size: 18px;}
+	.f_20{font-size:20px;}
+}
+
+/*skin style*/
+/*常用字体颜色*/
+.s_white{color: #fff;}
+.s_black{color: #333}
+.s_green{color: #00BDAF;}
+.s_red{color: #FF5500;}
+.s_blue{color: #0F71AF;}
+.s_gray{color: #8C8984;}
+.s_orange{color: #FD8B2A;}
