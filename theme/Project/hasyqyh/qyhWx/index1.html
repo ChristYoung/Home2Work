@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no, email=no">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="msapplication-tap-highlight" content="no">
+		<script type="text/javascript">
+		document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.clientWidth/10 +'px';
+		</script> 
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/hasyqyh-common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/hasyqyh-pagemodules.css"/>
+		<title>有图表页</title>
+	</head>
+	<body>
+		<header class="header-bar">
+			<h2 class="date-bar f_18">2016年10月25日</h2>
+			<span class="select-date"></span>
+		</header>
+		<div class="nav-bar f_16">科室门诊日收入</div>
+		<p class="charts-tips f_14 s_gray">*点击相应的环形可以查看具体数据</p>
+		<div id="charts-wrap"></div>
+		<div class="query-list">
+			<ul class="list-ul">
+				<li>
+					<span class="list-tit">门诊:</span>
+					<span class="list-vl">新增<i class="s_orange">200</i>元</span>
+					<span class="lisy-arrow"></span>
+				</li>
+				<li>
+					<span class="list-tit">外科:</span>
+					<span class="list-vl">新增<i class="s_orange">200</i>元</span>
+					<span class="lisy-arrow"></span>
+				</li>
+				<li>
+					<span class="list-tit">内科:</span>
+					<span class="list-vl">新增<i class="s_orange">200</i>元</span>
+					<span class="lisy-arrow"></span>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="js/echarts.common.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var chartsWrap = document.getElementById("charts-wrap"),
+		    myCharts = echarts.init(chartsWrap),
+		    option = {
+			    tooltip: {},
+			    legend: {
+			        orient: 'horizontal',
+			        left:15,
+			        bottom:20,
+			        selectedMode:false,
+			        data:['门诊','内科','外科','妇产科','神经科','肿瘤放射科','脑血管科','心理科','精神一门诊','精神专家二门诊','心理科专家二门诊','儿童心理科门诊','老年精神科','神经科专家门诊','外院','精神科专家一门诊','心理一科','心理三科','精神二门诊','精神三门诊','康复科门诊','心理科专家一门诊','精神科专家三门诊','急诊科']
+			    },
+			    series: [
+			        {
+			            name:'访问来源',
+			            type:'pie',
+			            center:['50%',150],
+			            radius: ['50%', '60%'],
+			            avoidLabelOverlap: false,
+			            label: {
+			                normal: {
+			                    show: false,
+			                    position: 'center'
+			                },
+			                emphasis: {
+			                    show: true,
+			                    textStyle: {
+			                        fontSize: '18',
+			                        fontWeight: 'bold'
+			                    }
+			                }
+			            },
+			            labelLine: {
+			                normal: {
+			                    show: false
+			                }
+			            },
+			            data:[
+			              {value:12,name:'门诊'},
+			              {value:12,name:'内科'},
+			              {value:12,name:'外科'},
+			              {value:12,name:'妇产科'},
+			              {value:12,name:'神经科'},
+			              {value:12,name:'肿瘤放射科'},
+			              {value:12,name:'脑血管科'},
+			              {value:12,name:'心理科'},
+			              {value:12,name:'精神一门诊'},
+			              {value:12,name:'精神专家二门诊'},
+			              {value:12,name:'心理科专家二门诊'},
+			              {value:12,name:'儿童心理科门诊'},
+			              {value:12,name:'老年精神科'},
+			              {value:12,name:'神经科专家门诊'},
+			              {value:12,name:'外院'},
+			              {value:12,name:'精神科专家一门诊'},
+			              {value:12,name:'心理一科'},
+			              {value:12,name:'心理三科'},
+			              {value:12,name:'精神二门诊'},
+			              {value:12,name:'精神三门诊'},
+			              {value:12,name:'康复科门诊'},
+			              {value:12,name:'心理科专家一门诊'},
+			              {value:12,name:'精神科专家三门诊'},
+			              {value:12,name:'急诊科'}
+			            ]
+			        }
+			    ]
+            };
+            myCharts.setOption(option);
+	</script>
+</html>

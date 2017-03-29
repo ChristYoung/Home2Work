@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no, email=no">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="msapplication-tap-highlight" content="no">
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/hasyqyh-common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/sui/sui.css"/>
+		<style type="text/css">
+			body{background: #fff; padding: 0 10px;}
+			#u-date{margin-bottom: 50px;}
+			
+			/*date plugin style reset*/
+			.current-month-value,.current-year-value{font-size: 16px;}
+			.picker-calendar-week-days .picker-calendar-week-day{}
+			.picker-calendar-day.picker-calendar-day-selected span{background: #FEB806;}
+		</style>
+		<title>选择日期</title>
+	</head>
+	<body>
+		<div id="u-date"></div>
+		<form class="" name="" id="" method="" action="">
+			<input type="hidden" name="date" id="date" value="" />
+			<button type="submit" class="u_btn u_btn_blue u_btn_lg">确认查询</button>
+		</form>
+	</body>
+	<script src="js/zepto.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/sui.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var getMaxDate = function(){
+			var strDate = '',
+			    _d = new Date(),
+			    _year = _d.getFullYear(),
+			    _month = _d.getMonth()+1,
+			    _date = _d.getDate();
+			strDate = _year+'-'+_month+'-'+(_date-1);    
+			return strDate;
+		};
+		var maxDate = getMaxDate();
+		$('#u-date').calendar({maxDate:maxDate,onChange:function(p,values,displayValues){
+            //displayValues是用户选择的日期2016-03-15
+            $('#date').val(displayValues);
+		}});
+	</script>
+</html>
