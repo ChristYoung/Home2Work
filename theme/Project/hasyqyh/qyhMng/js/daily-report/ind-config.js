@@ -23,9 +23,11 @@ $(function() {
 			selectedYear = $yearInput.val();
 
 		if((selectedYear * 10000 + selectedMonth * 10) < (currentYear * 10000 + currentMonth * 10)) {
-			$tabItems.find('.form-control').prop('readonly', true);
+			$tabItems.find('.num-input').prop('readonly', true);
+			$tabItems.find('.percentage-input').prop('readonly', true);
 		} else {
-			$tabItems.find('.form-control').prop('readonly', false);
+			$tabItems.find('.num-input').prop('readonly', false);
+			$tabItems.find('.percentage-input').prop('readonly', false);
 		}
 	};
 
@@ -57,53 +59,70 @@ $(function() {
 			perShow.html((obj.val() / dates).toFixed(2));
 		}
 	};
-
-	$yearInput.val(new Date().getFullYear()); //默认显示当前年份
-
-	$yearModal.on('click', '.timeModal-item', function() { //选择年份
-		$yearInput.val($(this).html());
-		$yearModal.modal('hide');
-		setReadonly();
-		//ajax something
-	});
-
-	$monthTabs.on('click', function() { //切换选择月份
-		var selectedMonth = $(this).attr('data-month');
-		$monthTabs.removeClass('active');
-		$(this).addClass('active');
-		$('#monthInput').val(selectedMonth);
-		setReadonly();
-		selectedMonth > 1 ? $('#appToYear').hide() : $('#appToYear').show();
-		//ajax something
-	});
-
-	$numInput.on('keyup', function() { //绑定计算每天指标的函数,并限制只能输入两位小数
-		var $perShow = $(this).siblings('.per-day');
-		clearNoNum($(this)[0], '2');
-		perDay($(this), $perShow);
-	});
-
-	$percentageInput.on('keyup', function() { //限制收入指标只能输入一位小数
-		clearNoNum($(this)[0], '1');
-		var ThisValue = $(this).val();
-		if(parseFloat(ThisValue) > 100) {
-			if(parseFloat(ThisValue) > 1000) { //当用户长按时,触发keyup时已经输入了三位数了
-				$(this).val(ThisValue.substring(0, ThisValue.length - 2));
-			} else {
-				$(this).val(ThisValue.substring(0, ThisValue.length - 1));
+    
+    setReadonly();
+    
+    (function(){
+	    $yearInput.val(new Date().getFullYear()); //默认显示当前年份
+	
+		$yearModal.on('click', '.timeModal-item', function() { //选择年份
+			$yearInput.val($(this).html());
+			$yearModal.modal('hide');
+			setReadonly();
+			//ajax something
+		});
+	
+		$monthTabs.on('click', function() { //切换选择月份
+			var selectedMonth = $(this).attr('data-month');
+			$monthTabs.removeClass('active');
+			$(this).addClass('active');
+			$('#monthInput').val(selectedMonth);
+			setReadonly();
+			selectedMonth > 1 ? $('#appToYear').hide() : $('#appToYear').show();
+			//ajax something
+		});
+	
+		$numInput.on('keyup', function() { //绑定计算每天指标的函数,并限制只能输入两位小数
+			var $perShow = $(this).siblings('.per-day');
+			clearNoNum($(this)[0], '2');
+			perDay($(this), $perShow);
+		});
+	
+		$percentageInput.on('keyup', function() { //限制收入指标只能输入一位小数
+			clearNoNum($(this)[0], '1');
+			var ThisValue = $(this).val();
+			if(parseFloat(ThisValue) > 100) {
+				if(parseFloat(ThisValue) > 1000) { //当用户长按时,触发keyup时已经输入了三位数了
+					$(this).val(ThisValue.substring(0, ThisValue.length - 2));
+				} else {
+					$(this).val(ThisValue.substring(0, ThisValue.length - 1));
+				}
 			}
-		}
-	});
-
-	$tabsBtn.on('click', function() { //选项卡切换
-		var _index = $(this).index();
-		$tabItems.hide();
-		$tabItems.eq(_index).fadeIn(300);
-
-		$tabsBtn.removeClass('active');
-		$(this).addClass('active');
-	});
-
-	setReadonly();
-
+		});
+	
+		$tabsBtn.on('click', function() { //选项卡切换
+			var _index = $(this).index(),
+			    selectedMonth = $('#monthInput').val();
+			$tabItems.hide();
+			$tabItems.eq(_index).fadeIn(300);
+	
+			$tabsBtn.removeClass('active');
+			$(this).addClass('active');
+			
+			if(_index == 7){ //当选陀螺刀药占比时,隐藏两个按钮
+				$('#appToMonth').hide();
+				$('#appToYear').hide();
+			}else{
+				$('#appToMonth').show();
+				selectedMonth > 1 ? $('#appToYear').hide() : $('#appToYear').show();
+			}
+		});
+    })();
+    
+    (function(){ //陀螺刀药占比模块相关代码
+    	var mzks = ['精神一门诊','精神二门诊','精神三门诊','精神科专家一门诊','精神科专家二门诊','精神科专家三门诊','老年精神科门诊','心理科一门诊','心理科二门诊','心理科三门诊','心理科专家一门诊','心理科专家二门诊','心理科特需门诊','外科门诊','妇产科门诊','神经内科门诊','神经科专家门诊','脑血管科门诊','内科门诊','康复科门诊','外院部门','司法鉴定室','肿瘤放疗门诊','儿童心理科门诊','急诊门诊'],
+    	    zyks = ['精神一科','精神二科','精神三科','精神四科','精神五科','精神六科','精神七科','急诊门诊','内科','心理一科','心理二科','神经科','脑血管科','外科','老年精神科','康复科'];
+    })();
+    
+    
 });

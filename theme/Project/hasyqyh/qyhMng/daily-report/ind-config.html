@@ -17,6 +17,11 @@
 		  .sel-area{margin-top: 20px;}
 		  .sel-area .month-tabs{width: 65px;}
 		  .sel-area .form-control,.ind-input-items .form-control{display: inline-block; width: 150px;}
+		  .people-wrap,.add-people-wrap{position: relative; margin-left: 60px; margin-bottom: 20px;}
+		  .people-wrap{width: 1000px; padding: 15px; border: 1px solid #ddd; border-radius: 5px;}
+		  .people-wrap .people-tit{display: inline-block;}
+		  .people-wrap input{display: inline-block; width: 310px;}
+		  .people-wrap select{display: inline-block; width: 150px; margin-right: 10px;}
 		  #yearInput{display: inline-block; width: 150px; cursor: pointer;}
 		  .ind-tabs-items{/*text-align: right;*/ margin-top: 20px;}
 		  .ind-input-items{margin-bottom: 12px;}
@@ -799,6 +804,26 @@
 			    						<span class="per-day">0.00</span>元/天
 		    		    			</li>
 		    		    		</ul>
+		    		    	</div>
+		    		    </div>
+		    		    <div class="ind-tabs-items people-items" style="display: none;">
+		    		    	<div class="add-people-wrap">
+		    		    		<button id="add-people-btn" type="button" class="btn btn-warning">新增占比人员</button>
+		    		    	</div>
+		    		    	<div class="people-wrap">
+    		    				<span class="people-tit">科室:</span>
+    		    				<select class="form-control people-depSelect">
+    		    					<option value="">住院科室</option>
+    		    					<option value="">门诊科室</option>
+    		    				</select>
+    		    				<select class="form-control people-depSelect">
+    		    					<option value="">住院科室</option>
+    		    					<option value="">门诊科室</option>
+    		    				</select>
+    		    				<span class="people-tit" style="margin-left: 60px;">姓名:</span>
+    		    				<input type="text" style="margin-right: 60px;" class="form-control pepole-nameInput" maxlength="5" name="" id="" value="" />
+    		    				<button type="button" class="btn btn-primary save-people-btn">保存</button>
+    		    				<button type="button" class="btn btn-danger del-people-btn">删除</button>
 		    		    	</div>
 		    		    </div>
 		    		    <div class="row">

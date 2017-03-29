@@ -1,3 +1,23 @@
+body{font-family: "microsoft yahei"; color: #333;}
+
 .header-bar{position: relative;}
-.header-bar .date-bar{line-height: 100px; background: #0F71AF;}
-.header-bar .select-date{position: absolute; width: 40px; height: 40px; background: red; top: 50%; right: 40px; margin-top: -20px;}
+.header-bar .date-bar{padding:0.4rem; background: #0F71AF; color: #fff; text-align: center;}
+.header-bar .select-date{position: absolute; width: 0.533rem; height: 0.533rem; background: red; top: 50%; right: 0.4rem; margin-top: -0.266rem;}
+
+.query-items{}
+.nav-bar{padding: 0.35rem; background: #EDEBE9;}
+.query-items .items-bar{position: relative; padding: 0.4rem; background: #fff;}
+.query-items .items-arrow{position: absolute; width: 0.533rem; height: 0.533rem; background: red; top: 50%; right: 0.4rem; margin-top: -0.266rem;}
+.items-table{}
+.items-table th,.items-table td{text-align: center; font-size: 14px; padding: 0.35rem 0; border-right: 1px solid #D3D0CF;}
+.items-table th{color: #0F71AF; border-top: 1px solid #D3D0CF;}
+.items-table td{border-bottom: 1px solid #D3D0CF; padding: 0.3rem 0;}
+.items-table th:nth-last-of-type(1),.items-table td:nth-last-of-type(1){border-right: none;}
+.items-table thead{background: #FAFAF9;}
+
+.query-list{}
+.query-list .list-ul{}
+.list-ul li{position: relative; padding: 0.4rem; font-size: 14px; border-bottom: 1px solid #D3D0CF;}
+#charts-wrap{width: 10rem; height: 512px;}
+.charts-tips{width: 100%; text-align: center; padding: 0.2rem;}
+

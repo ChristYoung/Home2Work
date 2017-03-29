@@ -17,15 +17,14 @@
 .f_flex1{display: block; -webkit-box-flex: 1; -webkit-flex: 1; flex: 1;}
 .f_oflow{white-space: nowrap; overflow: hidden; text-overflow: ellipsis;} /*过长隐藏*/
 
-.f_12{font-size: 14px;} /*常用字体大小(因为部分安卓机上字体偏小所以调大4个像素)*/
-.f_14{font-size: 16px;} 
-.f_16{font-size:18px;}
-.f_18{font-size: 20px;}
+.f_14{font-size: 14px;} /*常用字体大小(因为部分安卓机上字体偏小所以调大4个像素)*/
+.f_16{font-size: 16px;} 
+.f_18{font-size:18px;}
+.f_20{font-size: 20px;}
 @media all and (max-width:370px) {
-	.f_14{font-size: 14px;} 
-	.f_16{font-size:16px;}
-	.f_18{font-size: 18px;}
-	.f_20{font-size:20px;}
+	.f_16{font-size: 14px;} 
+	.f_18{font-size:16px;}
+	.f_20{font-size: 18px;}
 }
 
 /*skin style*/
@@ -37,3 +36,26 @@
 .s_blue{color: #0F71AF;}
 .s_gray{color: #8C8984;}
 .s_orange{color: #FD8B2A;}
+
+/*util style*/
+.u_btn{
+	display:inline-block;-webkit-box-sizing:content-box;box-sizing:content-box;
+	padding: 0.4rem 0; font-size: 14px;
+	border:none;border-radius: 0.106rem;
+	letter-spacing:1px;text-align:center;vertical-align:middle;
+	word-wrap:normal;white-space:nowrap;
+	color: #fff;
+}
+.u_btn:disabled{background-color: #ddd;}
+
+.u_btn_blue{background-color: #00BDAF;} /*按钮颜色*/
+.u_btn_blue:active{background-color: #087971;}
+.u_btn_green{background-color: #8AC97A;}
+.u_btn_green:active{background-color: #4D7C40;}
+.u_btn_gray{background-color: #BEB9B3;}
+.u_btn_gray:active{background-color: #A2A2A0;}
+.u_btn_orange{background-color: #F39C12;}
+
+
+.u_btn_lg{width: 100%;} /*按钮大小*/
+.u_btn_sm{padding: 0.3rem 0.4rem;}
