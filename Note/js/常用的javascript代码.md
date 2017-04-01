@@ -1,24 +1,14 @@
-1.原生JavaScript实现字符串长度截取
-function cutstr(str, len) {
-        var temp;
-        var icount = 0;
-        var patrn = /[^\x00-\xff]/;
-        var strre = "";
-        for (var i = 0; i < str.length; i++) {
-            if (icount < len - 1) {
-                temp = str.substr(i, 1);
-                if (patrn.exec(temp) == null) {
-                    icount = icount + 1
-                } else {
-                    icount = icount + 2
-                }
-                strre += temp
-            } else {
-                break
-            }
-        }
-        return strre + "..."
-    }
+0.如何将一个对象字面量转换成JSON对象
+var userData = {name:'xiaoming',age:'78'};
+var jsonData = JSON.parse(JSON.stringfy(userData));
+
+1.jquery将form表单中的内容格式化成一个对象字面量(可用于ajax提交)
+//js map函数用来遍历数组中的每一项值的，用来遍历数组中的每一项
+var useDate = {};
+$("#formId").serializeArray().map( function(x){
+    useData[x.name] = x.value;
+} );
+
 
 2.原生JavaScript获取域名主机
 function getHost(url) {
@@ -50,30 +40,17 @@ function get_get(){
   return querystr[1];
 }
 
-4.原生JavaScript跨浏览器添加事件
-function addEvt(oTarget,sEvtType,fnHandle){
-    if(!oTarget){return;}
-    if(oTarget.addEventListener){
-        oTarget.addEventListener(sEvtType,fnHandle,false);
-    }else if(oTarget.attachEvent){
-        oTarget.attachEvent("on" + sEvtType,fnHandle);
-    }else{
-        oTarget["on" + sEvtType] = fnHandle;
-    }
-}
-
-
-5.JQUERY
+4.JQUERY
   $(window).scrollTop();scrollTop获取的是内部元素超出外部容器的高度。
 例如：$('window').scrollTop()获取的就是当前这个页面超出窗口最上端的高度，scrollLeft与此同理
 
 
-6.移动端判断是否是android
+5.移动端判断是否是android
 var nua = navigator.userAgent
 var isAndroid = (nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android') > -1 && nua.indexOf('AppleWebKit') > -1 && nua.indexOf('Chrome') === -1)
 
 
-7.原生JavaScript常用的正则表达式
+6.原生JavaScript常用的正则表达式
 //正整数
 /^[0-9]*[1-9][0-9]*$/;
 
