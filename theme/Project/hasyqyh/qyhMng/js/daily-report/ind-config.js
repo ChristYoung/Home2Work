@@ -59,19 +59,19 @@ $(function() {
 			perShow.html((obj.val() / dates).toFixed(2));
 		}
 	};
-    
-    setReadonly();
-    
-    (function(){
-	    $yearInput.val(new Date().getFullYear()); //默认显示当前年份
-	
+
+	setReadonly();
+
+	(function() {
+		$yearInput.val(new Date().getFullYear()); //默认显示当前年份
+
 		$yearModal.on('click', '.timeModal-item', function() { //选择年份
 			$yearInput.val($(this).html());
 			$yearModal.modal('hide');
 			setReadonly();
 			//ajax something
 		});
-	
+
 		$monthTabs.on('click', function() { //切换选择月份
 			var selectedMonth = $(this).attr('data-month');
 			$monthTabs.removeClass('active');
@@ -81,13 +81,13 @@ $(function() {
 			selectedMonth > 1 ? $('#appToYear').hide() : $('#appToYear').show();
 			//ajax something
 		});
-	
+
 		$numInput.on('keyup', function() { //绑定计算每天指标的函数,并限制只能输入两位小数
 			var $perShow = $(this).siblings('.per-day');
 			clearNoNum($(this)[0], '2');
 			perDay($(this), $perShow);
 		});
-	
+
 		$percentageInput.on('keyup', function() { //限制收入指标只能输入一位小数
 			clearNoNum($(this)[0], '1');
 			var ThisValue = $(this).val();
@@ -99,30 +99,73 @@ $(function() {
 				}
 			}
 		});
-	
+
 		$tabsBtn.on('click', function() { //选项卡切换
 			var _index = $(this).index(),
-			    selectedMonth = $('#monthInput').val();
+				selectedMonth = $('#monthInput').val();
 			$tabItems.hide();
 			$tabItems.eq(_index).fadeIn(300);
-	
+
 			$tabsBtn.removeClass('active');
 			$(this).addClass('active');
-			
-			if(_index == 7){ //当选陀螺刀药占比时,隐藏两个按钮
+
+			if(_index == 7) { //当选陀螺刀药占比时,隐藏两个按钮,和年份月份选择
 				$('#appToMonth').hide();
 				$('#appToYear').hide();
-			}else{
+				$('.sel-area').hide();
+			} else {
 				$('#appToMonth').show();
 				selectedMonth > 1 ? $('#appToYear').hide() : $('#appToYear').show();
+				$('.sel-area').show();
 			}
 		});
-    })();
-    
-    (function(){ //陀螺刀药占比模块相关代码
-    	var mzks = ['精神一门诊','精神二门诊','精神三门诊','精神科专家一门诊','精神科专家二门诊','精神科专家三门诊','老年精神科门诊','心理科一门诊','心理科二门诊','心理科三门诊','心理科专家一门诊','心理科专家二门诊','心理科特需门诊','外科门诊','妇产科门诊','神经内科门诊','神经科专家门诊','脑血管科门诊','内科门诊','康复科门诊','外院部门','司法鉴定室','肿瘤放疗门诊','儿童心理科门诊','急诊门诊'],
-    	    zyks = ['精神一科','精神二科','精神三科','精神四科','精神五科','精神六科','精神七科','急诊门诊','内科','心理一科','心理二科','神经科','脑血管科','外科','老年精神科','康复科'];
-    })();
-    
-    
+	})();
+
+	(function() { //陀螺刀药占比模块相关代码
+		var mzks = ['精神一门诊', '精神二门诊', '精神三门诊', '精神科专家一门诊', '精神科专家二门诊', '精神科专家三门诊', '老年精神科门诊', '心理科一门诊', '心理科二门诊', '心理科三门诊', '心理科专家一门诊', '心理科专家二门诊', '心理科特需门诊', '外科门诊', '妇产科门诊', '神经内科门诊', '神经科专家门诊', '脑血管科门诊', '内科门诊', '康复科门诊', '外院部门', '司法鉴定室', '肿瘤放疗门诊', '儿童心理科门诊', '急诊门诊'],
+			zyks = ['精神一科', '精神二科', '精神三科', '精神四科', '精神五科', '精神六科', '精神七科', '急诊门诊', '内科', '心理一科', '心理二科', '神经科', '脑血管科', '外科', '老年精神科', '康复科'],
+			mzks_str = zyks_str = '';
+
+		mzks.forEach(function(value, index) {
+			mzks_str += '<option value="">' + value + '</option>'
+		});
+
+		zyks.forEach(function(value, index) {
+			zyks_str += '<option value="">' + value + '</option>'
+		});
+
+		var
+			$addPeopleWrap = $('.add-people-wrap'),
+			$addPeopleBtn = $('#add-people-btn'),
+			$peopleItems = $('.people-items'), //父元素
+			addPeopleTemplate = '<div class="people-wrap">' +
+			'<span class="people-tit">科室:</span>' +
+			'<select class="form-control people-depSelect dep-select1">' + mzks_str + '</select>' +
+			'<select class="form-control people-depSelect dep-select2">' + zyks_str + '</select>' +
+			'<span class="people-tit">姓名:</span>' +
+			'<input type="text" class="form-control pepole-nameInput" maxlength="5" name="" id="" value="" />' +
+			'<button type="button" class="btn btn-primary save-people-btn">保存</button>' +
+			'<button type="button" class="btn btn-danger del-people-btn">删除</button>' +
+			'</div>';
+
+		$addPeopleBtn.on('click', function() { //新增药占比人员
+			$(addPeopleTemplate).insertAfter($addPeopleWrap);
+		});
+
+		$peopleItems.on('click', '.del-people-btn', function() { //删除药占比人员
+			$(this).parent().remove();
+			//ajax something
+		});
+
+		$peopleItems.on('click', '.save-people-btn', function() { //保存药占比人员
+			var $nameInput = $(this).prev();
+			if($nameInput.val() == '') {
+				$nameInput.focus();
+				new witonAlert().init({ type: 'error', msg: '请输入正确的人员姓名' });
+				return false;
+			}
+			//ajax something
+		});
+
+	})();
 });

@@ -1,0 +1,23 @@
+  .ind-config{margin: 20px 0 0 0;}
+  .ind-tabs{overflow: hidden;}
+  .ind-config .tabs-btn{float: left; width: 120px; height: 34px; background: #F7F7F7; color: #000; cursor: pointer;}
+  .ind-config .tabs-btn span{display: inline-block; width: 100%; height: 30px; margin-top: 2px; line-height: 30px; text-align: center;}
+  .ind-config .tabs-btn:hover,.ind-config .tabs-btn.active{color: BE393A; border-bottom: 2px solid #BE393A;}
+  .sel-area{margin-top: 20px;}
+  .sel-area .month-tabs{width: 65px;}
+  .sel-area .form-control,.ind-input-items .form-control{display: inline-block; width: 150px;}
+  .people-wrap{font-size: 0;}
+  .people-wrap,.add-people-wrap{position: relative; margin-left: 60px; margin-bottom: 20px;}
+  .people-wrap{width: 1000px; padding: 15px; border-bottom: 1px solid #ddd; border-radius: 5px;}
+  .people-wrap .people-tit{display: inline-block; margin:0 10px; font-size: 14px;}
+  .people-wrap .pepole-nameInput{margin-right: 100px;}
+  .people-wrap input{display: inline-block; width: 310px;}
+  .people-wrap select{display: inline-block; width: 150px; margin-right: 10px;}
+  .people-wrap .dep-select2{margin-right: 20px;}
+  .people-wrap .save-people-btn{margin-right: 8px;}
+  #yearInput{display: inline-block; width: 150px; cursor: pointer;}
+  .ind-tabs-items{/*text-align: right;*/ margin-top: 20px;}
+  .ind-input-items{margin-bottom: 12px;}
+  .ind-input-items .per-day{color: #1bb955;}
+  .ind-input-items .ind-names{display: inline-block; width: 120px; text-align: right;}
+  .app-btnarea{margin:20px 0 0 138px;}
