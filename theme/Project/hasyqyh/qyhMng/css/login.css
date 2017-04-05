@@ -1,30 +1,58 @@
-body{overflow: hidden; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
-header{background-color: #000000; opacity: 0.5; filter: alpha(opacity=50); width: 100%; height: 60px; position: relative;}
+@charset "utf-8";
+body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,form,input,textarea,th,td,select{margin: 0;padding: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,form,a,th,td,select,em,span,strong{-webkit-touch-callout: inherit; -webkit-user-select: auto;}
+h1,h2,h3,h4,h5,h6,strong,em,b{font-weight: normal; font-style: normal;}
+
+body {
+  width: 100%;
+  font-family: "microsoft yahei";
+  font-size: 14px;
+  background-color: #fff;
+  overflow: hidden;
+}
+ul,li{list-style: none;}
+a {
+	color: #2F2F2F;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+a:hover {
+  text-decoration: none;
+}
+button,input,select,textarea {
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+header{height: 60px; position: relative; background-color: #367FA9;}
 header .logo-wrap{width: 255px; position: absolute; top: 15px; left: 45px;} 
 header .logo-wrap img{max-width: 100%;}
 header .item-name{height: 60px; position: absolute; left: 310px;}
 header .item-name strong{line-height: 60px; color: #FFFFFF; font-size: 16px; display: inline-block; margin-right: 20px;}
-header .header-list{height: 60px; position: absolute; right: 0;}
-header .header-list a{display: inline-block; font-size: 16px; color: #40d7ff; line-height: 60px; margin-right: 50px;}
-header .header-list .active{color: #fff;}
+header .header-list{height: 60px; position: absolute; right:50px;}
+header .header-list a{display: inline-block; font-size: 16px; color: #231815; line-height: 60px; margin-right: 50px;}
+header .header-list .active{color: #FFFFFF;}
+header{ background-color: rgba(0,0,0,0.5); /*opacity: 0.5; filter: alpha(opacity=50);*/ width: 100%;}
+header .header-list .active{color: #FFFFFF;}
 .authcenter{position: relative;}
 .authcenter .authcenter-body{position: relative; width: 1300px; height: auto; min-height: 450px; margin: 0 auto; padding: 50px 0; }
-.authcenter .authcenter-body .authcenter-body-login{float: right; width: 270px; height: auto; margin:30px 15px 0 0;}
+.authcenter .authcenter-body .authcenter-body-login{float: right; width: 270px; height: auto; margin:30px 15% 0 0;}
 .authcenter .authcenter-body .authcenter-body-login .login-tab{overflow: hidden;}
 .authcenter .authcenter-body .authcenter-body-login .login-tab li{float: left; width: 135px; text-align: center; padding: 10px 0; font-size: 14px; color: #FFFFFF; background-color: rgba(0,0,0,0.3); filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr=#4D000000,endcolorstr=#4D000000); cursor: pointer;}
 .authcenter .authcenter-body .authcenter-body-login .login-tab .selected{background-color: rgba(0,0,0,0.5); filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr=#7F000000,endcolorstr=#7F000000);}
 .authcenter .authcenter-background{width: 100%; position: absolute; top: 0; left: 0; z-index: -1;}
 .authcenter .authcenter-background #bgImg{position: absolute; width: 100%; height: auto; top: 0; left: 0; overflow: hidden;}
 
-/*login*/
-.authcenter .authcenter-body .authcenter-body-login{margin:150px 15px 0 0;}
-.authcenter .authcenter-body  .login-modern{width: 100%; padding:20px 30px 12px; background-color: rgba(0,0,0,0.5); filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr=#7F000000,endcolorstr=#7F000000);}
+/*pay login*/
+.authcenter .authcenter-body  .login-modern{width: 210px; padding:20px 30px; background-color: rgba(0,0,0,0.5); filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr=#7F000000,endcolorstr=#7F000000);}
 .authcenter .authcenter-body  .login-modern h2{color: #FFFFFF; text-align: center; font-size: 18px; margin-bottom: 20px;}
 .authcenter .authcenter-body  .login-modern li{margin-bottom: 10px; overflow: hidden;}
 .authcenter .authcenter-body  .login-modern li img{width: 95px; margin-left: 8px; height: 30px; max-width: 100%; float: right;}
-.authcenter .authcenter-body  .login-modern li button{width: 100%;}
+.authcenter .authcenter-body  .login-modern li button{width:100%;}
 .authcenter .authcenter-body  .login-modern li button a{display: inline-block; width: 100%;}
-.authcenter .authcenter-body  .login-modern li p{width: 100%; height: 15px; position: relative; color: #FFFFFF;}
+.authcenter .authcenter-body  .login-modern li p{width: 100%; height: 20px; position: relative; color: #FFFFFF;}
 .authcenter .authcenter-body  .login-modern li p a{position: absolute; color: #FFFFFF;}
 .authcenter .authcenter-body  .login-modern li p a:hover{text-decoration: underline;}
 .authcenter .authcenter-body  .login-modern li p .another{right: 0;}
@@ -36,7 +64,7 @@ select{height: 30px; padding: 5px 0;}
 
 /*responsive*/
 @media only screen and (min-width: 1500px) {
-	.authcenter .authcenter-body .authcenter-body-login{margin:250px 15px 0 0;}
+	.authcenter .authcenter-body .authcenter-body-login{margin:150px 15px 0 0;}
 }
 @media only screen and (min-width: 1000px) and (max-width: 1300px) {
 	body{width: 100%; min-width: 0;}
