@@ -16,12 +16,16 @@
 		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
 		<link rel="stylesheet" type="text/css" href="css/hasyqyh-common.css"/>
 		<link rel="stylesheet" type="text/css" href="css/hasyqyh-pagemodules.css"/>
+		<link rel="stylesheet" type="text/css" href="css/mobiscroll.custom-3.0.0-beta2.min.css"/>
 		<title>无图表页</title>
 	</head>
 	<body>
 		<header class="header-bar">
 			<h2 class="date-bar f_18">2016年10月25日</h2>
 			<span class="select-date"></span>
+			<form id="dateForm">
+				<input type="text" class="date-select" name="date" id="date" value="" />
+			</form>
 		</header>
 		<div class="query-items">
 			<div class="nav-bar f_16">全院门诊日收入</div>
@@ -80,4 +84,21 @@
 			</table>
 		</div>
 	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="js/mobiscroll.custom-3.0.0-beta2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			var dateSelector;
+			dateSelector = mobiscroll.date('#date', {
+				    lang: 'zh',
+				    display: 'bottom',
+				    dateWheels: 'yy M d',
+				    onSet: function (event, inst) {
+				      var valueText = event.valueText;
+				      var valueArr = valueText.split('/');
+				      $('.date-bar').html(valueArr[0]+'年'+valueArr[1]+'月'+valueArr[2]+'日');
+				    }
+            }); 
+		});
+	</script>
 </html>

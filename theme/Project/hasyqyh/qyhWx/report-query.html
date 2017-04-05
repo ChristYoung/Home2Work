@@ -159,12 +159,14 @@
 	<script src="js/zepto.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/popwindow.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
-		$('.section_select').click(function(){
-			var list = ['精神门诊一科','内科','外科'];
-			var pop = Object.create(popWindow);
-			pop.init({_list:list,title:'选择科室',callBack:function(value){
-				$('.dep_name').html(value);
-			}})
+		$(function(){
+			$('.section_select').click(function(){
+				var list = ['精神门诊一科','内科','外科'];
+				var pop = Object.create(popWindow);
+				pop.init({_list:list,title:'选择科室',callBack:function(value){
+					$('.dep_name').html(value);
+				}})
+			});
 		});
 	</script>
 </html>
