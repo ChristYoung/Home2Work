@@ -13,10 +13,11 @@ header .header-list .active{color: #fff;}
 .authcenter .authcenter-body .authcenter-body-login .login-tab{overflow: hidden;}
 .authcenter .authcenter-body .authcenter-body-login .login-tab li{float: left; width: 135px; text-align: center; padding: 10px 0; font-size: 14px; color: #FFFFFF; background-color: rgba(0,0,0,0.3); filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr=#4D000000,endcolorstr=#4D000000); cursor: pointer;}
 .authcenter .authcenter-body .authcenter-body-login .login-tab .selected{background-color: rgba(0,0,0,0.5); filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr=#7F000000,endcolorstr=#7F000000);}
-.authcenter .authcenter-background{width: 100%; position: absolute; top: 0; left: 0; /*z-index: -1;*/}
+.authcenter .authcenter-background{width: 100%; position: absolute; top: 0; left: 0; z-index: -1;}
 .authcenter .authcenter-background #bgImg{position: absolute; width: 100%; height: auto; top: 0; left: 0; overflow: hidden;}
 
 /*login*/
+.authcenter .authcenter-body .authcenter-body-login{margin:150px 15px 0 0;}
 .authcenter .authcenter-body  .login-modern{width: 100%; padding:20px 30px 12px; background-color: rgba(0,0,0,0.5); filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr=#7F000000,endcolorstr=#7F000000);}
 .authcenter .authcenter-body  .login-modern h2{color: #FFFFFF; text-align: center; font-size: 18px; margin-bottom: 20px;}
 .authcenter .authcenter-body  .login-modern li{margin-bottom: 10px; overflow: hidden;}
@@ -35,7 +36,7 @@ select{height: 30px; padding: 5px 0;}
 
 /*responsive*/
 @media only screen and (min-width: 1500px) {
-	.authcenter .authcenter-body .authcenter-body-login{margin:150px 15px 0 0;}
+	.authcenter .authcenter-body .authcenter-body-login{margin:250px 15px 0 0;}
 }
 @media only screen and (min-width: 1000px) and (max-width: 1300px) {
 	body{width: 100%; min-width: 0;}
