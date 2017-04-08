@@ -1,0 +1,11 @@
+/**app.wxss**/
+.page{box-sizing: border-box; -webkit-box-sizing: border-box;} 
+
+.f_flex{ /*flex布局下的对齐方式*/
+	display: -webkit-box; 
+	display: -webkit-flex;
+	display: -ms-flexbox; 
+	display: flex; 
+}
+.f_alignC{align-items: center; -webkit-align-items: center;}
+.f_flex1{display: block; -webkit-box-flex: 1; -webkit-flex: 1; flex: 1;}

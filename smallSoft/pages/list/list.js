@@ -1,0 +1,27 @@
+Page({
+    data:{
+        lists:[
+            {
+                content:"hello",
+                time:"2016/02/08",
+                id:1
+            },
+            {
+                content:"world",
+                time:"2016/08/08",
+                id:2
+            }
+        ]
+    },
+    edit(e){
+        console.log(e); //事件对象
+        wx.navigateTo({
+            url:"../add/add"
+        })
+    },
+    add(){
+        wx.navigateTo({
+            url:"../add/add"
+        })
+    }
+});

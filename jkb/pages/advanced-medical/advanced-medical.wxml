@@ -1,0 +1,22 @@
+<view class="page">
+	<view class="serviceList">
+		<view class="serviceList-li">
+			<image src="../../img/service0.png"></image>
+		</view>
+		<view class="serviceList-li">
+			<image src="../../img/service1.png"></image>
+		</view>
+		<view class="serviceList-li">
+			<image src="../../img/service2.png"></image>
+		</view>
+		<view class="serviceList-li">
+			<image src="../../img/service3.png"></image>
+		</view>
+		<view class="serviceList-li">
+			<image src="../../img/service4.png"></image>
+		</view>
+		<view class="serviceList-li">
+			<image src="../../img/service5.png"></image>
+		</view>
+	</view>
+</view>

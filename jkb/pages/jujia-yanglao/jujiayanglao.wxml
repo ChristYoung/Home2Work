@@ -1,0 +1,81 @@
+<view class="service-item-wrap">
+	<view class="item-name">健康养老</view>
+	<view class="item-body f_flex">
+		<view class="item-i f_flex1">
+			<navigator class="item-navigator" url="">
+				<image class="item-img" src="../../img/service5.png"></image>
+				<text>扫码登录</text>
+			</navigator>
+		</view>
+		<view class="item-i f_flex1">
+			<navigator class="item-navigator" url="../health-report/health-report">
+				<image class="item-img" src="../../img/service5.png"></image>
+				<text>健康报告</text>
+			</navigator>
+		</view>
+		<view class="item-i f_flex1">
+			<navigator class="item-navigator" url="">
+				<image class="item-img" src="../../img/service5.png"></image>
+				<text>档案查询</text>
+			</navigator>
+		</view>
+		<view class="item-i f_flex1">
+			<navigator class="item-navigator" url="../advanced-medical/advanced-medical">
+				<image class="item-img" src="../../img/service5.png"></image>
+				<text>高端医疗服务</text>
+			</navigator>
+		</view>
+	</view>
+</view>
+<view class="service-item-wrap">
+	<view class="item-name">寻医就诊</view>
+	<view class="item-body f_flex">
+		<view class="item-i f_flex1">
+			<navigator class="item-navigator" url="">
+				<image class="item-img" src="../../img/service5.png"></image>
+				<text>家庭医生</text>
+			</navigator>
+		</view>
+		<view class="item-i f_flex1">
+			<navigator class="item-navigator" url="">
+				<image class="item-img" src="../../img/service5.png"></image>
+				<text>分级诊疗</text>
+			</navigator>
+		</view>
+		<view class="item-i f_flex1">
+			<navigator class="item-navigator" url="">
+				<image class="item-img" src="../../img/service5.png"></image>
+				<text>120急救</text>
+			</navigator>
+		</view>
+	</view>
+</view>
+<view class="service-item-wrap">
+	<view class="item-name">智能监护</view>
+	<view class="item-body f_flex">
+		<view class="item-i f_flex1">
+			<navigator class="item-navigator" url="">
+				<image class="item-img" src="../../img/service5.png"></image>
+				<text>跌倒报警</text>
+			</navigator>
+		</view>
+		<view class="item-i f_flex1">
+			<navigator class="item-navigator" url="">
+				<image class="item-img" src="../../img/service5.png"></image>
+				<text>电子围栏</text>
+			</navigator>
+		</view>
+		<view class="item-i f_flex1">
+			<navigator class="item-navigator" url="">
+				<image class="item-img" src="../../img/service5.png"></image>
+				<text>档案查询</text>
+			</navigator>
+		</view>
+		<view class="item-i f_flex1">
+			<navigator class="item-navigator" url="">
+				<image class="item-img" src="../../img/service5.png"></image>
+				<text>家庭监护</text>
+			</navigator>
+		</view>
+	</view>
+</view>

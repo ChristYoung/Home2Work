@@ -1,0 +1,8 @@
+page{min-height: 100%; background-color: #EBEBEB;}
+.service-item-wrap{display: block; background-color: #fff; padding: 0 10rpx; margin-bottom: 20rpx; color: #333; font-family: "microsoft yahei";}
+.item-name{display: block; width: 100%; padding: 20rpx 0; border-bottom: 1px solid #E1E1E1; font-size: 16px;}
+.item-body{padding: 16rpx 0;}
+.item-body .item-i{border-right: 1px solid #E1E1E1;}
+.item-body .item-i:nth-last-of-type(1){border: none;}
+.item-i .item-navigator{display: block; width: 100%; height: 100%; text-align: center; font-size: 14px;}
+.item-i .item-img{display: block; width: 100rpx; height: 100rpx; margin: 6rpx auto 10rpx;}
