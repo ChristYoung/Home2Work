@@ -1,0 +1,54 @@
+/*basic style*/
+.input_btn{position: relative; display: inline-block; vertical-align: middle; height: 30px; line-height: 30px; font-weight: normal; cursor: pointer; padding: 0 10px; border: 0; border-radius: 4px; color: #fff; text-align: center;}
+.input_btn[disabled]{cursor: not-allowed;}
+.input_btn input[type=file]{position: absolute; top: 0; left: 100%; opacity: 0; filter:alpha(opacity=0); width: 0; height: 0;}
+.btn_green{background-color: #00BDAF;}
+.btn_green:hover{background-color: #1C746F;}
+.btn_blue{background-color: #008AFF;}
+.btn_blue:hover{background-color: #037CE3;}
+.btn_purple{background-color: #8454BB;}
+.btn_purple:hover{background-color: #6F489D;}
+.btn_black{background-color: #495F68;}
+.btn_black:hover{background-color: #868686;}
+.btn_gray{background-color: #bdbbbb; color: #000000;}
+.btn_gray:hover{background-color: #e6e6e6;}
+.btn_orange{background-color: #f39c12;}
+.btn_orange:hover{background-color: #D38E1A;}
+
+.btn_bar{background-color: #fff; color: #000; border: 1px solid #DCDCDC; line-height: 29px;}/*常用显示选中状态的按钮*/
+.btn_bar.active{background-color: #00BDAF; color: #fff; border-color: #fff;}
+.errorTips{font-weight: normal; color: red; margin-bottom: 0;}
+.must{color: red;}
+/*float*/
+.fr{float: right;}
+.fl{float: left;}
+.fc{width: 100%; margin-bottom: 10px;}
+.ft{width: 100%;}
+
+/*font color*/
+.f_red{color: red;}
+.f_gray{color: #DDDDDD;}
+
+/*form && button*/
+input[type=checkbox]{cursor: pointer; vertical-align:middle; margin-top:-2px; margin-bottom:1px;}
+input[type=checkbox]:disabled{cursor: not-allowed;}
+input[type=text]{height: 30px; padding: 0 10px; border: 1px solid #ddd; border-radius: 4px; line-height: 28px; margin-right: 10px; vertical-align: middle;}
+textarea{vertical-align: middle; padding: 5px 10px; border: 1px solid #ddd; border-radius: 4px;}
+input[type=text]:focus{border-color: #66afe9; -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6); box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);}
+input[type=text]:disabled,textarea.readyonly,input[type=text].readyonly{cursor: not-allowed; background: #F2F2F2;}
+select{height: 30px; line-height: 28px; vertical-align: middle; padding: 0 0 0 6px; border: 1px solid #DDDDDD; border-radius: 4px; cursor: pointer;}
+.vtag{display: inline-block; position: relative;}
+.vtag .placeholder{position: absolute; color: #B7B7B7; top: 7px; left: 8px; cursor: text;}
+.vip_select{width: 180px; height: 30px; padding: 2px 0 3px 6px; border: 1px solid #ddd; border-radius: 4px; line-height: 28px; cursor: pointer; margin-right: 12px;}
+.vip_label{display: inline-block; height: 30px; line-height: 28px; margin-right: 10px; cursor: pointer;}
+
+/*table*/
+.vip_table{width: 100%; border-collapse: collapse; border-top: none; table-layout: fixed;}
+.vip_table thead th{text-align: left; font-weight: bold; padding: 10px 8px;}
+.vip_table tbody tr td{border-right: 1px solid #DCDCDC; padding:8px 8px; border-bottom: 1px solid #DCDCDC; font-size: 12px; height: 29px;}
+.vip_table tbody tr td:nth-last-of-type(1){border-right: none;}
+.vip_table thead th{background: #FAFAF9; border-right: 1px solid #DCDCDC; border-bottom: 1px solid #DCDCDC;}
+.vip_table thead th:nth-last-of-type(1){border-right: none;}
+.vip_table tbody tr td{color: #494949;}
+.textoveflow{overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+.textcenter{text-align: center;}

@@ -17,7 +17,7 @@
 		<link rel="stylesheet" type="text/css" href="css/hasyqyh-common.css"/>
 		<link rel="stylesheet" type="text/css" href="css/popwindow.css"/>
 		<style type="text/css">
-			.query_section{color: #fff; font-size: 16px; padding: 0.266rem;}
+			.query_section{color: #fff; font-size: 16px; padding: 0.266rem; position: relative;}
 			.query_section .tit,.query_section .vl{line-height: 0.8rem;}
 			.section_select{background: #245279;}
 			.section0{background: #205D94;}
@@ -37,7 +37,7 @@
 				<span class="vl dep_name">精神门诊一科</span>
 			</li>
 		</ul>
-		<ul class="query_section section0">
+		<ul class="query_section section0" data-url="http:www.baidu.com">
 			<li class="f_flex">
 				<span class="tit f_flex1">全院收入昨日新增</span>
 				<span class="vl">1088<i>元</i></span>
@@ -47,7 +47,7 @@
 				<span class="vl">1088<i>元</i></span>
 			</li>
 		</ul>
-		<ul class="query_section section1">
+		<ul class="query_section section1" data-url="http:www.baidu.com">
 			<li class="f_flex">
 				<span class="tit f_flex1">门症挂号昨日新增</span>
 				<span class="vl">1088<i>人</i></span>
@@ -57,7 +57,7 @@
 				<span class="vl">1088<i>元/人</i></span>
 			</li>
 		</ul>
-		<ul class="query_section section2">
+		<ul class="query_section section2" data-url="http:www.baidu.com">
 			<li class="f_flex">
 				<span class="tit f_flex1">门诊收入昨日新增</span>
 				<span class="vl">1088<i>元</i></span>
@@ -83,7 +83,7 @@
 				<span class="vl">88<i>%</i></span>
 			</li>
 		</ul>
-		<ul class="query_section section3">
+		<ul class="query_section section3" data-url="http:www.baidu.com">
 			<li class="f_flex">
 				<span class="tit f_flex1">床日昨日新增</span>
 				<span class="vl">1088<i>床日</i></span>
@@ -101,7 +101,7 @@
 				<span class="vl">80<i>%</i></span>
 			</li>
 		</ul>
-		<ul class="query_section section4">
+		<ul class="query_section section4" data-url="http:www.baidu.com">
 			<li class="f_flex">
 				<span class="tit f_flex1">住院收入昨日新增</span>
 				<span class="vl">1088<i>元</i></span>
@@ -131,13 +131,13 @@
 				<span class="vl">80<i>%</i></span>
 			</li>
 		</ul>
-		<ul class="query_section section5">
+		<ul class="query_section section5" data-url="http:www.baidu.com">
 			<li class="f_flex">
 				<span class="tit f_flex1">医技工作量昨日新增</span>
 				<span class="vl">1088<i>次</i></span>
 			</li>
 		</ul>
-		<ul class="query_section section6">
+		<ul class="query_section section6" data-url="http:www.baidu.com">
 			<li class="f_flex">
 				<span class="tit f_flex1">医技收入昨日新增</span>
 				<span class="vl">1088<i>元</i></span>
@@ -166,6 +166,11 @@
 				pop.init({_list:list,title:'选择科室',callBack:function(value){
 					$('.dep_name').html(value);
 				}})
+			});
+			
+			$('.query_section').on('click',function(){
+				var _url = $(this).attr('data-url');
+				window.location.href=_url;
 			});
 		});
 	</script>

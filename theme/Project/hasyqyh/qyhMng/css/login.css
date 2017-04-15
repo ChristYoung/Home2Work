@@ -61,6 +61,7 @@ header .header-list .active{color: #FFFFFF;}
 input{display: inline-block; width: 100%; padding: 0 12px; height: 30px; line-height: 28px; border: 1px solid #ddd; font-family: "microsoft yahei";}
 select{height: 30px; padding: 5px 0;}
 .errorTips{color: red;}
+.browser-too-old{position: absolute; top: 0; left: 0; bottom: 0; right: 0; background: rgba(0,0,0,0.6); z-index: 9;}
 
 /*responsive*/
 @media only screen and (min-width: 1500px) {

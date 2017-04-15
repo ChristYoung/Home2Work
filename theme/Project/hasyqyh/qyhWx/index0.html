@@ -32,6 +32,8 @@
 			<div class="items-bar">
 				<span class="items-status f_16">新增:</span>
 				<span class="items-num s_orange f_16">200</span>元
+				<span class="items-status f_16">完成度:</span>
+				<span class="items-num s_orange f_16">20</span>%
 				<span class="items-arrow"></span>
 			</div>
 			<table class="items-table">
@@ -47,10 +49,10 @@
 				<tbody>
 					<tr>
 						<td>合计</td>
-						<td>12<span class="s_red">(-6)</span></td>
-						<td>12<span class="s_green">(+8)</span></td>
-						<td>12</td>
-						<td>12</td>
+						<td><span class="base-data">58%</span><br /><span class="cpmpare-span"></span></td>
+						<td><span class="res-span">30%</span><br /><span class="cpmpare-span"></span></td>
+						<td><span class="res-span">36%</span><br /><span class="cpmpare-span"></span></td>
+						<td><span class="res-span">42%</span><br /><span class="cpmpare-span"></span></td>
 					</tr>
 				</tbody>
 			</table>
@@ -75,10 +77,10 @@
 				<tbody>
 					<tr>
 						<td>合计</td>
-						<td>12<span class="s_green">(+0.7)</span></td>
-						<td>12</td>
-						<td>12</td>
-						<td>12</td>
+						<td><span class="base-data">58%</span><br /><span class="cpmpare-span"></span></td>
+						<td><span class="res-span">30%</span><br /><span class="cpmpare-span"></span></td>
+						<td><span class="res-span">36%</span><br /><span class="cpmpare-span"></span></td>
+						<td><span class="res-span">42%</span><br /><span class="cpmpare-span"></span></td>
 					</tr>
 				</tbody>
 			</table>
@@ -92,13 +94,36 @@
 			dateSelector = mobiscroll.date('#date', {
 				    lang: 'zh',
 				    display: 'bottom',
+				    dateFormat:'yy/mm/dd',
 				    dateWheels: 'yy M d',
 				    onSet: function (event, inst) {
 				      var valueText = event.valueText;
 				      var valueArr = valueText.split('/');
+                      $('#date').val(''+valueArr[0]+''+valueArr[1]+''+valueArr[2]+'');
 				      $('.date-bar').html(valueArr[0]+'年'+valueArr[1]+'月'+valueArr[2]+'日');
 				    }
             }); 
+            
+            $('.base-data').each(function(i,e){
+            	var This = $(e);
+            	var $resSpan = This.parent().siblings().find('.res-span');
+            	$resSpan.each(function(i,e){
+            		var diff = parseFloat($(e).html())-parseFloat(This.html());
+            		if(diff<0){
+            			if(This.html().indexOf('%') == -1){
+			              $(e).siblings('.cpmpare-span').addClass('s_red').html('('+diff+')');
+		                }else{
+		                  $(e).siblings('.cpmpare-span').addClass('s_red').html('('+diff+'%)');	
+		                }
+            		}else{
+            			if(This.html().indexOf('%') == -1){
+            				$(e).siblings('.cpmpare-span').addClass('s_green').html('(+'+diff+')');
+            			}else{
+            				$(e).siblings('.cpmpare-span').addClass('s_green').html('(+'+diff+'%)');
+            			}
+            		}
+            	});
+            });
 		});
 	</script>
 </html>

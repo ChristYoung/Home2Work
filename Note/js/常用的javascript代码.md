@@ -24,21 +24,40 @@ function getHost(url) {
         return host;
 }
 
-3.原生JavaScript获得URL中GET参数值
+3.1.原生JavaScript获得URL中GET参数值
 // 用法：如果地址是 test.htm?t1=1&t2=2&t3=3, 那么能取得：GET["t1"], GET["t2"], GET["t3"]
-function get_get(){ 
-  querystr = window.location.href.split("?")
+function get_get(_url,key){ //获得URL中GET参数值
+  var gets = [];	
+  querystr = _url.split("?");
   if(querystr[1]){
-    GETs = querystr[1].split("&")
-    GET =new Array()
-    for(i=0;i<GETs.length;i++){
-      tmp_arr = GETs[i].split("=")
-      key=tmp_arr[0]
-      GET[key] = tmp_arr[1]
+  	gets = querystr[1].split('&');
+    for(var i=0,len=gets.length; i<len; i++){
+    	var tmp_arr = gets[i].split('=');
+    	if(tmp_arr[0] == key){
+    		return tmp_arr[1];
+    	}
     }
-  }
-  return querystr[1];
-}
+    return -1;
+   }
+}; 
+
+
+3.2.function changeURLArg(url,arg,arg_val){  //修改url中get参数的值
+    var pattern=arg+'=([^&]*)'; 
+    var replaceText=arg+'='+arg_val; 
+    if(url.match(pattern)){ 
+        var tmp='/('+ arg+'=)([^&]*)/gi'; 
+        tmp=url.replace(eval(tmp),replaceText); 
+        return tmp; 
+    }else{ 
+        if(url.match('[\?]')){ 
+            return url+'&'+replaceText; 
+        }else{ 
+            return url+'?'+replaceText; 
+        } 
+    } 
+    return url+'\n'+arg+'\n'+arg_val; 
+};
 
 4.JQUERY
   $(window).scrollTop();scrollTop获取的是内部元素超出外部容器的高度。
