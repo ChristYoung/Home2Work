@@ -53,3 +53,12 @@ select{display: inline-block; width: 153px; height: 30px; line-height: 28px; mar
 .vip_table tbody tr td{color: #494949;}
 .textoveflow{overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
 .textcenter{text-align: center;}
+
+/*switch box*/
+.switch-box{display: inline-block; width: 45px; height: 20px; position: relative; border: 1px solid #ddd; border-radius: 999px; overflow: hidden;}
+.switch-box .switch-checkbox{position: absolute; opacity: 0; width: 100%; height: 100%; z-index: 9;}
+.switch-box .switch-box-show{position: absolute; width: 70px; height: 100%; top: 0; left: -27px; font-size: 0;}
+.switch-box .switch-box-show .switch-box-show-close,.switch-box .switch-box-show .switch-box-show-open{display: inline-block; width: 35px; height: 100%; background-color: #eee;}
+.switch-box .switch-box-show .switch-box-show-open{background-color: #0083E9;}
+.switch-box .switch-box-show .switch-circle{position: absolute; top: 0; left: 50%; width: 18px; height: 18px; margin-left: -9px; border-radius: 50%; background-color: #fff;}
+.switch-box .switch-checkbox:checked+.switch-box-show{left: 0;}

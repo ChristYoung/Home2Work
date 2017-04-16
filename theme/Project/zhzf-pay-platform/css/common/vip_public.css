@@ -56,9 +56,10 @@
 
 /*ipt-areas*/
 .ipt-areas{margin-top: 40px;}
+.ipt-title{font-size: 14px; color: #000; font-weight: bold; margin-bottom: 12px;}
 .ipt-ul{}
 .ipt-li{margin-bottom: 30px;}
-.ipt-li .ipt-tit,.ipt-li .ipt-inline{display: inline-block; position: relative;}
+.ipt-li .ipt-tit,.ipt-li .ipt-vl,.ipt-li .ipt-inline{display: inline-block; position: relative;}
 .ipt-li .ipt-tit{width: 100px; text-align: right; margin-right: 10px;}
 .ipt-inline .ipt-inline-items{margin-bottom: 10px;}
 .tit-vertical-top{vertical-align: top;}
