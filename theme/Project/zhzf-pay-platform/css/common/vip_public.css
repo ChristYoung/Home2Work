@@ -45,7 +45,6 @@
 .query_bar{border-top: 2px solid #D0DAD9; padding: 10px; overflow: hidden;}
 .query_bar .fc a,.query_bar .fc span{display: inline-block; vertical-align: middle; font-size: 14px; margin-right: 10px;}
 .query_bar .fc span{font-weight: bold;}
-.query_bar .fc a{width: 75px; text-align: right;}
 .query_tab{background: #FFFFFF; padding: 10px; border-top: 3px solid #AEBFC1;}
 .query_tab p{font-size: 14px; font-weight: bold; margin-bottom: 10px; float: left; width: 200px; margin-right: 10px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; cursor: default;}
 
@@ -56,7 +55,7 @@
 .qyh-tabs>li.active>a{color: #008CF5; background-color: #fff; cursor: default; border: 1px solid #008CF5; border-bottom-color: transparent;}
 
 /*ipt-areas*/
-.ipt-areas{margin-top: 20px;}
+.ipt-areas{margin-top: 40px;}
 .ipt-ul{}
 .ipt-li{margin-bottom: 30px;}
 .ipt-li .ipt-tit,.ipt-li .ipt-inline{display: inline-block; position: relative;}
