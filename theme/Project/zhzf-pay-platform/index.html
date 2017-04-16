@@ -7,6 +7,7 @@
 		<link rel="stylesheet" type="text/css" href="css/common/reset.css"/>
 		<link rel="stylesheet" type="text/css" href="css/common/vip_basicStyle.css"/>
 		<link rel="stylesheet" type="text/css" href="css/common/vip_public.css"/>
+		<link rel="stylesheet" type="text/css" href="css/pages/index.css"/>
 		<title>管理首页</title>
 	</head>
 	<body>
@@ -50,9 +51,299 @@
 				   	  </form>
 		    	</div>
 		    	<div class="query_tab">
-		    		<p>数据汇总</p>
+		    		<div class="charts-wrap">
+		    			<p>数据汇总</p>
+		    			<div class="charts-tabs">
+		    				<span class="charts-tabs-items active">支付笔数</span>
+		    				<span class="charts-tabs-items">支付金额</span>
+		    			</div>
+		    			<div class="plt-charts" id="charts-1"></div>
+		    			<div class="plt-charts" id="charts-2" style="display: none;"></div>
+		    		</div>
+		    		<div class="charts-wrap">
+		    			<p>按支付渠道</p>
+		    			<div class="charts-tabs">
+		    				<span class="charts-tabs-items active">支付笔数</span>
+		    				<span class="charts-tabs-items">支付金额</span>
+		    			</div>
+		    			<div class="plt-charts" id="charts-3"></div>
+		    			<div class="plt-charts" id="charts-4" style="display: none;"></div>
+		    		</div>
+		    		<div class="charts-wrap">
+		    			<p>按产品类型</p>
+		    			<div class="charts-tabs">
+		    				<span class="charts-tabs-items active">支付笔数</span>
+		    				<span class="charts-tabs-items">支付金额</span>
+		    			</div>
+		    			<div class="plt-charts" id="charts-5"></div>
+		    			<div class="plt-charts" id="charts-6" style="display: none;"></div>
+		    		</div>
 		    	</div>
 		    </div>
 		</div>
 	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="js/common/echarts.common.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var charts1 = document.getElementById("charts-1"),
+		    myCharts1 = echarts.init(charts1),
+			option1 = {
+			    tooltip: {
+			        trigger: 'axis'
+			    },
+			    toolbox: {
+			        show: true,
+			        feature: {
+			            dataZoom: {
+			                yAxisIndex: 'none'
+			            },
+			            dataView: {readOnly: false},
+			            restore: {},
+			            saveAsImage: {}
+			        }
+			    },
+			    xAxis:  {
+			        type: 'category',
+			        boundaryGap: false,
+			        data: ['2017/03/01','2017/03/02','2017/03/03','2017/03/04','2017/03/05','2017/03/06','2017/03/07']
+			    },
+			    yAxis: {
+			        type: 'value'
+			    },
+			    series: [
+			        {
+			            type:'line',
+			            data:[11, 11, 15, 13, 12, 13, 10],
+			        }
+			    ]
+			};
+        
+        var charts2 = document.getElementById("charts-2"),
+		    myCharts2 = echarts.init(charts2), 
+		    option2 = {
+		    	tooltip: {
+			        trigger: 'axis'
+			    },
+			    toolbox: {
+			        show: true,
+			        feature: {
+			            dataZoom: {
+			                yAxisIndex: 'none'
+			            },
+			            dataView: {readOnly: false},
+			            restore: {},
+			            saveAsImage: {}
+			        }
+			    },
+			    xAxis:  {
+			        type: 'category',
+			        boundaryGap: false,
+			        data: ['2017/03/01','2017/03/02','2017/03/03','2017/03/04','2017/03/05','2017/03/06','2017/03/07']
+			    },
+			    yAxis: {
+			        type: 'value'
+			    },
+			    series: [
+			        {
+			            type:'line',
+			            data:[11, 11, 15, 13, 12, 13, 10],
+			        }
+			    ]
+		    };
+        
+        var charts3 = document.getElementById("charts-3"),
+		    myCharts3 = echarts.init(charts3), 
+            option3 = {
+            	tooltip: {
+			        trigger: 'axis'
+			    },
+			     legend: {
+                   data:['微信','支付宝']
+                },
+			    toolbox: {
+			        show: true,
+			        feature: {
+			            dataZoom: {
+			                yAxisIndex: 'none'
+			            },
+			            dataView: {readOnly: false},
+			            restore: {},
+			            saveAsImage: {}
+			        }
+			    },
+			    xAxis:  {
+			        type: 'category',
+			        boundaryGap: false,
+			        data: ['2017/03/01','2017/03/02','2017/03/03','2017/03/04','2017/03/05','2017/03/06','2017/03/07']
+			    },
+			    yAxis: {
+			        type: 'value'
+			    },
+			    series: [
+			        {   
+			        	name:'微信',
+			            type:'line',
+			            data:[11, 11, 15, 13, 12, 13, 10],
+			        },
+			        { 
+			        	name:'支付宝',
+			        	type:'line',
+			        	data:[101, 201, 150, 132, 72, 98, 100],
+			        }
+			    ]
+            };
+        
+        var charts4 = document.getElementById("charts-4"),
+		    myCharts4 = echarts.init(charts4), 
+		    option4 = {
+		    	tooltip: {
+			        trigger: 'axis'
+			    },
+			     legend: {
+                   data:['微信','支付宝']
+                },
+			    toolbox: {
+			        show: true,
+			        feature: {
+			            dataZoom: {
+			                yAxisIndex: 'none'
+			            },
+			            dataView: {readOnly: false},
+			            restore: {},
+			            saveAsImage: {}
+			        }
+			    },
+			    xAxis:  {
+			        type: 'category',
+			        boundaryGap: false,
+			        data: ['2017/03/01','2017/03/02','2017/03/03','2017/03/04','2017/03/05','2017/03/06','2017/03/07']
+			    },
+			    yAxis: {
+			        type: 'value'
+			    },
+			    series: [
+			        {   
+			        	name:'微信',
+			            type:'line',
+			            data:[1100, 1201, 1500, 1023, 1782, 103, 1810],
+			        },
+			        { 
+			        	name:'支付宝',
+			        	type:'line',
+			        	data:[801, 2001, 3508, 1032, 7200, 928, 1000],
+			        }
+			    ]
+		    };
+        
+        var charts5 = document.getElementById("charts-5"),
+		    myCharts5 = echarts.init(charts5), 
+		    option5 = {
+		    	tooltip: {
+			        trigger: 'axis'
+			    },
+			     legend: {
+                   data:['医路通','miniPay','智慧校园','健康管理']
+                },
+			    toolbox: {
+			        show: true,
+			        feature: {
+			            dataZoom: {
+			                yAxisIndex: 'none'
+			            },
+			            dataView: {readOnly: false},
+			            restore: {},
+			            saveAsImage: {}
+			        }
+			    },
+			    xAxis:  {
+			        type: 'category',
+			        boundaryGap: false,
+			        data: ['2017/03/01','2017/03/02','2017/03/03','2017/03/04','2017/03/05','2017/03/06','2017/03/07']
+			    },
+			    yAxis: {
+			        type: 'value'
+			    },
+			    series: [
+			        {   
+			        	name:'医路通',
+			            type:'line',
+			            data:[1100, 1201, 1500, 1023, 1782, 103, 1810],
+			        },
+			        { 
+			        	name:'miniPay',
+			        	type:'line',
+			        	data:[891, 201, 308, 102, 720, 28, 100],
+			        },
+			        { 
+			        	name:'智慧校园',
+			        	type:'line',
+			        	data:[801, 200, 3108, 102, 720, 98, 108],
+			        },
+			        { 
+			        	name:'健康管理',
+			        	type:'line',
+			        	data:[821, 201, 35, 103, 700, 978, 115],
+			        }
+			    ]
+		    };
+        
+        var charts6 = document.getElementById("charts-6"),
+		    myCharts6 = echarts.init(charts6),  
+		    option6 = {
+		    	tooltip: {
+			        trigger: 'axis'
+			    },
+			     legend: {
+                   data:['医路通','miniPay','智慧校园','健康管理']
+                },
+			    toolbox: {
+			        show: true,
+			        feature: {
+			            dataZoom: {
+			                yAxisIndex: 'none'
+			            },
+			            dataView: {readOnly: false},
+			            restore: {},
+			            saveAsImage: {}
+			        }
+			    },
+			    xAxis:  {
+			        type: 'category',
+			        boundaryGap: false,
+			        data: ['2017/03/01','2017/03/02','2017/03/03','2017/03/04','2017/03/05','2017/03/06','2017/03/07']
+			    },
+			    yAxis: {
+			        type: 'value'
+			    },
+			    series: [
+			        {   
+			        	name:'医路通',
+			            type:'line',
+			            data:[1100, 1201, 1500, 1023, 1782, 103, 1810],
+			        },
+			        { 
+			        	name:'miniPay',
+			        	type:'line',
+			        	data:[891, 201, 308, 102, 720, 28, 100],
+			        },
+			        { 
+			        	name:'智慧校园',
+			        	type:'line',
+			        	data:[801, 200, 3108, 102, 720, 98, 108],
+			        },
+			        { 
+			        	name:'健康管理',
+			        	type:'line',
+			        	data:[821, 201, 35, 103, 700, 978, 115],
+			        }
+			    ]
+		    };
+		    
+            myCharts1.setOption(option1);
+            myCharts2.setOption(option2);
+            myCharts3.setOption(option3);
+            myCharts4.setOption(option4);
+            myCharts5.setOption(option5);
+            myCharts6.setOption(option6);
+	</script>
 </html>
