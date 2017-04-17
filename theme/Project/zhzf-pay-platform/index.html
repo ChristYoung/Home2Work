@@ -4,6 +4,8 @@
 		<meta charset="utf-8">
 		<meta name="renderer" content="webkit">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />	
+		<link rel="stylesheet" type="text/css" href="css/common/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common/jquery.datetimepicker.css"/>
 		<link rel="stylesheet" type="text/css" href="css/common/reset.css"/>
 		<link rel="stylesheet" type="text/css" href="css/common/vip_basicStyle.css"/>
 		<link rel="stylesheet" type="text/css" href="css/common/vip_public.css"/>
@@ -28,8 +30,8 @@
 		    	<p class="body_title">管理首页</p>
 		    	<div class="query_bar">
 		    		<form id="" name="" action="" method="">
-				   	  	 <input class="" type="text" name="" id="" placeholder="开始日期" readonly="readonly"/>
-				   	  	 <input class="" type="text" name="" id="" placeholder="结束日期" readonly="readonly"/>
+				   	  	 <input class="" type="text" name="" id="startDate" placeholder="开始日期" readonly="readonly"/>
+				   	  	 <input class="" type="text" name="" id="endDate" placeholder="结束日期" readonly="readonly"/>
 				   	  	 <select class="">
 				   	  	 	<option value="">选择商户</option>
 				   	  	 	<option value="">青岛城阳人民医院</option>
@@ -57,8 +59,12 @@
 		    				<span class="charts-tabs-items active">支付笔数</span>
 		    				<span class="charts-tabs-items">支付金额</span>
 		    			</div>
-		    			<div class="plt-charts" id="charts-1"></div>
-		    			<div class="plt-charts" id="charts-2" style="display: none;"></div>
+		    			<div class="plt-charts">
+		    				<div class="plt-charts-item" id="charts-1"></div>
+		    			</div>
+		    			<div class="plt-charts">
+		    				<div class="plt-charts-item" id="charts-2"></div>
+		    			</div>
 		    		</div>
 		    		<div class="charts-wrap">
 		    			<p>按支付渠道</p>
@@ -66,8 +72,12 @@
 		    				<span class="charts-tabs-items active">支付笔数</span>
 		    				<span class="charts-tabs-items">支付金额</span>
 		    			</div>
-		    			<div class="plt-charts" id="charts-3"></div>
-		    			<div class="plt-charts" id="charts-4" style="display: none;"></div>
+		    			<div class="plt-charts">
+		    				<div class="plt-charts-item" id="charts-3"></div>
+		    			</div>
+		    			<div class="plt-charts">
+		    				<div class="plt-charts-item" id="charts-4"></div>
+		    			</div>
 		    		</div>
 		    		<div class="charts-wrap">
 		    			<p>按产品类型</p>
@@ -75,8 +85,12 @@
 		    				<span class="charts-tabs-items active">支付笔数</span>
 		    				<span class="charts-tabs-items">支付金额</span>
 		    			</div>
-		    			<div class="plt-charts" id="charts-5"></div>
-		    			<div class="plt-charts" id="charts-6" style="display: none;"></div>
+		    			<div class="plt-charts">
+		    				<div class="plt-charts-item" id="charts-5"></div>
+		    			</div>
+		    			<div class="plt-charts">
+		    				<div class="plt-charts-item" id="charts-6"></div>
+		    			</div>
 		    		</div>
 		    	</div>
 		    </div>
@@ -84,6 +98,8 @@
 	</body>
 	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
 	<script src="js/common/echarts.common.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/common/jquery.datetimepicker.full.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/pages/index.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
 		var charts1 = document.getElementById("charts-1"),
 		    myCharts1 = echarts.init(charts1),
@@ -113,7 +129,7 @@
 			    series: [
 			        {
 			            type:'line',
-			            data:[11, 11, 15, 13, 12, 13, 10],
+			            data:[101, 1100, 175, 13, 12, 183, 130],
 			        }
 			    ]
 			};
@@ -188,7 +204,7 @@
 			        { 
 			        	name:'支付宝',
 			        	type:'line',
-			        	data:[101, 201, 150, 132, 72, 98, 100],
+			        	data:[101, 78, 56, 23, 55, 56, 78],
 			        }
 			    ]
             };
@@ -267,22 +283,22 @@
 			        {   
 			        	name:'医路通',
 			            type:'line',
-			            data:[1100, 1201, 1500, 1023, 1782, 103, 1810],
+			            data:[45, 88, 1500, 89, 1782, 103, 1810],
 			        },
 			        { 
 			        	name:'miniPay',
 			        	type:'line',
-			        	data:[891, 201, 308, 102, 720, 28, 100],
+			        	data:[891, 69, 308, 112, 720, 28, 100],
 			        },
 			        { 
 			        	name:'智慧校园',
 			        	type:'line',
-			        	data:[801, 200, 3108, 102, 720, 98, 108],
+			        	data:[801, 200, 3108, 23, 720, 98, 108],
 			        },
 			        { 
 			        	name:'健康管理',
 			        	type:'line',
-			        	data:[821, 201, 35, 103, 700, 978, 115],
+			        	data:[821, 201, 35, 777, 700, 978, 115],
 			        }
 			    ]
 		    };
@@ -345,5 +361,6 @@
             myCharts4.setOption(option4);
             myCharts5.setOption(option5);
             myCharts6.setOption(option6);
+            
 	</script>
 </html>
