@@ -1,14 +1,14 @@
 $(function() {
-	//	var $chartsTabs = $('.charts-tabs');
-	//	$chartsTabs.each(function(i,e){
-	//		var $chartsItems = $(e).find('.charts-tabs-items');
-	//		var $pltCharts = $(e).siblings('.plt-charts');
-	//		$chartsItems.on('click',function(){
-	//			$chartsItems.removeClass('active');
-	//			$(this).addClass('active');
-	//			$pltCharts.hide().eq($(this).index()).show();
-	//		});
-	//	});
+		var $chartsTabs = $('.charts-tabs');
+		$chartsTabs.each(function(i,e){
+			var $chartsItems = $(e).find('.charts-tabs-items');
+			var $pltCharts = $(e).siblings('.plt-charts');
+			$chartsItems.on('click',function(){
+				$chartsItems.removeClass('active');
+				$(this).addClass('active');
+				$pltCharts.hide().eq($(this).index()).show();
+			});
+		});
     $.datetimepicker.setLocale('zh');//设置日期时间控件显示中文
 	$('#startDate').datetimepicker({ //初始化开始日期
 		timepicker: false, //禁用时间控件
