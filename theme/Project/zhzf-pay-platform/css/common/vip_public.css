@@ -15,7 +15,7 @@
 #side_menu dl.active dd{display: block;}
 #side_menu dl dd ul{margin: 0; padding: 0; list-style: none;}
 #side_menu dl dd ul li{margin: 0; padding: 0; list-style: none;}
-#side_menu dl dd ul li a{display: block; height: 30px; padding: 0 20px 0 66px; color: #6a818a; line-height: 30px; cursor: pointer; position: relative;}
+#side_menu dl dd ul li a{display: block; height: 30px; padding: 0 20px 0 55px; color: #6a818a; line-height: 30px; cursor: pointer; position: relative;}
 #side_menu dl dd ul li a span.circle{position: absolute; top: 50%; left: 40px; margin-top: -6px; width: 12px; height: 12px; background: url(../img/circle.png) no-repeat 0 0;}
 
 #side_menu dl dt:hover,

@@ -29,6 +29,8 @@
 .f_red{color: red;}
 .f_gray{color: #DDDDDD;}
 .f_blue{color: #0083E9;}
+.f_green{color: #00a65a;}
+.f_orange{color: #f39c12;}
 
 /*form && button*/
 input[type=checkbox]{cursor: pointer; vertical-align:middle; margin-top:-2px; margin-bottom:1px;}

@@ -9,9 +9,10 @@
 		<link rel="stylesheet" type="text/css" href="../css/common/vip_public.css"/>
 		<style type="text/css">
 			.query_tab{margin-top: 25px;}
+			td label{cursor: pointer; margin-right: 5px;}
 			/*.vip_table tbody tr td{padding: 12px 8px;}*/
 		</style>
-		<title>产品应用</title>
+		<title>支付渠道</title>
 	</head>
 	<body>
 		<div id="header">
@@ -41,22 +42,35 @@
 				   	  <table class="vip_table">
 				   	  	<thead>
 				   	  		<tr>
-				   	  			<th>支付渠道</th>
+				   	  			<th></th>
 				   	  			<th>开关状态</th>
 				   	  		</tr>
 				   	  	</thead>
 				   	  	<tbody>
 				   	  		<tr>
-				   	  			<td>医路通</td>
 				   	  			<td>
-				   	  				<div class="switch-box">
+				   	  				微信商户
+				   	  				<br /><br /><label>
+				   	  					<input type="checkbox" name="" id="" value="" />微信公众号支付
+				   	  				</label>
+				   	  				<label>
+				   	  					<input type="checkbox" name="" id="" value="" />微信刷卡支付(反扫)
+				   	  				</label>
+				   	  				<label>
+				   	  					<input type="checkbox" name="" id="" value="" />微信扫码支付(正扫)
+				   	  				</label>
+				   	  			</td>
+				   	  			<td>
+				   	  				<a href="#" class="f_green" style="margin-right: 20px;">启用</a>
+				   	  				<a href="#" class="f_orange">设置参数</a>
+				   	  				<!--<div class="switch-box">
 				   	  					<input type="checkbox" name="" class="switch-checkbox" id="" value="" />
 				   	  					<div class="switch-box-show">
 				   	  						<div class="switch-box-show-open"></div>
 				   	  						<div class="switch-box-show-close"></div>
 				   	  						<span class="switch-circle"></span>
 				   	  					</div>
-				   	  				</div>
+				   	  				</div>-->
 				   	  			</td>
 				   	  		</tr>
 				   	  	</tbody>

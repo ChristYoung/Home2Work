@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <title>向商户付款</title>
+    <link rel="stylesheet" href="../css/pages/default.css">
+    <link rel="stylesheet" href="../css/pages/scan.css">
+</head>
+<body>
+
+    <div class="layout-flex">
+        <!-- content start -->
+        <div class="content">
+            <p class="sico_pay_p"><span class="sico_pay"></span></p>
+            <div class="amount_title"><em>向</em><span>威富通线上测试</span><em>付款</em></div>
+            <div class="set_amount">
+                <div class="amount_hd">消费总额</div>
+                <div class="amount_bd">
+                    <i class="i_money">¥</i>
+                    <span class="input_simu" id="amount"></span>
+                    <!-- 模拟input -->
+                    <em class="line_simu" id="line"></em>
+                    <!-- 模拟闪烁的光标 -->
+                    <div class="clearBtn none" id="clearBtn"><b class="btn_clear"></b></div>
+                    <!-- 清除按钮 -->
+                </div>
+            </div>
+            <p class="remark"><span id="remarkBtn">付款备注</span></p>
+        </div>
+        <!-- content end -->
+
+        <!-- 键盘 -->
+        <div class="keyboard">
+            <table class="key_table" id="keyboard">
+                <tr>
+                    <td class="key border b_rgt_btm" data-value="1">1</td>
+                    <td class="key border b_rgt_btm" data-value="2">2</td>
+                    <td class="key border b_rgt_btm" data-value="3">3</td>
+                    <td class="key border b_btm clear" data-value="delete"></td>
+                </tr>
+                <tr>
+                    <td class="key border b_rgt_btm" data-value="4">4</td>
+                    <td class="key border b_rgt_btm" data-value="5">5</td>
+                    <td class="key border b_rgt_btm" data-value="6">6</td>
+                    <td class="pay_btn disable" rowspan="3" id="payBtn"><em>付</em>款</td>
+                </tr>
+                <tr>
+                    <td class="key border b_rgt_btm" data-value="7">7</td>
+                    <td class="key border b_rgt_btm" data-value="8">8</td>
+                    <td class="key border b_rgt_btm" data-value="9">9</td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="key border b_rgt" data-value="0">0</td>
+                    <td class="key border b_rgt" data-value="dot">.</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 添加备注弹窗 -->
+        <div class="pop-wrap none" id="remarkPop">
+            <div class="pop_remark">
+                <div class="pop_title">添加付款备注</div>
+                <div class="input_wrap border b_all2">
+                    <input type="text" id="remarkInput" maxlength="20" placeholder="最多输入20个字符">
+                </div>
+                <div class="btn_wrap border b_top">
+                    <span id="remarkCancel">取消</span>
+                    <span class="border b_lft" id="remarkConfirm">确定</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="none">
+        <input type="hidden" id="mchId" value="7551000001">
+        <input type="hidden" id="userId" value="10181">
+        <input type="hidden" id="sign" value="751B7939985D7470F7383401C9C9EC76">
+        <input type="hidden" id="mchName" value="威富通线上测试">
+        <input type="hidden" id="outTradeNo" value="">
+        <input type="hidden" id="body" value="付款测试（勿修改）">
+        <input type="hidden" id="client" value="SPAY_AND">
+        <input type="hidden" id="userName" value="null">
+        <input type="hidden" id="payType" value="">
+    </div>
+    <script src="../js/common/hammer.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../js/common/common.js?v=1"></script>
+    <script src="../js/common/alipay.js?v=1"></script>
+</body>
+</html>
