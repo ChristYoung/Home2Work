@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{margin: 0; padding: 0; list-style: none;}
+			.lightgrey{color: #a8a8a8;}
+			.darkgrey{color: #565656;}
+			.green{color: #6AC13C;}
+			.greenbox{ background: #e9f8df;}
+			.yj_calendar{width: 450px; background: #fff; box-shadow: 0 1px 1px rgba(0,0,0,0.1);}
+			.cal_title{color: #6AC13C; text-align: center; border-bottom: 1px solid #6AC13C; padding: 0 0 10px 0; position: relative;}
+			.month-btn{position: absolute; font-size: 20px; font-weight: bold; top: 30px; cursor: pointer;}
+			#prev_month{left: 15px;}
+			#next_month{right: 15px;}
+			.body-list ul{width: 100%; font-family: arial; font-weight: bold; font-size: 14px;}
+			.body-list li{width: 14.28%; height: 36px; line-height: 36px; display: block; transition: .5s; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; float: left; text-align: center; cursor: pointer;}
+			.body-list li:hover{border: 1px solid #6AC13C;}
+		</style>
+	</head>
+	<body>
+		<div class="yj_calendar">
+			<div class="cal_title">
+				<h2 class="" id="calendar-title">Month</h1>
+				<h3 class="" id="calendar-year">Year</h2>
+				<span class="month-btn" id="prev_month"><</span>
+				<span class="month-btn" id="next_month">></span>
+			</div>
+			<div class="cal_body">
+				<div class="lightgrey body-list">
+					<ul>
+						<li>周一</li>
+						<li>周二</li>
+						<li>周三</li>
+						<li>周四</li>
+						<li>周五</li>
+						<li>周六</li>
+						<li>周日</li>
+					</ul>
+				</div>
+				<div class="darkgrey body-list">
+					<ul id="days">
+						<li></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var holder = document.getElementById("days"),
+		    prev = document.getElementById("prev_month"),
+		    next = document.getElementById("next_month"),
+		    ctitle = document.getElementById("calendar-title"),
+		    cyear = document.getElementById("calendar-year");
+		
+		var monthName = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+		
+		var my_date = new Date(),
+		    my_year = my_date.getFullYear(),
+		    my_month = my_date.getMonth(),
+		    my_day = my_date.getDate();
+		    
+		var dayStart = function(month,year){ //获取某一个月的第一天是星期几
+			var tempDate = new Date(year,month,1);
+			return tempDate.getDay();
+		};
+		
+		var getMonthDate = function(year, month) { //返回一个月有多少天
+			var d = new Date();
+			d.setFullYear(year, month, 0);
+			return d.getDate();
+	   };
+	   
+	   var refreshDate = function(){ //创建一个refresDate函数来生成当前月份显示
+	   	 var str = '',
+	   	     totalDay = getMonthDate(my_year,my_month), //获取该月总天数
+	   	     firstDay = dayStart(my_month,my_year),
+	   	     myclass;
+	   	     for(var i=1; i<firstDay; i++){
+	   	     	str+='<li></li>'; //为起始日期之前的日期创建空白节点
+	   	     }
+	   	     for(var i=1; i<=totalDay; i++){
+	   	     	if((my_year*10000+my_month*100+i)<(my_year*10000+my_month*100+my_day)){
+	   	     		myclass = " class='lightgrey'"; //该日期在今天之前,以浅灰色显示
+	   	     	}else if((my_year*10000+my_month*100+i)==(my_year*10000+my_month*100+my_day)){
+	   	     		myclass = " class='green greenbox'"; //该日期在今天之前,以浅灰色显示
+	   	     	}else{
+	   	     		myclass = " class='darkgrey'"; //当该日期在今天之后时，以深灰字体显示
+	   	     	}
+	   	     	str+="<li"+myclass+">"+i+"</li>"; //创建日期节点
+	   	     }
+	   	    holder.innerHTML = str; //显示日期
+	   	    ctitle.innerHTML = monthName[my_month];
+	   	    cyear.innerHTML = my_year;
+	   }
+	   refreshDate();
+	   prev.onclick = function(){
+	   	 my_month--;
+	   	 if(my_month<0){
+	   	 	my_year--;
+	   	 	my_month = 11;
+	   	 }
+	   	 refreshDate();
+	   };
+	   next.onclick = function(){
+	   	my_month++;
+	   	if(my_month>11){
+	   		my_year++;
+	   		my_month = 0;
+	   	}
+	   	refreshDate();
+	   }
+	</script>
+</html>
