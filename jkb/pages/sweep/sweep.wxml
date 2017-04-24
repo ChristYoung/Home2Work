@@ -1,3 +1,0 @@
-<view class="scanCode-wrap">
-	<button type="primary" bindtap="scan">点击扫码</button>
-</view>

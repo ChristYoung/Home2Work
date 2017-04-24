@@ -1,2 +1,0 @@
-.serviceList .serviceList-li{width: 690rpx; height: 413rpx; margin: 20rpx auto;}
-.serviceList .serviceList-li .serviceList-nav,.serviceList .serviceList-li image{display: block; width: 100%; height: 100%;}
