@@ -21,6 +21,6 @@ body{font-family: "microsoft yahei"; color: #333;}
 .query-list .list-ul{}
 .list-ul li{position: relative; padding: 0.4rem; font-size: 14px; border-bottom: 1px solid #D3D0CF;}
 .list-ul li .lisy-arrow{position: absolute; width: 92%; height: 0.533rem; background-size: 0.533rem 0.533rem; background-image: url(../img/fanhui.png); background-position: right center; background-repeat:no-repeat; top: 50%; right: 0.4rem; margin-top: -0.266rem;}
-#charts-wrap{width: 10rem; height: 512px;}
+#charts-wrap{width: 10rem; height: 300px;}
 .charts-tips{width: 100%; text-align: center; padding: 0.2rem;}
 
