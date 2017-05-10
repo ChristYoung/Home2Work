@@ -40,7 +40,7 @@
 /*util style*/
 .u_btn{
 	display:inline-block;-webkit-box-sizing:content-box;box-sizing:content-box;
-	padding: 0.4rem 0; font-size: 14px;
+	padding: 0.3rem 0; font-size: 14px;
 	border:none;border-radius: 0.106rem;
 	letter-spacing:1px;text-align:center;vertical-align:middle;
 	word-wrap:normal;white-space:nowrap;
@@ -49,6 +49,8 @@
 .u_btn:disabled{background-color: #ddd;}
 
 .u_btn_blue{background-color: #00BDAF;} /*按钮颜色*/
+.u_btn_blue2{background-color: #0F71AF;}
+.u_btn_blue2:active{background-color: #054B79;}
 .u_btn_blue:active{background-color: #087971;}
 .u_btn_green{background-color: #8AC97A;}
 .u_btn_green:active{background-color: #4D7C40;}
