@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no, email=no">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="screen-orientation" content="portrait">
+		<meta name="x5-orientation" content="portrait">
+		<meta name="msapplication-tap-highlight" content="no">
+		<script type="text/javascript">
+		document.getElementsByTagName('html')[0].style.fontSize = document.documentElement.clientWidth/10 +'px';
+		</script> 
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/hasyqyh-common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/hasyqyh-pagemodules.css"/>
+		<link rel="stylesheet" type="text/css" href="css/qyhPicker.css"/>
+		<style type="text/css">
+			.body-list li{width: 25%;}
+			.cal_title{padding: 10px 0; margin-bottom: 10px;}
+		</style>
+		<title></title>
+	</head>
+	<body>
+		<div class="qyh_picker qyh_calendar">
+			<div class="cal_title">
+				<h2 class="" id="calendar-title">2017</h1>
+				<span class="month-btn" id="prev"><</span>
+				<span class="month-btn" id="next">></span>
+			</div>
+			<div class="cal_body">
+				<div class="body-list"></div>
+				<div class="picker-list body-list">
+					<ul id="seasons">
+						<li data-season="01">第一季度</li>
+						<li data-season="02">第二季度</li>
+						<li data-season="03">第三季度</li>
+						<li data-season="04">第四季度</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="queryBtn-area">
+			<form class="" name="" id="customQueryForm" method="" action="">
+				<input type="hidden" name="seasonQuery" id="seasonQuery" value="" />
+				<button type="button" id="customQueryBtn" class="u_btn u_btn_blue u_btn_lg">确认查询</button>
+			</form>
+		</div>
+	</body>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<script src="js/qyhSeasonPicker.js" type="text/javascript" charset="utf-8"></script>
+</html>
