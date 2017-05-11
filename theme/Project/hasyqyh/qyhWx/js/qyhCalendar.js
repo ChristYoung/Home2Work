@@ -16,7 +16,7 @@ var _d = new Date(),
 	_month = _d.getMonth() + 1,
 	_day = _d.getDate();
 
-var dayStart = function(year, month) { //获取某一个月的第一天是星期几
+var dayStart = function(year, month) { //获取某一个月的第一天是星期几,0的话表示是星期日
 	var tempDate = new Date(year, month, 1);
 	return tempDate.getDay();
 };
@@ -37,6 +37,7 @@ var refreshDate = function() { //生成当前月份显示
 	var str = '',
 		totalDays = getMonthDays(_year, _month), //获取该月天数
 		firstaDay = dayStart(_year, _month - 1);
+	firstaDay = firstaDay == 0?7:firstaDay;
 	for(var i = 1; i < firstaDay; i++) {
 		str += '<li></li>'; //为起始日期之前的日期创建空白节点
 	};
@@ -83,14 +84,14 @@ $customQueryBtn.on('click', function() { //点击确认后,将所选的日期信
 		infoYear = parseInt($cyear.html()).toString(),
 		infoMonth = parseInt($ctitle.html()).toString(),
 		checkedDays = $pickerList.find('.active');
-    if(checkedDays.length == 0){
-    	alert('请先选择要查询的日期')
-    }else{
-	    checkedDays.each(function(i, e) {
+	if(checkedDays.length == 0) {
+		alert('请先选择要查询的日期')
+	} else {
+		checkedDays.each(function(i, e) {
 			var infoDay = $(e).attr('data-day');
-			daysQueryStr += getDayInfo(infoYear, infoMonth, infoDay)+','; //将所选的日期拼成字符串以逗号隔开传给后台
+			daysQueryStr += getDayInfo(infoYear, infoMonth, infoDay) + ','; //将所选的日期拼成字符串以逗号隔开传给后台
 		});
-	    $dateQuery.val(daysQueryStr);
-	    $('#customQueryForm').submit();
-    }
+		$dateQuery.val(daysQueryStr);
+		$('#customQueryForm').submit();
+	}
 });
