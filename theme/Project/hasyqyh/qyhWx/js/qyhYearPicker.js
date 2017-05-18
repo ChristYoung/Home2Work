@@ -28,8 +28,15 @@ var refreshYear = function(startYear, taotalYear) { //生成当前月份显示
 };
 refreshYear(start_year, TOTAL_YEARS);
 
+$pickerList.find('li').each(function(i, e) {
+	var thisYear = parseInt($(e).attr('data-year'));
+	if(thisYear <= _year && thisYear > (_year - LIMITNUM)) {
+		$(e).addClass('active');
+	}
+});
+
 $prev.on('click', function() {
-	start_year = (start_year-TOTAL_YEARS)<START_YEAR?start_year:(start_year-TOTAL_YEARS);
+	start_year = (start_year - TOTAL_YEARS) < START_YEAR ? start_year : (start_year - TOTAL_YEARS);
 	refreshYear(start_year, TOTAL_YEARS);
 });
 
@@ -56,7 +63,7 @@ $pickerList.on('click', 'li', function() {
 	}
 });
 
-$customQueryBtn.on('click', function() { 
+$customQueryBtn.on('click', function() {
 	var yearQueryStr = '', //将所选的年份以逗号隔开拼成字符串传给后台
 		checkedDays = $pickerList.find('.active');
 	if(checkedDays.length == 0) {

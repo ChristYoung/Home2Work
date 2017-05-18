@@ -8,4 +8,4 @@
 .body-list ul{width: 100%; font-family: arial; font-size: 14px; overflow: hidden;}
 .body-list li{width: 14.28%; height: 36px; line-height: 30px; display: block; transition: .3s; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; float: left; text-align: center; cursor: pointer;}
 .body-list li .days-span{display: inline-block; width: 30px; height: 30px; border-radius: 100%;}
-.body-list li.active .days-span,.body-list li.active{background-color: #00bdaf; color: #fff;}
+

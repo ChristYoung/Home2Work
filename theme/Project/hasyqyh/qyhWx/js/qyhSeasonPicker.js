@@ -6,6 +6,8 @@ var $seasonQuery = $('#seasonQuery'),
 	$customQueryBtn = $('#customQueryBtn');
 	
 var _d = new Date(),
+    _month = _d.getMonth()+1,
+    _season = Math.floor( (_month%3)==0?(_month/3):(_month/3+1) ),
 	_year = _d.getFullYear();
 	
 var LIMITNUM = 5,
@@ -16,6 +18,13 @@ var getMonthInfo = function(infoYear, infoSeason) {
 	infoSeason = infoSeason[1] ? infoSeason : '0' + infoSeason;
 	return infoYear + infoSeason;
 };
+
+$pickerList.find('li').each(function(i,e){ //当前季度的之前4个季度默认选中
+	var thisSeason = $(e).attr('data-season');
+	if(thisSeason<=_season && thisSeason>(_season-LIMITNUM)){
+		$(e).addClass('active');
+	}
+});
 
 $next.on('click',function(){
 	_year++;

@@ -112,15 +112,15 @@
         //console.log(JSON.stringify(this.fields));
         
         //为form表单绑定一个submit事件
-//      var _onsubmit = this.form.onsubmit;
-//
-//      this.form.onsubmit = (function(that) {
-//          return function(evt) { //evt是表单提交时的事件对象
-//              try {
-//                  return that._validateForm(evt) && (_onsubmit === undefined || _onsubmit());
-//              } catch(e) {}
-//          };
-//      })(this);
+        var _onsubmit = this.form.onsubmit;
+
+        this.form.onsubmit = (function(that) {
+            return function(evt) { //evt是表单提交时的事件对象
+                try {
+                    return that._validateForm(evt) && (_onsubmit === undefined || _onsubmit());
+                } catch(e) {}
+            };
+        })(this);
         
     },
 

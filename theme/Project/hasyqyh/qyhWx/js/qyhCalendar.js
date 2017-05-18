@@ -37,7 +37,7 @@ var refreshDate = function() { //生成当前月份显示
 	var str = '',
 		totalDays = getMonthDays(_year, _month), //获取该月天数
 		firstaDay = dayStart(_year, _month - 1);
-	firstaDay = firstaDay == 0?7:firstaDay;
+	firstaDay = firstaDay == 0 ? 7 : firstaDay;
 	for(var i = 1; i < firstaDay; i++) {
 		str += '<li></li>'; //为起始日期之前的日期创建空白节点
 	};
@@ -49,6 +49,14 @@ var refreshDate = function() { //生成当前月份显示
 	$cyear.html(_year);
 };
 refreshDate();
+
+//当前日期之前的5天默认选中
+$pickerList.find('li').each(function(i, e) {
+	var thisDay = parseInt($(e).attr('data-day'));
+	if(thisDay <= _day && thisDay > (_day - LIMITNUM)) {
+		$(e).addClass('active');
+	}
+});
 
 $prev.on('click', function() {
 	_month--;
