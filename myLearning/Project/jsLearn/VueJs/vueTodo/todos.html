@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" type="text/css" href="index.css"/>
     <script src="../vue.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
@@ -19,7 +19,7 @@
             class="task-input" 
             type="text"
             v-model="todo"
-            v-on:keyup.13="addTodo"
+            v-on:keyup.enter="addTodo"
         />
         <ul class="task-count" v-show="list.length">
             <li>{{noCheckeLength}}个任务未完成</li>
@@ -53,6 +53,6 @@
             </ul>
         </div>
     </div>
-    <script src="./app.js"></script>
+    <script src="./app.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
