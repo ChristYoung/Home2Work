@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.emb{width: 100%; height: 50px; line-height: 50px; background-color: #1C746F; color: #fff; margin-bottom: 10px; position: relative; padding-left: 10px;}
+			.hwrap{width: 200px; height: 100%; background-color: red; color: #fff; position: absolute; left: 50px; cursor: pointer; text-align: center;}
+		</style>
+		<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="app">
+			<custom-select con-value="查询" :list="list1"></custom-select>
+			<custom-select con-value="收藏" :list="list1"></custom-select>
+		</div>
+		<script type="text/javascript">
+			//注册组件
+			Vue.component('custom-select',{  //全局注册
+				data:function(){
+					return {selectShow:true}
+				},
+				props:["conValue","list"], //(父组件往子组件传数据,通过自定义属性)
+				template:'<div class="emb" v-show="selectShow">{{conValue}}<custom-list :listChild="list"></custom-list></div>'
+			}); 
+			
+			Vue.component('custom-list',{
+				props:["listChild"], 
+				template:'<a class="hwrap" @click="doSelectHandler(listChild)">{{listChild}}</a>',
+				methods:{
+					doSelectHandler:function(listChild){
+						//子父组件之间有交互(子组件往父组件传数据通过自定义事件,父组件用$on监听自定义事件,$emit触发父组件所关心的自定义事件)
+						
+					}
+				}
+			});
+			
+			new Vue({ 
+				el:'#app',
+				data:{
+					list1:'哈哈'
+				},
+				components:{
+					'custom-select2':{
+						template:'<div class="emb emb2"></div>' //局部注册组件
+					}
+				}
+			});
+		</script>
+	</body>
+</html>
