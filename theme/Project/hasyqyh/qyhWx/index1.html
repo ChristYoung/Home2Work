@@ -55,6 +55,16 @@
 	<script src="js/zepto.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/echarts.common.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
+		String.prototype.formatTens = function(){ //将千分位展示的字符串格式化成正常的数字
+			return parseFloat(this.replace(/,/g,''));
+		};
+		function formatJsonArr(arr){
+			arr.forEach(function(value,index,oldvalue){
+				oldvalue[index] = value.value.formatTens();
+			});
+			return arr;
+		}
+		
 		var chartsWrap = document.getElementById("charts-wrap"),
 		    myCharts = echarts.init(chartsWrap),
 		    option = {
@@ -64,7 +74,7 @@
 			        left:5,
 			        bottom:20,
 			        selectedMode:false,
-			        data:['门诊','内科','外科','妇产科','神经科','肿瘤放射科','脑血管科','心理科','精神一门诊','精神专家二门诊','心理科专家二门诊','儿童心理科门诊','老年精神科','神经科专家门诊','外院','精神科专家一门诊','心理一科','心理三科','精神二门诊','精神三门诊','康复科门诊','心理科专家一门诊','精神科专家三门诊','急诊科']
+			        data:['门诊','内科','外科']
 			    },
 			    series: [
 			        {
@@ -91,32 +101,11 @@
 			                    show: false
 			                }
 			            },
-			            data:[
-			              {value:12,name:'门诊'},
-			              {value:12,name:'内科'},
-			              {value:12,name:'外科'},
-			              {value:12,name:'妇产科'},
-			              {value:12,name:'神经科'},
-			              {value:12,name:'肿瘤放射科'},
-			              {value:12,name:'脑血管科'},
-			              {value:12,name:'心理科'},
-			              {value:12,name:'精神一门诊'},
-			              {value:12,name:'精神专家二门诊'},
-			              {value:102,name:'心理科专家二门诊'},
-			              {value:12,name:'儿童心理科门诊'},
-			              {value:12,name:'老年精神科'},
-			              {value:12,name:'神经科专家门诊'},
-			              {value:12,name:'外院'},
-			              {value:12,name:'精神科专家一门诊'},
-			              {value:12,name:'心理一科'},
-			              {value:12,name:'心理三科'},
-			              {value:12,name:'精神二门诊'},
-			              {value:12,name:'精神三门诊'},
-			              {value:12,name:'康复科门诊'},
-			              {value:12,name:'心理科专家一门诊'},
-			              {value:12,name:'精神科专家三门诊'},
-			              {value:12,name:'急诊科'}
-			            ]
+			            data: formatJsonArr([ 
+			              {value:'2,300,2',name:'门诊'},
+			              {value:'2,300,2',name:'内科'},
+			              {value:'2,300,2',name:'外科'},
+			            ])
 			        }
 			    ]
             };

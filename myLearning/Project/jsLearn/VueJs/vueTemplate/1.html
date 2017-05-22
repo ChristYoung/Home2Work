@@ -26,19 +26,13 @@
 			
 			Vue.component('custom-list',{
 				props:["listChild"], 
-				template:'<a class="hwrap" @click="doSelectHandler(listChild)">{{listChild}}</a>',
-				methods:{
-					doSelectHandler:function(listChild){
-						//子父组件之间有交互(子组件往父组件传数据通过自定义事件,父组件用$on监听自定义事件,$emit触发父组件所关心的自定义事件)
-						
-					}
-				}
+				template:'<a class="hwrap" @click="doSelectHandler(listChild)">{{listChild}}</a>'
 			});
 			
 			new Vue({ 
 				el:'#app',
 				data:{
-					list1:'哈哈'
+					list1:'哈s哈'
 				},
 				components:{
 					'custom-select2':{

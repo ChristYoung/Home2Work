@@ -26,8 +26,9 @@
 				props:["list"], //(父组件往子组件传数据,通过自定义属性)
 				template:'<div class="emb" v-show="selectShow">{{val}}<custom-list :listChild="list" v-on:receive="changeValueHandler"></custom-list></div>',
 				methods:{
-					changeValueHandler:function(){
-						alert('我被触发了');
+					changeValueHandler:function(value){
+						//alert('我被触发了,值为'+value);
+						this.val = value;
 					}
 				}
 			}); 
@@ -47,7 +48,7 @@
 			new Vue({ 
 				el:'#app',
 				data:{
-					list1:'哈哈'
+					list1:'哈xz哈'
 				},
 				components:{
 					'custom-select2':{
