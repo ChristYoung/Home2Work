@@ -11,13 +11,14 @@
   .people-wrap{width: 1000px; padding: 15px; border-bottom: 1px solid #ddd; border-radius: 5px;}
   .people-wrap .people-tit{display: inline-block; margin:0 10px; font-size: 14px;}
   .people-wrap .pepole-nameInput{margin-right: 100px;}
-  .people-wrap input{display: inline-block; width: 310px;}
+  .people-wrap input[type=text]{display: inline-block; width: 310px;}
   .people-wrap select{display: inline-block; width: 150px; margin-right: 10px;}
   .people-wrap .dep-select2{margin-right: 20px;}
-  .people-wrap .save-people-btn{margin-right: 8px;}
+ .people-wrap .save-people-btn,.people-wrap .sel-deps,.people-wrap .del-deps,.people-wrap .del-org{margin-right: 8px;}
   #yearInput{display: inline-block; width: 150px; cursor: pointer;}
   .ind-tabs-items{/*text-align: right;*/ margin-top: 20px;}
   .ind-input-items{margin-bottom: 12px;}
   .ind-input-items .per-day{color: #1bb955;}
   .ind-input-items .ind-names{display: inline-block; width: 120px; text-align: right;}
   .app-btnarea{margin:20px 0 0 138px;}
+  .del-people-btn,.save-people-btn,.sel-deps,.del-org{vertical-align: top;}
