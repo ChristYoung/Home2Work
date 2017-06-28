@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no, email=no">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="screen-orientation" content="portrait">
+	<meta name="x5-orientation" content="portrait">
+	<meta name="msapplication-tap-highlight" content="no">
+    <title>超准中医体质测试</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<style>
+		.col-xs-2-5 { width:20%; float:left; position: relative; min-height: 1px;}
+	</style>
+  </head>
+  <body>
+
+    <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+      <div class="container">
+          <h1>中医体质测试</h1>
+      </div>
+    </header>
+
+    <form action="" id="questionForm" method="post">
+      <div class="container question-desc">
+      <ul>
+        <li class="adv">
+			"睿博健康吧"根据中华中医药学会《中医体质分类及判定》标准定制
+        </li>
+      </ul>
+      </div>
+
+      <div class="container question-container" id="questions"></div>
+
+      <div class="container option-container">
+        <input type="submit" class="hidden-button" />
+        <a href="#" class="submit" id="submitButton">提交</a>
+      </div>
+
+      <div class="container option-statement">
+        <h4>提交代表你已接受以下声明</h4>
+        <p>本测试不作为诊断和治疗的依据，对于已经医生确诊的疾病，应按照医嘱积极治疗。所提及的内容仅作为生活保健的咨询建议。如遇不适请及时就医。<br /><b>本测试不适用于孕妇和乳母</b></p>
+      </div>
+
+      <!--copyright-->
+      <div class="container copyright-container designed-by">
+        <img src="img/qrcode_for_gh_597d04287d6d_258.jpg"  width="350" onclick="javascript:window.location.href='http://mp.weixin.qq.com/s?__biz=MjM5OTE2Nzk2Ng==&mid=205388137&idx=1&sn=3af4d1ade49d2cf12540bbc5c56e4497#rd'"/>
+        <h2 class="advtitle">睿博健康吧,您的贴心健康管家</h2>
+      </div>
+
+    </form>
+
+    <script src="js/jquery-2.0.min.js"></script>
+    <script src="js/jquery.tap.js"></script>
+    <script src="js/selfTest.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>
