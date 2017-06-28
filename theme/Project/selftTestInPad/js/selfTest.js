@@ -1,11 +1,8 @@
 (function(){
 	     	
       function makeQuestionHtml(questionIndex,questionTagId,questionTitle,allQuestionCount,optionNum,b1,b2,b3,b4,b5) {
-        if (optionNum == 2) {
-          var optionHtml = '<ul class="row"><li class="col-xs-6" value="1">男</li><li class="col-xs-6" value="2">女</li></ul><input name="question['+questionTagId+']" type="hidden"/>';
-        } else {
-          var optionHtml = '<ul class="row"><li class="col-xs-2-5" value="1">'+b1+'</li><li class="col-xs-2-5" value="2">'+b2+'</li><li class="col-xs-2-5" value="3">'+b3+'</li><li class="col-xs-2-5" value="4">'+b4+'</li><li class="col-xs-2-5" value="5">'+b5+'</li></ul><input name="question['+questionTagId+']"  type="hidden"/>';
-        };
+       
+        var optionHtml = '<ul class="row"><li class="col-xs-2-5" value="1">'+b1+'</li><li class="col-xs-2-5" value="2">'+b2+'</li><li class="col-xs-2-5" value="3">'+b3+'</li><li class="col-xs-2-5" value="4">'+b4+'</li><li class="col-xs-2-5" value="5">'+b5+'</li></ul><input name="question['+questionTagId+']"  type="hidden"/>';
 
         var html = '<div class="question disabled" question-no="'+questionIndex+'" question-tag="'+questionTagId+'"><h3><span class="question-no"><b>'+questionIndex+'</b>/'+allQuestionCount+'</span><span class="real-title">'+questionTitle+'</span></h3><div class="question-options">'+optionHtml+'</div></div>';
         
@@ -36,24 +33,16 @@
 //    }
 
       $(function(){
-        var Questions =  jQuery.parseJSON('[{"tagID":1,"tag":"您精力充沛吗？"},{"tagID":2,"tag":"您容易疲乏吗？"},{"tagID":3,"tag":"您容易气短，呼吸短促，接不上气吗？"},{"tagID":4,"tag":"您说话声音低弱无力吗?"},{"tagID":5,"tag":"您感到闷闷不乐、情绪低沉吗?"},{"tagID":6,"tag":"您容易精神紧张、焦虑不安吗?"},{"tagID":7,"tag":"您因为生活状态改变而感到孤独、失落吗？"},{"tagID":8,"tag":"您容易感到害怕或受到惊吓吗?"},{"tagID":9,"tag":"您感到身体超重不轻松吗?"},{"tagID":10,"tag":"您眼睛干涩吗?"},{"tagID":11,"tag":"您手脚发凉吗?"},{"tagID":12,"tag":"您胃脘部、背部或腰膝部怕冷吗？"},{"tagID":13,"tag":"您比一般人耐受不了寒冷吗？"},{"tagID":14,"tag":"您容易患感冒吗?"},{"tagID":15,"tag":"您没有感冒时也会鼻塞、流鼻涕吗?"},{"tagID":16,"tag":"您有口粘口腻，或睡眠打鼾吗？"},{"tagID":17,"tag":"您容易过敏(对药物、食物、气味、花粉或在季节交替、气候变化时)吗?"},{"tagID":18,"tag":"您的皮肤容易起荨麻疹吗? "},{"tagID":19,"tag":"您的皮肤在不知不觉中会出现青紫瘀斑、皮下出吗?"},{"tagID":20,"tag":"您的皮肤一抓就红，并出现抓痕吗?"},{"tagID":21,"tag":"您皮肤或口唇干吗?"},{"tagID":22,"tag":"您有肢体麻木或固定部位疼痛的感觉吗?"},{"tagID":23,"tag":"您面部或鼻部有油腻感或者油亮发光吗?"},{"tagID":24,"tag":"您面色或目眶晦黯，或出现褐色斑块/斑点吗?"},{"tagID":25,"tag":"您有皮肤湿疹、疮疖吗?"},{"tagID":26,"tag":"您感到口干咽燥、总想喝水吗？"},{"tagID":27,"tag":"您感到口苦或嘴里有异味吗?"},{"tagID":28,"tag":"您腹部肥大吗?"},{"tagID":29,"tag":"您吃(喝)凉的东西会感到不舒服或者怕吃(喝)凉的东西吗？"},{"tagID":30,"tag":"您有大便黏滞不爽、解不尽的感觉吗?"},{"tagID":31,"tag":"您容易大便干燥吗?"},{"tagID":32,"tag":"您舌苔厚腻或有舌苔厚厚的感觉吗?"},{"tagID":33,"tag":"您舌下静脉瘀紫或增粗吗？"}]');
-        QuestionTagsWithTwoOptions = jQuery.parseJSON('["1"]');
-		QuestionTagForAge = "100";
-        QuestionTagsWithSepacilOptionName = jQuery.parseJSON('["3","4","5","6","8","9"]');
-
-        currentQuestion = 1;
-        allQuestionNum = Questions.length;
+        var Questions =  jQuery.parseJSON('[{"tagID":1,"tag":"您精力充沛吗？"},{"tagID":2,"tag":"您容易疲乏吗？"},{"tagID":3,"tag":"您容易气短，呼吸短促，接不上气吗？"},{"tagID":4,"tag":"您说话声音低弱无力吗?"},{"tagID":5,"tag":"您感到闷闷不乐、情绪低沉吗?"},{"tagID":6,"tag":"您容易精神紧张、焦虑不安吗?"},{"tagID":7,"tag":"您因为生活状态改变而感到孤独、失落吗？"},{"tagID":8,"tag":"您容易感到害怕或受到惊吓吗?"},{"tagID":9,"tag":"您感到身体超重不轻松吗?"},{"tagID":10,"tag":"您眼睛干涩吗?"},{"tagID":11,"tag":"您手脚发凉吗?"},{"tagID":12,"tag":"您胃脘部、背部或腰膝部怕冷吗？"},{"tagID":13,"tag":"您比一般人耐受不了寒冷吗？"},{"tagID":14,"tag":"您容易患感冒吗?"},{"tagID":15,"tag":"您没有感冒时也会鼻塞、流鼻涕吗?"},{"tagID":16,"tag":"您有口粘口腻，或睡眠打鼾吗？"},{"tagID":17,"tag":"您容易过敏(对药物、食物、气味、花粉或在季节交替、气候变化时)吗?"},{"tagID":18,"tag":"您的皮肤容易起荨麻疹吗? "},{"tagID":19,"tag":"您的皮肤在不知不觉中会出现青紫瘀斑、皮下出吗?"},{"tagID":20,"tag":"您的皮肤一抓就红，并出现抓痕吗?"},{"tagID":21,"tag":"您皮肤或口唇干吗?"},{"tagID":22,"tag":"您有肢体麻木或固定部位疼痛的感觉吗?"},{"tagID":23,"tag":"您面部或鼻部有油腻感或者油亮发光吗?"},{"tagID":24,"tag":"您面色或目眶晦黯，或出现褐色斑块/斑点吗?"},{"tagID":25,"tag":"您有皮肤湿疹、疮疖吗?"},{"tagID":26,"tag":"您感到口干咽燥、总想喝水吗？"},{"tagID":27,"tag":"您感到口苦或嘴里有异味吗?"},{"tagID":28,"tag":"您腹部肥大吗?"},{"tagID":29,"tag":"您吃(喝)凉的东西会感到不舒服或者怕吃(喝)凉的东西吗？"},{"tagID":30,"tag":"您有大便黏滞不爽、解不尽的感觉吗?"},{"tagID":31,"tag":"您容易大便干燥吗?"},{"tagID":32,"tag":"您舌苔厚腻或有舌苔厚厚的感觉吗?"},{"tagID":33,"tag":"您舌下静脉瘀紫或增粗吗？"}]'),
+             QuestionTagsWithSepacilOptionName = jQuery.parseJSON('["2","4","5","13"]'), //需要反向计分的问题列表
+             currentQuestion = 1,
+             allQuestionNum = Questions.length,
+             maximumOffset;
         $(Questions).each(function(i){
-          if (in_array(this.tagID,QuestionTagsWithTwoOptions)) {
-            var questionHtml = makeQuestionHtml(i+1,this.tagID,this.tag,allQuestionNum,2);
-          } else {
-		    if (this.tagID == QuestionTagForAge)
-			  var questionHtml = makeQuestionHtml(i+1,this.tagID,this.tag,allQuestionNum,4,'28以下','28~35','35~45','45~60','60以上');
-			else if (in_array(this.tagID,QuestionTagsWithSepacilOptionName))
+		    if (in_array(this.tagID,QuestionTagsWithSepacilOptionName))
 			  var questionHtml = makeQuestionHtml(i+1,this.tagID,this.tag,allQuestionNum,4,'总是','经常','有时','很少','没有');
 			else
 			  var questionHtml = makeQuestionHtml(i+1,this.tagID,this.tag,allQuestionNum,4,'没有','很少','有时','经常','总是');
-          }
 
 		  if(i == 0)
 			$('#questions').append(addSectionHeader('请根据您最近一年的体验和感觉回答',''));
@@ -61,11 +50,10 @@
         });
 
         $('#questions').find('.question[question-no="1"]').removeClass('disabled');      /*初始化*/
-        $('#questions').find('.question[question-no="1"]').addClass('active');           /*question-no是一个自定义属性*/
+        $('#questions').find('.question[question-no="1"]').addClass('active');           
 
         //CLICK OPTION!
-        $(".question-options li").bind('click',function() {
-
+        $(".question-options li").on('click',function() {
           //控制题目显示状态
           if ($(this).parents('.question').attr('question-no') == currentQuestion)
           {
@@ -80,21 +68,12 @@
             
             currentQuestion++;
           };
-
           //操作选项
           var thisTag = $(this).parents('.question').attr('question-tag');
           $('input[name="question['+thisTag+']"]').attr("value",$(this).attr("value"));
           
           $(this).parent().find('li').removeClass('active');
           $(this).addClass('active');
-
-		  //判断男女选项
-		  if(thisTag == 1)
-		  {
-			var text = ($(this).attr("value") == 1) ? '你的阴囊部位潮湿吗？' : '你带下色黄（白带颜色发黄）吗？';
-			$('div[question-tag="43"]').find('h3').find('.real-title').html(text);
-		  }
-
           maximumOffset = $('.basicinfo-container').offset().top - 70;
         });
 
