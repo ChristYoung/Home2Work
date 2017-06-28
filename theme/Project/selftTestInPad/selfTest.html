@@ -58,10 +58,10 @@
     <script src="js/jquery.tap.js"></script>
     <script src="js/selfTest.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
-    	function getStatus(){
-    		return [majorStatus,minorStatus];
-    	}
-    	console.log(getStatus());
+    var lastResult = '';	
+    $('#submitButton').click(function() {
+		getResult();
+	});
     </script>
   </body>
 </html>
