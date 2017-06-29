@@ -181,7 +181,7 @@
 					resultArr.splice(oLoca, 1);
 					resultArr.forEach(function(item, index) {
 						if(item >= 9) {
-							if(index > oLoca) {
+							if(index >= oLoca) {
 								minorStatus += arrStatus[index + 2] + ',';
 							} else {
 								minorStatus += arrStatus[index + 1] + ',';
