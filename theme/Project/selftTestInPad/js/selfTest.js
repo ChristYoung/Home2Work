@@ -146,46 +146,37 @@
 			pingheTagArr.forEach(function(item, index) {
 				pinghe += parseInt($('input[name="question[' + item + ']"]').val());
 			});
-			resultArr.push(pinghe, qixu, yangxu, yinxu, tanshi, shire, xueyu, qiyu, tebing);
-			console.log(resultArr);
+			resultArr=[pinghe, qixu, yangxu, yinxu, tanshi, shire, xueyu, qiyu, tebing];
+			var returnResultArr = resultArr.slice(0);
 			if(resultArr[0] >= 17) {
 				resultArr.splice(0, 1);
 				majorStatus = arrStatus[0];
 				if(Math.max.apply(null, resultArr) < 8) {
 					minorStatus = '';
-				} else if(Math.max.apply(null, resultArr) < 10) {
+				} else if(Math.max.apply(null, resultArr) <= 10) {
 					resultArr.forEach(function(item, index) {
 						if(item >= 9) {
 							minorStatus += arrStatus[index + 1] + ',';
 						}
 					});
 				} else {
-					var oloca1 = find_array(Math.max.apply(null, resultArr), resultArr);
-					majorStatus = arrStatus[oloca1 + 1];
-					resultArr.splice(oloca1, 1);
-					resultArr.forEach(function(item, index) {
-						if(item >= 9) {
-							if(index > oloca1) {
-								minorStatus += arrStatus[index + 2] + ',';
-							} else {
-								minorStatus += arrStatus[index + 1] + ',';
-							}
+					majorStatus = '';
+					resultArr.forEach(function(item,index){
+						if(item>=11){
+							majorStatus += arrStatus[index+1]+',';
+						}else if(item<=10 && item>=9){
+							minorStatus += arrStatus[index+1]+',';
 						}
 					});
 				}
 			} else {
 				resultArr.splice(0, 1);
 				if(Math.max.apply(null, resultArr) >= 11) {
-					var oLoca = find_array(Math.max.apply(null, resultArr), resultArr);
-					majorStatus = arrStatus[oLoca + 1];
-					resultArr.splice(oLoca, 1);
-					resultArr.forEach(function(item, index) {
-						if(item >= 9) {
-							if(index >= oLoca) {
-								minorStatus += arrStatus[index + 2] + ',';
-							} else {
-								minorStatus += arrStatus[index + 1] + ',';
-							}
+					resultArr.forEach(function(item,index){
+						if(item>=11){
+							majorStatus += arrStatus[index+1]+',';
+						}else if(item<=10 && item>=9){
+							minorStatus += arrStatus[index+1]+',';
 						}
 					});
 				} else {
@@ -196,12 +187,11 @@
 		}
 
 		if(minorStatus != '') { //将结果返回给安卓端
-			resultStr = '基本是' + majorStatus + ',倾向是' + minorStatus;
+			resultStr = '基本是' + majorStatus + '倾向是' + minorStatus;
 		} else {
 			resultStr = '是' + majorStatus;
 		}
-		console.log(resultStr);
-		return resultStr;
+		return {score:returnResultArr,conclusion:resultStr};
 	};
 
 	minimumOffset = $('.section_header').first().offset().top;
