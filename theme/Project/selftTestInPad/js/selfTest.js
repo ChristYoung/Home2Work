@@ -78,7 +78,7 @@
 	function getResult() {
 		var alreadyTested = $('#questions').find('input[value]').length;
 		var isErrorComing = false;
-		var resultStr = '';
+		var resultStr = ''; //返回给安卓端的最后的结论
 		//答题完成度检测
 		if(alreadyTested < allQuestionNum && !isErrorComing) {
 			if(alreadyTested == 0) {
@@ -187,9 +187,22 @@
 		}
 
 		if(minorStatus != '') { //将结果返回给安卓端
-			resultStr = '基本是' + majorStatus + '倾向是' + minorStatus;
+			resultStr += majorStatus.split(',').map(function(item,index){
+				if(item != ''){
+					return '基本是-'+item;
+				}
+			}).join(',');
+			resultStr += minorStatus.split(',').map(function(item,index){
+				if(item != ''){
+					return '倾向是-'+item;
+				}
+			}).join(',');
 		} else {
-			resultStr = '是' + majorStatus;
+			resultStr += majorStatus.split(',').map(function(item,index){
+				if(item != ''){
+					return '是-'+item;
+				}
+			}).join(',');
 		}
 		return {score:returnResultArr,conclusion:resultStr};
 	};
