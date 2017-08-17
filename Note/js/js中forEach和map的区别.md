@@ -21,4 +21,27 @@ map:1.和forEach非常相似，都是用来遍历数组中的每一项值的，�
 	     return item*10;
 	})
 	console.log(res);//-->[120,230,240,420,10];
-	console.log(ary);//-->[12,23,24,42,1]；	                       
+	console.log(ary);//-->[12,23,24,42,1];
+	
+#### filter的作用	--->IE 9以上支持                       
+实例1:
+返回数组 ages 中所有元素都大于 18 的元素:
+[10,20,100,78,6].filter(function(currentValue){
+   return currentValue >= 18;
+});
+
+实例2:
+简单的数组去重
+//currentValue 必须。当前元素的值 index 可选。
+//index 当期元素的索引值 可选。
+//arr 当期元素属于的数组对象
+[1,2,3,1,'a',1,'a'].filter(function(currentValue,index,arr){ 
+    return index===array.indexOf(currentValue)
+});
+
+定义:filter() 方法创建一个新的数组，新数组中的元素是通过检查指定数组中符合条件的所有元素。
+注意： filter() 不会对空数组进行检测。
+注意： filter() 不会改变原始数组。
+
+返回数组，包含了符合条件的所有元素。如果没有符合条件的元素则返回空数组。
+
