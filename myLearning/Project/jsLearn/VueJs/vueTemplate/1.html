@@ -15,31 +15,33 @@
 			<custom-select con-value="收藏" :list="list1"></custom-select>
 		</div>
 		<script type="text/javascript">
-			//注册组件
-			Vue.component('custom-select',{  //全局注册
-				data:function(){
-					return {selectShow:true}
-				},
-				props:["conValue","list"], //(父组件往子组件传数据,通过自定义属性)
-				template:'<div class="emb" v-show="selectShow">{{conValue}}<custom-list :listChild="list"></custom-list></div>'
-			}); 
-			
-			Vue.component('custom-list',{
-				props:["listChild"], 
-				template:'<a class="hwrap" @click="doSelectHandler(listChild)">{{listChild}}</a>'
-			});
-			
-			new Vue({ 
-				el:'#app',
-				data:{
-					list1:'哈s哈'
-				},
-				components:{
-					'custom-select2':{
-						template:'<div class="emb emb2"></div>' //局部注册组件
-					}
+		//注册组件
+		Vue.component('custom-select', { //全局注册
+			data: function() {
+				return {
+					selectShow: true
 				}
-			});
+			},
+			props: ["conValue", "list"], //(父组件往子组件传数据,通过自定义属性)
+			template: '<div class="emb" v-show="selectShow">{{conValue}}<custom-list :listChild="list"></custom-list></div>'
+		});
+		
+		Vue.component('custom-list', {
+			props: ["listChild"],
+			template: '<a class="hwrap" @click="doSelectHandler(listChild)">{{listChild}}</a>'
+		});
+		
+		new Vue({
+			el: '#app',
+			data: {
+				list1: '哈s哈'
+			},
+			components: {
+				'custom-select2': {
+					template: '<div class="emb emb2"></div>' //局部注册组件
+				}
+			}
+		});
 		</script>
 	</body>
 </html>

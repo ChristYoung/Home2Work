@@ -24,6 +24,8 @@
 				}
 				oDiv.onmousemove = function(ev){
 					var ev = ev || window.event;
+					//L表示黄色滑块距离图片左边的距离
+					//T表示黄色滑块距离图片上边的距离
 					var L = (ev.clientX-oDiv.offsetLeft-oSpan.offsetWidth/2);  //需要减去oDiv相对于文档的偏移值
 					var T = (ev.clientY-oDiv.offsetTop-oSpan.offsetHeight/2);
 					
