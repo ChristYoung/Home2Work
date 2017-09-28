@@ -1,0 +1,56 @@
+#custom_menu{}
+#custom_menu tbody tr.firstMenu{background-color: #f8f8f8;}
+#custom_menu tbody tr.secondMenu{background-color: #fff;}
+#custom_menu tbody tr td .viewUrl{float: left; width: 300px; line-height: 30px; position: relative; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+#custom_menu tbody tr td .copyIcon{margin-left: 10px; line-height: 30px;}
+
+#account_list{margin: 0 0 10px 0; padding: 0; list-style: none;}
+#account_list .account_items{margin-bottom: 10px; padding: 10px; border: 1px solid #ddd; border-radius: 6px;}
+#account_list .account_items:last-child{margin-bottom: 0px;}
+#account_list .account_items .pay_list{margin: 0; padding: 0;}
+#account_list .account_items .pay_list .pay_items{width: 290px; height: 150px; margin: 10px 10px 0 0; border: 1px solid #ddd; border-radius: 6px; float: left; overflow: hidden;}
+#account_list .account_items .pay_list .pay_items.go_bind{}
+#account_list .account_items .pay_list .pay_items.go_bind a{display: block; width: 100%; height: 100%; padding: 80px 0 0 0; text-align: center; cursor: pointer;}
+#account_list .account_items .pay_list .pay_items.go_bind.wx_pay a{background: url(images/wx_pay_go_bind.png) no-repeat center 23px;}
+#account_list .account_items .pay_list .pay_items.go_bind.ztc_pay a{background: url(images/ztc_pay_go_bind.png) no-repeat center 23px;}
+#account_list .account_items .pay_list .pay_items.go_bind a:hover{background-color: #f6f6f6;}
+#account_list .account_items .pay_list .pay_items.go_unbind{}
+#account_list .account_items .pay_list .pay_items.go_unbind .title{height: 33px; padding: 0 10px 0 40px; line-height: 32px; border-bottom: 1px solid #ddd;}
+#account_list .account_items .pay_list .pay_items.go_unbind.wx_pay .title{background: url(images/wx_pay_go_unbind.png) no-repeat 10px center;}
+#account_list .account_items .pay_list .pay_items.go_unbind.ztc_pay .title{background: url(images/ztc_pay_go_unbind.png) no-repeat 10px center;}
+#account_list .account_items .pay_list .pay_items.go_unbind .view{margin: 0 10px 10px 10px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+#account_list .account_items .pay_list .pay_items.go_unbind .view span{color: #989898; display: inline-block; width: 100px; text-align: left;}
+#account_list .account_items .pay_list .pay_items.go_unbind .link{margin: 0 10px; overflow: hidden;}
+#account_list .account_items .pay_list .pay_items.go_unbind .link a.f_green{margin-right: 25px;}
+#account_list .account_items .pay_list .pay_items.go_unbind .link a i{font-style: normal;}
+
+#authority_list{}
+#authority_list .authority_items{margin-bottom: 10px;}
+#authority_list .authority_items dt{}
+#authority_list .authority_items dt label{}
+#authority_list .authority_items dt label span{font-weight: bold;}
+#authority_list .authority_items dd{margin-left: 18px;}
+#authority_list .authority_items dd label{display: inline-block; *display: inline; *zoom: 1; min-width: 150px; margin-top: 10px;}
+
+#authority_view{}
+#authority_view tbody tr{}
+#authority_view tbody tr th{text-align: left; font-weight: bold; padding: 10px 0 0 0;}
+#authority_view tbody tr td{padding: 0;}
+#authority_view tbody tr td span{display: inline-block; *display: inline; *zoom: 1; min-width: 130px; margin-top: 10px;}
+#authority_view tbody tr td span b{font-weight: normal;}
+
+.view-li{margin-bottom: 30px;}
+.view-tit,.view-vl{display: inline-block;}
+.view-tit{margin-right: 12px; width: 80px; text-align: right; vertical-align: top;}
+
+/*role*/
+.authority_items_span{display: inline-block; margin:10px 0 10px 20px;}
+.authority_items_css{margin-left: 20px;margin-top: 10px;}
+.radio_1{height: 31px;}
+
+/*订单流水等页面,样式定制*/
+.details_div{margin-bottom: 25px;}
+.details_div .details_span_u1{display: inline-block; width: 120px; text-align: right;}
+
+
+

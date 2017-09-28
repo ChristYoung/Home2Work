@@ -1,0 +1,22 @@
+body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,form,input,textarea,th,td,select{margin: 0;padding: 0; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+body,h1,h2,h3,h4,h5,h6,p,dl,dd,ul,ol,form,a,th,td,select,em,span,strong{-webkit-touch-callout: inherit; -webkit-user-select: auto;}
+h1,h2,h3,h4,h5,h6,strong,em,b{font-weight: normal; font-style: normal;}
+body{font-family: "微软雅黑", "Arial"; font-size: 12px; background-color: #ecf0f5; min-width: 1000px;}
+ul,li{list-style: none;}
+a{text-decoration: none;}
+a:hover,a:active{text-decoration: none;}
+a:focus{text-decoration: none; outline: 0;}
+
+hr{margin-top: 0; margin-bottom: 10px;}
+
+table{width: 100%; border-collapse: collapse; border-spacing: 0;}
+table tr th{font-weight: normal; text-align: left;}
+table tr th,
+table tr td{padding: 8px 5px; word-break: break-all; word-wrap: break-word;}
+label { vertical-align:middle;margin: 0;cursor: pointer;} 
+input[type=checkbox],input[type=radio]{vertical-align:middle;margin:0 2px 2px 0;cursor: pointer;}
+:focus{outline: 0;}
+
+::-moz-placeholder{color: #989898;}
+::-webkit-input-placeholder{color: #989898;}
+:-ms-input-placeholder{color: #989898;}
