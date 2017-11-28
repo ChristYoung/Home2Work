@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="UTF-8">
+<head>
+	<style type="text/css">
+	</style>
+</head>
+<body>
+	<button type="button" data-keyname="proName" id="clickMe">点我</button>
+	<ul id="mainUl">
+		<li>
+			<span>asdasd</span>
+		</li>
+	</ul>
+</body>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="http://mockjs.com/dist/mock.js"></script>
+<script type="text/javascript">
+	var MAX_SIZE = 6000;
+	var Random = Mock.Random;
+	// 用于生成指定的随机数据
+//	Random.guid()
+//	Random.id()
+//	Random.cname(2,4)
+//	Random.image('200x100', '#00405d', '#FFF', 'Mock.js')
+//	Random.url()
+//	Random.date('yyyy/MM/dd')
+//	Random.region()
+Mock.mock('http://localhost:8020/getDeps.json', {
+		    'list|5': [{
+		    	'guid': '@GUID',
+		    	'ID': '@ID',
+		        'username': '@CNAME',
+		        'email': '@EMAIL',
+		        'birth': '@DATE',
+		        'avatar': '@IMAGE',
+		        'webaddress': '@URL',
+		        'region': '@REGION' 
+		    }]
+		});
+	$('#clickMe').on('click', function() {
+        $.ajax({
+        	type: 'get',
+        	url: 'http://localhost:8020/getDeps.json',
+        	async:true,
+        	success: function(data) {
+        		console.log(JSON.parse(data));
+        	}
+        });
+	});
+	
+	
+	
+</script>
+</html>

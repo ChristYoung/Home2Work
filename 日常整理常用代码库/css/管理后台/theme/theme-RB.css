@@ -1,0 +1,79 @@
+/*body bg*/
+body{background: #fff;}
+
+/*page component theme*/
+#header{background-color: #01A4E9;}
+#header .logo{background-color: #367fa9; color: #fff;}
+#header .school_name,#header .user_info span,#header .user_info a{color: #fff;}
+#header .lan-sel ul li{color:#000}
+#header .lan-sel ul li:hover{background-color:#01A4E9;color:#A40B06;cursor:pointer}
+#header .lan-sel:after{border-top:10px solid #000}
+
+#footer{background-color: #ECF0F4;}
+
+.table_list thead tr{background-color: #eee;}
+.table_list tbody tr:nth-child(odd){background-color: #fff;}
+.table_list tbody tr:nth-child(even){background-color: #f8f8f8;}
+
+.main_body_ul li a{border: 1px solid #3C8DBC; border-bottom: none;}
+.main_body_ul .on1{color:white;background-color: #3C8DBC;}
+
+/*---------unit theme-----------*/
+.input_btn.btn_main{background-color: #337ab7;}
+.input_btn.btn_main:hover{background-color: #286090; color: #fff;}
+.input_btn.btn_peace{background-color: #00a65a;}
+.input_btn.btn_peace:hover{background-color: #008d4c; color: #fff;}
+.input_btn.btn_warn{background-color: #f39c12;}
+.input_btn.btn_warn:hover{background-color: #e08e0b; color: #fff;}
+.input_btn.btn_anger{background-color: #dd4b39;}
+.input_btn.btn_anger:hover{background-color: #d73925; color: #fff;}
+.input_btn.btn_disable{background-color: #999;}
+.input_btn.btn_disable:hover{background-color: #868686; color: #fff;}
+.tabs_btn{background-color: #F7F7F7; color: #000;}
+.tabs_btn.tabs_anger.active{border-bottom: 2px solid #BE393A;}
+.btn_bar{background-color: #fff; color: #000; border: 1px solid #DCDCDC; -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none;}
+a.btn_bar:hover{color: #fff;}
+.btn_bar.btn_bar_main:hover{background-color: #337ab7; color: #fff;}
+.btn_bar.btn_bar_peace:hover{background-color: #008d4c; color: #fff;}
+.btn_bar.btn_bar_warn:hover{background-color: #f39c12; color: #fff;}
+.btn_bar.btn_bar_anger:hover{background-color: #dd4b39; color: #fff;}
+
+.bar_main{background-color: #337ab7;}
+.bar_peace{background-color: #00a65a;}
+.bar_warn{background-color: #f39c12;}
+.bar_anger{background-color: #dd4b39;}
+.bar_disable{background-color: #999;}
+
+.box.b_main{border-top-color: #99DBF6;}
+.box.b_main2{border-top-color: #00c0ef;}
+.box.b_disable{border-top-color: #d2d6de;}
+.box.b_warn{border-top-color: #f39c12;}
+.box.b_peace{border-top-color: #00a65a;}
+
+.f_anger,
+.f_anger:hover{color: #dd4b39;}
+.f_main,
+.f_main:hover{color: #337ab7;}
+.f_peace,
+.f_peace:hover{color: #00a65a;}
+.f_warn,
+.f_warn:hover{color: #f39c12;}
+.f_disable,
+.f_disable:hover{color: #999;}
+
+/*-----function theme----*/
+.readonly{background-color: #ddd;}
+
+/*---side menu theme---*/
+#side_menu{background-color: #fff;}
+#side_menu dl dt{border-left: 4px solid #fff; color: #6a818a;}
+#side_menu dl dd{background-color: #F2F6F9;}
+#side_menu dl dd ul li a{color: #000;}
+#side_menu dl dt:hover,
+#side_menu dl.active dt{background-color: #F2F6F9; border-left-color: #5C9ACF; color: #5B9BD1;}
+#side_menu dl dd ul li a:hover,
+#side_menu dl dd ul li.active a{color: #5B9BD1; text-decoration: none;}
+
+.m_xxx{background-color: #F2F6F9; color: #000;} /*三级菜单*/
+.on2{color: #5B9BD1; background-color:#F2F6F9;}
+.on3{color: #5B9BD1; background-color:#F2F6F9;}

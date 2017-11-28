@@ -1,0 +1,41 @@
+.input_text{width: 180px; height: 30px; padding: 0 10px; border: 1px solid #ddd; border-radius: 4px; line-height: 28px;}
+.input_text:focus{border-color: #66afe9; -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6); box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);}
+/*.input_text[readonly]{background: #eae5e5;}*/
+
+.input_calendar{cursor: pointer; padding-right: 30px; background-image: url(images/calendar.png); background-repeat: no-repeat; background-position: 158px center;}
+
+.input_textarea{width: 180px; padding: 5px; border: 1px solid #ddd; border-radius: 4px; resize: none;}
+.input_textarea:focus{border-color: #66afe9; -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6); box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);}
+
+.input_sel{height: 30px; padding: 0 0 0 6px; border: 1px solid #ddd; border-radius: 4px; line-height: 28px; cursor: pointer;}
+.input_sel:focus{border-color: #66afe9; -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6); box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);}
+
+.input_radio,
+.input_checkbox{margin: 0 10px 0 0; font-weight: normal;}
+.input_radio input[type="radio"],
+.input_checkbox input[type="checkbox"]{float: left; margin: 2px 5px 0 0; cursor: pointer;}
+.input_checkbox input[type="checkbox"][disabled]{cursor: not-allowed;}
+.input_radio span,
+.input_checkbox span{}
+
+.input_btn,.btn_bar{display: inline-block; height: 30px; line-height: 30px; font-weight: normal; cursor: pointer; padding: 0 10px; border: 0; border-radius: 4px; color: #fff; text-align: center;}
+.input_btn[disabled]{cursor: not-allowed;}
+.tabs_btn{display: inline-block; min-width: 120px; height: 30px; line-height: 30px; text-align: center; cursor: pointer;}
+a.input_btn:focus{color: #fff;}
+a.input_btn:hover{color: #fff;}
+a.tabs_btn:focus{color: #000;}
+a.tabs_btn:hover{color: #000;}
+
+.input_text,
+.input_textarea,
+.input_sel,
+.input_btn{transition: all 300ms; -moz-transition: all 300ms; -webkit-transition: all 300ms; -o-transition: all 300ms;}
+
+.input_file{position: relative; /*overflow: hidden;*/ vertical-align: middle; font-weight: normal;}
+.input_file input[type="file"]{position: absolute; top: 0; left: 100%; width: 0; height: 0; filter: alpha(opacity=0); opacity: 0; display: none;}
+
+.check_msg{display: none; margin: 10px 0 0 0; color: #dd4b39;}
+
+.label_bar{display: inline-block; padding: 3px 6px; font-weight: bold; color: #fff; line-height: 1; margin-right: 5px; text-align: center; white-space: nowrap; vertical-align: baseline; border-radius: 2px;}
+
+.box{margin-bottom: 10px; padding: 10px; background-color: #fff; border: 1px solid #ddd; border-top-width: 3px; border-radius: 4px;}
