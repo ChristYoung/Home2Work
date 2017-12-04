@@ -8,20 +8,20 @@
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="/sqqyh/css/reset.css"/>
-	<link rel="stylesheet" type="text/css" href="/sqqyh/css/login.css"/>
+	<link rel="stylesheet" type="text/css" href="http://test.witontek.com/sqqyh/css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="http://test.witontek.com/sqqyh/css/login.css"/>
 </head>
 <body>
 	<div class="authcenter">
 		<!--<header id='header'>
 			<div class="logo-wrap"></div>
 		</header>-->
-		<input type="hidden" name="server" id="server" value="/sqqyh" />
+		<input type="hidden" name="server" id="server" value="http://test.witontek.com/sqqyh" />
 		<div class="authcenter-body">
 			<div class="authcenter-body-login">
 				<div class="slide-modern login-modern"  >
 					<h2 id="loginTypeTitle">宿迁人民医院企业号</h2> 
-					<form method="post" name="loginForm" id="loginForm" action="/sqqyh/login">
+					<form method="post" name="loginForm" id="loginForm" action="http://test.witontek.com/sqqyh/login">
 						<ul>
 							<li>
 								<input type="text" name="userName" id="userName" value="" placeholder="管理员账号"/>
@@ -31,12 +31,12 @@
 							</li>
 							<li>
 								<input type="text" id="code-school" name="code" placeholder="验证码" onpaste="return false">
-								<img src="/sqqyh/login/verifyCode?0.052898986" onclick="changeImg($(this),'/sqqyh/login/verifyCode')" id="showcode-school" title="看不清，换一张" alt="看不清，换一张">
+								<img src="http://test.witontek.com/sqqyh/login/verifyCode?0.052898986" onclick="changeImg($(this),'http://test.witontek.com/sqqyh/login/verifyCode')" id="showcode-school" title="看不清，换一张" alt="看不清，换一张">
 							</li>
 							<li>
 								<p>
 									<label class="errorTips" id="loginErrorTips"></label>
-									<a href="javascript:changeImg($('#showcode-school'),'/sqqyh/login/verifyCode')" id="validate_code_change_btn" class="another">看不清，换一张</a>
+									<a href="javascript:changeImg($('#showcode-school'),'http://test.witontek.com/sqqyh/login/verifyCode')" id="validate_code_change_btn" class="another">看不清，换一张</a>
 								</p>
 							</li>
 							<li>
@@ -50,7 +50,7 @@
 				</div>
                 <div class="slide-modern pwdReset-morden" style="display: none;" >
                 	<h2 id="pwdResetTitle">忘记密码</h2> 
-					<form method="post" name="pwdRestForm" id="pwdRestForm" action="/sqqyh/pc/verification/reset">
+					<form method="post" name="pwdRestForm" id="pwdRestForm" action="http://test.witontek.com/sqqyh/pc/verification/reset">
 						<ul>
 							<li>
 								<input type="text" name="userName" id="userName-forget" value="" placeholder="管理员账号"/>
@@ -84,13 +84,13 @@
 			</div>
 		</div>
 		<div class="authcenter-background">
-			<img class="bgImg" src="/sqqyh/img/BANK.jpg"/>
+			<img class="bgImg" src="http://test.witontek.com/sqqyh/img/BANK.jpg"/>
 		</div>
 	</div>
 </body>
-<script src="/sqqyh/js/common/jquery-2.0.0.js" type="text/javascript" charset="utf-8"></script>
-<script src="/sqqyh/js/plugin/validate.js" type="text/javascript" charset="utf-8"></script>
-<script src="/sqqyh/js/login.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://test.witontek.com/sqqyh/js/common/jquery-2.0.0.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://test.witontek.com/sqqyh/js/plugin/validate.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://test.witontek.com/sqqyh/js/login.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript">
 	window.onload = function(){
 		resizeImg();  //背景图适配

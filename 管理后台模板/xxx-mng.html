@@ -6,21 +6,21 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 <meta name="renderer" content="webkit">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<script src="/sqqyh/js/common/jquery-2.0.0.js" type="text/javascript" charset="utf-8"></script>
-<script src="/sqqyh/js/common/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="/sqqyh/js/plugin/validate.js" type="text/javascript" charset="utf-8"></script>
-<script src="/sqqyh/js/plugin/witon-alert.js" type="text/javascript" charset="utf-8"></script>
-<script src="/sqqyh/js/plugin/jquery.datetimepicker.full.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="/sqqyh/js/common/common.js" type="text/javascript" charset="utf-8"></script>
-<link rel="stylesheet" type="text/css" href="/sqqyh/css/bootstrap.min.css"/>
-<link rel="stylesheet" type="text/css" href="/sqqyh/css/plugin/jquery.datetimepicker.css"/>
-<link rel="stylesheet" type="text/css" href="/sqqyh/css/reset.css"/>
-<link rel="stylesheet" type="text/css" href="/sqqyh/css/unit.css"/>
-<link rel="stylesheet" type="text/css" href="/sqqyh/css/function.css"/>
-<link rel="stylesheet" type="text/css" href="/sqqyh/css/component.css"/>
-<link rel="stylesheet" type="text/css" href="/sqqyh/css/page.css"/>
-<link rel="stylesheet" type="text/css" href="/sqqyh/css/plugin/witon-alert.css"/>
-<link rel="stylesheet" type="text/css" href="/sqqyh/css/theme/theme-ABC.css"/>		<title></title>
+<script src="http://test.witontek.com/sqqyh/js/common/jquery-2.0.0.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://test.witontek.com/sqqyh/js/common/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://test.witontek.com/sqqyh/js/plugin/validate.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://test.witontek.com/sqqyh/js/plugin/witon-alert.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://test.witontek.com/sqqyh/js/plugin/jquery.datetimepicker.full.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://test.witontek.com/sqqyh/js/common/common.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="http://test.witontek.com/sqqyh/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="http://test.witontek.com/sqqyh/css/plugin/jquery.datetimepicker.css"/>
+<link rel="stylesheet" type="text/css" href="http://test.witontek.com/sqqyh/css/reset.css"/>
+<link rel="stylesheet" type="text/css" href="http://test.witontek.com/sqqyh/css/unit.css"/>
+<link rel="stylesheet" type="text/css" href="http://test.witontek.com/sqqyh/css/function.css"/>
+<link rel="stylesheet" type="text/css" href="http://test.witontek.com/sqqyh/css/component.css"/>
+<link rel="stylesheet" type="text/css" href="http://test.witontek.com/sqqyh/css/page.css"/>
+<link rel="stylesheet" type="text/css" href="http://test.witontek.com/sqqyh/css/plugin/witon-alert.css"/>
+<link rel="stylesheet" type="text/css" href="http://test.witontek.com/sqqyh/css/theme/theme-ABC.css"/>		<title></title>
 	</head>
 	<body>
 <header id="header">
@@ -29,7 +29,7 @@
 	<p class="user_info">
 		<span>用户名:admin</span>
 		<a href="#editPassword" data-toggle="modal">修改密码</a>
-		<a href="/sqqyh/logout">退出</a>
+		<a href="http://test.witontek.com/sqqyh/logout">退出</a>
 	</p>
 </header>
 
@@ -99,14 +99,14 @@
 		if(editPwdFormValidator._validateForm()) {
 			$.ajax({
 				type: 'post',
-				url: '/sqqyh/pc/admin/pwdModify',
+				url: 'http://test.witontek.com/sqqyh/pc/admin/pwdModify',
 				async: true,
 				data: $('#editPwdForm').serialize(),
 				dataType: 'json',
 				success: function(data) {
 					if(data.success) {
 						new autoMsg({type:'success',msg: '密码修改成功',callBack:function() {
-							window.location.href = '/sqqyh/logout';
+							window.location.href = 'http://test.witontek.com/sqqyh/logout';
 						}});
 					} else {
 						new autoMsg({type:'error',msg:data.resultMsg});
@@ -133,9 +133,9 @@
 		<dt>基础办公<span class="circle"></span><span class="arrow"></span></dt>
 		<dd>
 			<ul>
-			        <li id="m_2_1"><a href="/sqqyh/news/newslist">新闻公告</span></a></li> 
-			        <li id="m_2_2"><a href="/sqqyh/wx/qyh/wa/weekArrange.htm">周程安排</span></a></li> 
-			       <li id="m_2_3"><a href="/sqqyh/meeting/room/query.htm">会议助手</span></a></li> 
+			        <li id="m_2_1"><a href="http://test.witontek.com/sqqyh/news/newslist">新闻公告</span></a></li> 
+			        <li id="m_2_2"><a href="http://test.witontek.com/sqqyh/wx/qyh/wa/weekArrange.htm">周程安排</span></a></li> 
+			       <li id="m_2_3"><a href="http://test.witontek.com/sqqyh/meeting/room/query.htm">会议助手</span></a></li> 
 			</ul>
 		</dd>
 	</dl>
@@ -143,10 +143,10 @@
 		<dt>服务套件<span class="circle"></span><span class="arrow"></span></dt>
 		<dd>
 			<ul>
-			         <li id="m_3_2"><a href="/sqqyh/salary/importSalary.htm">工资条</span></a></li> 
-			         <li id="m_3_3"><a href="/sqqyh/pc/kpi/index.htm">业绩考核</span></a></li>
-			         <li id="m_3_4"><a href="/sqqyh/que/quelist?tab=JXZ">问卷投票</span></a></li>
-			         <li id="m_3_5"><a href="/sqqyh/safe/queryAssetType.htm">安全检查</span></a></li>
+			         <li id="m_3_2"><a href="http://test.witontek.com/sqqyh/salary/importSalary.htm">工资条</span></a></li> 
+			         <li id="m_3_3"><a href="http://test.witontek.com/sqqyh/pc/kpi/index.htm">业绩考核</span></a></li>
+			         <li id="m_3_4"><a href="http://test.witontek.com/sqqyh/que/quelist?tab=JXZ">问卷投票</span></a></li>
+			         <li id="m_3_5"><a href="http://test.witontek.com/sqqyh/safe/queryAssetType.htm">安全检查</span></a></li>
 			</ul>
 		</dd>
 	</dl>
@@ -154,20 +154,20 @@
     		<dt>权限管理<span class="circle"></span><span class="arrow"></span></dt>
     		<dd>
     			<ul>
-    			    <li id="m_4_1"><a href="/sqqyh/pc/admin/list.htm">账号管理</span></a></li> 
-    			    <li id="m_4_2"><a href="/sqqyh/pc/admin/menu/list.htm">菜单权限</span></a></li> 
+    			    <li id="m_4_1"><a href="http://test.witontek.com/sqqyh/pc/admin/list.htm">账号管理</span></a></li> 
+    			    <li id="m_4_2"><a href="http://test.witontek.com/sqqyh/pc/admin/menu/list.htm">菜单权限</span></a></li> 
     			</ul>
     		</dd>
     	</dl>
-   </aside><input type="hidden" name="server" id="server" value="/sqqyh" />
+   </aside><input type="hidden" name="server" id="server" value="http://test.witontek.com/sqqyh" />
 		
 		    <section id="main_body">
 		    	<ul class="main_body_ul f_12">
-					<li><a href="/sqqyh/news/newslist" class="on1">发布列表</a></li> 	
-					<li><a href="/sqqyh/news/draftslist" class="">草稿箱</a></li>
+					<li><a href="http://test.witontek.com/sqqyh/news/newslist" class="on1">发布列表</a></li> 	
+					<li><a href="http://test.witontek.com/sqqyh/news/draftslist" class="">草稿箱</a></li>
 				</ul>
 		    	<div class="query_bar box b_main cf">
-		    		<form id="searchNewsForm" name="searchNewsForm" action="/sqqyh/news/newslist" method="post">
+		    		<form id="searchNewsForm" name="searchNewsForm" action="http://test.witontek.com/sqqyh/news/newslist" method="post">
 		    			<input type="hidden" name="currentPage" id="_currentPage" value="1" />
 		    			<input type="hidden" name="pageSize" id="_pageSize" value="10" />
 			    		<div class="fl">
@@ -189,7 +189,7 @@
 			    		</div>
 			    		<div class="fr">
 			    			<button type="submit" class="input_btn btn_main">查询</button>
-			    			<a href="/sqqyh/news/addnews" class="input_btn btn_peace">新建</a>
+			    			<a href="http://test.witontek.com/sqqyh/news/addnews" class="input_btn btn_peace">新建</a>
 			    		</div>
 		    		</form>
 		    	</div>
@@ -358,7 +358,7 @@ function resetPageSize(pageSize){
 			</div>
 		</div>
 	</body>
-	<script src="/sqqyh/js/pages/news/news-mng.js" type="text/javascript" charset="utf-8"></script>
+	<script src="http://test.witontek.com/sqqyh/js/pages/news/news-mng.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
 		$(function() {
 			setSideMenu('#m_2','#m_2_1');
