@@ -121,6 +121,10 @@ function randomColor() {
 	return -1;
 };
 
+~~~~['2', '3', ‘啦啦啦’, '哈哈','啦啦啦'].filter(function(ele, index, arr) { // 简单的数组去重
+  return index === arr.indexOf(ele);
+}); 
+
 ~~~.JQUERY
   $(window).scrollTop();scrollTop获取的是内部元素超出外部容器的高度。
 例如：$('window').scrollTop()获取的就是当前这个页面超出窗口最上端的高度，scrollLeft与此同理

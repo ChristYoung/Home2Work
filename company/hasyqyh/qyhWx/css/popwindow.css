@@ -1,6 +1,0 @@
-/*遮罩层*/
-#qyh_mask{position: fixed; top: 0; left: 0; bottom: 0; right: 0; background-color: rgba(0,0,0,0.5); z-index: 99;}
-
-#popwindow_wrap{position: fixed; bottom: 0; width: 100%; background: #fff; color: #5DAFED; font-size: 14px; z-index: 999;}
-.pop_header,.pop_footer,.p_li{text-align: center; line-height: 0.95rem; border-bottom: 1px solid #ddd;}
-.pop_header,.pop_footer{line-height: 1.05rem;}
