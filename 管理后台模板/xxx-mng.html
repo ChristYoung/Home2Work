@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="renderer" content="webkit">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<script src="/sqqyh/js/common/jquery-2.0.0.js" type="text/javascript" charset="utf-8"></script>
+<script src="/sqqyh/js/common/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/sqqyh/js/plugin/validate.js" type="text/javascript" charset="utf-8"></script>
+<script src="/sqqyh/js/plugin/witon-alert.js" type="text/javascript" charset="utf-8"></script>
+<script src="/sqqyh/js/plugin/jquery.datetimepicker.full.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/sqqyh/js/common/common.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="/sqqyh/css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="/sqqyh/css/plugin/jquery.datetimepicker.css"/>
+<link rel="stylesheet" type="text/css" href="/sqqyh/css/reset.css"/>
+<link rel="stylesheet" type="text/css" href="/sqqyh/css/unit.css"/>
+<link rel="stylesheet" type="text/css" href="/sqqyh/css/function.css"/>
+<link rel="stylesheet" type="text/css" href="/sqqyh/css/component.css"/>
+<link rel="stylesheet" type="text/css" href="/sqqyh/css/page.css"/>
+<link rel="stylesheet" type="text/css" href="/sqqyh/css/plugin/witon-alert.css"/>
+<link rel="stylesheet" type="text/css" href="/sqqyh/css/theme/theme-ABC.css"/>		<title></title>
+	</head>
+	<body>
+<header id="header">
+	<h1 class="logo f_18 t_a_center">宿迁人民医院企业号</h1>
+	<p class="school_name"></p>
+	<p class="user_info">
+		<span>用户名:admin</span>
+		<a href="#editPassword" data-toggle="modal">修改密码</a>
+		<a href="/sqqyh/logout">退出</a>
+	</p>
+</header>
+
+<!--修改密码modal-->
+<div class="modal fade" id="editPassword" tabindex="-1" role="dialog" aria-labelledby="editPasswordLabel">
+	<div class="modal-dialog" role="document" style="width: 400px;">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="editPasswordLabel">修改密码</h4>
+			</div>
+			<form name="editPwdForm" id="editPwdForm">
+				<div class="modal-body">
+					<div class="table_viewport">
+						<table class="table_edit">
+							<tbody>
+								<tr>
+									<th style="width: 130px;">原始密码<span class="f_anger">*</span>：</th>
+									<td>
+										<input type="password" id="oldPwd" name="oldPwd" maxlength="16" placeholder="原始密码" class="input_text">
+									</td>
+								</tr>
+								<tr>
+									<th>新密码<span class="f_anger">*</span>：</th>
+									<td><input type="password" id="newPwd" name="newPwd" maxlength="16" placeholder="新密码" class="input_text"></td>
+								</tr>
+								<tr>
+									<th>再次输入<span class="f_anger">*</span>：</th>
+									<td><input type="password" id="renewPassword" name="renewPassword" maxlength="16" placeholder="再次确认新密码" class="input_text"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<button type="reset" id="resetBtn" style="display: none;"></button>
+			</form>
+			<div class="modal-footer">
+				<button type="button" id="ConfirmEditPwdBtn" class="input_btn btn_warn">确认</button>
+				<button type="button" class="input_btn btn_disable" data-dismiss="modal">取消</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var editPwdFormValidator = new FormValidator('editPwdForm', [
+		{name:'oldPwd',display:'原始密码',rules:'required'},
+		{name:'newPwd',display:'新密码',rules:'required|min_length[8]|max_length[16]|callback_strongPwd'},
+		{name:'renewPassword',display:'确认新密码',rules:'required|matches[newPwd]'}
+		], false, function(errs, event) {
+			if(errs.length > 0) {
+				new autoMsg({type: 'error',	msg: errs[0].message});
+				$('#'+errs[0].id).focus();
+			}
+		});
+	editPwdFormValidator.registerCallback('strongPwd', function(value) {
+    	//密码必须为8-16位数字字母组合
+    	var rex = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,16}$/; 
+    	return rex.test(value);
+    });
+	editPwdFormValidator.setMessage('oldPwd.required','原始密码不能为空');
+	editPwdFormValidator.setMessage('newPassword.required','新密码不能为空');
+	editPwdFormValidator.setMessage('newPassword.min_length','新密码请输入8~16数字字母组合');
+	editPwdFormValidator.setMessage('strongPwd', '新密码请输入8~16数字字母组合');
+	editPwdFormValidator.setMessage('matches','确认密码和新密码不一致');
+
+	$('#ConfirmEditPwdBtn').on('click', function() {
+		if(editPwdFormValidator._validateForm()) {
+			$.ajax({
+				type: 'post',
+				url: '/sqqyh/pc/admin/pwdModify',
+				async: true,
+				data: $('#editPwdForm').serialize(),
+				dataType: 'json',
+				success: function(data) {
+					if(data.success) {
+						new autoMsg({type:'success',msg: '密码修改成功',callBack:function() {
+							window.location.href = '/sqqyh/logout';
+						}});
+					} else {
+						new autoMsg({type:'error',msg:data.resultMsg});
+					}
+				}
+			});
+		}
+	});
+
+	$('#editPassword').on('hide.bs.modal', function() { //关闭弹窗时清空表单
+		$('#resetBtn').trigger('click');
+	});
+</script>		<section id="main">
+			<aside id="side_menu"> <!--side menu-->
+	<!--<dl id="m_1">
+		<dt>首页<span class="circle"></span><span class="arrow"></span></dt>
+		<dd>
+			<ul>
+			    <li id="m_1_1"><a href="">首页</span></a></li> 
+			</ul>
+		</dd>
+	</dl>-->
+	<dl id="m_2">
+		<dt>基础办公<span class="circle"></span><span class="arrow"></span></dt>
+		<dd>
+			<ul>
+			        <li id="m_2_1"><a href="/sqqyh/news/newslist">新闻公告</span></a></li> 
+			        <li id="m_2_2"><a href="/sqqyh/wx/qyh/wa/weekArrange.htm">周程安排</span></a></li> 
+			       <li id="m_2_3"><a href="/sqqyh/meeting/room/query.htm">会议助手</span></a></li> 
+			</ul>
+		</dd>
+	</dl>
+	<dl id="m_3">
+		<dt>服务套件<span class="circle"></span><span class="arrow"></span></dt>
+		<dd>
+			<ul>
+			         <li id="m_3_2"><a href="/sqqyh/salary/importSalary.htm">工资条</span></a></li> 
+			         <li id="m_3_3"><a href="/sqqyh/pc/kpi/index.htm">业绩考核</span></a></li>
+			         <li id="m_3_4"><a href="/sqqyh/que/quelist?tab=JXZ">问卷投票</span></a></li>
+			         <li id="m_3_5"><a href="/sqqyh/safe/queryAssetType.htm">安全检查</span></a></li>
+			</ul>
+		</dd>
+	</dl>
+    	<dl id="m_4">
+    		<dt>权限管理<span class="circle"></span><span class="arrow"></span></dt>
+    		<dd>
+    			<ul>
+    			    <li id="m_4_1"><a href="/sqqyh/pc/admin/list.htm">账号管理</span></a></li> 
+    			    <li id="m_4_2"><a href="/sqqyh/pc/admin/menu/list.htm">菜单权限</span></a></li> 
+    			</ul>
+    		</dd>
+    	</dl>
+   </aside><input type="hidden" name="server" id="server" value="/sqqyh" />
+		
+		    <section id="main_body">
+		    	<ul class="main_body_ul f_12">
+					<li><a href="/sqqyh/news/newslist" class="on1">发布列表</a></li> 	
+					<li><a href="/sqqyh/news/draftslist" class="">草稿箱</a></li>
+				</ul>
+		    	<div class="query_bar box b_main cf">
+		    		<form id="searchNewsForm" name="searchNewsForm" action="/sqqyh/news/newslist" method="post">
+		    			<input type="hidden" name="currentPage" id="_currentPage" value="1" />
+		    			<input type="hidden" name="pageSize" id="_pageSize" value="10" />
+			    		<div class="fl">
+		    				<input type="text" class="input_text" name="title" id="title" placeholder="新闻公告标题" value="" />
+		    				<input type="text" class="input_text input_calendar" name="beginDate" id="startDate" placeholder="发布开始日期" value="" />
+		    				<input type="text" class="input_text input_calendar" name="endDate" id="endDate" placeholder="发布结束日期" value="" />
+		    				<select class="input_sel" name="type">
+		    					<option value="QB" >全部类型</option>
+		    					<option value="XW" >新闻</option>
+		    					<option value="GG" >公告</option>
+		    					<option value="KH" >考核</option>
+		    					<option value="DY" >调研</option>
+		    					<option value="HD" >活动</option>
+		    					<option value="BS" >比赛</option>
+		    					<option value="HY" >会议</option>
+		    					<option value="TZ" >通知</option>
+		    					<option value="QT" >其他</option>
+		    				</select>
+			    		</div>
+			    		<div class="fr">
+			    			<button type="submit" class="input_btn btn_main">查询</button>
+			    			<a href="/sqqyh/news/addnews" class="input_btn btn_peace">新建</a>
+			    		</div>
+		    		</form>
+		    	</div>
+		        <div class="box b_disable">
+		        	<p class="page_caption">新闻公告列表</p>
+			        <div class="table_viewport">
+			        	<table class="table_list">
+			        		<thead>
+			        			<tr>
+			        				<th>标题</th>
+			        				<th>类型</th>
+			        				<th>简介</th>
+			        				<th>发布时间</th>
+			        				<th>操作</th>
+			        			</tr>
+			        		</thead>
+			        		<tbody>
+			        		
+			        			<tr>
+			        				<td>马上马上啊11444</td>
+			        				<td>公告</td>
+			        				<td>是否为服务324234</td>
+			        				<td>2017-11-17 17:19:05</td>
+			        				<td><a href="javascript:;" data-id="97" class="f_anger news_del">删除</a></td>
+			        			</tr>
+			        			<tr>
+			        				<td>jjjjlmx金饭碗我哦给我12</td>
+			        				<td>调研</td>
+			        				<td>是否为12</td>
+			        				<td>2017-11-17 14:26:22</td>
+			        				<td><a href="javascript:;" data-id="95" class="f_anger news_del">删除</a></td>
+			        			</tr>
+			        			<tr>
+			        				<td>lmx新闻公告</td>
+			        				<td>新闻</td>
+			        				<td>lmxlmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</td>
+			        				<td>2017-11-17 14:22:38</td>
+			        				<td><a href="javascript:;" data-id="94" class="f_anger news_del">删除</a></td>
+			        			</tr>
+			        			<tr>
+			        				<td>lmx新闻公告</td>
+			        				<td>新闻</td>
+			        				<td>lmxlmxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</td>
+			        				<td>2017-11-17 14:16:19</td>
+			        				<td><a href="javascript:;" data-id="90" class="f_anger news_del">删除</a></td>
+			        			</tr>
+			        			<tr>
+			        				<td>今天星期五啊，明天不上班啊</td>
+			        				<td>通知</td>
+			        				<td>hhhhhh</td>
+			        				<td>2017-11-17 14:12:01</td>
+			        				<td><a href="javascript:;" data-id="89" class="f_anger news_del">删除</a></td>
+			        			</tr>
+			        			<tr>
+			        				<td>发布时间显示</td>
+			        				<td>新闻</td>
+			        				<td>233</td>
+			        				<td>2017-11-16 13:46:48</td>
+			        				<td><a href="javascript:;" data-id="84" class="f_anger news_del">删除</a></td>
+			        			</tr>
+			        			<tr>
+			        				<td>测试111</td>
+			        				<td>新闻</td>
+			        				<td>测试</td>
+			        				<td>2017-11-16 10:40:55</td>
+			        				<td><a href="javascript:;" data-id="82" class="f_anger news_del">删除</a></td>
+			        			</tr>
+			        			<tr>
+			        				<td>双十二活动</td>
+			        				<td>活动</td>
+			        				<td>双十二活动</td>
+			        				<td>2017-11-15 14:52:09</td>
+			        				<td><a href="javascript:;" data-id="88" class="f_anger news_del">删除</a></td>
+			        			</tr>
+			        			<tr>
+			        				<td>羽毛球比赛</td>
+			        				<td>比赛</td>
+			        				<td>羽毛球比赛</td>
+			        				<td>2017-11-14 11:14:32</td>
+			        				<td><a href="javascript:;" data-id="86" class="f_anger news_del">删除</a></td>
+			        			</tr>
+			        			<tr>
+			        				<td>时间测试</td>
+			        				<td>调研</td>
+			        				<td>11</td>
+			        				<td>2017-11-14 11:13:56</td>
+			        				<td><a href="javascript:;" data-id="85" class="f_anger news_del">删除</a></td>
+			        			</tr>
+			        	    
+			        		</tbody>
+			        	</table>
+			        </div>
+
+
+<div class="page_bar">
+	<div class="p_l">
+		每页
+		<select class="input_sel" onchange="resetPageSize(this.value);">
+			<option selected="selected" value="10"   >10</option>
+			<option  value="25"   >25</option>
+			<option  value="50"   >50</option>
+			<option  value="100" >100</option>
+		</select> 条
+	</div>
+	<div class="p_c cf">
+		<a href="#" >首　页</a>
+		<a href="#" >上一页</a>
+		<a href="#" >下一页</a>
+		<a href="#" >末　页</a>
+	</div>
+	<div class="p_r">
+		共
+		<label class="totalNum">10</label> 条 <label class="pageNum">1</label> 页 - 第
+		<select class="input_sel" onchange="javascirpt:gotoPage(this.value)">
+			<option selected value="1">1</option>
+		</select>页
+	</div>
+</div>
+
+<script type="text/javascript">
+function gotoPage(pageNum){
+    var frm = document.searchNewsForm;
+    frm.currentPage.value = pageNum;
+    frm.submit();
+}
+
+function resetCurrentPage(){
+    var frm = document.searchNewsForm;
+    frm.currentPage.value = 1;
+}
+
+function resetPageSize(pageSize){
+    var frm = document.searchNewsForm;
+    frm.pageSize.value = pageSize;
+    frm.submit();
+}
+</script>		        </div>
+		    </section>
+		</section>
+<footer id="footer">
+	<ul>
+		<li class="footerlist">
+			<span>© 2016 - 2017 睿博信息科技有限公司</span>
+			<span>电话： 0513-68851805</span>
+		</li>
+		<li class="footerlist">
+			<span>Version：V2.0</span>
+			<span>Powered by : <a href="http://www.witontek.com" target="_blank">Witon Information Technology</a></span>
+		</li>
+	</ul>
+</footer>		<div class="modal fade" id="modalDialog" tabindex="-1" role="dialog" aria-labelledby="">
+			<div class="modal-dialog" role="document" style="width: 400px;">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="modalTitle">删除</h4>
+					</div>
+					<div class="modal-body">
+						<p id="bodyContent">该新闻公告已发布,是否确认删除?</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" id="modalConfirmBtn" class="input_btn btn_main">确认</button>
+						<button type="button" class="input_btn btn_disable" data-dismiss="modal">取消</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="/sqqyh/js/pages/news/news-mng.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function() {
+			setSideMenu('#m_2','#m_2_1');
+		})
+	</script>
+</html>

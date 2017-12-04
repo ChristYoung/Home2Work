@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />	
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="/sqqyh/css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="/sqqyh/css/login.css"/>
+</head>
+<body>
+	<div class="authcenter">
+		<!--<header id='header'>
+			<div class="logo-wrap"></div>
+		</header>-->
+		<input type="hidden" name="server" id="server" value="/sqqyh" />
+		<div class="authcenter-body">
+			<div class="authcenter-body-login">
+				<div class="slide-modern login-modern"  >
+					<h2 id="loginTypeTitle">宿迁人民医院企业号</h2> 
+					<form method="post" name="loginForm" id="loginForm" action="/sqqyh/login">
+						<ul>
+							<li>
+								<input type="text" name="userName" id="userName" value="" placeholder="管理员账号"/>
+							</li>
+							<li>
+								<input type="password" name="password" id="password" onpaste="return false" value="" placeholder="管理员密码"/>
+							</li>
+							<li>
+								<input type="text" id="code-school" name="code" placeholder="验证码" onpaste="return false">
+								<img src="/sqqyh/login/verifyCode?0.052898986" onclick="changeImg($(this),'/sqqyh/login/verifyCode')" id="showcode-school" title="看不清，换一张" alt="看不清，换一张">
+							</li>
+							<li>
+								<p>
+									<label class="errorTips" id="loginErrorTips"></label>
+									<a href="javascript:changeImg($('#showcode-school'),'/sqqyh/login/verifyCode')" id="validate_code_change_btn" class="another">看不清，换一张</a>
+								</p>
+							</li>
+							<li>
+								<button type="submit" class="xy-btn xy-btn-main" id="btn">登 录</button>
+							</li>
+							<li>
+								<p><a href="javascript:;" class="forgetPwdBtn">忘记密码?</a></p>
+							</li>
+						</ul>
+					</form>
+				</div>
+                <div class="slide-modern pwdReset-morden" style="display: none;" >
+                	<h2 id="pwdResetTitle">忘记密码</h2> 
+					<form method="post" name="pwdRestForm" id="pwdRestForm" action="/sqqyh/pc/verification/reset">
+						<ul>
+							<li>
+								<input type="text" name="userName" id="userName-forget" value="" placeholder="管理员账号"/>
+							</li>
+							<li>
+								<input type="text" name="phoneNo" id="phoneNo" value="" placeholder="管理员手机"/>
+							</li>
+							<li>
+								<input type="text" id="verificationCode" name="verificationCode" placeholder="短信验证码" onpaste="return false">
+								<button type="button" id="sendCodeAgain" class="xy-btn xy-btn-warn" style="width: 99px;">发送验证码</button>
+								<!--<img src="/rbEduPay/validateCode/verifyCode" onclick="changeImg($(this),'/rbEduPay/validateCode/verifyCode')" id="showcode-school" title="看不清，换一张" alt="看不清，换一张">-->
+							</li>
+							<li>
+								<input type="password" maxlength="16" name="newPasswd" id="newPasswd" onpaste="return false" value="" placeholder="新密码"/>
+							</li>
+							<li>
+								<p>
+									<label class="errorTips" id="forgetPwdErrTips"></label>
+								</p>
+							</li>
+							<li>
+								<button type="submit" class="xy-btn xy-btn-main" id="confirmRestPwdBtn">确认重置</button>
+							</li>
+							<li>
+								<button type="button" class="xy-btn xy-btn-disable" id="giveUpRestPwdBtn">放弃</button>
+							</li>
+						</ul>
+						<button type="reset" id="formRest" style="display: none;"></button>
+					</form>
+                </div>
+			</div>
+		</div>
+		<div class="authcenter-background">
+			<img class="bgImg" src="/sqqyh/img/BANK.jpg"/>
+		</div>
+	</div>
+</body>
+<script src="/sqqyh/js/common/jquery-2.0.0.js" type="text/javascript" charset="utf-8"></script>
+<script src="/sqqyh/js/plugin/validate.js" type="text/javascript" charset="utf-8"></script>
+<script src="/sqqyh/js/login.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	window.onload = function(){
+		resizeImg();  //背景图适配
+	};
+</script>
+</html>

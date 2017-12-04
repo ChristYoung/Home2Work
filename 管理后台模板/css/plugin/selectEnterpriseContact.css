@@ -1,0 +1,24 @@
+.modal-body{overflow: hidden;}
+.select-area,.result-area{float: left; height: 100%; border-right: 1px solid #ddd; overflow-y: auto; overflow-x: hidden; padding-bottom: 50px;}
+.result-area{border: none;}
+.select-area .select-list-wrap{width: 200px;}
+.result-area .result-list-wrap{width: 900px; padding-bottom: 40px;}
+
+.select-list-wrap .all{font-size: 14px; font-weight: bold; padding-left: 5px;}
+.select-list-wrap .slide-status{font-size: 14px; color: #05958B;}
+.select-list-wrap .all,.select-list-wrap .depList,.select-list-wrap .tagList{line-height: 32px; height: 32px; cursor: pointer;
+ -moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select: none;  -ms-user-select: none; user-select: none;
+ }
+.select-list-wrap .depList,.select-list-wrap .tagList{padding-left: 25px;} 
+.select-list-wrap .depList.active,.select-list-wrap .tagList.active,.select-list-wrap .all.active{background: #05958B; color: #fff;}
+
+.selected-area{border-bottom: 1px solid #e5e5e5; padding-bottom: 15px; margin-bottom: 15px; position: relative;}
+.selected-btn-area{position: absolute; top: 0; right: 0;}
+.selected-wrap{overflow-x: auto; min-height: 30px; line-height: 30px; width: 1110px;}
+.selected-wrap .selected-item{position: relative;}
+.selected-wrap .del-selected{cursor: pointer; position: absolute; right: -2px; top: -8px;}
+
+.result-listItem{position: relative; padding-left: 30px; margin-left: 10px; cursor: pointer; line-height: 40px; height: 40px; border-bottom: 1px solid #ddd;
+-moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select: none;  -ms-user-select: none; user-select: none;}
+.result-listItem .result-listItemHook{color: #05958B; width: 18px; height: 18px; margin-right: 5px; margin-left: 10px; text-align: center; position: absolute; left: 0;} 
+.result-listItem .result-listItemName{font-size: 14px;} 

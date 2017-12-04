@@ -1,0 +1,78 @@
+body{font-family: "微软雅黑", "Arial"; font-size: 12px; min-width: 1100px; overflow: hidden;}
+.must,.errorTips{color: red;}
+.xy-btn{display: inline-block; padding: 8px 12px; color: #FFFFFF; border: none; border-radius: 3px; cursor: pointer; text-align: center;}
+.xy-btn[disabled]{cursor: not-allowed;}
+input[type=text],input[type=password]{width: 235px; padding: 0 12px; height: 30px; line-height: 28px; border: 1px solid #DDDDDD; font-family: "微软雅黑", "Arial";}
+select{height: 30px; padding: 5px 0;}
+
+/*login btn*/
+.xy-btn-main{background-color: #367FA9;}
+.xy-btn-anger{background-color: #b92525;}
+.xy-btn-warn{background-color: #F39C12;}
+.xy-btn-disable{background-color: #999999;}
+.xy-btnDisabled{color: #FFFFFF;}
+
+/*public style*/
+header{height: 60px; position: relative; background-color: rgba(0,0,0,0.5); /*opacity: 0.5; filter: alpha(opacity=50);*/ width: 100%;}
+header .logo-wrap{width: 255px; position: absolute; top: 5px; left: 45px;} 
+header .logo-wrap img{max-width: 100%;}
+header .header-list{height: 60px; float:right;}
+header .header-list a{display: inline-block; font-size: 16px; color: #fff; line-height: 60px; margin-right: 50px;}
+header .header-list .active{color: #37d1e0;}
+
+.authcenter{position: relative;}
+.authcenter .authcenter-body{position: relative; width: 1300px; height: auto; min-height: 450px; margin: 0 auto; padding: 50px 0; }
+.authcenter .authcenter-body .authcenter-body-login{float: right; width: 270px; height: auto; margin:30px 15% 0 0;}
+.authcenter .authcenter-body .authcenter-body-login .login-tab{overflow: hidden;}
+.authcenter .authcenter-body .authcenter-body-login .login-tab li{float: left; width: 135px; text-align: center; padding: 10px 0; font-size: 14px; color: #FFFFFF; background-color: rgba(0,0,0,0.3); filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr=#4D000000,endcolorstr=#4D000000); cursor: pointer;}
+.authcenter .authcenter-body .authcenter-body-login .login-tab .selected{background-color: rgba(0,0,0,0.5); filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr=#7F000000,endcolorstr=#7F000000);}
+.authcenter .authcenter-background{width: 100%; position: absolute; top: 0; left: 0; z-index: -1;}
+.authcenter .authcenter-background .bgImg{position: absolute; width: 100%; height: auto; top: 0; left: 0; overflow: hidden;}
+
+/*login*/
+.authcenter .authcenter-body  .slide-modern{width: 210px; padding:20px 30px; background-color: rgba(0,0,0,0.5); filter:progid:DXImageTransform.Microsoft.Gradient(startColorStr=#7F000000,endcolorstr=#7F000000);}
+.authcenter .authcenter-body  .slide-modern h2{color: #FFFFFF; text-align: center; font-size: 18px; margin-bottom: 20px;}
+.authcenter .authcenter-body  .slide-modern li{margin-bottom: 10px; overflow: hidden;}
+.authcenter .authcenter-body  .slide-modern li img{width: 95px; margin-left: 8px; height: 30px; max-width: 100%; float: right;}
+.authcenter .authcenter-body  .slide-modern li button{width:100%;}
+.authcenter .authcenter-body  .slide-modern li button a{display: inline-block; width: 100%;}
+.authcenter .authcenter-body  .slide-modern li p{width: 100%; height: 18px; position: relative; color: #FFFFFF;}
+.authcenter .authcenter-body  .slide-modern li p a{position: absolute; color: #FFFFFF;}
+.authcenter .authcenter-body  .slide-modern li p a:hover{text-decoration: underline;}
+.authcenter .authcenter-body  .slide-modern li p .another,.authcenter .authcenter-body  .login-modern li p .forgetPwdBtn{right: 0;}
+.authcenter .authcenter-body  .slide-modern li p .forgetpassword{left: 0;}
+
+
+/*private*/
+#idNo,#password,#school-admin-name,#bank-admin-name,#password-school,#password-bank{width: 184px;}
+#code-school,#code-bank,#code,#verificationCode{width: 80px;}
+#province{margin-right: 10px;}
+#province,#city{width: 98px;}
+#school{width: 100%;}
+
+
+
+/*responsive*/
+@media only screen and (min-width: 1500px) {
+	.authcenter .authcenter-body .authcenter-body-login{margin:150px 15px 0 0;}
+}
+@media only screen and (min-width: 1000px) and (max-width: 1300px) {
+	body{width: 100%; min-width: 0;}
+	.authcenter .authcenter-body{width: 80%;}
+}
+@media only screen and (max-width: 1000px) {
+	body{width: 100%; min-width: 0;}
+	.authcenter .authcenter-body{width: 285px;}
+}
+@media only screen and (max-width: 550px) {
+	header .header-list{display: none;}
+}
+
+/*language select*/
+#header .language{float:right;margin-right:40px;line-height:60px;color:#fff}
+#header{z-index:10}
+#header .lan-sel{position:relative;width:80px;padding:0 10px;display:inline-block;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+#header .lan-sel ul{display:none;position:absolute;left:0;top:60px;line-height:32px;background:#fff}
+#header .lan-sel ul li{width:80px;padding:0 10px;color:#01A4E9}
+#header .lan-sel ul li:hover{background-color:#01A4E9;color:#fff;cursor:pointer}
+#header .lan-sel:after{content:'';position:absolute;top:26px;right:8px;width:0;height:0;border-left:5px solid transparent;border-right:5px solid transparent;border-top:10px solid #fff}
