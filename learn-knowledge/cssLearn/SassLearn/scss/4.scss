@@ -1,8 +1,0 @@
-//在混合宏中使用插值,插值不能拼接成一个变量，但是在占位符中可以使用
-/*在混合宏中使用插值,插值不能拼接成一个变量，但是在占位符中可以使用*/
-@mixin generate-sizes($class,$small,$medium,$big){
-    .#{$class}-small{font-size: $small;}
-    .#{$class}-medium{font-size: $medium;}
-    .#{$class}-big{font-size: $big;}
-}
-@include generate-sizes("header-text",12px,20px,40px);

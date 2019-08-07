@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*多行元素实现水平垂直居中*/
+			.g-container {
+				width: 800px;
+				height: 500px;
+				border: 1px solid #000000;
+				display: flex;
+			}
+			.g-wrapper {
+				margin: auto;
+			}
+			.g-wrapper .g-box {
+				width: 100%;
+				overflow: hidden;
+				margin-bottom: 144px;
+			}
+			.g-wrapper .g-box:nth-of-type(2) {
+				margin-bottom: 0;
+			}
+			.g-box .item {
+				width: 100px;
+				height: 100px;
+				margin-right: 10px;
+				float: left;
+				background: #0099FF;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="g-container">
+			<div class="g-wrapper">
+				<div class="g-box">
+					<div class="item"></div>
+					<div class="item"></div>
+					<div class="item"></div>
+					<div class="item"></div>
+				</div>
+				<div class="g-box">
+					<div class="item"></div>
+					<div class="item"></div>
+					<div class="item"></div>
+					<div class="item"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+</html>
