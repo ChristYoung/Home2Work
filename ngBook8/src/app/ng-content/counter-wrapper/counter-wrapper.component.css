@@ -1,0 +1,17 @@
+.box {
+  width: 800px;
+  height: 80px;
+  margin-bottom: 12px;
+}
+
+.red {
+  border: 1px solid #ff7b4c;
+}
+
+.blue {
+  border: 1px solid #4e90ff;
+}
+
+.green {
+  border: 1px solid #4add4f;
+}

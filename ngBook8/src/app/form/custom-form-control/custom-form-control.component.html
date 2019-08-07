@@ -1,0 +1,10 @@
+<div class="img-container">
+  <div class="img-selected">
+    <img src="{{selected ? selected : ''}}" alt="">
+  </div>
+  <ul class="img-item-selector">
+    <li *ngFor="let img of imageList; let i = index;" (click)="onChange(i)" class="img-item">
+      <img src="{{img.imageUrl}}" alt="">
+    </li>
+  </ul>
+</div>

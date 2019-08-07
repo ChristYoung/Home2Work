@@ -1,0 +1,8 @@
+<div>
+  <span>{{count}}</span>
+  <button (click)="update()">click</button>
+</div>
+
+<input type="text" [(ngModel)]="keyWord" />
+<button (click)="search()">Search</button>
+<app-hero-show-list [heroes]="heroes"></app-hero-show-list>

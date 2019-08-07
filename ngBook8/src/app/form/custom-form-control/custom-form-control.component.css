@@ -1,0 +1,23 @@
+ul, li {
+  list-style: none;
+}
+
+.img-item {
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+.img-item img {
+  width: 90px;
+  height: 90px;
+}
+
+.img-selected img {
+  width: 180px;
+  height: 180px;
+}
+
+.img-item-selector {
+  margin-top: 80px;
+  display: flex;
+}

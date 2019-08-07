@@ -1,0 +1,12 @@
+<p>通过按钮进行切换操作，你会注意到计数器的值不会增加。这意味着我们的计数器组件只被实例化了一次 - 从未被销毁和重新创建，</p>
+<p>投影内容的生命周期将被绑定到它被声明的地方，而不是显示在地方</p>
+<div class="box red">
+  <ng-content></ng-content>
+</div>
+<div class="box blue" *ngIf="show">
+  <ng-content select="app-counter"></ng-content>
+</div>
+<div class="box green">
+  <ng-content select="app-counter-two"></ng-content>
+</div>
+<button type="button" (click)="show = !show">{{show ? 'Hide' : 'show'}}</button>

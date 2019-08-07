@@ -1,0 +1,11 @@
+<form [formGroup]="reactiveForm">
+  <div>
+    <input placeholder="用户名" formControlName="userName" type="text">
+  </div>
+  <div>
+    <input placeholder="密码" formControlName="pwd" type="password">
+  </div>
+  <p>请选择头像</p>
+  <app-custom-form-control formControlName="avatar" ></app-custom-form-control>
+  <p>{{reactiveForm.value | json}}</p>
+</form>

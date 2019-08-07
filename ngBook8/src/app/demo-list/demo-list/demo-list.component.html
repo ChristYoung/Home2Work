@@ -1,0 +1,9 @@
+<p class="title">Angular相关示例</p>
+
+<div class="demo-wrapper" *ngFor="let d of demoListItem">
+  <p class="demo-class">{{d.demoClass}}</p>
+  <ul>
+    <li class="demo-list-item" *ngFor="let di of d.demoItems" (click)="demoListItemClicked(di.demoRouter)">{{di.demoName}}</li>
+  </ul>
+</div>
+

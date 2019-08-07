@@ -1,0 +1,8 @@
+.title {
+  text-align: center;
+  font-size: 22px;
+}
+
+.demo-list-item {
+  cursor: pointer;
+}

@@ -1,0 +1,10 @@
+.testDrag {
+  width: 300px;
+  height: 300px;
+  background-color: #4a42dd;
+}
+
+.toDrag {
+  opacity: .3;
+  border: 3px dashed #ff3c17;
+}

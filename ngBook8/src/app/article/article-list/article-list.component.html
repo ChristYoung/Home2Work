@@ -1,0 +1,17 @@
+<form action="">
+  <h3>Add a link</h3>
+  <div>
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" #newtitle>
+  </div>
+  <div>
+    <label for="link">Title:</label>
+    <input type="text" id="link" name="link" #newlink>
+  </div>
+  <div class="article-list">
+    <app-article-item *ngFor="let a of articleList" [articleItem]="a"></app-article-item>
+  </div>
+  <div>
+    <button type="button" (click)="addArticle(newtitle, newlink)">新增</button>
+  </div>
+</form>

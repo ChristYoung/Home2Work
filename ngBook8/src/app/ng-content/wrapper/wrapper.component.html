@@ -1,0 +1,8 @@
+<app-counter-wrapper>
+  <span>this is not a counter</span>
+  <ng-container ngProjectAs="app-counter">
+    <app-counter></app-counter>
+  </ng-container>
+  <app-counter></app-counter>
+  <app-counter-two (saySomething)="sayHandler($event)" ></app-counter-two>
+</app-counter-wrapper>
