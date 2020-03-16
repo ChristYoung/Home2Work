@@ -144,11 +144,7 @@ export class ReactiveFormComponent implements OnInit {
     } else {
       this.formErrors.formError = '存在不合法的输入项，请检查';
     }
-    console.log(this.userInfo);
+    console.log(`%c当前的useInfo表单值是: ${this.userInfo}`, 'color: pink');
   }
 
-  testEmail() {
-    const email = this.userForm.get('email').value;
-    console.log(email);
-  }
 }

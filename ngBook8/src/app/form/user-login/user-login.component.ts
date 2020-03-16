@@ -1,3 +1,4 @@
+// use-login是一个模板驱动型表单
 import { Component, OnInit, Input } from '@angular/core';
 
 import { User } from 'app/domain/user-model';
