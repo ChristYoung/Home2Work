@@ -8,7 +8,6 @@ import { UserLoginComponent } from './user-login/user-login.component';
 import { ReactiveFormValidateComponent } from './reactive-form-validate/reactive-form-validate.component';
 import { CustomFormControlComponent } from './custom-form-control/custom-form-control.component';
 import { AgeInputComponent } from './age-input/age-input.component';
-import { CustomFormControl2Component } from './custom-form-control2/custom-form-control2.component';
 
 @NgModule({
   imports: [
@@ -23,7 +22,6 @@ import { CustomFormControl2Component } from './custom-form-control2/custom-form-
     ReactiveFormValidateComponent,
     CustomFormControlComponent,
     AgeInputComponent,
-    CustomFormControl2Component,
   ]
 })
 export class FormModule {
