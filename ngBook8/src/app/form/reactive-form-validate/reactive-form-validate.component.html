@@ -9,5 +9,10 @@
     <input type="password" formControlName="pwd" placeholder="请输入密码" />
     <input type="password" formControlName="confirm" placeholder="请确认密码" />
   </div>
-  <p>{{reactiveForm.value | json}}</p>
+  <p>表单值: {{reactiveForm.value | json}}</p>
+
+  <p>formControl的errors是一个key-value键值对对象.</p>
+  <p *ngIf="reactiveForm.get('userId').errors">userId是否含错: {{reactiveForm.get('userId').errors | json}}</p>
+  <p>account子formGroup是否含错: {{reactiveForm.get('account').errors | json}}</p>
+  <p>account子formGroup的confirm是否含错: {{reactiveForm.get('account').get('confirm').errors | json}}</p>
 </form>

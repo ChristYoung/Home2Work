@@ -51,12 +51,10 @@ export class CustomFormControlComponent implements ControlValueAccessor {
   /*writeValue, registerOnChange, registerOnTouched这三个方法是ControlValueAccessor接口上的三个方法, 都是在表单初始化后立即执行*/
 
   writeValue(obj: any): void {
-    console.log('writeValue', obj);
     this.selected = obj;
   }
 
   registerOnChange(fn: any): void {
-    console.log('registerOnChange', fn);
     this.propagateChange = fn;
   }
 
