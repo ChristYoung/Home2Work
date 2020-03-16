@@ -3,7 +3,8 @@ export class PathLibrary {
   public static readonly demoList = 'demoList';
   public static readonly articleList = 'articleList';
   public static readonly reactiveForm = 'reactiveForm'; // 动态表单
-  public static readonly reactiveFormValidate1 = 'reactiveFormValidate1'; // 高阶响应式表单验证1
+  public static readonly reactiveFormValidate1 = 'reactiveFormValidate1'; // 自定义表单controlValueAccessor
+  public static readonly reactiveFormValidate2 = 'reactiveFormValidate2'; // 自定义表单controlValueAccessor2
   public static readonly userLoginForm = 'userLoginForm'; // 模板驱动变动验证
   public static readonly ngContent = 'ngContent'; // 内容投影
   public static readonly dynamicContainer = 'dynamicContainer'; // 动态组件

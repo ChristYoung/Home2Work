@@ -4,7 +4,7 @@
 
 *.ts-config.json 中的compilerOptions下的baseUrl设置根路径，在ts文件中import时可以使用绝对路径
 
-*.Typescript描述对象字面量的类型 const a: { [key: string]: any }
+*.Typescript描述对象字面量的类型(可索引接口) const a: { [key: string]: any }
 
 *.ngIf的else语法 *ngIf="isBoolean else otherTemplate" <ng-template #otherTemplate></ng-template>
 
@@ -20,3 +20,12 @@
         console.log('看看是什么', tess.Tess);
         console.log('看看是什么', new tess.Tess()); // 被实例化了
       });
+
+
+---updateOn---
+symptom: [null, { validators: [Validators.required], updateOn: "submit" }], // 患者主诉
+      medicalHistory: [null, { validators: [Validators.required], updateOn: "submit" }], // 既往史
+      illSummary: [null, { validators: [Validators.required], updateOn: "submit" }], // 病史摘要
+      diagCode: [null, { validators: [Validators.required], updateOn: "submit" }], // 主诊断
+      subDiagnose: [null], // 副诊断
+    });

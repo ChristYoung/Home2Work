@@ -1,4 +1,4 @@
-// 实现一个自定义的表单控件
+// 通过ControlValueAccessor接口实现一个自定义的表单控件
 import {Component, OnInit, forwardRef} from '@angular/core';
 import {ControlValueAccessor, NG_VALUE_ACCESSOR, NG_VALIDATORS, FormControl, FormGroup} from '@angular/forms';
 
@@ -43,7 +43,7 @@ export class CustomFormControlComponent implements ControlValueAccessor {
 
   private propagateChange = (_: any) => {};
 
-  onChange(i) {
+  onChange(i: number) {
     this.selected = this.imageList[i].imageUrl;
     this.propagateChange(this.selected);
   }

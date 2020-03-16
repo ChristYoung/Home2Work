@@ -18,7 +18,8 @@ export class ReactiveFormValidateComponent implements OnInit {
     this.reactiveForm = this.fb.group({
       userName: ['杨杰'],
       pwd: ['sdsdsd'],
-      avatar: [avatarUrl]
+      avatar: [avatarUrl],
+      userId: ['']
     });
   }
 

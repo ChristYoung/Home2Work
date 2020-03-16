@@ -1,6 +1,7 @@
-import {Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
-import {User} from 'app/domain/user-model';
+import { User } from 'app/domain/user-model';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-user-login',
@@ -17,7 +18,7 @@ export class UserLoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  public doLogin(f): void {
+  public doLogin(f: NgForm): void {
     console.log('form', f); // f是NgForm类型
     console.log('form.submitted', f.submitted);
     console.log('form.valid', f.valid);
