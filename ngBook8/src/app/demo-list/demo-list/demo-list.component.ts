@@ -28,7 +28,7 @@ export class DemoListComponent implements OnInit {
           { demoName: '模板驱动型表单(userLoginComponent)', demoRouter: PathLibrary.moduleName_form + '/' + PathLibrary.userLoginForm },
           { demoName: '响应式表单(ReactiveFormComponent)', demoRouter: PathLibrary.moduleName_form + '/' + PathLibrary.reactiveForm },
           { demoName: '实现一个自定义表单控件(ReactiveFormValidateComponent)', demoRouter: PathLibrary.moduleName_form + '/' + PathLibrary.reactiveFormValidate1 },
-          { demoName: '动态验证Reactive表单', demoRouter: '' },
+          { demoName: '动态验证Reactive表单', demoRouter: PathLibrary.moduleName_form + '/' + PathLibrary.validateReactiveFormDynamicly },
         ]
       },
       {
