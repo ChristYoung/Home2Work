@@ -9,7 +9,7 @@ function logClass(params: any) {
    params.prototype.apiUrls = params; // 可以对类进行扩展
 }
 
-@logClass
+@logClass()
 class HttpClient {
     constructor() {
 
