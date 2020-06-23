@@ -1,1 +1,15 @@
-<p>custom-template-render works!</p>
+<!-- 给定数组 [{name:'小王',age:10},{name:'老王',age: 12}], 需要支持自定义渲染模板 -->
+
+<ul>
+    <li *ngFor="let item of data">
+      <ng-template
+        [ngTemplateOutlet]="customRenderer || defaultRenderer"
+        [ngTemplateOutletContext]="{ $implicit: item }"
+      ></ng-template>
+    </li>
+  
+    <ng-template #defaultRenderer let-data>
+      <span>age: {{ data.age }}</span>
+      <span>name: {{ data.name }}</span>
+    </ng-template>
+  </ul>

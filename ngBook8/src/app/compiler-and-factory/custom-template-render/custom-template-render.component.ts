@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef } from '@angular/core';
+
+interface Payload {
+  age: number;
+  name: string;
+}
 
 @Component({
   selector: 'app-custom-template-render',
@@ -7,9 +12,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomTemplateRenderComponent implements OnInit {
 
+  @Input()
+  data: Payload[] = [
+    {
+      age: 10,
+      name: '小王',
+    },
+    {
+      age: 12,
+      name: '老王',
+    }
+  ];
+
+  @Input() customRenderer: TemplateRef<{ $implicit: Payload; }>;
+
   constructor() { }
 
   ngOnInit() {
   }
+
 
 }
