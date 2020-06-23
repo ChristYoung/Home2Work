@@ -15,6 +15,7 @@ export class PathLibrary {
   public static readonly range = 'range'; // 结构型指令range
   public static readonly changeDetection1 = 'changeDetection1'; // 变更检测学习1
   public static readonly pipesDemo = 'pipesDemo';
+  public static readonly customRender = 'customRender'; // 自定义渲染模板
 
   // 各个模块
   public static readonly moduleName_article = 'article';

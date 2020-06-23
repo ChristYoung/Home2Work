@@ -63,6 +63,7 @@ export class DemoListComponent implements OnInit {
         demoItems: [
           { demoName: '学习使用编译器和工厂方法构建动态组件(ContainerComponent)', demoRouter: PathLibrary.moduleName_compilerAndFactory + '/' + PathLibrary.dynamicContainerByFactory },
           { demoName: '根据用户的输入动态编译组件template(RunTimeCompilerComponent', demoRouter: PathLibrary.moduleName_compilerAndFactory + '/' + PathLibrary.runTimeCompiler },
+          { demoName: 'Angular自定义渲染模板, 此demo来自https://zhuanlan.zhihu.com/p/146501023?utm_source=wechat_session&utm_medium=social&utm_oi=557177781184700416', demoRouter: PathLibrary.moduleName_compilerAndFactory + '/' + PathLibrary.customRender },
         ]
       }
     ];
