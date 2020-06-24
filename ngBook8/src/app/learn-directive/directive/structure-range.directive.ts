@@ -18,7 +18,7 @@ export class StructureRangeDirective {
     console.log('StructureRangeDirective -> setappRange -> value', value);
     this.vcr.clear();
     this._range = StructureRangeDirective.getRange(value[0], value[1]);
-    this._range.forEach(num => {
+    this._range.forEach((num: number) => {
       this.vcr.createEmbeddedView(this.tpl, { $implicit: num });
     });
   }

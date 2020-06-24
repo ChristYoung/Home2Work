@@ -30,7 +30,6 @@ class Person {
 export class RangeComponent implements OnInit {
 
   conditon: boolean;
-  rangeArr = [10, 20];
 
   ngOnInit() {
   }
