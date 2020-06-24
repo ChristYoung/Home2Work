@@ -12,4 +12,30 @@
       <span>age: {{ data.age }}</span>
       <span>name: {{ data.name }}</span>
     </ng-template>
+    <p>
+      <!-- ng-template 标签可以理解为声明了一个函数。(类比react的渲染函数) -->
+    <!-- #customRenderer 以#开头即为函数名，那这里的函数名就是customRenderer: function customRenderer(){ } -->
+    <!-- let-data声明函数的形参的名称，那这里的函数形参的名称就是 data: function customRenderer(data) { } -->
+    <!-- 即 let-xxx 相当于 function customRenderer(xxx) { } -->
+    <!-- ng-template 标签内的内容可以理解为React函数体
+        function  customRenderer(){ 
+          return ( 
+              <h1>name：{ data.name }</h1>
+              <h1>age：{ data.age }</h1>
+          )
+    } -->
+    <!-- [ngTemplateOutletContext]="{ $implicit: item }"这段代码主要是定义函数的实参 -->
+    <!-- 因为我们使用了*ngFor="let item of data"，所以{ $implicit: item }表示将item当做实参传递给渲染函数 function customRenderer(data) { }, 这里可以理解为函数调用: customRenderer(item) -->
+
+    <!-- 敲黑板总结下Angular的模板语法
+        模板中的 ng-template标签表示声明一个渲染函数
+        模板中的 #表示函数名
+        模板中的 let-xxx表示函数形参名称
+        模板中的 $implicit表示函数实参名称
+        模板中的 ng-template标签内部内容表示函数体 -->
+    </p>
+    <ng-template #customRenderer let-data>
+      <h1>name：{{ data.name }}</h1>
+      <h6>age：{{ data.age }}</h6>
+    </ng-template>
   </ul>
