@@ -10,6 +10,7 @@ export class ChildAComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log('A is init');
   }
 
 }

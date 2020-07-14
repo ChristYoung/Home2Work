@@ -10,14 +10,18 @@ const routes: Routes = [
         path: PathLibrary.childRoutesBox,
         component: ChildRoutesBoxComponent,
         children: [
-            {
-                path: 'childA',
-                component: ChildAComponent,
-            },
+            // {
+            //     path: 'childA',
+            //     component: ChildAComponent,
+            // },
             {
                 path: 'childB',
                 component: ChildBComponent,
-            }
+            },
+            {
+                path: '**',
+                component: ChildAComponent,
+            },
         ]
     }
 ];

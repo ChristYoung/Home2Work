@@ -1,3 +1,6 @@
-<a [routerLink]="['./childA']">去A</a>
-<a [routerLink]="['./childB']">去B</a>
+<p (click)="goA()">去A</p>
+<p (click)="goB()">去B</p>
+<p>---------------------------------</p>
+<p [routerLink]="['./childA']">去A</p>
+<p [routerLink]="['./childB']">去B</p>
 <router-outlet></router-outlet>
