@@ -59,6 +59,12 @@ export class DemoListComponent implements OnInit {
         ]
       },
       {
+        demoClass: '子路由',
+        demoItems: [
+          { demoName: '子路由应用', demoRouter: PathLibrary.moduleName_ChildRoutes + '/' + PathLibrary.childRoutesBox }
+        ]
+      },
+      {
         demoClass: '学习使用编译器和工厂方法构建动态组件',
         demoItems: [
           { demoName: '学习使用编译器和工厂方法构建动态组件(ContainerComponent)', demoRouter: PathLibrary.moduleName_compilerAndFactory + '/' + PathLibrary.dynamicContainerByFactory },

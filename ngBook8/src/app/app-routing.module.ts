@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: PathLibrary.moduleName_pipes, loadChildren: () => import('app/pipes/pipes.module').then(mod => mod.PipesModule) },
   { path: PathLibrary.moduleName_changeDetection, loadChildren: () => import('app/change-detection/change-detection.module').then(mod => mod.ChangeDetectionModule) },
   { path: PathLibrary.moduleName_compilerAndFactory, loadChildren: () => import('app/compiler-and-factory/compiler-and-factory.module').then(mod => mod.CompilerAndFactoryModule) },
+  { path: PathLibrary.moduleName_ChildRoutes, loadChildren: () => import('app/child-routes/child-routes.module').then(mod => mod.ChildRoutesModule) },
 ];
 
 @NgModule({
