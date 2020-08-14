@@ -9,12 +9,13 @@
     <input type="text" id="link" name="link" #newlink>
   </div>
   <div class="article-list">
-    articleList: {{articleList | json}}
     <app-article-item *ngFor="let a of articleList" [articleItem]="a"></app-article-item>
   </div>
   <p>----------------------------------------------</p>
   <div class="article-list2">
-    articleList2: {{articleList2 | json}}
+
+    <!-- 这行调试代码会引起: ExpressionChangedAfterItHasBeenCheckedError的报错, 因为articleList2已经在子组件中被修改了. -->
+    <p *ngFor="let a2 of articleList2">a2: {{a2 | json}}<br />---------------------------------</p>
     <app-article-item2 *ngFor="let a2 of articleList2" [articleItem2]="a2"></app-article-item2>
   </div>
   <div>
