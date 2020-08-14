@@ -1,7 +1,7 @@
 export class ArticleItem {
   title: string;
   link: string;
-  votes: number;
+  votes?: number;
 
   constructor(title: string, link: string, votes?: number) {
     this.title = title;
@@ -19,4 +19,11 @@ export class ArticleItem {
     }
   }
 
+}
+
+export interface ArticleItem2 {
+  title: string;
+  name: string;
+  optSelectedId: number[];
+  selecteCheck?: number[];
 }

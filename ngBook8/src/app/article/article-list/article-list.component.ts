@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {ArticleItem} from 'app/domain/article-item';
+import { Component, OnInit } from '@angular/core';
+import { ArticleItem, ArticleItem2 } from 'app/domain/article-item';
 
 @Component({
   selector: 'app-article-list',
@@ -10,6 +10,10 @@ import {ArticleItem} from 'app/domain/article-item';
 export class ArticleListComponent implements OnInit {
 
   articleList: Array<ArticleItem> = [];
+  articleList2: Array<ArticleItem2> = [
+    { name: 'ddd', title: 'eeee', optSelectedId: [] },
+    { name: 'rre', title: '2@@@@', optSelectedId: [-1] },
+  ];
 
   constructor() {
   }

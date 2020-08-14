@@ -5,6 +5,7 @@ import {ArticleListComponent} from './article-list/article-list.component';
 import { ArticleItemComponent } from './article-item/article-item.component';
 
 import {ArticleRouter} from 'app/article/article-router';
+import { ArticleItem2Component } from './article-item2/article-item2.component';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import {ArticleRouter} from 'app/article/article-router';
   declarations: [
     ArticleListComponent,
     ArticleItemComponent,
+    ArticleItem2Component,
   ]
 })
 export class ArticleModule {

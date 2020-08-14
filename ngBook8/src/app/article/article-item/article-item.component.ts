@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {ArticleItem} from 'app/domain/article-item';
+import { Component, Input, OnInit } from '@angular/core';
+import { ArticleItem } from 'app/domain/article-item';
 
 @Component({
   selector: 'app-article-item',
@@ -15,6 +15,8 @@ export class ArticleItemComponent implements OnInit {
   }
 
   ngOnInit() {
+    // this.voteUp();
+    this.articleItem = new ArticleItem('oooddd', '999');
   }
 
   voteUp(): void {

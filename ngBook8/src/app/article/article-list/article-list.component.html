@@ -9,7 +9,13 @@
     <input type="text" id="link" name="link" #newlink>
   </div>
   <div class="article-list">
+    articleList: {{articleList | json}}
     <app-article-item *ngFor="let a of articleList" [articleItem]="a"></app-article-item>
+  </div>
+  <p>----------------------------------------------</p>
+  <div class="article-list2">
+    articleList2: {{articleList2 | json}}
+    <app-article-item2 *ngFor="let a2 of articleList2" [articleItem2]="a2"></app-article-item2>
   </div>
   <div>
     <button type="button" (click)="addArticle(newtitle, newlink)">新增</button>
