@@ -26,6 +26,11 @@ export class CustomTemplateRenderComponent implements OnInit {
 
   @Input() customRenderer: TemplateRef<{ $implicit: Payload; }>;
 
+  exampleContext = {
+    $implicit: 'default context property when none specified',
+    aContextProperty: 'a context property'
+  };
+
   constructor() { }
 
   ngOnInit() {

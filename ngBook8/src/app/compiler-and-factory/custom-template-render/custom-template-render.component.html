@@ -39,3 +39,13 @@
       <h6>age：{{ data.age }}</h6>
     </ng-template>
   </ul>
+
+  <!-- ----------此处的context就是ngTemplateOutletContext的简写--------- -->
+  <ng-container *ngTemplateOutlet="templateRef; context: exampleContext"></ng-container>
+    <ng-template #templateRef let-default let-other="aContextProperty">
+      <div>
+        $implicit = '{{default}}'
+        aContextProperty = '{{other}}'
+      </div>
+    </ng-template>
+    
