@@ -17,8 +17,8 @@
     <!-- 这行调试代码会引起: ExpressionChangedAfterItHasBeenCheckedError的报错, 因为articleList2已经在子组件中被修改了. -->
     <p *ngFor="let a2 of articleList2">a2: {{a2 | json}}<br />---------------------------------</p>
     <app-article-item2 *ngFor="let a2 of articleList2" [articleItem2]="a2"></app-article-item2>
-    <button type="button" (click)="test1()">articleList2=[]</button>
-    <button type="button" (click)="test2()">articleList2=[...]</button>
+    <!-- <button type="button" (click)="test1()">articleList2=[]</button>
+    <button type="button" (click)="test2()">articleList2=[...]</button> -->
   </div>
   <div>
     <button type="button" (click)="addArticle(newtitle, newlink)">新增</button>
