@@ -29,4 +29,30 @@ export class ArticleListComponent implements OnInit {
     }
   }
 
+  test1(): void {
+    this.articleList2 = this.returnArticleList2();
+  }
+
+  test2(): void {
+    this.returnArticleList3(this.articleList2);
+    // this.articleList2 = this.returnArticleList2();
+  }
+
+  returnArticleList2(): Array<ArticleItem2> {
+    return [
+      { name: 'dddsdd', title: 'ess222eee', optSelectedId: [] },
+      { name: 'rre222', title: '@@@@222', optSelectedId: [-1] },
+    ];
+  }
+
+  returnArticleList3(arr: Array<ArticleItem2>): Array<ArticleItem2> {
+    const cloneArr = [...arr];
+    console.log("ArticleListComponent -> arr", arr);
+    cloneArr.push({ name: 'sss', title: 'ess222eee', optSelectedId: [] });
+    cloneArr.forEach(item => item.name = 'lhsdsb');
+    console.log("ArticleListComponent -> arr", arr);
+    console.log("ArticleListComponent -> cloneArr", cloneArr);
+    return cloneArr;
+  }
+
 }
