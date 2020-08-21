@@ -1,5 +1,9 @@
+const path = require('path');
+const webpack = require('webpack');
 const htmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssWebpackPlugin = require('optimize-css-assets-webpack-plugin');
+const cleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     entry: "./src/main.ts",
@@ -32,9 +36,15 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.ProgressPlugin(),                   // 在打包很慢的时候, 展示打包的进度条.
+        new cleanWebpackPlugin.CleanWebpackPlugin(),    // 使用cleanWebpackPlugin, 每次打包生成文件之前将上次构建的文件全部删除.
         new htmlWebPackPlugin({
             template: "./src/index.html"
-        })
+        }),
+        new MiniCssExtractPlugin({
+            filename: 'assets/styles/[name]-[hash:5].css' // 对输出的css文件进行重命名.  
+        }),
+        new OptimizeCssWebpackPlugin(),                   // 压缩css.
     ],
     devServer: {
         contentBase: path.resolve(__dirname, 'dist'),
