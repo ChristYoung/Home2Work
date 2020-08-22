@@ -24,14 +24,14 @@ module.exports = {
             {
                 test: /\.css$/,
                 exclude: path.resolve(__dirname, './node_modules'),
-                include: path.resolve(__dirname, './src'),
+                include: path.resolve(__dirname, './src/styles'),
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader,
                         options: {
                             publicPath: '../../' // build出来后图片地址不显示, 应该需要配置下publicPath.
                         },
-                    }, 'css-loader', 'postcss-loader'],
+                    }, 'css-loader'],
             },
         ]
     },
