@@ -33,6 +33,7 @@ resizeableImage.prototype = {
 
 		//将容器分配给一个变量
 		this.container = $(this.cfg.image_target).parent('.resize-container');
+		console.log('container', this.container);
 
 		//在容器上添加相关事件 
 		this.container.on('mousedown', '.resize-handle', function (e) {
