@@ -1,3 +1,4 @@
+// 读取图片文件base64码并预览在页面上.
 export function fileInputChange() {
     const fileInput$ = document.getElementById('fileInput') as HTMLInputElement;
     const img$ = document.getElementById('imgContainer') as HTMLImageElement;
@@ -8,4 +9,9 @@ export function fileInputChange() {
         fileReader.readAsDataURL(file);
         fileReader.onload = (e) => img$.src = e.target.result as string;
     });
+}
+
+// 使得图片可以拖拽
+export function makeImgMoveable(): void {
+
 }
