@@ -34,6 +34,7 @@ export class ResizeAbleImage {
 
         // 给移动图片的容器绑定事件    
         this.resizeContianer = $(this.cfgOptions.image_target).parent('.resize-container');
+        this.resizeContianer.on('mousedown', 'img', (e: any) => this.startMoving(e));
     }
 
     // 保存事件状态(在进行图片移动或者大小调整前,先将相关状态保存下来)
