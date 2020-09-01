@@ -35,6 +35,7 @@ export class ResizeAbleImage {
         // 给移动图片的容器绑定事件    
         this.resizeContianer = $(this.cfgOptions.image_target).parent('.resize-container');
         this.resizeContianer.on('mousedown', 'img', (e: any) => this.startMoving(e));
+        $('.js-crop').on('click', () => this.cropImage());
     }
 
     // 保存事件状态(在进行图片移动或者大小调整前,先将相关状态保存下来)
@@ -56,7 +57,7 @@ export class ResizeAbleImage {
         e.stopPropagation();
         this.saveEventState(e);
         $(document).mousemove((e: any) => this.moving(e));
-        $(document).mouseup((e: any) => this.moving(e));
+        $(document).mouseup((e: any) => this.endMoving(e));
     }
 
     // 正在移动
@@ -72,6 +73,24 @@ export class ResizeAbleImage {
 
     // 结束移动
     private endMoving(e: MouseEvent): void {
+        e.preventDefault();
+        $(document).off('mousemove');
+        $(document).off('mouseup');
+    }
 
+    // 裁剪图片
+    cropImage(): void {
+        const crop_canvas: HTMLElementTagNameMap['canvas'] = document.createElement('canvas');
+        const ctx = crop_canvas.getContext('2d');
+        const overyLay$ = $('.overlay');
+        const left = overyLay$.offset().left - this.resizeContianer.offset().left;
+        const top = overyLay$.offset().top - this.resizeContianer.offset().top;
+        const width = overyLay$.width();
+        const height = overyLay$.height();
+        crop_canvas.width = width;
+        crop_canvas.height = height;
+        ctx.clearRect(0, 0, width, height);
+        ctx.drawImage(this.cfgOptions.image_target, left, top, width, height, 0, 0, width, height);
+        this.cfgOptions.image_target.src = crop_canvas.toDataURL('image/png');
     }
 }
