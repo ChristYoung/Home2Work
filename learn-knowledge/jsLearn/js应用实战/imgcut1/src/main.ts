@@ -5,9 +5,8 @@ import './styles/imgcut.css';
 import $ from 'jquery';
 
 // 1. 获取文件并读取文件
-import { fileInputChange, makeImgMoveable } from './fileInputChange';
+import { fileInputChange } from './fileInputChange';
+import { ResizeAbleImage } from './resizeableImage';
 
 fileInputChange();
-
-import { ResizeAbleImage } from './resizeableImage';
 const re = new ResizeAbleImage($('.resize-image'));
