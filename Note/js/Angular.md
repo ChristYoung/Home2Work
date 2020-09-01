@@ -35,7 +35,7 @@ symptom: [null, { validators: [Validators.required], updateOn: "submit" }], // �
 
 ## 构建Angular Lib的步骤
 ### 以下供参考
-https://medium.com/@nikolasleblanc/building-an-angular-4-component-library-with-the-angular-cli-and-ng-packagr-53b2ade0701e
+https://medium.com/@nikolasleblanc/building-an-angular-4-component-library-with-the-angular-cli-and-ng-packagr-53b2ade0701e (需要翻墙)
 https://angular.cn/guide/creating-libraries
 
 1. 在任意空位置执行ng new xxx新建一个Angular项目.
