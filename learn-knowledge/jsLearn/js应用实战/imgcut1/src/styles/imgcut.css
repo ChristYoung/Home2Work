@@ -443,3 +443,18 @@ body #cda-remove {
     vertical-align: middle;
     margin-left: 8px;
 }
+input[type=file] {
+    display: none;
+}
+.input_file_label {
+    display: inline-block;
+    width: 120px;
+    padding: 8px;
+    font-size: 14px;
+    background-color: teal;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-left: 22px;
+    text-align: center;
+}
