@@ -1,7 +1,7 @@
 // 表单嵌套组件
 // 多个formGroup嵌套
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-nested-form',
@@ -29,6 +29,26 @@ export class NestedFormComponent implements OnInit {
         })
       ])
     });
+  }
+
+  get workFlowContent() {
+    return this.validateForm.get('workFlowContent') as FormArray;
+  }
+
+  addStage(): void {
+    this.workFlowContent.push(
+      this.fb.group({
+        stageName: [null, [Validators.required]],
+        stageType: [null, [Validators.required]],
+        stageContent: this.fb.array([
+          this.fb.control(null)
+        ]),
+      })
+    );
+  }
+
+  removeStage(workflowIndex: number): void {
+    this.workFlowContent.removeAt(workflowIndex);
   }
 
   ngOnInit() {

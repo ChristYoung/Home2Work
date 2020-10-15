@@ -20,17 +20,25 @@
 
   <nz-form-item>
     <nz-form-label nzSpan="3" nz-col>
-      工作流内容
+      <div>
+        工作流内容：
+      </div>
     </nz-form-label>
     <nz-form-control nzSpan="14">
+        <div><button nz-button (click)="addStage()">增加stage</button></div>
         <div class="workFlowContent" formArrayName="workFlowContent"
-        *ngFor="let content of validateForm.controls['workFlowContent']['controls'];
+        *ngFor="let content of workFlowContent.controls;
            let workflowIndex = index">
      <div [formGroupName]="workflowIndex.toString()">
        <nz-row>
          <nz-form-label nzSpan="3" nz-col>
            stage{{workflowIndex + 1}}
          </nz-form-label>
+         <nz-form-control nzOffset="15" nzSpan="3" nz-col>
+            <button nz-button (click)="removeStage(workflowIndex)">
+                  删除
+            </button>
+        </nz-form-control>
        </nz-row>
        <nz-row>
          <nz-form-label nzSpan="3" nz-col>stageName</nz-form-label>
@@ -46,7 +54,7 @@
          <nz-form-label nzSpan="3" nz-col>stageContent</nz-form-label>
          <nz-form-control nz-col nzSpan="18">
            <nz-row formArrayName="stageContent"
-                   *ngFor="let stage of content.get('stageContent').controls;let stageIndex = index">
+                   *ngFor="let stage of content.get('stageContent')['controls'];let stageIndex = index">
              <input nz-input [formControlName]="stageIndex.toString()">
            </nz-row>
          </nz-form-control>

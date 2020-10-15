@@ -5,6 +5,7 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzFormModule } from 'ng-zorro-antd/form';
 import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzButtonModule } from 'ng-zorro-antd/button';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { ReactiveFormValidateComponent } from './reactive-form-validate/reactive-form-validate.component';
@@ -21,6 +22,7 @@ import { formRouter } from './form-router';
     FormsModule,
     ReactiveFormsModule,
     NzDividerModule,
+    NzButtonModule,
     NzFormModule,
     NzInputModule,
     NzGridModule,
