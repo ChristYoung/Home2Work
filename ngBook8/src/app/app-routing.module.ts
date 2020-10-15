@@ -21,7 +21,6 @@ const routes: Routes = [
       routes,
       {
         enableTracing: false,
-        useHash: true
       }
     )
   ],

@@ -183,6 +183,17 @@ var isAndroid = (nua.indexOf('Mozilla/5.0') > -1 && nua.indexOf('Android') > -1 
   就无法通过data('keyName')方法获取到数据,必须写成"data-keyname"才行 
   
   
+~~~. JS 浏览器打开新窗口, 非tab
+	要使用非tab方式打开的 JS如下:
+
+                     window.open(url, "_blank", "scrollbars=yes,resizable=1,modal=false,alwaysRaised=yes");
+
+
+
+      设置  alwaysRaised=yes 属性.  
+  	更多信息可参考:  http://stackoverflow.com/questions/726761/javascript-open-in-a-new-window-not-tab
+  	
+  
 ~~~.获取文件base64编码  
 /**
      * @param file
