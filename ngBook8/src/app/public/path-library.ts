@@ -3,6 +3,7 @@ export class PathLibrary {
   public static readonly demoList = 'demoList';
   public static readonly articleList = 'articleList';
   public static readonly reactiveForm = 'reactiveForm'; // 动态表单
+  public static readonly nestedForm = 'nestedForm'; // 多个formGroup嵌套
   public static readonly reactiveFormValidate1 = 'reactiveFormValidate1'; // 自定义表单controlValueAccessor
   public static readonly validateReactiveFormDynamicly = 'validateReactiveFormDynamicly'; // 动态验证响应式表单
   public static readonly userLoginForm = 'userLoginForm'; // 模板驱动变动验证
