@@ -2,6 +2,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { NzGridModule } from 'ng-zorro-antd/grid';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { ReactiveFormValidateComponent } from './reactive-form-validate/reactive-form-validate.component';
@@ -17,6 +20,10 @@ import { formRouter } from './form-router';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    NzDividerModule,
+    NzFormModule,
+    NzInputModule,
+    NzGridModule,
     formRouter,
   ],
   declarations: [

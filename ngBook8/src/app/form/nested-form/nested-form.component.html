@@ -1,1 +1,46 @@
-<p>nested-form works!</p>
+<nz-divider [nzText]="'表单嵌套'"></nz-divider>
+
+<form [formGroup]="validateForm">
+
+  <nz-form-item>
+    <nz-form-label nzSpan="3" nz-col>
+      工作流名称
+    </nz-form-label>
+    <nz-form-control nzSpan="7" nz-col>
+      <input nz-input type="text" placeholder="请输入工作流名称" formControlName="workFlowName">
+    </nz-form-control>
+
+    <nz-form-label nzSpan="3" nzOffset="1" nz-col>
+      工作流类型
+    </nz-form-label>
+    <nz-form-control nzSpan="7" nz-col>
+      <input nz-input type="text" placeholder="请输入工作流类型" formControlName="workFlowType">
+    </nz-form-control>
+  </nz-form-item>
+
+  <nz-form-item>
+    <nz-form-label nzSpan="3" nz-col>
+      工作流内容
+    </nz-form-label>
+    <nz-form-control nzSpan="14">
+      <nz-row formArrayName="workFlowContent"
+              *ngFor="let content of validateForm.controls['workFlowContent']['controls'];
+              let workFlowIndex = index">
+        <nz-form-control nz-col nzSpan="12">
+          <input nz-input [formControlName]="workFlowIndex" type="text">
+        </nz-form-control>
+
+      </nz-row>
+    </nz-form-control>
+  </nz-form-item>
+
+</form>
+
+<nz-form-item>
+  <nz-form-label nzSpan="3" nz-col>
+    表单的值
+  </nz-form-label>
+  <nz-form-control nzSpan="21" nz-col>
+    {{validateForm.value | json}}
+  </nz-form-control>
+</nz-form-item>
