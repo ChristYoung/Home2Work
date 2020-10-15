@@ -15,11 +15,18 @@ export class NestedFormComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
   ) {
+    // 初始化表单构建
     this.validateForm = this.fb.group({
       workFlowName: [null, [Validators.required]],
       workFlowType: [null, [Validators.required]],
-      workFlowContent: this.fb.array([
-        this.fb.control(null)
+      workFlowContent: this.fb.array([ // formArray嵌套
+        this.fb.group({
+          stageName: [null, [Validators.required]],
+          stageType: [null, [Validators.required]],
+          stageContent: this.fb.array([
+            this.fb.control(null)
+          ]),
+        })
       ])
     });
   }

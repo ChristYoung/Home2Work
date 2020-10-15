@@ -23,14 +23,36 @@
       工作流内容
     </nz-form-label>
     <nz-form-control nzSpan="14">
-      <nz-row formArrayName="workFlowContent"
-              *ngFor="let content of validateForm.controls['workFlowContent']['controls'];
-              let workFlowIndex = index">
-        <nz-form-control nz-col nzSpan="12">
-          <input nz-input [formControlName]="workFlowIndex" type="text">
-        </nz-form-control>
-
-      </nz-row>
+        <div class="workFlowContent" formArrayName="workFlowContent"
+        *ngFor="let content of validateForm.controls['workFlowContent']['controls'];
+           let workflowIndex = index">
+     <div [formGroupName]="workflowIndex.toString()">
+       <nz-row>
+         <nz-form-label nzSpan="3" nz-col>
+           stage{{workflowIndex + 1}}
+         </nz-form-label>
+       </nz-row>
+       <nz-row>
+         <nz-form-label nzSpan="3" nz-col>stageName</nz-form-label>
+         <nz-form-control nz-col nzSpan="7">
+           <input nz-input type="text" formControlName="stageName">
+         </nz-form-control>
+         <nz-form-label nzOffset="1" nzSpan="3" nz-col>stageType</nz-form-label>
+         <nz-form-control nz-col nzSpan="7">
+           <input nz-input type="text" formControlName="stageType">
+         </nz-form-control>
+       </nz-row>
+       <nz-row>
+         <nz-form-label nzSpan="3" nz-col>stageContent</nz-form-label>
+         <nz-form-control nz-col nzSpan="18">
+           <nz-row formArrayName="stageContent"
+                   *ngFor="let stage of content.get('stageContent').controls;let stageIndex = index">
+             <input nz-input [formControlName]="stageIndex.toString()">
+           </nz-row>
+         </nz-form-control>
+       </nz-row>
+     </div>
+   </div>
     </nz-form-control>
   </nz-form-item>
 
