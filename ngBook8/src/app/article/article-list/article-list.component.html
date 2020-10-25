@@ -1,5 +1,5 @@
 <form action="">
-  <h3>Add a link</h3>
+  <h3>新增一个app-article-item组件</h3>
   <div>
     <label for="title">Title:</label>
     <input type="text" id="title" name="title" #newtitle>
@@ -9,18 +9,20 @@
     <input type="text" id="link" name="link" #newlink>
   </div>
   <div class="article-list">
+    以下是app-article-item组件:
     <app-article-item *ngFor="let a of articleList" [articleItem]="a"></app-article-item>
   </div>
   <p>----------------------------------------------</p>
   <div class="article-list2">
-
+    以下是app-article-item2组件:
     <!-- 这行调试代码会引起: ExpressionChangedAfterItHasBeenCheckedError的报错, 因为articleList2已经在子组件中被修改了. -->
-    <p *ngFor="let a2 of articleList2">a2: {{a2 | json}}<br />---------------------------------</p>
+    <p *ngFor="let a2 of articleList2">a2: {{a2 | json}}<br /></p>
     <app-article-item2 *ngFor="let a2 of articleList2" [articleItem2]="a2"></app-article-item2>
     <!-- <button type="button" (click)="test1()">articleList2=[]</button>
     <button type="button" (click)="test2()">articleList2=[...]</button> -->
+    <button type="button" (click)="addArticle2()">新增app-article-item2组件</button>
   </div>
   <div>
-    <button type="button" (click)="addArticle(newtitle, newlink)">新增</button>
+    <button type="button" (click)="addArticle(newtitle, newlink)">新增app-article-item组件</button>
   </div>
 </form>

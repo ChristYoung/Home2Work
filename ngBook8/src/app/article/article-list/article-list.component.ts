@@ -29,6 +29,10 @@ export class ArticleListComponent implements OnInit {
     }
   }
 
+  addArticle2(): void {
+
+  }
+
   test1(): void {
     this.articleList2 = this.returnArticleList2();
   }
