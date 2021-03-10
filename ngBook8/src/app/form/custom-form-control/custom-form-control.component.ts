@@ -1,6 +1,6 @@
 // 通过ControlValueAccessor接口实现一个自定义的表单控件
-import {Component, OnInit, forwardRef} from '@angular/core';
-import {ControlValueAccessor, NG_VALUE_ACCESSOR, NG_VALIDATORS, FormControl, FormGroup} from '@angular/forms';
+import { Component, OnInit, forwardRef } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, NG_VALIDATORS, FormControl, FormGroup } from '@angular/forms';
 
 class ImageListItem {
   imageUrl: string;
@@ -33,15 +33,15 @@ export class CustomFormControlComponent implements ControlValueAccessor {
 
   constructor() {
     this.imageList = [
-      {imageTitle: '住院缴费记录', imageValue: 'inpatient_pay', imageUrl: 'assets/images/icon_hospitalpayrecord.png'},
-      {imageTitle: '我的缴费记录', imageValue: 'my_record', imageUrl: 'assets/images/icon_mypaymentrecord.png'},
-      {imageTitle: '一卡通充值', imageValue: 'ecard_pay', imageUrl: 'assets/images/icon_one-card-recharge.png'},
-      {imageTitle: '门诊缴费', imageValue: 'outpatient_pay', imageUrl: 'assets/images/icon_outpatient-payment.png'},
-      {imageTitle: '去支付', imageValue: 'go_pay', imageUrl: 'assets/images/icon_pay.png'},
+      { imageTitle: '住院缴费记录', imageValue: 'inpatient_pay', imageUrl: 'assets/images/icon_hospitalpayrecord.png' },
+      { imageTitle: '我的缴费记录', imageValue: 'my_record', imageUrl: 'assets/images/icon_mypaymentrecord.png' },
+      { imageTitle: '一卡通充值', imageValue: 'ecard_pay', imageUrl: 'assets/images/icon_one-card-recharge.png' },
+      { imageTitle: '门诊缴费', imageValue: 'outpatient_pay', imageUrl: 'assets/images/icon_outpatient-payment.png' },
+      { imageTitle: '去支付', imageValue: 'go_pay', imageUrl: 'assets/images/icon_pay.png' },
     ];
   }
 
-  private propagateChange = (_: any) => {};
+  private propagateChange = (_: any) => { };
 
   onChange(i: number) {
     this.selected = this.imageList[i].imageUrl;
@@ -58,9 +58,9 @@ export class CustomFormControlComponent implements ControlValueAccessor {
     this.propagateChange = fn;
   }
 
-  registerOnTouched(fn: any): void {}
+  registerOnTouched(fn: any): void { }
 
-  validate(c: FormControl): {[key: string]: any} {
+  validate(c: FormControl): { [key: string]: any } {
     return this.selected ? null : {
       imageListInvalid: {
         valid: false
