@@ -9,6 +9,7 @@ import {DynamicContanierComponent} from './dynamic-contanier/dynamic-contanier.c
 import {DynamicChild1Component} from './dynamic-child1/dynamic-child1.component';
 import {DynamicChild2Component} from './dynamic-child2/dynamic-child2.component';
 import { NgTemplateComponent } from './ng-template/ng-template.component';
+import { NgTemplateChildComponent } from './ng-template/ng-template-child/ng-template-child.component';
 
 @NgModule({
   imports: [
@@ -24,6 +25,7 @@ import { NgTemplateComponent } from './ng-template/ng-template.component';
     DynamicChild1Component,
     DynamicChild2Component,
     NgTemplateComponent,
+    NgTemplateChildComponent,
   ],
   entryComponents: [
     DynamicChild1Component,
