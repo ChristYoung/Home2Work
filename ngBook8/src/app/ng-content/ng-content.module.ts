@@ -8,6 +8,7 @@ import {CounterTwoComponent} from './counter-two/counter-two.component';
 import {DynamicContanierComponent} from './dynamic-contanier/dynamic-contanier.component';
 import {DynamicChild1Component} from './dynamic-child1/dynamic-child1.component';
 import {DynamicChild2Component} from './dynamic-child2/dynamic-child2.component';
+import { NgTemplateComponent } from './ng-template/ng-template.component';
 
 @NgModule({
   imports: [
@@ -22,6 +23,7 @@ import {DynamicChild2Component} from './dynamic-child2/dynamic-child2.component'
     DynamicContanierComponent,
     DynamicChild1Component,
     DynamicChild2Component,
+    NgTemplateComponent,
   ],
   entryComponents: [
     DynamicChild1Component,

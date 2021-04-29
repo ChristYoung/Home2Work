@@ -8,6 +8,7 @@ export class PathLibrary {
   public static readonly validateReactiveFormDynamicly = 'validateReactiveFormDynamicly'; // 动态验证响应式表单
   public static readonly userLoginForm = 'userLoginForm'; // 模板驱动变动验证
   public static readonly ngContent = 'ngContent'; // 内容投影
+  public static readonly ngTemplate = 'ngTemplate';
   public static readonly dynamicContainer = 'dynamicContainer'; // 动态组件
   public static readonly dynamicContainerByFactory = 'dynamicContainerByFactory'; // 使用工厂函数动态创建组件
   public static readonly runTimeCompiler = 'runTimeCompiler'; // 运行时编译
