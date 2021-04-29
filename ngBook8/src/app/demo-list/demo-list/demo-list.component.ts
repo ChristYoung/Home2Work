@@ -36,6 +36,7 @@ export class DemoListComponent implements OnInit {
         demoClass: 'Angular动态',
         demoItems: [
           { demoName: '内容投影(WrapperComponent)', demoRouter: PathLibrary.moduleName_ngContent + '/' + PathLibrary.ngContent },
+          { demoName: 'ngTemplate和ng-content的区别(参考: https://indepth.dev/posts/1405/ngtemplateoutlet)', demoRouter: PathLibrary.moduleName_ngContent + '/' + PathLibrary.ngTemplate },
           { demoName: '动态组件(DynamicContanierComponent)', demoRouter: PathLibrary.moduleName_ngContent + '/' + PathLibrary.dynamicContainer },
         ]
       },

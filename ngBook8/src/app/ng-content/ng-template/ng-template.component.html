@@ -1,1 +1,20 @@
-<p>ng-template works!</p>
+<!-- 
+ps: 什么时候使用ng-content, 什么时候使用ng-template?
+当子组件是聪明组件, 即子组件有自己的内部数据, 只是需要外部父组件提供不同的html模板定义的时候, 使用ng-template.
+当子组件是笨组件, 没有自己的内部数据, 或者被传入的部分不需要考虑子组件的内部数据的时候使用ng-content.
+
+ps: ng-conten投影内容的生命周期将被绑定到它被声明的地方, 而不是显示在地方, 但是ng-template不是
+
+ps: ng-content被传入的模板并不知道它被传入的容器的上下文
+
+参考: https://indepth.dev/posts/1405/ngtemplateoutlet
+ -->
+
+<app-ng-template-child [optionTemplate]="opt">
+    <div class="ngCon">我是要被投影的内容</div>
+</app-ng-template-child>
+
+<ng-template #opt let-data>
+    <h1>{{data.name}}</h1>
+    <h6>{{data.value}}</h6>
+</ng-template>

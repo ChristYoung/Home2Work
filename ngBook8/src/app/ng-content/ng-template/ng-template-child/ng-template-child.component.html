@@ -1,1 +1,13 @@
-<p>ng-template-child works!</p>
+<div class="ngDiv">
+    <ng-content></ng-content>
+    <ul>
+        <li *ngFor="let d of dataList">
+            <ng-template [ngTemplateOutlet]="optionTemplate || defaultTemplate" [ngTemplateOutletContext]="{ $implicit: d }"></ng-template>
+        </li>
+    </ul>
+</div>
+
+<ng-template #defaultTemplate let-data>
+    <span>{{data.name}}</span>
+    <h6>{{data.value}}</h6>
+</ng-template>
